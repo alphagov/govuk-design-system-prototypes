@@ -6,7 +6,7 @@
     <% navSectionTitle = navSection.name.tr('_', ' ') %>
 
     <% if !defined?(navSection.pages) %>
-      <a href="/v2/<%= navSection.name %>"<% if navSection.group %> class="group-heading"<% end %>><%= navSectionTitle %></a>
+      <a href="/v1/<%= navSection.name %>"<% if navSection.group %> class="group-heading"<% end %>><%= navSectionTitle %></a>
     <% else %>
 
       <a href="#<%= navSection.name %>"><%= navSectionTitle %></a>
@@ -20,7 +20,7 @@
       %>
 
       <li<% if defined?(page) && page == navPage %> class="current-page"<% end %>>
-        <a href="/v2/<%= navSection.name %>/<%= navPage %>"><%= navPageTitle %></a>
+        <a href="/v1/<%= navSection.name %>/<%= navPage %>"><%= navPageTitle %></a>
       </li>
 
       <% end %>

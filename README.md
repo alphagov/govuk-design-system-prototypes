@@ -27,7 +27,7 @@ You can include the content on a page using a partial, like this:
 <%= partial 'documentation/agile/scrum' %>
 ```
 
-The navigation and page headings are generated from the data file in the `data` folder. This allows us to quickly try out different navigation schemas. The values in the data file determine the URL path. The same values are transformed into the links and page titles by swappin underscores for spaces and capitalising the 1st letter.
+The navigation and page headings are generated from the data file in the `data` folder. This allows us to quickly try out different navigation structures. The values in the data file determine the URL path. The same values are transformed into the links and page titles by swapping underscores for spaces and capitalising the 1st letter.
 
 
 ## Preview

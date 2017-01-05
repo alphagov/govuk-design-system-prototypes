@@ -1,5 +1,71 @@
 ---
+layout: layout
 title: GOV.UK Design System
 ---
 
-<%= partial '/documentation/index' %>
+<%	# Swap underscores for spaces
+	pageTitle = page.tr('_', ' ')
+%>
+
+<p class="section-heading"><%= section %></p>
+<h1><%= pageTitle %></h1>
+
+<%= partial '/documentation/' + section + '/' + page rescue nil %>
+
+
+
+<% 
+	nextPage = ''
+	nextSection = ''
+	nextPageTitle = ''
+	nextNav = true
+
+	data.nav.sections.each_with_index do |navSection, index|
+
+		currentPageIndex = navSection.pages.index(page)
+
+		if currentPageIndex
+
+			# Last page in section
+			if currentPageIndex + 1 == navSection.pages.length
+
+				if data.nav.sections[index+1]
+					nextSection = data.nav.sections[index+1].name
+					nextPage = data.nav.sections[index+1].pages[0]
+				else
+					nextNav = false
+				end
+
+
+			# Other pages
+			else
+
+				nextSection = navSection.name
+				nextPage = navSection.pages[currentPageIndex+1]
+
+			end
+
+			nextPageTitle = nextPage.tr('_', ' ')
+			nextPageTitle = nextPageTitle.capitalize
+
+		end
+
+	end
+%>
+
+<nav class="govuk-previous-and-next-navigation">
+<ul class="group">
+
+<% if nextNav %>	
+  <li class="next-page">
+    <a href="<%= '/v1/' + nextSection + '/' + nextPage %>" rel="next">
+      <span class="pagination-part-title">Next</span>
+      <span class="pagination-label"><%= nextPageTitle %></span>
+    </a>
+  </li>
+<% end %>
+
+</ul>
+</nav>
+
+

@@ -32,7 +32,7 @@ data.nav.sections.each do |section|
     section.pages.each do |page|
 
       # Set up proxy
-      proxy "/v2/#{section.name}/#{page}/index.html", "/v2/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
+      proxy "/v1/#{section.name}/#{page}/index.html", "/v1/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
     
     end
   end
