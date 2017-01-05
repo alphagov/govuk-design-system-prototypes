@@ -1,0 +1,30 @@
+Avoid unnecessary decoration - only use icons if there’s a real user need.
+
+## Icons
+
+* if icons are needed ensure they are clear, simple and accompanied by relevant text
+* don’t hide functionality under icons
+
+GOV.UK standard icons are provided, as well as organisation crests and media player icons – find these in the GOV.UK frontend toolkit images folder.
+
+### Legal text
+
+Use bold text with an exclamation icon if there are legal consequences - for example, a fine or prison sentence.
+
+<% partial "/partials/example" do %>
+<div class="text">
+	<div class="notice">
+		<i class="icon icon-important">
+			<span class="visually-hidden">Warning</span>
+		</i>
+		<strong class="bold-small">
+			You can be fined up to £5,000 if you don’t register.
+		</strong>
+	</div>
+</div>
+<% end %>
+
+
+## Examples
+
+* Example page: Icons in the GOV.UK frontend toolkit

@@ -1,0 +1,33 @@
+
+<ul>
+  <% data.nav.sections.each do |navSection| %>
+  <li<% if defined?(section) && section == navSection.name %> class="current-section"<% end %>>
+    
+    <% navSectionTitle = navSection.name.tr('_', ' ') %>
+
+    <% if !defined?(navSection.pages) %>
+      <a href="/v2/<%= navSection.name %>"<% if navSection.group %> class="group-heading"<% end %>><%= navSectionTitle %></a>
+    <% else %>
+
+      <a href="#<%= navSection.name %>"><%= navSectionTitle %></a>
+      <ul>
+
+      <% navSection.pages.each do |navPage| 
+
+        navPageTitle = navPage.tr('_', ' ')
+        navPageTitle = navPageTitle.capitalize!
+
+      %>
+
+      <li<% if defined?(page) && page == navPage %> class="current-page"<% end %>>
+        <a href="/v2/<%= navSection.name %>/<%= navPage %>"><%= navPageTitle %></a>
+      </li>
+
+      <% end %>
+      </ul>
+
+    <% end %>
+
+  <% end %>
+  </li>
+</ul>

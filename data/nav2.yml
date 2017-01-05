@@ -1,0 +1,24 @@
+sections:
+    -
+      name: introduction
+      pages: []
+    -
+      name: design_principles
+      pages: []
+    -
+      name: design_patterns
+      pages: 
+        - styles
+        - components
+        - pages
+        - tasks
+        - services
+    -
+      name: design_tools
+      pages:
+        - GOV.UK_Frontend
+        - GOV.UK_Prototype_Kit
+    -
+      name: design_community
+      pages:
+        - custom_extensions

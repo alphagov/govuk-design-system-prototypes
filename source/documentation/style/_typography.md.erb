@@ -1,0 +1,182 @@
+
+
+
+For GOV.UK domains, always use the GDS Transport Website font in Light and Bold.
+
+
+## Font
+
+Use the GDS Transport Website font in Light and Bold. It’s licensed for use on the GOV.UK domains only.
+
+For services publicly available on different domains, use an alternative typeface like Arial.
+
+## Headings
+
+* use GDS Transport Website Bold
+* use sentence case for headings
+* use headings consistently to create a clear hierarchy
+
+<% partial "/partials/example" do %>
+<h1 class="heading-xlarge">A 48px Bold heading</h1>
+<h2 class="heading-large">A 36px Bold heading</h2>
+<h3 class="heading-medium">A 24px Bold heading</h3>
+<h4 class="heading-small">A 19px Bold heading</h4>
+<% end %>
+
+
+## Lead paragraph
+
+* use 24px for a lead paragraph
+* there should only be one lead paragraph per page
+
+<% partial "/partials/example" do %>
+<div class="text">
+	<p class="lede">
+		A 24pxlead paragraph, maecenas sed diam eget risus varius blandit sit amet non magna.
+	</p>
+	<p>
+		A 19px body copy paragraph, maecenas sed diam eget risus varius blandit sit amet non magna.
+	</p>
+</div>
+<% end %>
+
+
+## Body copy
+
+* use GDS Transport Website Light
+* avoid using bold and italics
+* use 19px for body copy – 16px for smaller screens
+* use smaller sizes only if there’s a user need (eg 16px, 14px, 12px)
+* make sure lines of text don’t exceed 75 characters, as they become harder to read beyond that point
+
+<% partial "/partials/example" do %>
+<div class="text">
+	<p>
+	A 19px body copy paragraph. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
+	</p>
+	<p class="font-xsmall">
+	A 16px supporting text paragraph. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
+	</p>
+</div>
+<% end %>
+
+
+## Links
+
+* links within body copy should be blue and underlined
+* links without surrounding text should not have a full stop at the end
+* link colours can be found in the <a href="/colour">colour palette</a>
+
+<% partial "/partials/example" do %>
+<div class="text">
+	<p>
+		<a href="#">A 19px link without surrounding text</a>
+	</p>
+	<p>
+		<a href="#">A 19px body copy link</a>. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+	</p>
+	<a href="#" class="link-back">Back</a>
+</div>
+<% end %>
+
+
+## Lists
+
+List items start with a lowercase letter and have no full stop at the end.
+
+<% partial "/partials/example" do %>
+<ul class="list list-bullet">
+  <li>here is a bulleted list</li>
+  <li>vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor</li>
+  <li>vestibulum id ligula porta felis euismod semper</li>
+  <li>integer posuere erat a ante venenatis dapibus posuere velit aliquet</li>
+</ul>
+<ol class="list list-number">
+  <li>here is a numbered list</li>
+  <li>vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor</li>
+  <li>vestibulum id ligula porta felis euismod semper</li>
+  <li>integer posuere erat a ante venenatis dapibus posuere velit aliquet</li>
+</ol>
+<ul class="list">
+  <li><a href="#">Related link</a></li>
+  <li><a href="#">Related link</a></li>
+  <li><a href="#">Related link</a></li>
+  <li><a href="#" class="bold-xsmall">More</a></li>
+</ul>
+<% end %>
+
+
+## Inset text
+
+Use bordered inset text to draw attention to important content on the page.
+
+<% partial "/partials/example" do %>
+<div class="text">
+	<div class="panel panel-border-wide">
+		<p>
+		It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application.
+		</p>
+	</div>
+</div>
+<% end %>
+
+
+## Legal text
+
+Use bold text with an exclamation icon if there are legal consequences - for example, a fine or prison sentence.
+
+<% partial "/partials/example" do %>
+<div class="text">
+	<div class="notice">
+		<i class="icon icon-important">
+			<span class="visually-hidden">Warning</span>
+		</i>
+		<strong class="bold-small">
+			You can be fined up to £5,000 if you don’t register.
+		</strong>
+	</div>
+</div>
+<% end %>
+
+
+## Hidden text (progressive disclosure)
+
+Use this to make your page easier to scan, only showing contextual information when required.
+
+Click on "Help with nationality" to see how this works.
+
+
+<% partial "/partials/example" do %>
+<details role="group">
+
+	<summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Help with nationality</span></summary>
+
+	<div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+		<p>
+		  If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.
+		</p>
+		<p>
+		  We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post.
+		</p>
+	</div>
+</details>
+<% end %>
+
+
+
+If you’re using the HTML5 details and summary elements, you’ll need a polyfill for <a href="http://caniuse.com/#feat=details" rel="external">not-so-modern browsers</a>.
+
+You’ll need to ensure that your markup matches the example above. <a href="https://github.com/alphagov/govuk_elements/blob/master/public/javascripts/vendor/details.polyfill.js">GOV.UK elements uses this polyfill</a>.
+
+<a href="/typography/example-details-summary/">Take a look at example page</a> which demonstrates conditionally revealing information, using the HTML5 details and summary elements.
+
+
+## Examples
+
+<ul class="list list-bullet">
+<li>
+  <a href="/typography/example-typography/">
+    an example typography page
+  </a>
+</li>
+</ul>

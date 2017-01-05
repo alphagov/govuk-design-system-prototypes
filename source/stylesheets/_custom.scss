@@ -1,0 +1,329 @@
+// CUSTOM STYLES
+
+.technical-documentation {
+    max-width: none;
+}
+
+.toc {
+    padding: 15px;
+    margin-bottom: 300px;
+}
+
+.toc__list {
+
+    a:link{
+        padding-left: 11px;
+    }
+
+}
+
+.toc__list a:visited {
+
+    color: $link-colour;
+
+}
+
+.toc__list a:first-letter {
+
+    text-transform: uppercase;
+
+}
+
+.toc__list li li{
+
+    border-left: 4px solid transparent;
+
+}
+
+.toc__list .current-page {
+    //font-weight: bold;
+    background: $grey-4;
+    border-left: 4px solid #005ea5;
+}
+
+.toc__list li li li {
+    margin-left: 5px;
+
+    a:link{
+    	//padding: 4px 0;
+    }
+}
+
+.toc__list li li li:before{
+	content: "— ";
+    float: left;
+    font-size: 8px;
+    margin-top: 12px;
+    color: $link-colour;
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.toc__list > ul > li > .group-heading:link{
+  color: $secondary-text-colour;
+  font-weight: normal;
+  font-size: 19px;
+  margin-top: $gutter-half;
+}
+.toc__list > ul > li > .group-heading:visited{
+  color: $secondary-text-colour;
+}
+
+#content{
+
+    .section-heading{
+        color: $secondary-text-colour;
+        font-size: 24px;
+        margin: 15px 0 0;
+        &::first-letter{
+            text-transform: uppercase;
+        }     
+    }
+
+    .example{
+        @extend %contain-floats;
+        border: 1px solid $border-colour;
+        margin: $gutter 0;
+        padding: $gutter;
+    }
+
+    p.example-grid {
+      width: 100%;
+      max-width: none;
+      background: url("/images/grid.png") 0 0 repeat;
+      margin: 0;
+      height: 30px;
+      @include media(tablet) {
+        height: 60px;
+      }
+      overflow: hidden;
+      text-indent: -999em;
+    }
+
+    p, ul.list, ol.list{
+        max-width: 34em;
+    }
+
+    h1{
+        @extend .heading-xlarge;
+        margin-top: 0;
+        border-top: 0;
+    }
+
+    h1:first-letter{
+        text-transform: uppercase;
+    }
+
+    h2{
+        @extend .heading-medium;
+    }
+
+    h3{
+        @extend .heading-small;
+    }
+
+    > ul{
+        @extend .list;
+        @extend .list-bullet;
+    }
+
+    .example + .highlight{
+        margin-top: -31px;
+    }
+
+    .highlight{
+        font-size: 16px;
+    }
+
+}
+
+
+// 3. Colour
+// ==========================================================================
+
+// Colour swatches
+.swatch {
+  width: 60px;
+  height: 60px;
+  @include border-radius(100%);
+  @include media(mobile) {
+    clear: both;
+    float: left;
+    margin-right: $gutter-half;
+    margin-bottom: $gutter-half;
+  }
+  @include media(tablet) {
+    margin: 0 auto $gutter-half auto;
+  }
+}
+
+// Sass list for colour palette
+$palette: (
+  ("purple", $purple),
+  ("mauve", $mauve),
+  ("fuschia", $fuschia),
+  ("pink", $pink),
+  ("baby-pink", $baby-pink),
+  ("red", $red),
+  ("mellow-red", $mellow-red),
+  ("orange", $orange),
+  ("brown", $brown),
+  ("yellow", $yellow),
+  ("green", $green),
+  ("grass-green", $grass-green),
+  ("turquoise", $turquoise),
+  ("light-blue", $light-blue),
+  ("govuk-blue", $govuk-blue)
+);
+
+@mixin color-swatches {
+  @each $color in $palette {
+    $color-name: nth($color, 1);
+    $color-var: nth($color, 2);
+    .swatch-#{$color-name} {
+      background-color: $color-var;
+    }
+  }
+}
+
+// Generate swatch classes for each colour in palette list
+@include color-swatches;
+
+.swatch-alpha {
+  background-color: $alpha-colour;
+}
+
+.swatch-beta {
+  background-color: $beta-colour;
+}
+
+.swatch-discovery {
+  background-color: $discovery-colour;
+}
+
+.swatch-live {
+  background-color: $live-colour;
+}
+
+.swatch-error {
+  background-color: $error-colour;
+}
+
+.swatch-focus {
+  background-color: $focus-colour;
+}
+
+.swatch-button-colour {
+  background-color: $button-colour;
+}
+
+.swatch-black {
+  background-color: $black;
+}
+
+.swatch-grey-1 {
+  background-color: $grey-1;
+}
+
+.swatch-grey-2 {
+  background-color: $grey-2;
+}
+
+.swatch-grey-3 {
+  background-color: $grey-3;
+}
+
+.swatch-grey-4 {
+  background-color: $grey-4;
+}
+
+.swatch-white {
+  background-color: $white;
+  border: 1px solid $grey-3;
+}
+
+.swatch-text-colour {
+  background-color: $text-colour;
+}
+
+.swatch-text-secondary {
+  background-color: $secondary-text-colour;
+}
+
+.swatch-page-colour {
+  background-color: $page-colour;
+  border: 1px solid $grey-3;
+}
+
+.swatch-button-colour {
+  background-color: $button-colour;
+}
+
+.swatch-link-colour {
+ background-color: $link-colour;
+}
+
+.swatch-link-colour-visited {
+ background-color: $link-visited-colour;
+}
+
+.swatch-link-colour-hover {
+ background-color: $link-hover-colour;
+}
+
+.swatch-border-colour {
+  background-color: $border-colour;
+}
+
+.swatch-panel-colour {
+  background-color: $panel-colour;
+}
+
+.swatch-highlight-colour {
+  background-color: $highlight-colour;
+}
+
+// Colour swatch layout
+.swatch-wrapper {
+  @include media(tablet) {
+    float: left;
+    width: 20%;
+    text-align: center;
+  }
+
+  .heading-small {
+    margin-bottom: em(10);
+  }
+
+  ul {
+    list-style-type: none;
+    padding-bottom: $gutter-half;
+    padding-left: 0;
+    @include media(mobile) {
+      min-height: 50px;
+      padding-top: 10px;
+    }
+  }
+  li {
+    @include core-16;
+  }
+  b {
+  font-weight: bold;
+  text-transform: uppercase;
+  }
+}
+
+.govuk-previous-and-next-navigation{
+  @extend %contain-floats;
+  border-top: 1px solid $border-colour;
+  padding: $gutter-half 0 $gutter;
+}
+
+.page-next{
+  a{
+    font-weight: bold;
+  }
+  a:first-letter{
+    text-transform: uppercase;
+  }
+}
