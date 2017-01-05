@@ -28,7 +28,7 @@ page '/*.txt', layout: false
 data.nav.sections.each do |section|
 
   # Iterate over pages in section
-  if defined?(navSection.pages)
+  if defined?(section.pages)
     section.pages.each do |page|
 
       # Set up proxy

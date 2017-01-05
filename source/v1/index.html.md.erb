@@ -22,7 +22,10 @@ title: GOV.UK Design System
 
 	data.nav.sections.each_with_index do |navSection, index|
 
-		currentPageIndex = navSection.pages.index(page)
+
+		if defined?(navSection.pages)
+			currentPageIndex = navSection.pages.index(page)
+		end
 
 		if currentPageIndex
 
