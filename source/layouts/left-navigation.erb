@@ -1,7 +1,15 @@
-
+<%
+currentSection = ''
+if defined?(section)
+  currentSection = section
+end
+if defined?(current_page.data.section)
+  currentSection = current_page.data.section
+end
+%>
 <ul>
   <% data.nav.sections.each do |navSection| %>
-  <li<% if defined?(section) && section == navSection.name %> class="current-section"<% end %>>
+  <li<% if currentSection == navSection.name %> class="current-section"<% end %>>
     
     <% navSectionTitle = navSection.name.tr('_', ' ') %>
 
