@@ -1,8 +1,10 @@
-# Technical Documentation
+# GOV.UK design prototypes
+
+Prototypes exploring the idea of putting all our design guidance and tools in a single place.
 
 ## Getting started
 
-To preview or build the website, we need to use the terminal.
+To preview or build the prototype:
 
 Install Ruby with Rubygems, perferably with a [Ruby version manager][rvm],
 and the [Bundler gem][bundler].
@@ -17,32 +19,20 @@ bundle install
 
 To make changes edit the source files in the `source` folder.
 
-Although a single page of HTML is generated the markdown is spread across
-multiple files to make it easier to manage. They can be found in
-`source/documentation`.
+The content is in markdown files in `source/documentation`. This means the same content can be repourposed in different ways, so we can test different structures.
 
-A new markdown file isn't automatically included in the generated output. If we
-add a new markdown file at the location `source/documentation/agile/scrum.md`,
-the following snippet in `source/index.html.md.erb`, includes it in the
-generated output.
+You can include the content on a page using a partial, like this:
 
 ```
 <%= partial 'documentation/agile/scrum' %>
 ```
 
-Including files manually like this lets us specify the position they appear in
-the page.
+The navigation and page headings are generated from the data file in the `data` folder. This allows us to quickly try out different navigation schemas. The values in the data file determine the URL path. The same values are transformed into the links and page titles by swappin underscores for spaces and capitalising the 1st letter.
+
 
 ## Preview
 
-Whilst writing documentation we can run a middleman server to preview how the
-published version will look in the browser. After saving a change the preview in
-the browser will automatically refresh.
-
-The preview is only available on our own computer. Others won't be able to
-access it if they are given the link.
-
-Type the following to start the server:
+You can preview the prototype on your own machine by typing:
 
 ```
 bundle exec middleman server
