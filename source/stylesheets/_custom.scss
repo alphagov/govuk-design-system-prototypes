@@ -28,14 +28,14 @@
 
 }
 
-.toc__list li li{
+.toc__list li a,
+.toc__list li li a{
 
     border-left: 4px solid transparent;
 
 }
 
-.toc__list .current-page {
-    //font-weight: bold;
+.toc__list .current-page a {
     background: $grey-4;
     border-left: 4px solid #005ea5;
 }
@@ -99,7 +99,7 @@
       text-indent: -999em;
     }
 
-    p, ul.list, ol.list{
+    p, ul.list, ol.list, blockquote{
         max-width: 34em;
     }
 
@@ -133,6 +133,11 @@
     .highlight{
         font-size: 16px;
     }
+
+    blockquote {
+      margin: 15px 0;
+      border-left: 4px solid #dee0e2;
+  }
 
 }
 
@@ -324,5 +329,39 @@ $palette: (
   }
   a:first-letter{
     text-transform: uppercase;
+  }
+}
+
+.site-search{
+  float: right;
+  margin-top: 1px;
+
+  .submit{
+    margin-left: -4px;
+    height: 36px;
+    width: 36px;
+    border: 1px solid #005ea5;
+    border-width: 0 0 0 1px;
+    border-left-color: #222;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    overflow: hidden;
+    text-indent: -5000px;
+    color: #fff;
+    background-color: #005ea5;
+    background-image: url("/images/search-button.png");
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+  }
+  #site-search-text{
+    padding: 5px 6px 6px 15px;
+    border: none;
+    width: 235px;
+  }
+
+  #site-search-text::-webkit-input-placeholder{
+    color: $text-colour;
+    font-size: 16px;
   }
 }

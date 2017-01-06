@@ -3,16 +3,16 @@ layout: layout
 title: GOV.UK Design System
 ---
 
+
 <%	# Swap underscores for spaces
 	pageTitle = page.tr('_', ' ')
+	sectionTitle = section.tr('_', ' ')
 %>
 
-<p class="section-heading"><%= section %></p>
+<p class="section-heading"><%= sectionTitle %></p>
 <h1><%= pageTitle %></h1>
 
 <%= partial '/documentation/' + section + '/' + page rescue nil %>
-
-
 
 <% 
 	nextPage = ''
@@ -34,7 +34,9 @@ title: GOV.UK Design System
 
 				if data.nav.sections[index+1]
 					nextSection = data.nav.sections[index+1].name
-					nextPage = data.nav.sections[index+1].pages[0]
+					if defined?(data.nav.sections[index+1].pages)
+						nextPage = data.nav.sections[index+1].pages[0]
+					end
 				else
 					nextNav = false
 				end

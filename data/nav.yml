@@ -1,9 +1,6 @@
 sections:
     -
       name: introduction
-      group: true
-    -
-      name: get_started
     -
       name: design_principles
     -
@@ -118,6 +115,11 @@ sections:
       name: GOV.UK_Frontend
     -
       name: GOV.UK_Prototype_Kit
+      pages:
+        - about
+        - get_started
+        - basic_usage
+        - advanced_usage
     -
       name: design_community
       group: true
