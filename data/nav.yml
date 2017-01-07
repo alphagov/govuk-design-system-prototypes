@@ -113,6 +113,10 @@ sections:
       group: true
     -
       name: GOV.UK_Frontend
+      pages:
+        - about
+        - get_started
+        - contribute
     -
       name: GOV.UK_Prototype_Kit
       pages:

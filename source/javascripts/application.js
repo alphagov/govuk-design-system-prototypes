@@ -16,10 +16,18 @@ $(function() {
   // Toggle subnav if it's clicked
   $('.js-toc-list > ul > li > a').click(function(){
 
-  	console.log('woo');
+    if($(this).siblings("ul").css('display') == 'block'){
 
-  	$('.js-toc-list > ul > li > ul').hide();
-  	$(this).siblings("ul").toggle('fast');
+      $(this).siblings("ul").toggle('fast');
+
+    } else {
+      // Hide all navs
+      $('.js-toc-list > ul > li > ul').hide();
+
+      // Show this subnav
+      $(this).siblings("ul").toggle('fast');
+
+    }
 
   });
 
