@@ -16,7 +16,7 @@ For services publicly available on different domains, use an alternative typefac
 * use sentence case for headings
 * use headings consistently to create a clear hierarchy
 
-<% partial "/partials/example" do %>
+<% partial "/layouts/example" do %>
 <h1 class="heading-xlarge">A 48px Bold heading</h1>
 <h2 class="heading-large">A 36px Bold heading</h2>
 <h3 class="heading-medium">A 24px Bold heading</h3>
@@ -29,7 +29,7 @@ For services publicly available on different domains, use an alternative typefac
 * use 24px for a lead paragraph
 * there should only be one lead paragraph per page
 
-<% partial "/partials/example" do %>
+<% partial "/layouts/example" do %>
 <div class="text">
 	<p class="lede">
 		A 24pxlead paragraph, maecenas sed diam eget risus varius blandit sit amet non magna.
@@ -49,7 +49,7 @@ For services publicly available on different domains, use an alternative typefac
 * use smaller sizes only if there’s a user need (eg 16px, 14px, 12px)
 * make sure lines of text don’t exceed 75 characters, as they become harder to read beyond that point
 
-<% partial "/partials/example" do %>
+<% partial "/layouts/example" do %>
 <div class="text">
 	<p>
 	A 19px body copy paragraph. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
@@ -67,7 +67,7 @@ For services publicly available on different domains, use an alternative typefac
 * links without surrounding text should not have a full stop at the end
 * link colours can be found in the <a href="/colour">colour palette</a>
 
-<% partial "/partials/example" do %>
+<% partial "/layouts/example" do %>
 <div class="text">
 	<p>
 		<a href="#">A 19px link without surrounding text</a>
@@ -84,7 +84,7 @@ For services publicly available on different domains, use an alternative typefac
 
 List items start with a lowercase letter and have no full stop at the end.
 
-<% partial "/partials/example" do %>
+<% partial "/layouts/example" do %>
 <ul class="list list-bullet">
   <li>here is a bulleted list</li>
   <li>vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor</li>
@@ -110,7 +110,7 @@ List items start with a lowercase letter and have no full stop at the end.
 
 Use bordered inset text to draw attention to important content on the page.
 
-<% partial "/partials/example" do %>
+<% partial "/layouts/example" do %>
 <div class="text">
 	<div class="panel panel-border-wide">
 		<p>
@@ -125,7 +125,7 @@ Use bordered inset text to draw attention to important content on the page.
 
 Use bold text with an exclamation icon if there are legal consequences - for example, a fine or prison sentence.
 
-<% partial "/partials/example" do %>
+<% partial "/layouts/example" do %>
 <div class="text">
 	<div class="notice">
 		<i class="icon icon-important">
@@ -146,7 +146,7 @@ Use this to make your page easier to scan, only showing contextual information w
 Click on "Help with nationality" to see how this works.
 
 
-<% partial "/partials/example" do %>
+<% partial "/layouts/example" do %>
 <details role="group">
 
 	<summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Help with nationality</span></summary>
