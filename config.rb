@@ -24,7 +24,8 @@ page '/*.txt', layout: false
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 
-# For each section in nav.yml
+# Set up routes for V1 prototype
+
 data.nav.sections.each do |section|
 
   # Iterate over pages in section
@@ -33,6 +34,22 @@ data.nav.sections.each do |section|
 
       # Set up proxy
       proxy "/v1/#{section.name}/#{page}/index.html", "/v1/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
+    
+    end
+  end
+
+end
+
+# Set up routes for V2 prototype
+
+data.v2DesignPatterns.sections.each do |section|
+
+  # Iterate over pages in section
+  if defined?(section.pages)
+    section.pages.each do |page|
+
+      # Set up proxy
+      proxy "/v2/#{section.name}/#{page}/index.html", "/v2/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
     
     end
   end

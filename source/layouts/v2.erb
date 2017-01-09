@@ -38,10 +38,7 @@
                   </span>
                 <% end %>
                 <span class="header__title">
-                  <%= config[:tech_docs][:service_name] %>
-                  <% if config[:tech_docs][:phase] %>
-                    <span class="phase-banner"><%= config[:tech_docs][:phase] %></span>
-                  <% end %>
+                  Design Patterns
                 </span>
               <% if config[:tech_docs][:service_link] %>
                 </a>
@@ -50,11 +47,11 @@
               <% end %>
             </div>
 
+<!--
             <input class="header__navigation-toggle-checkbox" type="checkbox" id="show-menu" />
             <label class="header__navigation-toggle" for="show-menu">
               Menu
             </label>
-
             <% if config[:tech_docs][:header_links] %>
               <nav id="navigation" class="header__navigation" aria-label="Top Level Navigation">
                 <ul>
@@ -68,11 +65,45 @@
                 </ul>
               </nav>
             <% end %>
+          -->
+
+
+
+
+            <div class="site-search">
+              <input type="text" name="q" id="site-search-text" placeholder="Search patterns">
+              <input class="submit" type="submit" value="Search">
+            </div>
+
           </div>
         </header>
       </div>
+      <div id="toc-heading" class="toc-show fixedsticky">
+        <a href="#toc" class="toc-show__label js-toc-show">
+          Table of contents <span class="toc-show__icon"></span>
+        </a>
+      </div>
 
-      <%= yield %>
+      <% html = yield %>
+
+      <div class="app-pane__body" data-module="highlighted-nav">
+        <div class="app-pane__toc">
+          <div class="toc" data-module="table-of-contents">
+            <a href="#" class="toc__close js-toc-close">Close</a>
+            <nav  id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+
+              <%= partial '/layouts/v2-left-navigation' %>
+
+            </nav>
+          </div>
+        </div>
+
+        <div class="app-pane__content">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            <%= html %>
+          </main>
+        </div>
+      </div>
     </div>
 
     <% if config[:tech_docs][:ga_tracking_id].is_a?(String) && !config[:tech_docs][:ga_tracking_id].empty? %>
