@@ -92,7 +92,7 @@
             <a href="#" class="toc__close js-toc-close">Close</a>
             <nav  id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
 
-              <%= partial '/layouts/v3-left-navigation' %>
+              <%= partial('/layouts/left-nav', :locals => { :nav => data.v3nav, :version => "v3" }) %>
 
             </nav>
           </div>

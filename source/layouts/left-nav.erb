@@ -7,14 +7,17 @@ if defined?(current_page.data.section)
   currentSection = current_page.data.section
 end
 %>
+
 <ul>
-  <% data.nav.sections.each do |navSection| %>
+  <% nav.sections.each do |navSection| %>
   <li class="<% if currentSection == navSection.name %>current-section<% end %><% if defined?(current_page.data.section) && current_page.data.section == navSection.name %> current-page<% end %>">
     
     <% navSectionTitle = navSection.name.tr('_', ' ') %>
 
     <% if !defined?(navSection.pages) %>
-      <a href="/v1/<%= navSection.name %>"<% if navSection.group %> class="group-heading"<% end %>><%= navSectionTitle %></a>
+
+      <a href="/<%= version %>/<%= navSection.name %>"<% if navSection.group %> class="group-heading"<% end %>><%= navSectionTitle %></a>
+
     <% else %>
 
       <a href="#<%= navSection.name %>"><%= navSectionTitle %></a>
@@ -28,7 +31,7 @@ end
       %>
 
       <li<% if defined?(page) && page == navPage %> class="current-page"<% end %>>
-        <a href="/v1/<%= navSection.name %>/<%= navPage %>"><%= navPageTitle %></a>
+        <a href="/<%= version %>/<%= navSection.name %>/<%= navPage %>"><%= navPageTitle %></a>
       </li>
 
       <% end %>

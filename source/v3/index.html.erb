@@ -2,10 +2,10 @@
 layout: v3
 ---
 
-
 <%	# Swap underscores for spaces
 	pageTitle = page.tr('_', ' ')
 	sectionTitle = section.tr('_', ' ')
+	nav = data.v3nav
 %>
 
 <p class="section-heading"><%= sectionTitle %></p>
@@ -19,7 +19,7 @@ layout: v3
 	nextPageTitle = ''
 	nextNav = true
 
-	data.nav.sections.each_with_index do |navSection, index|
+	nav.sections.each_with_index do |navSection, index|
 
 
 		if defined?(navSection.pages)
@@ -32,9 +32,9 @@ layout: v3
 			if currentPageIndex + 1 == navSection.pages.length
 
 				if data.nav.sections[index+1]
-					nextSection = data.nav.sections[index+1].name
-					if defined?(data.nav.sections[index+1].pages)
-						nextPage = data.nav.sections[index+1].pages[0]
+					nextSection = nav.sections[index+1].name
+					if defined?(nav.sections[index+1].pages)
+						nextPage = nav.sections[index+1].pages[0]
 					end
 				else
 					nextNav = false

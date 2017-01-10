@@ -26,7 +26,7 @@ page '/*.txt', layout: false
 
 # Set up routes for V1 prototype
 
-data.nav.sections.each do |section|
+data.v1nav.sections.each do |section|
 
   # Iterate over pages in section
   if defined?(section.pages)
@@ -42,7 +42,7 @@ end
 
 # Set up routes for V2 prototype
 
-data.v2DesignPatterns.sections.each do |section|
+data.v2nav.sections.each do |section|
 
   # Iterate over pages in section
   if defined?(section.pages)
@@ -58,7 +58,7 @@ end
 
 # Set up routes for V3 prototype
 
-data.v3DesignPatterns.sections.each do |section|
+data.v3nav.sections.each do |section|
 
   # Iterate over pages in section
   if defined?(section.pages)
