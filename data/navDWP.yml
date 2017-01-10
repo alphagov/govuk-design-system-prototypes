@@ -2,8 +2,6 @@ sections:
     -
       name: introduction
     -
-      name: design_principles
-    -
       name: design_patterns
       group: true
     -

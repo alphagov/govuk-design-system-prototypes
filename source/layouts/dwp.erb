@@ -32,16 +32,12 @@
                 <span>
               <% end %>
                 <% if config[:tech_docs][:show_govuk_logo] %>
-                  <span class="govuk-logo">
-                    <img class="govuk-logo__printable-crown" src="/images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
-                    GOV.UK
+                  <span class="govuk-logo" style="background: none">
+                    <img src="/images/org_crest_white_27px_x2.png" height="32" style="background: none; height: 28px; top: 4px; position: relative;">
                   </span>
                 <% end %>
                 <span class="header__title">
-                  <%= config[:tech_docs][:service_name] %>
-                  <% if config[:tech_docs][:phase] %>
-                    <span class="phase-banner"><%= config[:tech_docs][:phase] %></span>
-                  <% end %>
+                  DWP Design Patterns
                 </span>
               <% if config[:tech_docs][:service_link] %>
                 </a>
@@ -74,7 +70,7 @@
 
 
             <div class="site-search">
-              <input type="text" name="q" id="site-search-text" placeholder="Search">
+              <input type="text" name="q" id="site-search-text" placeholder="Search patterns">
               <input class="submit" type="submit" value="Search">
             </div>
 
@@ -95,7 +91,47 @@
             <a href="#" class="toc__close js-toc-close">Close</a>
             <nav  id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
 
-              <%= partial '/layouts/left-navigation' %>
+<%
+currentSection = ''
+if defined?(section)
+  currentSection = section
+end
+if defined?(current_page.data.section)
+  currentSection = current_page.data.section
+end
+%>
+<ul>
+  <% data.navDWP.sections.each do |navSection| %>
+  <li class="<% if currentSection == navSection.name %>current-section<% end %><% if defined?(current_page.data.section) && current_page.data.section == navSection.name %> current-page<% end %>">
+    
+    <% navSectionTitle = navSection.name.tr('_', ' ') %>
+
+    <% if !defined?(navSection.pages) %>
+      <a href="/v3/dwp/<%= navSection.name %>"<% if navSection.group %> class="group-heading"<% end %>><%= navSectionTitle %></a>
+    <% else %>
+
+      <a href="#<%= navSection.name %>"><%= navSectionTitle %></a>
+      <ul>
+
+      <% navSection.pages.each do |navPage| 
+
+        navPageTitle = navPage.tr('_', ' ')
+        navPageTitle = navPageTitle.capitalize!
+
+      %>
+
+      <li<% if defined?(page) && page == navPage %> class="current-page"<% end %>>
+        <a href="/v3/dwp/<%= navSection.name %>/<%= navPage %>"><%= navPageTitle %></a>
+      </li>
+
+      <% end %>
+      </ul>
+
+    <% end %>
+
+  <% end %>
+  </li>
+</ul>
 
             </nav>
           </div>
