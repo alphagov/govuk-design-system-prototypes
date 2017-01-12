@@ -1,0 +1,17 @@
+---
+layout: v4
+---
+
+<%	# Swap underscores for spaces
+	pageTitle = page.tr('_', ' ')
+	sectionTitle = section.tr('_', ' ')
+%>
+
+<p class="section-heading"><%= sectionTitle %></p>
+<h1><%= pageTitle %></h1>
+
+<%= partial '/documentation/' + section + '/' + page rescue nil %>
+
+<%= partial('/layouts/pagination', :locals => { :nav => data.v4nav, :version => "v4" }) %>
+
+
