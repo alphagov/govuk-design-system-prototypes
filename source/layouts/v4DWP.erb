@@ -32,12 +32,13 @@
                 <span>
               <% end %>
                 <% if config[:tech_docs][:show_govuk_logo] %>
-                  <span class="govuk-logo" style="background: none">
-                    <img src="/images/org_crest_white_27px_x2.png" height="32" style="background: none; height: 28px; top: 4px; position: relative;">
+                  <span class="govuk-logo">
+                    <img class="govuk-logo__printable-crown" src="/images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+                    GOV.UK
                   </span>
                 <% end %>
                 <span class="header__title">
-                  DWP Design Patterns
+                  Design Patterns
                 </span>
               <% if config[:tech_docs][:service_link] %>
                 </a>
@@ -91,47 +92,7 @@
             <a href="#" class="toc__close js-toc-close">Close</a>
             <nav  id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
 
-<%
-currentSection = ''
-if defined?(section)
-  currentSection = section
-end
-if defined?(current_page.data.section)
-  currentSection = current_page.data.section
-end
-%>
-<ul>
-  <% data.navDWP.sections.each do |navSection| %>
-  <li class="<% if currentSection == navSection.name %>current-section<% end %><% if defined?(current_page.data.section) && current_page.data.section == navSection.name %> current-page<% end %>">
-    
-    <% navSectionTitle = navSection.name.tr('_', ' ') %>
-
-    <% if !defined?(navSection.pages) %>
-      <a href="/v3/DWP/<%= navSection.name %>"<% if navSection.group %> class="group-heading"<% end %>><%= navSectionTitle %></a>
-    <% else %>
-
-      <a href="#<%= navSection.name %>"><%= navSectionTitle %></a>
-      <ul>
-
-      <% navSection.pages.each do |navPage| 
-
-        navPageTitle = navPage.tr('_', ' ')
-        navPageTitle = navPageTitle.capitalize!
-
-      %>
-
-      <li<% if defined?(page) && page == navPage %> class="current-page"<% end %>>
-        <a href="/v3/DWP/<%= navSection.name %>/<%= navPage %>"><%= navPageTitle %></a>
-      </li>
-
-      <% end %>
-      </ul>
-
-    <% end %>
-
-  <% end %>
-  </li>
-</ul>
+              <%= partial('/layouts/left-nav', :locals => { :nav => data.v4nav, :version => "v4" }) %>
 
             </nav>
           </div>

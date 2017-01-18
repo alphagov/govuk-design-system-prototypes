@@ -10,7 +10,7 @@ layout: v4
 <p class="section-heading"><%= sectionTitle %></p>
 <h1><%= pageTitle %></h1>
 
-<%= partial '/documentation/' + section + '/' + page rescue nil %>
+<%= partial '/documentation/' + section + '/' + page rescue partial '/documentation/discuss' %>
 
 <%= partial('/layouts/pagination', :locals => { :nav => data.v4nav, :version => "v4" }) %>
 
