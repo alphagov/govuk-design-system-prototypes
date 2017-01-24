@@ -106,7 +106,6 @@ sections:
         - case_working
         - feedback_forms
         - surveys
-        - local_government_services
     -
       name: design community
       group: true
@@ -123,3 +122,4 @@ sections:
         - HMRC
         - Land_Registry
         - Ministry_of_Justice
+        - local_government
