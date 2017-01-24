@@ -1,0 +1,31 @@
+sections:
+    -
+      name: DWP_design_patterns
+      group: true
+    - 
+      name: introduction
+    -
+      name: components
+      pages:
+        - headers
+        - footers
+        - banking_details
+        - before_you_start
+        - declaration
+        - find_your_GP
+        - naming_a_representative
+        - payments_from_abroad
+        - add_items_to_a_list
+        - search_for_an_address
+    -
+      name: pages
+      pages:
+        - error_pages
+        - admin_interface
+        - dashboards
+        - search_results
+        - to_do_list
+    -
+      name: tasks
+      pages:
+        - delegation

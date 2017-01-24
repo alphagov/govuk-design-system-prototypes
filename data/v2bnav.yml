@@ -108,15 +108,18 @@ sections:
         - surveys
         - local_government_services
     -
-      name: departmental patterns
+      name: design community
       group: true
     -
-      name: DWP
+      name: contribution_guidelines
+      pages:
+        - how_to_contribute
+        - submission_criteria
     -
-      name: Home_Office
-    -
-      name: HMRC
-    -
-      name: Land_Registry
-    -
-      name: Ministry_of_Justice
+      name: other_pattern_libraries
+      pages:
+        - DWP
+        - Home_Office
+        - HMRC
+        - Land_Registry
+        - Ministry_of_Justice

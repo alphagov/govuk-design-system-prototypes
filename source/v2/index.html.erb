@@ -7,6 +7,8 @@ title: GOV.UK Design System
 <%	# Swap underscores for spaces
 	pageTitle = page.tr('_', ' ')
 	sectionTitle = section.tr('_', ' ')
+
+	puts pageTitle
 %>
 
 <p class="section-heading"><%= sectionTitle %></p>
@@ -14,6 +16,6 @@ title: GOV.UK Design System
 
 <%= partial '/documentation/' + section + '/' + page rescue nil %>
 
-<%= partial('/layouts/pagination', :locals => { :nav => data.v2nav, :version => "v2" }) %>
+<%= partial('/layouts/pagination', :locals => { :nav => data.v2bnav, :version => "v2" }) %>
 
 

@@ -42,7 +42,7 @@ end
 
 # Set up routes for V2 prototype
 
-data.v2nav.sections.each do |section|
+data.v2bnav.sections.each do |section|
 
   # Iterate over pages in section
   if defined?(section.pages)
