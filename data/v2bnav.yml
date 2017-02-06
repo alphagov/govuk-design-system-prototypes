@@ -107,7 +107,7 @@ sections:
         - feedback_forms
         - surveys
     -
-      name: design community
+      name: design_community
       group: true
     -
       name: contribution_guidelines
