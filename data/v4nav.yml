@@ -107,17 +107,13 @@ sections:
         - surveys
         - local_government_services
     -
-      name: DWP design patterns
+      name: community
       group: true
     -
-      name: Home Office design patterns
-      group: true
+      name: other_pattern_libraries
     -
-      name: HMRC design patterns
-      group: true
-    -
-      name: Land Registry design patterns
-      group: true
-    -
-      name: MoJ design patterns
-      group: true
+      name: contribution_guidelines
+      pages:
+        - how_to_contribute
+        - submission_criteria
+        - design_pattern_template

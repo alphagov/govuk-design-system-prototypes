@@ -26,11 +26,11 @@ end
       <% navSection.pages.each do |navPage| 
 
         navPageTitle = navPage.tr('_', ' ')
-        navPageTitle = navPageTitle.capitalize!
+        #navPageTitle = navPageTitle.capitalize!
 
       %>
 
-      <li<% if defined?(page) && page == navPage %> class="current-page"<% end %>>
+      <li<% if ((defined?(page) && page == navPage) || (defined?(current_page.data.page) && current_page.data.page == navPage)) %> class="current-page"<% end %>>
         <a href="/<%= version %>/<%= navSection.name %>/<%= navPage %>"><%= navPageTitle %></a>
       </li>
 

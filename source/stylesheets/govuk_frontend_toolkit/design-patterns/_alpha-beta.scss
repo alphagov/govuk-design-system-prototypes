@@ -59,8 +59,8 @@
 
   color: $white;
   @if $state == alpha {
-    background-color: $alpha-colour;
+    background-color: #005ea5;
   } @else if $state == beta {
-    background-color: $beta-colour;
+    background-color: #005ea5;
   }
 }

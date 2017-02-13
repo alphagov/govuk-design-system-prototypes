@@ -79,6 +79,7 @@ sections:
         - terms_and_conditions_page
         - declaration_page
         - sign-in_page
+        - design_pattern
     -
       name: tasks
       pages:

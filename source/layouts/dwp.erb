@@ -107,7 +107,7 @@ end
     <% navSectionTitle = navSection.name.tr('_', ' ') %>
 
     <% if !defined?(navSection.pages) %>
-      <a href="/v3/dwp/<%= navSection.name %>"<% if navSection.group %> class="group-heading"<% end %>><%= navSectionTitle %></a>
+      <a href="/v3/DWP/<%= navSection.name %>"<% if navSection.group %> class="group-heading"<% end %>><%= navSectionTitle %></a>
     <% else %>
 
       <a href="#<%= navSection.name %>"><%= navSectionTitle %></a>
@@ -121,7 +121,7 @@ end
       %>
 
       <li<% if defined?(page) && page == navPage %> class="current-page"<% end %>>
-        <a href="/v3/dwp/<%= navSection.name %>/<%= navPage %>"><%= navPageTitle %></a>
+        <a href="/v3/DWP/<%= navSection.name %>/<%= navPage %>"><%= navPageTitle %></a>
       </li>
 
       <% end %>

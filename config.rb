@@ -42,7 +42,7 @@ end
 
 # Set up routes for V2 prototype
 
-data.v2nav.sections.each do |section|
+data.v2bnav.sections.each do |section|
 
   # Iterate over pages in section
   if defined?(section.pages)
@@ -82,6 +82,22 @@ data.v4nav.sections.each do |section|
 
       # Set up proxy
       proxy "/v4/#{section.name}/#{page}/index.html", "/v4/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
+    
+    end
+  end
+
+end
+
+# Set up routes for V5 prototype
+
+data.v5nav.sections.each do |section|
+
+  # Iterate over pages in section
+  if defined?(section.pages)
+    section.pages.each do |page|
+
+      # Set up proxy
+      proxy "/v5/#{section.name}/#{page}/index.html", "/v5/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
     
     end
   end

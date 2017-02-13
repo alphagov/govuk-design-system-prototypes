@@ -1,0 +1,29 @@
+---
+layout: v5
+title: GOV.UK Design Patterns
+---
+
+
+<%	# Swap underscores for spaces
+	pageTitle = page.tr('_', ' ')
+	sectionTitle = section.tr('_', ' ')
+
+	puts pageTitle
+%>
+
+<p class="section-heading"><%= sectionTitle %></p>
+<h1><%= pageTitle %></h1>
+
+<%= partial '/documentation/' + section + '/' + page + '/README' rescue nil %>
+
+<hr>
+
+<ul class="status-and-actions panel panel-border-wide">
+<li>Status: under discussion</li>
+<li><a href="https://github.com/alphagov/govuk_design_prototypes/pull/4">Discuss this pattern on Hackpad</a></li>
+<li><a href="https://github.com/alphagov/govuk_design_prototypes/pull/4">Edit this pattern on Github</a></li>
+</ul>
+
+<%= partial('/layouts/pagination', :locals => { :nav => data.v5nav, :version => "v5" }) %>
+
+

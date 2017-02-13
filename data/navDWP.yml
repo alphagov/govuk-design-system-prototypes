@@ -107,9 +107,9 @@ sections:
         - surveys
         - local_government_services
     -
-      name: community
+      name: design_community
       group: true
     -
       name: other_pattern_libraries
     -
-      name: how_to_contribute
+      name: contribution_guidelines

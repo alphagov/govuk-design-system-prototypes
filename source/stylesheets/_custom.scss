@@ -406,3 +406,18 @@ $palette: (
   display: inline-block;
   width: 24.5%;
 }
+
+
+.link-back{
+  margin-left: 15px;
+}
+
+.technical-documentation .status-and-actions{
+  //padding-left: 0;
+  li{
+    list-style-type: none;
+    a{
+      font-weight: bold;
+    }
+  }
+}
