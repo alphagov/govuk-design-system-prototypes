@@ -1,0 +1,62 @@
+sections:
+    -
+      name: introduction
+    -
+      name: design_patterns
+      group: true
+    -
+      name: framework
+      pages: 
+        - layout
+        - typography
+        - colour
+        - icons_and_images
+        - data
+        - buttons
+        - form_elements
+        - errors_and_validation
+    -
+      name: elements
+      pages: 
+        - layout
+        - typography
+        - colour
+        - icons_and_images
+        - data
+        - buttons
+        - form_elements
+        - errors_and_validation
+    -
+      name: components
+      pages:
+        - addresses
+        - alpha_and_beta_banners
+        - dates
+        - email_addresses
+        - form_elements
+        - gender_or_sex
+        - help_text
+        - names
+        - national_insurance_numbers
+        - passwords
+        - progress_indicators
+        - usernames
+    -
+      name: pages
+      pages:
+        - check_your_answers_pages
+        - confirmation_pages
+        - feedback_pages
+        - question_pages
+        - start_pages
+    -
+      name: tasks
+      pages:
+        - email_confirmation
+        - knowledge_based_authentication
+        - user_accounts
+    -
+      name: services
+      pages:
+        - naming_your_service
+        - structuring_forms
