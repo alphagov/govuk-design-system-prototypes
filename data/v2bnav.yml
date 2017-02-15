@@ -15,8 +15,9 @@ sections:
         - imagery
         - icons
         - forms
-        - states
-        - utilities
+        - errors_and_validation
+        - data
+        - buttons
     -
       name: components
       pages:
@@ -25,6 +26,7 @@ sections:
         - breadcrumbs
         - page_navigation
         - section_navigation
+        - alpha_and_beta_banners
         - pagination
         - tabs
         - accordions
@@ -37,7 +39,6 @@ sections:
         - alerts
         - progress_indicators
         - form_labels
-        - buttons
         - radios
         - checkboxes
         - text_fields
@@ -49,17 +50,17 @@ sections:
         - add_edit_delete
         - search_box
         - search_filters
-        - name
-        - sex_and_gender
+        - names
+        - gender_or_sex
         - ethnicity
         - addresses
         - dates
         - currency
-        - email
+        - email_addresses
         - telephone
-        - username
-        - password
-        - national_insurance_number
+        - usernames
+        - passwords
+        - national_insurance_numbers
         - nationality_and_residency
         - passports
         - credit_cards
