@@ -70,11 +70,12 @@ sections:
       name: pages
       pages:
         - blank_page
-        - start_page
+        - start_pages
         - task_list
-        - question_page
-        - check_your_answers
-        - confirmation_page
+        - question_pages
+        - check_your_answers_pages
+        - confirmation_pages
+        - feedback_pages
         - search_results
         - error_pages
         - terms_and_conditions_page
