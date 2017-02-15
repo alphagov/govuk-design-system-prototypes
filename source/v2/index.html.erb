@@ -14,7 +14,8 @@ title: GOV.UK Design System
 <p class="section-heading"><%= sectionTitle %></p>
 <h1><%= pageTitle %></h1>
 
-<%= partial '/documentation/' + section + '/' + page rescue nil %>
+
+<%= partial '/documentation/' + section + '/' + page + '/README' rescue nil %>
 
 
 <hr>

@@ -1,6 +1,6 @@
 sections:
     -
-      name: introduction
+      name: get_started
     -
       name: design_patterns
       group: true

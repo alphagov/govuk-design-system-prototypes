@@ -1,0 +1,86 @@
+
+## Numeric tabular data
+
+- when comparing rows of numbers, align numbers to the right in table cells
+- use the GOV.UK frontend toolkit’s tabular numbers to allow numbers of the same width to be more easily compared
+
+<% partial "/layouts/example" do %>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th class="numeric" scope="col">Paper form</th>
+      <th class="numeric" scope="col">Digital</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>25 November to 1 December 2013</td>
+      <td class="numeric">2,763</td>
+      <td class="numeric">1,792</td>
+    </tr>
+    <tr>
+      <td>2 to 8 December 2013</td>
+      <td class="numeric">2,850</td>
+      <td class="numeric">1,740</td>
+    </tr>
+    <tr>
+     <td>9 to 15 December 2013</td>
+      <td class="numeric">2,388</td>
+      <td class="numeric">1,683</td>
+    </tr>
+  </tbody>
+</table>
+<% end %>
+
+## Data in a table
+
+Not all content in tables should be right aligned.
+
+<% partial "/layouts/example" do %>
+<table>
+  <thead>
+    <tr>
+      <th colspan="2">Dates and amounts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>First 6 weeks</td>
+      <td>£109.80 per week</td>
+    </tr>
+    <tr>
+      <td>Next 33 weeks</td>
+      <td>£109.80 per week</td>
+    </tr>
+    <tr>
+     <td>Total estimated pay</td>
+      <td>£4,282.20</td>
+    </tr>
+    <tr>
+      <td>Tell the mother’s employer</td>
+      <td>28 days before they want to start maternity pay</td>
+    </tr>
+  </tbody>
+</table>
+<% end %>
+
+
+## Data visualisation
+
+- data is recommended as an alternative to using images
+- for screen readers, ensure the data value appears first so it makes sense when read aloud
+
+<% partial "/layouts/example" do %>
+<div class="data">
+  <span class="data-item bold-xxlarge">24</span>
+  <span class="data-item bold-xsmall">Ministerial departments</span>
+</div>
+<% end %>
+
+<% partial "/layouts/example" do %>
+<div class="data">
+  <span class="data-item bold-xlarge">56/154</span>
+  <span class="data-item bold-xsmall">on GOV.UK</span>
+</div>
+<% end %>
