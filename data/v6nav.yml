@@ -4,10 +4,29 @@ sections:
     -
       name: design_patterns
       group: true
-    -
-      name: patterns
+    - 
+    #   name: patterns
+    #   group: true
+    # -
+      name: address
+      pages:
+        - display_an_address
+        - finding_an_address
+        - selecting_an_address
+        - editing_an_address
+    -      
+      name: components
+      group: true
+    -    
+      name: components
       pages:
         - address
+        - postcode
+    - 
+      name: elements
+      pages:
+      - button
+    # -
     # -
     #   name: framework
     #   pages: 
