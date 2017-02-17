@@ -5,9 +5,6 @@ sections:
       name: design_patterns
       group: true
     - 
-    #   name: patterns
-    #   group: true
-    # -
       name: address
       pages:
         - display_an_address
