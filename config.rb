@@ -104,6 +104,22 @@ data.v5nav.sections.each do |section|
 
 end
 
+# Set up routes for V6 prototype
+
+data.v6nav.sections.each do |section|
+
+  # Iterate over pages in section
+  if defined?(section.pages)
+    section.pages.each do |page|
+
+      # Set up proxy
+      proxy "/v6/#{section.name}/#{page}/index.html", "/v6/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
+    
+    end
+  end
+
+end
+
 
 # General configuration
 
