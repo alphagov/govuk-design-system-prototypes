@@ -112,9 +112,9 @@ sections:
       name: design_community
       group: true
     -
-      name: contribution_guidelines
+      name: submit_a_pattern
       pages:
-        - how_to_contribute
+        - how_to_submit_a_pattern
         - submission_criteria
     -
       name: other_pattern_libraries
