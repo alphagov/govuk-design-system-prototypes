@@ -1,7 +1,5 @@
 sections:
     -
-      name: get_started
-    -
       name: design_patterns
       group: true
     -
@@ -109,19 +107,12 @@ sections:
         - feedback_forms
         - surveys
     -
-      name: design_community
+      name: documentation
       group: true
+    -
+      name: get_started
     -
       name: submit_a_pattern
       pages:
         - how_to_submit_a_pattern
         - submission_criteria
-    -
-      name: other_pattern_libraries
-      pages:
-        - DWP
-        - Home_Office
-        - HMRC
-        - Land_Registry
-        - Ministry_of_Justice
-        - local_government
