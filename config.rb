@@ -34,7 +34,7 @@ data.v8nav.sections.each do |section|
     section.pages.each do |page|
 
       # Set up proxy
-      proxy "/v8/#{section.name}/#{page}/index.html", "/v8/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
+      proxy "/v8/#{section.name}/#{page.name}/index.html", "/v8/index.html", :locals => { :page => page, :section => section }, :ignore => true
     
     end
   end

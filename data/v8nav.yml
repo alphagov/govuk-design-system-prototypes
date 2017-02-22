@@ -4,108 +4,280 @@ sections:
       group: true
     -
       name: styles
-      pages: 
-        - identity
-        - writing
-        - layout
-        - colour
-        - typography
-        - imagery
-        - icons
-        - forms
-        - errors_and_validation
-        - data
-        - buttons
+      pages:
+        - 
+            name: colour
+            status: live 
+        - 
+            name: forms
+            status: live 
+        - 
+            name: icons
+            status: live 
+        - 
+            name: identity
+            status: live
+        - 
+            name: images
+            status: live 
+        - 
+            name: layout
+            status: live
+        - 
+            name: typography
+            status: live 
+        - 
+            name: writing
+            status: live 
     -
       name: components
       pages:
-        - headers
-        - footers
-        - breadcrumbs
-        - page_navigation
-        - section_navigation
-        - alpha_and_beta_banners
-        - pagination
-        - tabs
-        - accordions
-        - modals
-        - loaders
-        - data_tables
-        - video
-        - maps
-        - help_text
-        - alerts
-        - progress_indicators
-        - form_labels
-        - radios
-        - checkboxes
-        - text_fields
-        - select_boxes
-        - type-ahead
-        - file_upload
-        - date_picker
-        - calendar_control
-        - add_edit_delete
-        - search_box
-        - search_filters
-        - names
-        - gender_or_sex
-        - ethnicity
-        - addresses
-        - dates
-        - currency
-        - email_addresses
-        - telephone
-        - usernames
-        - passwords
-        - national_insurance_numbers
-        - nationality_and_residency
-        - passports
-        - credit_cards
-        - health_related_conditions
-        - employment_status
+        - 
+            name: headers
+            status: live 
+        - 
+            name: footers
+            status: live 
+        - 
+            name: breadcrumbs
+            status: live 
+        - 
+            name: page_navigation
+            status: live 
+        - 
+            name: section_navigation
+            status: live 
+        - 
+            name: alpha_and_beta_banners
+            status: live 
+        - 
+            name: pagination
+            status: live 
+        - 
+            name: tabs
+            status: live 
+        - 
+            name: data
+            status: live 
+        - 
+            name: form_errors
+            status: live 
+        - 
+            name: accordions
+            status: live 
+        - 
+            name: modals
+            status: live 
+        - 
+            name: loaders
+            status: live 
+        - 
+            name: data_tables
+            status: live 
+        - 
+            name: video
+            status: live 
+        - 
+            name: maps
+            status: live 
+        - 
+            name: help_text
+            status: live 
+        - 
+            name: alerts
+            status: live 
+        - 
+            name: progress_indicators
+            status: live 
+        - 
+            name: form_labels
+            status: live 
+        - 
+            name: radios
+            status: live 
+        - 
+            name: checkboxes
+            status: live 
+        - 
+            name: text_fields
+            status: live 
+        - 
+            name: select_boxes
+            status: live 
+        - 
+            name: file_upload
+            status: live 
+        - 
+            name: date_picker
+            status: live 
+        - 
+            name: calendar_control
+            status: live 
+        - 
+            name: add_edit_delete
+            status: live 
+        - 
+            name: search_box
+            status: live 
+        - 
+            name: search_filters
+            status: live
+        - 
+            name: names
+            status: live 
+        - 
+            name: gender_and_sex
+            status: live 
+        - 
+            name: ethnicity
+            status: live 
+        - 
+            name: addresses
+            status: live 
+        - 
+            name: dates
+            status: live 
+        - 
+            name: currency
+            status: live 
+        - 
+            name: email_addresses
+            status: live 
+        - 
+            name: telephone
+            status: live 
+        - 
+            name: usernames
+            status: live 
+        - 
+            name: passwords
+            status: live 
+        - 
+            name: national_insurance_numbers
+            status: live 
+        - 
+            name: nationality_and_residency
+            status: live 
+        - 
+            name: passports
+            status: live 
+        - 
+            name: credit_cards
+            status: live 
+        - 
+            name: health_related_conditions
+            status: live 
+        - 
+            name: employment_status
+            status: live 
     -
       name: pages
       pages:
-        - blank_page
-        - start_pages
-        - task_list
-        - question_pages
-        - check_your_answers_pages
-        - confirmation_pages
-        - feedback_pages
-        - search_results
-        - error_pages
-        - terms_and_conditions_page
-        - declaration_page
-        - sign-in_page
-        - design_pattern
+        - 
+            name: blank_page
+            status: live 
+        - 
+            name: start_pages
+            status: live 
+        - 
+            name: task_list
+            status: live 
+        - 
+            name: question_pages
+            status: live 
+        - 
+            name: check_your_answers_pages
+            status: live 
+        - 
+            name: confirmation_pages
+            status: live 
+        - 
+            name: feedback_pages
+            status: live 
+        - 
+            name: search_results
+            status: live 
+        - 
+            name: error_pages
+            status: live 
+        - 
+            name: terms_and_conditions_page
+            status: live 
+        - 
+            name: declaration_page
+            status: live 
+        - 
+            name: sign-in_page
+            status: live 
+        - 
+            name: design_pattern
+            status: live 
     -
       name: tasks
       pages:
-        - apply
-        - check_eligibility
-        - pay
-        - register
-        - sign_in
-        - save_progress
-        - verify_identity
-        - give_consent
-        - delegate_authority
-        - send_a_notification
-        - book_an_appointment
-        - make_a_declaration
+        - 
+            name: apply
+            status: live 
+        - 
+            name: check_eligibility
+            status: live 
+        - 
+            name: pay
+            status: live 
+        - 
+            name: register
+            status: live 
+        - 
+            name: sign_in
+            status: live 
+        - 
+            name: save_progress
+            status: live 
+        - 
+            name: verify_identity
+            status: live 
+        - 
+            name: give_consent
+            status: live 
+        - 
+            name: delegate_authority
+            status: live 
+        - 
+            name: send_a_notification
+            status: live 
+        - 
+            name: book_an_appointment
+            status: live 
+        - 
+            name: make_a_declaration
+            status: live 
     -
       name: services
       pages:
-        - naming_your_service
-        - scoping_your_service
-        - telephone_support
-        - web-chat
-        - help_systems
-        - case_working
-        - feedback_forms
-        - surveys
+        - 
+            name: naming_your_service
+            status: live 
+        - 
+            name: scoping_your_service
+            status: live 
+        - 
+            name: telephone_support
+            status: live 
+        - 
+            name: web-chat
+            status: live 
+        - 
+            name: help_systems
+            status: live 
+        - 
+            name: case_working
+            status: live 
+        - 
+            name: feedback_forms
+            status: live 
+        - 
+            name: surveys
+            status: live 
     -
       name: documentation
       group: true
@@ -114,5 +286,9 @@ sections:
     -
       name: submit_a_pattern
       pages:
-        - how_to_submit_a_pattern
-        - submission_criteria
+        - 
+            name: how_to_submit_a_pattern
+            status: live 
+        - 
+            name: submission_criteria
+            status: live 

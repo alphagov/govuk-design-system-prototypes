@@ -1,7 +1,7 @@
 <%
 currentSection = ''
 if defined?(section)
-  currentSection = section
+  currentSection = section.name
 end
 if defined?(current_page.data.section)
   currentSection = current_page.data.section
@@ -25,13 +25,12 @@ end
 
       <% navSection.pages.each do |navPage| 
 
-        navPageTitle = navPage.tr('_', ' ')
-        #navPageTitle = navPageTitle.capitalize!
+        navPageTitle = navPage.name.tr('_', ' ')
 
       %>
 
       <li<% if ((defined?(page) && page == navPage) || (defined?(current_page.data.page) && current_page.data.page == navPage)) %> class="current-page"<% end %>>
-        <a href="/<%= version %>/<%= navSection.name %>/<%= navPage %>"><%= navPageTitle %></a>
+        <a href="/<%= version %>/<%= navSection.name %>/<%= navPage.name %>"><%= navPageTitle %></a>
       </li>
 
       <% end %>
