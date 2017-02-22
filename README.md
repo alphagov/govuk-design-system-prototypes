@@ -21,13 +21,16 @@ bundle install
 
 To make changes edit the source files in the `source` folder.
 
-The content is in markdown files in `source/documentation`. This means the same content can be repourposed in different ways, so we can test different structures.
+The pattern content is stored in markdown files in `source/documentation`. This means the same patterns can be repourposed in different versions of the prototype.
 
-You can include the content on a page using a partial, like this:
+By default the folder structure in `source/documentation` determines the url for that page. 
+Make sure these match with the navigation data file, which is stored in the `data` folder.
 
-```
-<%= partial 'documentation/agile/scrum' %>
-```
+You can create new data files for new prototypes, but you'll need to also:
+
+- add a new route to `config.rb` that references the new data file
+- create a new template in `layouts` that references the new data file
+- update the pages in your prototype folder so they use the new template
 
 The navigation and page headings are generated from the data file in the `data` folder. This allows us to quickly try out different navigation structures. The values in the data file determine the URL path. The same values are transformed into the links and page titles by swapping underscores for spaces and capitalising the 1st letter.
 
