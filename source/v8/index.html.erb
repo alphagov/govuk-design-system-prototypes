@@ -1,0 +1,22 @@
+---
+layout: v8
+title: GOV.UK Design System
+---
+
+
+<%	# Swap underscores for spaces
+	pageTitle = page.tr('_', ' ')
+	sectionTitle = section.tr('_', ' ')
+
+	puts pageTitle
+%>
+
+<p class="section-heading"><%= sectionTitle %></p>
+<h1><%= pageTitle %></h1>
+
+<%= partial '/documentation/' + section + '/' + page + '/README' rescue partial '/documentation/proposal' %>
+
+
+<%= partial('/layouts/pagination', :locals => { :nav => data.v8nav, :version => "v8" }) %>
+
+

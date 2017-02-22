@@ -24,80 +24,17 @@ page '/*.txt', layout: false
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 
-# Set up routes for V1 prototype
 
-data.v1nav.sections.each do |section|
+# Set up routes for V8 prototype
 
-  # Iterate over pages in section
-  if defined?(section.pages)
-    section.pages.each do |page|
-
-      # Set up proxy
-      proxy "/v1/#{section.name}/#{page}/index.html", "/v1/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
-    
-    end
-  end
-
-end
-
-# Set up routes for V2 prototype
-
-data.v2bnav.sections.each do |section|
+data.v8nav.sections.each do |section|
 
   # Iterate over pages in section
   if defined?(section.pages)
     section.pages.each do |page|
 
       # Set up proxy
-      proxy "/v2/#{section.name}/#{page}/index.html", "/v2/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
-    
-    end
-  end
-
-end
-
-# Set up routes for V3 prototype
-
-data.v3nav.sections.each do |section|
-
-  # Iterate over pages in section
-  if defined?(section.pages)
-    section.pages.each do |page|
-
-      # Set up proxy
-      proxy "/v3/#{section.name}/#{page}/index.html", "/v3/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
-    
-    end
-  end
-
-end
-
-# Set up routes for V4 prototype
-
-data.v4nav.sections.each do |section|
-
-  # Iterate over pages in section
-  if defined?(section.pages)
-    section.pages.each do |page|
-
-      # Set up proxy
-      proxy "/v4/#{section.name}/#{page}/index.html", "/v4/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
-    
-    end
-  end
-
-end
-
-# Set up routes for V5 prototype
-
-data.v5nav.sections.each do |section|
-
-  # Iterate over pages in section
-  if defined?(section.pages)
-    section.pages.each do |page|
-
-      # Set up proxy
-      proxy "/v5/#{section.name}/#{page}/index.html", "/v5/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
+      proxy "/v8/#{section.name}/#{page}/index.html", "/v8/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
     
     end
   end
