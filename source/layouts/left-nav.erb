@@ -23,7 +23,7 @@ end
       <a href="#<%= navSection.name %>"><%= navSectionTitle %></a>
       <ul>
 
-      <% navSection.pages.each do |navPage| 
+      <% navSection.pages.sort!{|a,b| a['name']<=>b['name']}.each do |navPage| 
 
         navPageTitle = navPage.name.tr('_', ' ')
 
