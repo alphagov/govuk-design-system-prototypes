@@ -1,5 +1,16 @@
 sections:
     -
+      name: get_started
+    -
+      name: submit_a_pattern
+      pages:
+        - 
+            name: how_to_submit_a_pattern
+            status: live 
+        - 
+            name: submission_criteria
+            status: live 
+    -
       name: design_patterns
       group: true
     -
@@ -277,18 +288,4 @@ sections:
             status: live 
         - 
             name: surveys
-            status: live 
-    -
-      name: documentation
-      group: true
-    -
-      name: get_started
-    -
-      name: submit_a_pattern
-      pages:
-        - 
-            name: how_to_submit_a_pattern
-            status: live 
-        - 
-            name: submission_criteria
             status: live 
