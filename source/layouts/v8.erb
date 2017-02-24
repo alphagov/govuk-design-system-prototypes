@@ -38,11 +38,44 @@
                 </span>
                 </a>
             </div>
-
+<!--
             <div class="site-search">
               <input type="text" name="q" id="site-search-text" placeholder="Search patterns">
               <input class="submit" type="submit" value="Search">
             </div>
+          -->
+
+          <div data-module="navigation">
+            <button type="button" class="header__navigation-toggle js-nav-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation">Menu</button>
+
+            <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
+              <ul>
+                  <li>
+                    <a href="/v8/govuk_design_patterns">
+                      About
+                    </a>
+                  </li>
+
+                  <li class="active">
+                    <a href="/v8/design_patterns">
+                      Patterns
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/v8/submit_a_pattern/how_to_submit_a_pattern">
+                      Community
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/v8/contact_the_team">
+                      Support
+                    </a>
+                  </li>
+              </ul>
+            </nav>
+          </div>
 
           </div>
         </header>
@@ -56,7 +89,14 @@
       <% html = yield %>
 
       <div class="app-pane__body" data-module="highlighted-nav">
+
         <div class="app-pane__toc">
+
+        <div class="pattern-search">
+          <input type="text" name="q" id="pattern-search-text" placeholder="Search patterns">
+          <input class="submit" type="submit" value="Search">
+        </div>
+
           <div class="toc" data-module="table-of-contents">
             <a href="#" class="toc__close js-toc-close">Close</a>
             <nav  id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
