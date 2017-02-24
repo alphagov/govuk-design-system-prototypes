@@ -398,6 +398,11 @@ $palette: (
     padding: 5px 5px 6px 15px;
     width: 100%;
     border: 2px solid #0b0c0c;
+    
+    &:focus{
+      outline: 3px solid #ffbf47;
+      outline-offset: 0;
+    }
   }
 
   #pattern-search-text::-webkit-input-placeholder{
