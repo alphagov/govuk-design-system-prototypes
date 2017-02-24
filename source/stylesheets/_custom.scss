@@ -64,6 +64,7 @@
   font-size: 24px;
   margin-top: $gutter-half;
 }
+
 .toc__list > ul > li > .group-heading:visited{
   color: $secondary-text-colour;
 }
@@ -73,7 +74,7 @@
     .section-heading{
         color: $secondary-text-colour;
         font-size: 24px;
-        margin: 15px 0 0;
+        margin: 37px 0 0;
         &::first-letter{
             text-transform: uppercase;
         }     
@@ -107,6 +108,8 @@
         @extend .heading-xlarge;
         margin-top: 0;
         border-top: 0;
+        margin-bottom: $gutter;
+        padding-top: 5px;
     }
 
     h1:first-letter{
@@ -420,4 +423,28 @@ $palette: (
       font-weight: bold;
     }
   }
+}
+
+
+// Replicating Govuk Metadata
+
+.govuk-metadata {
+    @extend %contain-floats;
+    font-size: 14px;
+    line-height: 1.42857;
+    margin-bottom: $gutter;
+
+    dl {
+      dt{
+        float: left;
+        clear: left;
+        width: auto;
+        min-width: 120px;
+        padding-right: 10px;
+      }
+      dd {
+        float: left;
+        width: 55%;
+      }
+    }
 }
