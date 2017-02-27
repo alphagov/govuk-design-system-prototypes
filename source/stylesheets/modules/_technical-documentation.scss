@@ -12,10 +12,10 @@
     margin: $gutter ($gutter + 2px) $gutter;
   }
 
-  //This doesn't appear to be be needed. Should be using standard Gov.uk type styles.
-  // h1, h2, h3, h4, h5, h6 {
-  //   padding-top: $gutter-half;
-  // }
+  //Not sure if this needed. Should be using standard Gov.uk type styles.
+  h1, h2, h3, h4, h5, h6 {
+    padding-top: $gutter-half;
+  }
 
   img {
     max-width: 100%;
