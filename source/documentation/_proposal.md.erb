@@ -1,15 +1,13 @@
+<%= partial('/documentation/meta-status', 
 
-<%= partial('/documentation/meta-proposed', 
-
-	:locals => { 	  
+	:locals => { 	 
+					:status => "Proposed",
 					:department => "Government Digital Service",
 					:departmentLink => "https://www.gov.uk/government/organisations/government-digital-service",
-					:teamName => "Service Manual and Patterns",
-					:teamLink => "#",
-					:hackpadLink => "#"
-				}
-	) 
-%>
+					:hackpadLink => "#",
+					:githubLink => "#"  
+
+}) %>
 
 This pattern has been proposed by the GOV.UK design community.
 

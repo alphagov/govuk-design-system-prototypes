@@ -1,0 +1,29 @@
+<div class="grid-row">
+
+  <div class="column-two-thirds">
+
+    <div class="govuk-metadata">
+      <dl>
+          <dt>Status:</dt>
+          <dd>
+            <% %w{Proposed Draft Recommended}.each do |possible_status| 
+              if status == possible_status %>
+                <p class="status status_selected"><%= possible_status %></p>
+              <% else %>
+                <p class="status"><%= possible_status %></p>
+              <% end %>
+            <% end %>
+          </dd>
+
+          <dt>Author:</dt>
+          <dd><a href="<%= "#{departmentLink}" %>"><%= "#{department}" %></a></dd>
+          <dt>Discuss on:</dt>
+          <dd><a href="<%= "#{hackpadLink}" %>">Hackpad</a></dd>
+          <dt>Edit on:</dt>
+          <dd><a href="<%= "#{githubLink}" %>">Github</a></dd>
+      </dl>
+    </div>
+
+  </div>
+
+</div>
