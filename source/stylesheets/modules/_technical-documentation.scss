@@ -21,10 +21,10 @@
     max-width: 100%;
     width: auto;
     height: auto;
-    // adding borders for screenshots
+     // adding borders for screenshots
     @include box-sizing(border-box);
     border: 1px solid $border-colour;
-    padding: 5px;
+    padding: 10px;
     margin: $gutter-half 0 0 0;
   }
 
