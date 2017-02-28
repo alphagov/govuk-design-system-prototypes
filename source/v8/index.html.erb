@@ -14,5 +14,12 @@ title: GOV.UK Design System
 
 <%= partial '/documentation/' + section.name + '/' + page.name + '/README' rescue partial '/documentation/proposal' %>
 
+<%= partial('/documentation/meta-info', 
 
+	:locals => { 	 
+					:prototypeKit => "No",
+					:govukFrontend => "No",
+					:firstSubmitted => "15/06/2016",
+					:lastUpdated => "28/02/2017"
+}) %>
 
