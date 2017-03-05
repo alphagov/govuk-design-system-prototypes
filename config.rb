@@ -32,7 +32,7 @@ data.v9nav.sections.each do |section|
   if defined?(section.pages)
     section.pages.each do |page|
       # Set up proxy
-      proxy "/v9/#{section.name}/#{page.name}/index.html", "/v9/index.html", :locals => { :page => page, :section => section }, :ignore => true  
+      proxy "/v9/#{section.name}/#{page.name}/index.html", "/v9/govuk_design_patterns/patterns/index.html", :locals => { :page => page, :section => section }, :ignore => true  
     end
   end
 end
