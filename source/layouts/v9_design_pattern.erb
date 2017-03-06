@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || "GOV.UK Documentation" %></title>
+
+    <!--[if gt IE 8]><!--><%= stylesheet_link_tag :screen, media: 'screen' %><!--<![endif]-->
+    <!--[if lte IE 8]><%= stylesheet_link_tag 'screen-old-ie', media: 'screen' %><![endif]-->
+
+    <link rel="canonical" href="<%= config[:tech_docs][:host] %><%= current_page.url %>">
+
+    <%= stylesheet_link_tag :print, media: 'print' %>
+
+    <%= javascript_include_tag :application %>
+  </head>
+
+  <body>
+    <div class="app-pane">
+      <div class="app-pane__header">
+        <a href="#content" class="skip-link">Skip to main content</a>
+
+        <header class="header header--full-width">
+          <div class="header__container">
+            <div class="header__brand">
+                <a href="/v8/govuk_design_patterns/">
+                <% if config[:tech_docs][:show_govuk_logo] %>
+                  <span class="govuk-logo">
+                    <img class="govuk-logo__printable-crown" src="/images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+                    GOV.UK
+                  </span>
+                <% end %>
+                <span class="header__title">
+                  Design Patterns
+                </span>
+                </a>
+            </div>
+<!--
+            <div class="site-search">
+              <input type="text" name="q" id="site-search-text" placeholder="Search patterns">
+              <input class="submit" type="submit" value="Search">
+            </div>
+          -->
+
+          <div data-module="navigation">
+            <button type="button" class="header__navigation-toggle js-nav-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation">Menu</button>
+
+            <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
+              <ul>
+                  <li>
+                    <a href="/v9/govuk_design_patterns">
+                      About
+                    </a>
+                  </li>
+
+                  <li class="active">
+                    <a href="/v9/styles/colour">
+                      Patterns
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/v9/govuk_design_patterns/community">
+                      Community
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/v9/govuk_design_patterns/support">
+                      Support
+                    </a>
+                  </li>
+              </ul>
+            </nav>
+          </div>
+
+          </div>
+        </header>
+      </div>
+      <div id="toc-heading" class="toc-show fixedsticky">
+        <a href="#toc" class="toc-show__label js-toc-show">
+          Table of contents <span class="toc-show__icon"></span>
+        </a>
+      </div>
+
+      <% html = yield %>
+
+      <div class="app-pane__body" data-module="highlighted-nav">
+
+        <div class="app-pane__toc">
+
+        <div class="pattern-search">
+          <input type="text" name="q" id="pattern-search-text" placeholder="Search patterns">
+          <input class="submit" type="submit" value="Search">
+        </div>
+
+          <div class="toc" data-module="table-of-contents">
+            <a href="#" class="toc__close js-toc-close">Close</a>
+            <nav  id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+
+              <%= partial('/layouts/v9_left_nav', :locals => { :nav => data.v9nav, :version => "v9" }) %>
+
+            </nav>
+          </div>
+        </div>
+
+        <div class="app-pane__content">
+          <main id="content" class="technical-documentation markdown" data-module="anchored-headings">
+
+            <p class="section-heading"><%= current_page.data.section %></p>
+            <h1><%= current_page.data.title %></h1>
+
+            <%= html %>
+
+            <%= partial('/documentation/meta-info', 
+
+              :locals => {   
+                      :prototypeKit => "No",
+                      :govukFrontend => "No",
+                      :firstSubmitted => "15/06/2016",
+                      :lastUpdated => "28/02/2017"
+            }) %>
+
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

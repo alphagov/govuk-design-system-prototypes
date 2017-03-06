@@ -22,6 +22,8 @@ page '/*.txt', layout: false
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
 
+page "/v9/govuk_design_patterns/patterns/*", :layout => "v9_design_pattern"
+
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 
 
