@@ -1,20 +1,15 @@
 
-<!--
-<p>
-Path: <%= current_page.path %>
-</p>
--->
 
 <% pattern_root = "/v9/govuk_design_patterns/patterns/" %>
 
 <ul>
 <% sitemap.resources.select { |r| r.data.section && r.url.start_with?(pattern_root) }.group_by { |r| r.data.section }.each do |section, arr| %>
   
-  <li>
+  <li<% if (current_page.data.section == section) %> class="current-section"<% end %>>
     <a href="#<%= section %>"><%= section %></a>
     <ul>
       <% arr.each do |res| %>
-        <li><%= link_to res.data.title, res.data.path %></li>
+        <li<% if (current_page.path == res.path) %> class="current-page"<% end %>><%= link_to res.data.title, res.url %></li>
       <% end %>
     </ul>
   </li>
