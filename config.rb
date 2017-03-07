@@ -27,18 +27,6 @@ page "/v9/govuk_design_patterns/patterns/*", :layout => "v9_design_pattern"
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 
 
-# Set up routes for V9 prototype
-
-data.v9nav.sections.each do |section|
-  # Iterate over pages in section
-  if defined?(section.pages)
-    section.pages.each do |page|
-      # Set up proxy
-      proxy "/v9/#{section.name}/#{page.name}/index.html", "/v9/govuk_design_patterns/patterns/index.html", :locals => { :page => page, :section => section }, :ignore => true  
-    end
-  end
-end
-
 # Set up routes for V8 prototype
 
 data.v8nav.sections.each do |section|

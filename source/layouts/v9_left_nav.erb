@@ -1,9 +1,20 @@
 
 
-<% pattern_root = "/v9/govuk_design_patterns/patterns/" %>
+<% 
+
+pattern_root = "/v9/govuk_design_patterns/patterns/" 
+
+section_order = ["Styles", "Components", "Pages", "Tasks", "Services"]
+
+%>
 
 <ul>
-<% sitemap.resources.select { |r| r.data.section && r.url.start_with?(pattern_root) }.group_by { |r| r.data.section }.each do |section, arr| %>
+
+<% sitemap.resources
+	.select { |r| r.data.section && r.url.start_with?(pattern_root) }
+	.group_by { |r| r.data.section }
+	.each do |section, arr| 
+%>
   
   <li<% if (current_page.data.section == section) %> class="current-section"<% end %>>
     <a href="#<%= section %>"><%= section %></a>
@@ -13,5 +24,7 @@
       <% end %>
     </ul>
   </li>
+
 <% end %>
+
 <ul>
