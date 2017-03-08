@@ -25,7 +25,7 @@ sections_in_order.each do |section|
   <li<% if (current_page.data.section == section) %> class="current-section"<% end %>>
     <a href="#<%= section %>"><%= section %></a>
     <ul>
-      <% arr.each do |res| %>
+      <% arr.sort_by{|res| res.data.title}.each do |res| %>
         <li<% if (current_page.path == res.path) %> class="current-page"<% end %>><%= link_to res.data.title, res.url %></li>
       <% end %>
     </ul>
