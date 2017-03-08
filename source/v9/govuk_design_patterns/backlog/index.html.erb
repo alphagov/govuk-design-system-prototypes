@@ -6,53 +6,49 @@ title:	Design patterns backlog
 
 
 
-      <% 
-		pattern_root = "/v9/govuk_design_patterns/patterns/" 
-		%>
+<% 
+pattern_root = "/v9/govuk_design_patterns/patterns/" 
+%>
 
 
-      <h2>Priority patterns</h2>
+<h2>Priority patterns</h2>
+
+<p>Patterns are prioritised according to user need and the team resources available.
+	They are:</p>
+
+<ol class="list list-number">
+<%
+sitemap.resources													# Get all the pages that:
+	.select { |r| 													
+		r.data.section && 										# have a defined section
+		r.url.start_with?(pattern_root) && 		# are in the 'patterns' folder
+		r.data.status == "Backlog" && 				# have a status of 'Backlog'
+		r.data.priority 											# have a defined priority
+	}
+	.sort_by { |r| r.data.priority }				# Sort them by priority
+	.each do |res| 
+%>	  
+	<li><%= link_to res.data.title, res.url %></li>
+<% end %>
+</ol>
 
 
-	    <ol class="list list-number">
+<h2>Other patterns</h2>
 
-      <%
+<p>These are patterns for which we've identified a user need, but that we're not yet planning to work on:</p>
 
-		sitemap.resources
-			.select { |r| 
-				r.data.section && 
-				r.url.start_with?(pattern_root) && 
-				r.data.status == "Backlog" && 
-				r.data.priority 
-			}
-			.sort_by { |r| r.data.priority }
-			.each do |res| 
-		%>
-		  
-	        <li><%= link_to res.data.title, res.url %></li>
-
-		<% end %>
-	    </ol>
-
-
-      <h2>Other patterns</h2>
-
-
-	    <ul>
-
-      <%
-
-		sitemap.resources
-			.select { |r| 
-				r.data.section && 
-				r.url.start_with?(pattern_root) && 
-				r.data.status == "Backlog" && 
-				!r.data.priority 
-			}
-			.each do |res| 
-		%>
-		  
-	        <li><%= link_to res.data.title, res.url %></li>
-
-		<% end %>
-	    </ul>
+<ul>
+  <%
+	sitemap.resources
+		.select { |r| 
+			r.data.section && 
+			r.url.start_with?(pattern_root) && 
+			r.data.status == "Backlog" && 
+			!r.data.priority 
+		}
+		.sort_by { |r| r.data.title }
+		.each do |res| 
+	%>  
+	<li><%= link_to res.data.title, res.url %></li>
+	<% end %>
+</ul>
