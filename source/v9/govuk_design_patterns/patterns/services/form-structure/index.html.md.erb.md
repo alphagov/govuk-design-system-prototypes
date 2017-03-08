@@ -2,6 +2,7 @@
 title:		Form structure
 section:	Services
 status:		Approved by GDS
+department: All
 ---
 
 This guide explains how to structure online forms.
