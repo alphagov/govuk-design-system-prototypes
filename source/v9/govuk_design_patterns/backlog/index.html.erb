@@ -1,0 +1,98 @@
+---
+layout: govuk_design_patterns
+productName: Design Patterns
+sectionNav: patterns
+---
+
+<main id="content" role="main">
+<br>
+  <div class="grid-row">    
+
+    <div class="column-two-thirds markdown">
+
+      <h1>Design patterns backlog</h1>
+
+      <% 
+		pattern_root = "/v9/govuk_design_patterns/patterns/" 
+		%>
+
+
+      <h2>Priority patterns</h2>
+
+
+	    <ol class="list list-number">
+
+      <%
+
+		sitemap.resources
+			.select { |r| 
+				r.data.section && 
+				r.url.start_with?(pattern_root) && 
+				r.data.status == "Backlog" && 
+				r.data.priority 
+			}
+			.sort_by { |r| r.data.priority }
+			.each do |res| 
+		%>
+		  
+	        <li><%= link_to res.data.title, res.url %></li>
+
+		<% end %>
+	    </ol>
+
+
+      <h2>Other patterns</h2>
+
+
+	    <ul>
+
+      <%
+
+		sitemap.resources
+			.select { |r| 
+				r.data.section && 
+				r.url.start_with?(pattern_root) && 
+				r.data.status == "Backlog" && 
+				!r.data.priority 
+			}
+			.each do |res| 
+		%>
+		  
+	        <li><%= link_to res.data.title, res.url %></li>
+
+		<% end %>
+	    </ul>
+
+<!--
+      <h2>Patterns by section</h2>
+
+      <%
+
+		sitemap.resources
+			.select { |r| r.data.section && r.url.start_with?(pattern_root) && r.data.status == "Backlog" }
+			.group_by { |r| r.data.section }
+			.each do |section, arr| 
+		%>
+		  
+
+	    <h2><%= section %></h2>
+	    <ul>
+	      <% arr.each do |res| %>
+	        <li><%= link_to res.data.title, res.url %></li>
+	      <% end %>
+	    </ul>
+
+		<% end %>
+
+
+
+-->
+
+
+    </div>
+
+  </div>
+
+
+
+</main>
