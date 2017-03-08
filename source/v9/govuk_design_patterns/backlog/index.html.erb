@@ -1,7 +1,9 @@
 ---
-layout: v9_design_pattern
+layout: v9_design_pattern_backlog
 title:	Design patterns backlog
 ---
+
+
 
 
       <% 
@@ -54,28 +56,3 @@ title:	Design patterns backlog
 
 		<% end %>
 	    </ul>
-
-<!--
-      <h2>Patterns by section</h2>
-
-      <%
-
-		sitemap.resources
-			.select { |r| r.data.section && r.url.start_with?(pattern_root) && r.data.status == "Backlog" }
-			.group_by { |r| r.data.section }
-			.each do |section, arr| 
-		%>
-		  
-
-	    <h2><%= section %></h2>
-	    <ul>
-	      <% arr.each do |res| %>
-	        <li><%= link_to res.data.title, res.url %></li>
-	      <% end %>
-	    </ul>
-
-		<% end %>
-
-
-
--->

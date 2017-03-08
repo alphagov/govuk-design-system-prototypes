@@ -113,39 +113,7 @@
             <p class="section-heading"><%= current_page.data.section %></p>
             <h1><%= current_page.data.title %></h1>
 
-            <div class="grid-row">
-
-              <div class="column-two-thirds">
-
-                <div class="govuk-metadata">
-                  <dl>
-                      <dt>Status:</dt>
-                      <dd><a href="../status/"><%= current_page.data.status %></a></dd>
-                      <!--
-                      <dt>Author:</dt>
-                      <dd><a href="<%= current_page.data.author %>"><%= current_page.data.author %></a></dd>
-                    -->
-                      <dt>Discuss on:</dt>
-                      <dd><a href="<%= current_page.data.discuss %>">Hackpad</a></dd>
-                      <dt>Edit on:</dt>
-                      <dd><a href="<%= current_page.data.edit %>">Github</a></dd>
-                  </dl>
-                </div>
-
-              </div>
-
-            </div>
-
             <%= html %>
-
-            <%= partial('/documentation/meta-info', 
-
-              :locals => {   
-                      :prototypeKit => "No",
-                      :govukFrontend => "No",
-                      :firstSubmitted => "15/06/2016",
-                      :lastUpdated => "28/02/2017"
-            }) %>
 
           </main>
         </div>
