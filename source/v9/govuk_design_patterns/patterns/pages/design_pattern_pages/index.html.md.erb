@@ -1,0 +1,57 @@
+---
+title:		Design pattern pages
+section:	Pages
+status:		Alpha
+department: All
+---
+
+A design pattern is a repeatable way of solving a common design problem.
+
+Design patterns consist of guidance, examples and often reusable code.
+
+
+
+## Design pattern meta data
+
+Every design pattern has meta data that describes the pattern and it's properties. The meta data is coded as YAML Frontmatter at the top of the markdown file for each pattern.
+
+This meta data is used to build the navigation for GOV.UK Design Patterns, so it's
+important that it's correct. The table below describes each data item and the values it can take:
+
+<table>
+  <tr>
+    <th>Variable</th>
+    <th>Description</th>
+    <th>Possible values</th>
+  </tr>
+  <tr>
+    <td>title</td>
+    <td>The name of the pattern</td>
+    <td>Any</td>
+  </tr>
+  <tr>
+    <td>aliases</td>
+    <td>Other common names or keywords associated with the pattern</td>
+    <td>Comma separated list</td>
+  </tr>
+  <tr>
+    <td>section</td>
+    <td>The section the pattern appears in the navigation</td>
+    <td>Styles, Components, Pages, Tasks or Services</td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>The status of the pattern</td>
+    <td>Backlog, Work-in-progress, Beta or Approved</td>
+  </tr>
+  <tr>
+    <td>department</td>
+    <td>Which departments the pattern is relevant for</td>
+    <td>Use 'All' for global patterns, otherwise use the name of the department</td>
+  </tr>
+  <tr>
+    <td>priority</td>
+    <td>The relative importance of a backlog pattern</td>
+    <td>Number - low means high priority</td>
+  </tr>
+</table>
