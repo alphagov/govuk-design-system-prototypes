@@ -7,21 +7,32 @@ title:	Design patterns backlog
 pattern_root = "/v9/govuk_design_patterns/patterns/" 
 %>
 
+<p>Design patterns are prioritised according to user need and the team resources available.</p>
 
 <h2>Priority patterns</h2>
 
-<p>Design patterns are prioritised according to user need and the team resources available. The patterns we're planning to work on next are:</p>
+<p>The patterns we're planning to work on next are:</p>
 
 <ol class="list list-number">
+	
 <%
-sitemap.resources													# Get all the pages that:
+
+# Get all the pages that:
+# 	have a defined section
+# 	are in the 'patterns' folder
+# 	have a status of 'Backlog'
+# 	have a defined priority
+
+# Sort them by priority
+
+sitemap.resources													
 	.select { |r| 													
-		r.data.section && 										# have a defined section
-		r.url.start_with?(pattern_root) && 		# are in the 'patterns' folder
-		r.data.status == "Backlog" && 				# have a status of 'Backlog'
-		r.data.priority 											# have a defined priority
+		r.data.section && 										
+		r.url.start_with?(pattern_root) && 		
+		r.data.status == "Backlog" && 				
+		r.data.priority 											
 	}
-	.sort_by { |r| r.data.priority }				# Sort them by priority
+	.sort_by { |r| r.data.priority }				
 	.each do |res| 
 %>	  
 	<li><%= link_to res.data.title, res.url %></li>
@@ -29,7 +40,7 @@ sitemap.resources													# Get all the pages that:
 </ol>
 
 
-<h2>Other patterns</h2>
+<h2>Non-priority patterns</h2>
 
 <p>These are patterns for which we've identified a user need, but that we're not yet planning to work on:</p>
 
