@@ -125,8 +125,6 @@
                       <dt>Author:</dt>
                       <dd><a href="<%= current_page.data.author %>"><%= current_page.data.author %></a></dd>
                     -->
-                      <dt>Discuss on:</dt>
-                      <dd><a href="<%= current_page.data.discuss %>">Hackpad</a></dd>
                       <dt>Edit on:</dt>
                       <dd><a href="<%= current_page.data.edit %>">Github</a></dd>
                   </dl>
@@ -138,11 +136,13 @@
 
             <%= html %>
 
+
+            <% if current_page.data.discuss %>
             <div class="discuss">
               <details>
-                <summary>Discuss this pattern on Hackpad</summary>
+                <summary>Discuss this pattern</summary>
 
-                <p class="text-tiny">
+                <p>
                   Please note that this is not formal Cabinet Office guidance. <br>
                   All views expressed are those of the individual contributors. 
                 </p>
@@ -152,6 +152,7 @@
                 </div>
               </details>
             </div>
+            <% end %>
 
           </main>
         </div>
