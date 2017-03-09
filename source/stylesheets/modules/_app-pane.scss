@@ -42,6 +42,7 @@
         flex: 0 0 auto;
         width: $toc-width;
         border-right: 1px solid $grey-2;
+        // background-color: lighten($grey-3, 8%);
       }
 
       .app-pane__content {

@@ -111,7 +111,7 @@
           <main id="content" class="technical-documentation markdown" data-module="anchored-headings">
 
             <p class="section-heading"><%= current_page.data.section %></p>
-            <h1><%= current_page.data.title %></h1>
+            <h1><%= current_page.data.title %><span class="status"><%= current_page.data.status %></span></h1>
 
             <div class="grid-row">
 
@@ -119,8 +119,8 @@
 
                 <div class="govuk-metadata">
                   <dl>
-                      <dt>Status:</dt>
-                      <dd><a href="../status/"><%= current_page.data.status %></a></dd>
+                      <!-- <dt>Status:</dt>
+                      <dd><a href="../status/"><%= current_page.data.status %></a></dd> -->
                       <!--
                       <dt>Author:</dt>
                       <dd><a href="<%= current_page.data.author %>"><%= current_page.data.author %></a></dd>
