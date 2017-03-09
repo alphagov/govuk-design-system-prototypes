@@ -12,6 +12,10 @@
       font-weight: bold;
     }
 
+    p{
+      margin-top: 15px;
+    }
+
     div{
       margin-top: $gutter;
       border-top: 1px solid $border-colour;
@@ -21,12 +25,6 @@
       padding-right: 110px;
       padding-top: 30px;
       margin-right: -32px;
-
-      overflow: hidden;
-
-      iframe{
-        //margin-top: -110px;
-      }
     }
   }
 }
