@@ -2,9 +2,14 @@
 pattern_root = "/v9/govuk_design_patterns/patterns/" 
 section_order = ["Styles", "Components", "Pages", "Tasks", "Services"]
 
+# Filter out backlog patterns
 # Group patterns into sections
 patterns_by_section = sitemap.resources
-  .select { |r| r.data.section && r.url.start_with?(pattern_root) }
+  .select { |r| 
+    r.data.section && 
+    #r.data.status != "Backlog" &&
+    r.url.start_with?(pattern_root)
+  }
   .group_by { |r| r.data.section }
 
 # Create a list of used sections in the order defined in section_order. Any
@@ -26,7 +31,7 @@ sections_in_order.each do |section|
     <a href="#<%= section %>"><%= section %></a>
     <ul>
       <% arr.sort_by{|res| res.data.title}.each do |res| %>
-        <li<% if (current_page.path == res.path) %> class="current-page"<% end %>><%= link_to res.data.title, res.url %></li>
+        <li class="<% if (current_page.path == res.path) %>current-page <% end %>status-<%= res.data.status %>"><%= link_to res.data.title, res.url %></li>
       <% end %>
     </ul>
   </li>
