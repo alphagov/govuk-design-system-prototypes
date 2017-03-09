@@ -3,6 +3,7 @@ title:		Form structure
 section:	Services
 status:		Approved by GDS
 department: All
+discuss:	https://designpatterns.hackpad.com/XDwY2wv3lCn
 ---
 
 This guide explains how to structure online forms.
