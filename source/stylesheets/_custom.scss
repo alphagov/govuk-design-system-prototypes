@@ -57,6 +57,7 @@
     a:link{
         padding-left: 11px;
         position: relative;
+        padding-right: 60px;
     }
 
 }
@@ -77,12 +78,16 @@
 .toc__list li li a{
 
     border-left: 4px solid transparent;
-
 }
 
 .toc__list .current-page a {
     background: $grey-4;
     border-left: 4px solid #005ea5;
+
+        //Copy of pattern status
+        &::after {
+        display: none;
+    }
 }
 
 .toc__list li li li {
@@ -94,20 +99,66 @@
 }
 
 // Style nav according to pattern status
-.toc__list .status-backlog a{
+.toc__list 
+  {
+    
+    li[class^="status-"] a::after {
+        position: absolute;
+        right: 0;
+        font-size: 12px;
+        padding: 0 3px;
+        // border: 1px solid $grey-4;
+        // float: right;
+        min-width: 56px;
+        text-align: right;
+        margin-top: 3px;
+        letter-spacing: 1;
+        color: $secondary-text-colour;
+    }
+
+    .status-backlog a {
   
-   //color: $secondary-text-colour;
 
-   &::before{
-    content: "";
-    border: 4px solid $grey-2;
-    display: block;
-    position: absolute;
-    margin-left: -15px;
-    margin-top: 5px;
-    border-radius: 4px;
 
-   }
+      &::after {
+        content: "Backlog";
+        // color: $secondary-text-colour;
+        // border: 1px solid lighten($secondary-text-colour, 40%);
+        
+       }    
+    }
+
+    .status-alpha a {
+
+      &::after {
+        content: "Alpha";
+        // color: $pink;
+        // border: 1px solid lighten($pink, 40%);
+        
+       }
+    }    
+
+    .status-beta a {
+
+      &::after {
+        content: "Beta";
+        // color: $orange;
+        // border: 1px solid lighten($orange, 30%);
+        
+       }
+    }
+
+
+    .status-approved-by-gds a {
+
+      &::after {
+        content: "Approved";
+        // color: $turquoise;
+        // border: 1px solid lighten($turquoise, 40%);
+        
+       }
+    }
+
 }
 
 .toc__list li li li:before{

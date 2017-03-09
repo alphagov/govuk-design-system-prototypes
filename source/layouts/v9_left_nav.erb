@@ -31,7 +31,7 @@ sections_in_order.each do |section|
     <a href="#<%= section %>"><%= section %></a>
     <ul>
       <% arr.sort_by{|res| res.data.title}.each do |res| %>
-        <li class="<% if (current_page.path == res.path) %>current-page <% end %>status-<%= res.data.status.downcase %>"><%= link_to res.data.title, res.url %></li>
+        <li class="<% if (current_page.path == res.path) %>current-page <% end %>status-<%= res.data.status.downcase.tr(" ", "-") %>"><%= link_to res.data.title, res.url %></li>
       <% end %>
     </ul>
   </li>
