@@ -63,9 +63,7 @@
 }
 
 .toc__list a:visited {
-
     color: $link-colour;
-
 }
 
 .toc__list a:first-letter {
@@ -76,7 +74,6 @@
 
 .toc__list li a,
 .toc__list li li a{
-
     border-left: 4px solid transparent;
 }
 
@@ -101,14 +98,12 @@
 // Style nav according to pattern status
 .toc__list 
   {
-    
+
     li[class^="status-"] a::after {
         position: absolute;
         right: 0;
         font-size: 12px;
         padding: 0 3px;
-        // border: 1px solid $grey-4;
-        // float: right;
         min-width: 56px;
         text-align: right;
         margin-top: 3px;
@@ -117,8 +112,6 @@
     }
 
     .status-backlog a {
-  
-
 
       &::after {
         content: "Backlog";
@@ -162,7 +155,7 @@
 }
 
 .toc__list li li li:before{
-	content: "— ";
+	  content: "— ";
     float: left;
     font-size: 8px;
     margin-top: 12px;
@@ -603,4 +596,24 @@ $palette: (
         width: 55%;
       }
     }
+}
+
+// Status on h1 
+
+h1 {
+  position:relative;
+
+  span.status {
+    position: absolute;
+    font-size: 15px;
+    margin-left: $gutter-half;
+    margin-top: 12px;
+    color: $white;
+    font-weight: bold;
+    background-color: $govuk-blue;
+    padding: 6px 8px 5px 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+   
+  }
 }
