@@ -81,10 +81,18 @@
     background: $grey-4;
     border-left: 4px solid #005ea5;
 
-        //Copy of pattern status
-        &::after {
-        display: none;
-    }
+      //Copy of pattern status
+      &::after {
+        position: absolute;
+        right: 0;
+        font-size: 12px;
+        padding: 0 10px 0 3px;
+        min-width: 56px;
+        text-align: right;
+        margin-top: 3px;
+        letter-spacing: 1;
+        color: $secondary-text-colour;
+      }
 }
 
 .toc__list li li li {
@@ -103,7 +111,7 @@
         position: absolute;
         right: 0;
         font-size: 12px;
-        padding: 0 3px;
+        padding: 0 10px 0 3px;
         min-width: 56px;
         text-align: right;
         margin-top: 3px;
