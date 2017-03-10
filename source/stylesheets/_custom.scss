@@ -13,6 +13,7 @@
 .discuss{
   border-top: 3px solid $black;
   padding-top: $gutter;
+  margin-top: $gutter;
 
   details {
 
@@ -196,7 +197,7 @@
     .section-heading{
         color: $secondary-text-colour;
         font-size: 24px;
-        margin: 38px 0 0;
+        margin: $gutter 0 0;
         &::first-letter{
             text-transform: uppercase;
         }     
@@ -633,3 +634,12 @@ h1 {
    
   }
 }
+
+// Add border and padding to images
+
+  img {
+    @include box-sizing(border-box);
+    border: 1px solid $border-colour;
+    padding: 10px;
+    margin: $gutter-half 0 0 0;
+  }
