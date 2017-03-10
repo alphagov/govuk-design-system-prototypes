@@ -1,7 +1,7 @@
 ---
 title:		Form structure
 section:	Services
-status:		Approved by GDS
+status:		Approved
 department: All
 discuss:	https://designpatterns.hackpad.com/XDwY2wv3lCn
 ---
