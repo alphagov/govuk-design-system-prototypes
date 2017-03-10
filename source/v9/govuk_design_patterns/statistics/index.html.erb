@@ -1,12 +1,8 @@
 ---
-layout: govuk_design_patterns
+layout: v9_design_pattern_backlog
 productName: Design Patterns
 sectionNav: patterns
 ---
-
-
-<main id="content" role="main">
-<br>
 
 <h1 class='heading-large'>Statistics</h1>
 
@@ -25,11 +21,17 @@ design_patterns = sitemap.resources
 	.sort_by { |r| r.data.title }
 %>
 
-<ul class="stats">
-	<li>
-		<span class="stat-number"><%= design_patterns.length %></span>
-		<span class="stat-name">Patterns</span>
-	</li>
+<br>
+
+<hr>
+<div class="stats">
+	<div class="stat">
+		<div>
+			<span class="stat-number"><%= design_patterns.length %></span>
+			<span class="stat-name">Patterns</span>
+		</div>
+	</div>
+	<div class="stat">&nbsp;</div>
 	<%
 	design_patterns_by_status = design_patterns.group_by { |r| r.data.status }
 
@@ -41,19 +43,24 @@ design_patterns = sitemap.resources
   		arr = design_patterns_by_status[status]		
 	%>
 
-	<li>
-		<span class="stat-number"><%= arr.size %></span>
-		<span class="stat-name"><%= status %></span>
-	</li>
+	<div class="stat">
+		<div>
+			<span class="stat-number"><%= arr.size %></span>
+			<span class="stat-name"><%= status %></span>
+		</div>
+	</div>
 
 	<% end %>
-</ul>
+</div>
+<hr>
 
-<h2 class='heading-medium'>Full list of patterns</h2>
+<h3>Full list of patterns</h3>
+
+<br>
 
 <table class="patterns-table">
 	<tr>
-		<th>Title</th>
+		<th style="width: 35%;">Title</th>
 		<th>Section</th>
 		<th>Priority</th>
 		<th>Department</th>
@@ -71,5 +78,3 @@ design_patterns.each do |res|
 	</tr>
 <% end %>
 </table>
-
-</main>
