@@ -25,28 +25,20 @@ end
 # Loop over the sorted list of sections, and lookup the patterns for that
 # section from the original list
 sections_in_order.each do |section|
+  arr = patterns_by_section[section]
 %>
   <li<% if (current_page.data.section == section) %> class="current-section"<% end %>>
     <a href="#<%= section %>"><%= section %></a>
 
-<%
 
-  patterns_by_theme = patterns_by_section[section].group_by { |r| r.data.theme  || "Other"}
-
-  patterns_by_theme.each do |theme, arr|
-
-%>
 
     <ul>
-      <% if theme != "Other" %>
-      <li class="theme-heading"><%= theme %></li>
-      <% end %>
       <% arr.sort_by{|res| res.data.title}.each do |res| %>
         <li class="<% if (current_page.path == res.path) %>current-page <% end %>status-<%= res.data.status.downcase.tr(" ", "-") %>"><%= link_to res.data.title, res.url %></li>
       <% end %>
     </ul>
 
-<% end %>
+
     
   </li>
 
