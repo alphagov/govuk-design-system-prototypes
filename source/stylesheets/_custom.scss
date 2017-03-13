@@ -4,8 +4,12 @@
 // Stats
 
 .stats{
-  @extend %grid-row;
-  padding: 0 !important;
+  // @extend %grid-row;
+  @extend %contain-floats;
+  padding: $gutter !important;
+  border-top: 1px solid $border-colour;
+  border-bottom: 1px solid $border-colour;
+  margin-bottom: $gutter-half;
 
   .stat{
     
@@ -95,7 +99,6 @@
   text-transform: uppercase;
   color: $secondary-text-colour;
   font-size: 14px;
-  
   letter-spacing: 0.04em;
 }
 
