@@ -92,10 +92,11 @@
 
 .theme-heading{
   margin: 10px 15px;
-  //text-transform: uppercase;
-  //color: $secondary-text-colour;
-  //font-size: 14px;
-  font-size: 19px;
+  text-transform: uppercase;
+  color: $secondary-text-colour;
+  font-size: 14px;
+  
+  letter-spacing: 0.04em;
 }
 
 .toc__list {
