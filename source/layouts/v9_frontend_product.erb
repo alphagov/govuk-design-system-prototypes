@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || "GOV.UK Documentation" %></title>
+
+    <!--[if gt IE 8]><!--><%= stylesheet_link_tag :screen, media: 'screen' %><!--<![endif]-->
+    <!--[if lte IE 8]><%= stylesheet_link_tag 'screen-old-ie', media: 'screen' %><![endif]-->
+
+
+    <link href="/stylesheets/govuk-template.css" media="screen" rel="stylesheet" />
+    <link href="/stylesheets/fonts.css" media="all" rel="stylesheet" />
+
+    <link href="/stylesheets/service_toolkit.css" media="screen" rel="stylesheet" type="text/css" />
+
+  </head>
+
+  <body class="service-toolkit">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div id="skiplink-container">
+      <div>
+        <a href="#content" class="skiplink">Skip to main content</a>
+      </div>
+    </div>
+
+
+
+      <header role="banner" id="global-header" class="">
+        <div class="header-wrapper">
+          <div class="header-global" style="float: left">
+            <div class="header-logo" style="width: 100%">
+              <a href="#" id="logo" class="content">
+                <img src="/images/gov.uk_logotype_crown_invert_trans.png" width="36" height="32" alt=""> GOV.UK&nbsp;&nbsp;
+                <span class="product-name"><%= current_page.data.productName %></span>
+              </a>
+            </div>
+          </div>
+
+
+          <div data-module="navigation">
+            <button type="button" class="header__navigation-toggle js-nav-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation">Menu</button>
+
+            <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
+              <ul>
+                  <li class="active">
+                    <a href="/v9/govuk_frontend">
+                      About
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/v9/govuk_frontend/docs">
+                      Documentation
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/v9/govuk_frontend/community">
+                      Community
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="/v9/govuk_frontend/support">
+                      Support
+                    </a>
+                  </li>
+              </ul>
+            </nav>
+          </div>
+
+        </div>
+      </header>
+
+
+
+      <div id="global-header-bar"></div>
+
+      <%= yield %>
+
+
+    <footer class="group js-footer" id="footer" role="contentinfo">
+
+      <div class="footer-wrapper">
+
+        <div class="footer-meta">
+          <div class="footer-meta-inner">
+
+            <div class="open-government-licence">
+              <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+              
+                <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+              
+            </div>
+          </div>
+
+          <div class="copyright">
+            <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">&copy; Crown copyright</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="global-app-error" class="app-error hidden"></div>
+
+    <script src="/javascripts/govuk-template.js?0.18.3"></script>
+    
+    <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
+  </body>
+</html>
