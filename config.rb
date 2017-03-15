@@ -19,12 +19,33 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-# With alternative layout
-# page "/path/to/file.html", layout: :otherlayout
 
+# Design patterns have a different default layout
 page "/v9/govuk_design_patterns/patterns/*", :layout => "v9_design_pattern"
 
-# Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
+
+# Create discussion pages for all the patterns
+ready do
+
+  pattern_root = "/v9/govuk_design_patterns/patterns/" 
+
+  sitemap.resources.select { |r| 
+    r.data.section && 
+    r.data.discuss &&
+    r.url.start_with?(pattern_root)
+  }.each do |pattern|
+
+    proxy "#{pattern.url}discussion", "/v9/govuk_design_patterns/discussion.html", :locals => { 
+      :discuss  => pattern.data.discuss,
+      :section  => pattern.data.section,
+      :title    => pattern.data.title,
+      :status   => pattern.data.status,
+      :url      => pattern.url
+    }, :ignore => true
+
+  end
+
+end
 
 
 # Set up routes for V8 prototype

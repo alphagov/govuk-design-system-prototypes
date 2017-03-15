@@ -1,0 +1,293 @@
+// TAB PANELS
+
+// Based on https://github.com/nomensa/jquery.accessible-tabs
+
+.js-tabs.tabs-panel {
+  margin: $gutter 0;
+
+
+  /* Tabs control */
+  .js-tabs_control {
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .js-tabs_control li {
+    background: $white;
+    border-width: 1px 1px 0;
+    float: left;
+    margin: 0 10px 0 0;
+    padding: 0;
+    position: relative;
+  }
+
+  .js-tabs_control button {
+    background: transparent;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    padding: 15px 30px;
+    position: relative;
+    outline: 0;
+    color: $link-colour;
+    text-decoration: underline;
+  }
+
+  .js-tabs_control button:hover,
+  .js-tabs_control button:focus,
+  .js-tabs_control button:active {
+    border-color: #000;
+    text-decoration: underline;
+  }
+
+  .js-tabs_control .badge {
+    background-color: #C00000;
+    border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0 8px;
+    text-decoration: none;
+  }
+
+  /* Selected tabs control */
+  .js-tabs_control .js-tabs_control-item--active,
+  .js-tabs_control .js-tabs_control-item--active:focus,
+  .js-tabs_control .js-tabs_control-item--active:active {
+    background: $white;
+    border: 1px solid $border-colour;
+    border-bottom: none;
+    top: 1px;
+    z-index: 1000;
+
+    button{
+      padding-top: 13px;
+      padding-bottom: 17px;
+      text-decoration: none;
+      color: $text-colour;
+    }
+  }
+
+  /* Tabs panel */
+  .js-tabs_panel {
+    border: 1px solid $border-colour;
+    clear: left;
+    display: block;
+    overflow: auto;
+    position: relative;
+    padding: $gutter;
+    visibility: visible;
+    z-index: 5;
+  }
+
+  .js-tabs_panel:focus {
+    outline: 1px dotted #999;
+  }
+
+  .js-tabs_panel h2 {
+    display: inline-block;
+  }
+
+  .js-tabs_panel h2:focus {
+    outline: 1px dotted #999;
+  }
+
+
+  /* Tabs control text */
+  .js-tabs_control-text {
+    direction: ltr;
+    left: -999em;
+    position: absolute;
+  }
+
+}
+
+.js-btn,
+.js-hide-show_btn {
+  background: rgb(255,255,255); /* Fallback */
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1em;
+  margin: 1em 5px;
+  padding: 5px 1em;
+}
+
+
+// CODE TABS
+
+// Based on https://github.com/nomensa/jquery.accessible-tabs
+
+.js-tabs.tabs-code {
+  margin-top: $gutter;
+
+  /* Tabs control */
+  .js-tabs_control {
+    @extend %contain-floats;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border: 1px solid $border-colour;
+    border-bottom: 0;
+    z-index: 1000;
+  }
+
+  .js-tabs_control li {
+    background: $white;
+    border-width: 1px 1px 0;
+    float: right;
+    margin: 0 0 0 10px;
+    padding: 0;
+    position: relative;
+  }
+
+  .js-tabs_control button {
+    background: transparent;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    padding: 15px 30px;
+    position: relative;
+    outline: 0;
+    color: $link-colour;
+    text-decoration: underline;
+  }
+
+  .js-tabs_control button:hover,
+  .js-tabs_control button:focus,
+  .js-tabs_control button:active {
+    border-color: #000;
+    text-decoration: underline;
+  }
+
+  .js-tabs_control .badge {
+    background-color: #C00000;
+    border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0 8px;
+    text-decoration: none;
+  }
+
+  /* Selected tabs control */
+  .js-tabs_control .js-tabs_control-item--active,
+  .js-tabs_control .js-tabs_control-item--active:focus,
+  .js-tabs_control .js-tabs_control-item--active:active {
+    //background: #272822;
+    //outline: 1px solid #272822;
+    background: #f5f2f0;
+    border-top: none;
+    //top: 1px;
+    z-index: 1000;
+
+    button{
+      padding-top: $gutter-half -2;
+      padding-bottom: 17px;
+      //color: $white;
+      color: $text-colour;
+      text-decoration: none;
+    }
+  }
+
+  /* Tabs panel */
+  .js-tabs_panel {
+    clear: left;
+    display: block;
+    overflow: auto;
+    position: relative;
+    visibility: visible;
+    z-index: 5;
+    border-left: 1px solid $border-colour;
+    border-right: 1px solid $border-colour;
+
+    .language-markup{
+      margin-bottom: 0;
+    }
+
+  }
+
+  .js-tabs_panel:focus {
+    outline: 1px dotted #999;
+  }
+
+  .js-tabs_panel h2 {
+    display: inline-block;
+  }
+
+  .js-tabs_panel h2:focus {
+    outline: 1px dotted #999;
+  }
+
+
+  /* Tabs control text */
+  .js-tabs_control-text {
+    direction: ltr;
+    left: -999em;
+    position: absolute;
+  }
+
+}
+
+// MULTI PAGE TABS
+
+/*
+.tabs-multi-page{
+  @extend %contain-floats;
+  margin: $gutter 0;
+  border-bottom: 1px solid $border-colour;
+  .tab{
+    float: left;
+    padding: 10px 30px;
+    margin: 0;
+    font-size: 16px;
+    z-index: 999;
+    background: $white;
+    margin-bottom: -1px;
+    &.current{
+      border: 1px solid $border-colour;  
+      border-bottom: 1px solid $white;   
+    }
+  }
+}
+*/
+
+.tabs-multi-page{
+  @extend %contain-floats;
+  margin: 30px 0;
+  border-bottom: 4px solid #f8f8f8;
+  background: white;
+  .tab{
+    float: left;
+    a{
+      //color: $text-colour;
+        text-decoration: none;
+    }
+    padding: 15px 30px;
+    margin: 0;
+    font-size: 16px;
+    z-index: 999;
+    margin-bottom: -4px;
+    list-style-type: none;
+    &.current{
+      color: #fff;
+      font-weight: normal;
+      background: #f8f8f8;
+      border-bottom: 4px solid #005ea5;
+      a{
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.pattern-page .full-width-container{
+  padding-bottom: 0;
+}
+
+
