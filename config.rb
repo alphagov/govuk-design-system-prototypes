@@ -35,7 +35,7 @@ ready do
     r.url.start_with?(pattern_root)
   }.each do |pattern|
 
-    proxy "#{pattern.url}discussion", "/v9/govuk_design_patterns/discussion.html", :locals => { 
+    proxy "#{pattern.url}discussion.html", "/v9/govuk_design_patterns/discussion.html", :locals => { 
       :discuss  => pattern.data.discuss,
       :section  => pattern.data.section,
       :title    => pattern.data.title,
