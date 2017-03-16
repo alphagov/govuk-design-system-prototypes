@@ -99,7 +99,69 @@
             <a href="#" class="toc__close js-toc-close">Close</a>
             <nav  id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
 
-              <%= partial('/layouts/v9_left_nav') %>
+<% 
+pattern_root = "/v9/govuk_design_patterns/patterns/" 
+section_order = ["Styles", "Components", "Pages", "Tasks", "Services"]
+
+# Filter out backlog patterns
+# Group patterns into sections
+patterns_by_section = sitemap.resources
+  .select { |r| 
+    r.data.section && 
+    # r.data.status != "Backlog" &&
+    r.url.start_with?(pattern_root)
+  }
+  .group_by { |r| r.data.section }
+
+# Create a list of used sections in the order defined in section_order. Any
+# sections that are not listed in section_order will appear last. Any sections
+# in section_order that are not actually used will not be included.
+sections_in_order = patterns_by_section.keys.sort_by do |r|
+  section_order.index(r) || Float::INFINITY
+end
+%>
+
+<ul>
+<%
+# Loop over the sorted list of sections, and lookup the patterns for that
+# section from the original list
+sections_in_order.each do |sectionName|
+%>
+  <li<% if (sectionName == section) %> class="current-section"<% end %>>
+    <a href="#<%= sectionName %>"><%= sectionName %></a>
+
+<%
+
+  patterns_by_theme = patterns_by_section[sectionName].group_by { |r| r.data.theme  || "Other"}
+
+  patterns_by_theme.each do |theme, arr|
+
+%>
+
+    <ul>
+      <% if theme != "Other" %>
+      <li class="theme-heading"><%= theme %></li>
+      <% end %>
+      <% arr.sort_by{|res| res.data.title}.each do |res| %>
+        <li class="<% if (url == res.url) %>current-page <% end %>status-<%= res.data.status.downcase.tr(" ", "-") %>"><%= link_to res.data.title, res.url %></li>
+      <% end %>
+    </ul>
+
+<% end %>
+    
+  </li>
+
+<% end %>
+<ul>
+
+<h3 class="nav-group">Other design patterns</h3>
+
+<ul>
+  <li<% if (current_page.path == "v9/govuk_design_patterns/departmental_patterns/index.html") %> class="current-page"<% end %>><a href="/v9/govuk_design_patterns/departmental_patterns">Departmental  patterns</a></li>
+  <li<% if (current_page.path == "v9/govuk_design_patterns/backlog/index.html") %> class="current-page"<% end %>><a href="/v9/govuk_design_patterns/backlog">Patterns backlog</a></li>
+  <li<% if (current_page.path == "v9/govuk_design_patterns/statistics/index.html") %> class="current-page"<% end %>><a href="/v9/govuk_design_patterns/statistics">Pattern statistics</a></li>
+</ul>
+
 
             </nav>
           </div>
@@ -109,7 +171,7 @@
           <main id="content" class="technical-documentation markdown" data-module="anchored-headings">
 
           <div class="pattern-header">
-            
+
             <p class="section-heading"><%= section %></p>
             <h1><%= title %><span class="status"><%= status %></span></h1>
 
@@ -128,7 +190,7 @@
             All views expressed are those of the individual contributors. 
           </p>
 
-          <div>
+          <div class="hackpad">
             <script src="<%= discuss %>.js"></script><noscript><div>View <a href="<%= discuss %>">Tables</a> on Hackpad.</div></noscript>
           </div> 
 

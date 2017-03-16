@@ -57,18 +57,18 @@
     p{
       margin-top: 15px;
     }
-
-    div{
-      margin-top: $gutter;
-      border-top: 1px solid $border-colour;
-      background: $grey-4;
-
-      margin-left: -32px;
-      padding-right: 110px;
-      padding-top: 30px;
-      margin-right: -32px;
-    }
   }
+}
+
+.hackpad{
+  margin-top: $gutter;
+  border-top: 1px solid $border-colour;
+  background: $grey-4;
+
+  margin-left: -32px;
+  padding-right: 110px;
+  padding-top: 30px;
+  margin-right: -32px;
 }
 
 #navigation{
