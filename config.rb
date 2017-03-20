@@ -71,10 +71,10 @@ activate :search do |search|
 
     # Index these
     aliases: {boost: 50},
-    content: {index: true, store: false}, # 'magic' field, not in data
+    content: {index: true, store: false},
 
     # Just make these available when presenting search results
-    url:     {index: false, store: true}, # 'magic' field, not in data
+    url:     {index: false, store: true},
     section: {index: false, store: true, required: true},
     theme:   {index: false, store: true}
   }
