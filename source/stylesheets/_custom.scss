@@ -611,37 +611,27 @@ $palette: (
 }
 
 .pattern-search{
-    margin: 15px 15px 0 15px;
-    padding-bottom: $gutter-half;
-    border-bottom: 1px solid $border-colour;
+  margin: $gutter-half $gutter-half 0;
+  position: relative;
 
-  .submit{
-    
-    margin-left: -4px;
-    height: 40px;
-    width: 40px;
-    border: 1px solid #005ea5;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    overflow: hidden;
-    text-indent: -5000px;
-    color: #fff;
-    background-color: #005ea5;
-    background-image: url("/images/search-button.png");
-    background-repeat: no-repeat;
-    background-position: 0 50%;
-  }
+  background-color: #bfc1c3;
+  background-image: url(/images/search-button.png);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
 
-  #pattern-search-text{
-    padding: 5px 5px 6px 15px;
-    width: calc(100% - 62px);
-    border: 2px solid #0b0c0c;
-    border-right: 0px;
+  #pattern-search-text {
+    padding: 5px 15px;
+    border: 2px solid #bfc1c3;
+    margin-left: 34px;
+    width: calc(100% - 34px);
+    box-sizing: border-box;
+    transition: all 100ms ease-in-out;
     
     &:focus{
       outline: 3px solid #ffbf47;
       outline-offset: 0;
+      margin-left: 0;
+      width: 100%;
     }
   }
 
@@ -651,6 +641,54 @@ $palette: (
   }
 }
 
+.search-results {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: $white;
+  border: 1px solid #bfc1c3;
+  border-bottom: 2px solid #bfc1c3;
+  top: 100%;
+  z-index: 100;
+  max-height: 75vh;
+  overflow-x: scroll;
+  display: none;
+  
+  li {
+    font-size: 16px;
+  }
+
+  a:link, a:visited {
+    display: block;
+    padding: 10px $gutter-half;
+    text-decoration: none;
+    color: $text-colour;
+  }
+  
+  .active-result {
+    background: $govuk-blue;
+    color: $white;
+    
+    a:link, a:visited {
+      color: $white;
+    }
+
+    .result-section {
+      color: lighten($govuk-blue, 70%);
+    }
+  }
+}
+
+.search-results.visible {
+  display: block;
+}
+
+.result-section {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: $grey-1;
+  display: block;
+}
 
 .service-toolkit{
 

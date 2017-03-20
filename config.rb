@@ -60,6 +60,26 @@ data.v8nav.sections.each do |section|
   end
 end
 
+# Search
+# https://github.com/manastech/middleman-search#usage
+activate :search do |search|
+  search.resources = ['v9/govuk_design_patterns/patterns']
+
+  search.fields = {
+    # Index the title, but also make it available when showing results
+    title:   {boost: 100, store: true, required: true},
+
+    # Index these
+    aliases: {boost: 50},
+    content: {index: true, store: false}, # 'magic' field, not in data
+
+    # Just make these available when presenting search results
+    url:     {index: false, store: true}, # 'magic' field, not in data
+    section: {index: false, store: true, required: true},
+    theme:   {index: false, store: true}
+  }
+end
+
 
 # General configuration
 

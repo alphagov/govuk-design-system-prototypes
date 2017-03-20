@@ -2,6 +2,13 @@
 //= require vendor/modernizr
 //= require vendor/fixedsticky
 //= require start-modules
+//= require lunr.min
+//= require lunr.stemmer.support
+//= require search
+
+// Search
+var lunrIndex = null;
+var lunrData  = null;
 
 $(function() {
 
@@ -31,7 +38,5 @@ $(function() {
     }
 
   });
-
-
 
 });
