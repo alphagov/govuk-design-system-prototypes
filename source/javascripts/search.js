@@ -55,7 +55,7 @@ $(function() {
   function handleEnter(event) {
     var activeLink = $('li.active-result a');
 
-    if (activeLink) {
+    if (activeLink.length) {
       window.location = activeLink.attr('href');
     }
   }
