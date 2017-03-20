@@ -1,32 +1,5 @@
 @import "core";
 @import "vendor/fixedsticky";
+@import "modules/tabs";
 @import "custom";
 
-.tabs-multi-page{
-  @extend %contain-floats;
-  margin: 30px 0;
-  border-bottom: 4px solid #f8f8f8;
-  background: white;
-  .tab{
-    float: left;
-    a{
-      //color: $text-colour;
-        text-decoration: none;
-    }
-    padding: 15px 30px;
-    margin: 0;
-    font-size: 16px;
-    z-index: 999;
-    margin-bottom: -4px;
-    list-style-type: none;
-    &.current{
-      color: #fff;
-      font-weight: normal;
-      background: #f8f8f8;
-      border-bottom: 4px solid #005ea5;
-      a{
-        text-decoration: none;
-      }
-    }
-  }
-}
