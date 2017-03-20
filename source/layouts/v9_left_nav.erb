@@ -20,6 +20,8 @@ sections_in_order = patterns_by_section.keys.sort_by do |r|
 end
 %>
 
+<h3 class="nav-group">Global Design Patterns</h3>
+
 <ul>
 <%
 # Loop over the sorted list of sections, and lookup the patterns for that
@@ -27,7 +29,7 @@ end
 sections_in_order.each do |section|
 %>
   <li<% if (current_page.data.section == section) %> class="current-section"<% end %>>
-    <a href="#<%= section %>"><%= section %></a>
+    <a class="section-heading" href="#<%= section %>"><%= section %></a>
 
 <%
 
@@ -37,7 +39,7 @@ sections_in_order.each do |section|
 
 %>
 
-    <ul>
+    <ul class="section">
       <% if theme != "Other" %>
       <li class="theme-heading"><%= theme %></li>
       <% end %>

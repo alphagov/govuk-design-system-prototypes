@@ -86,8 +86,12 @@
 
 .nav-group{
   font-size: 19px;
-  margin: 30px 15px 15px;
+  margin: 30px 15px 15px 0;
   color: $secondary-text-colour
+}
+
+#toc > .nav-group {
+  margin-top: 15px;
 }
 
 .toc {
@@ -122,14 +126,61 @@
 
 }
 
+.toc__list .section-heading {
+
+  position: relative;
+  // padding-left: 0 !important;
+  border-left: 0 !important;
+  background-color: white;
+  margin-top: 10px;
+
+
+  &:before {
+    content:"";
+    display: block;
+    position: absolute;
+    background-image: url('/images/down-2x.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 12px;
+    width: 12px;
+    height: 12px;
+    top: 14px;
+    right: 15px;
+  }
+
+}
+
+.section-heading.is-active {
+    &:before {
+    content:"";
+    display: block;
+    position: absolute;
+    background-image: url('/images/down-2x.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 12px;
+    width: 12px;
+    height: 12px;
+    top: 14px;
+    right: 15px;
+    transform: rotate(180deg);
+  }
+}
+
+
+
 .toc__list li a,
 .toc__list li li a{
     border-left: 4px solid transparent;
 }
 
 .toc__list .current-page a {
-    background: $grey-4;
-    border-left: 4px solid #005ea5;
+    // background: $grey-4;
+    font-weight: bold;
+    letter-spacing: 0;
+    border-left: 4px solid $govuk-blue;
+    // border-bottom: 1px solid darken($grey-4, 10%);
 
       //Copy of pattern status
       &::after {
@@ -232,6 +283,23 @@
 .toc__list > ul > li > .group-heading:visited{
   color: $secondary-text-colour;
 }
+
+
+
+// Add separation between sections
+
+ul ul.section {
+  background-color: $white;
+  border-bottom: 2px solid $border-colour;
+  padding: 10px 0;
+  margin-bottom: 0 !important;
+
+  + ul.section {
+    margin-bottom: 0;
+
+  }
+} 
+
 
 .markdown{
 
@@ -534,18 +602,16 @@ $palette: (
 }
 
 .pattern-search{
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-right: 39px;
+    margin: 15px 15px 0 15px;
+    padding-bottom: $gutter-half;
+    border-bottom: 1px solid $border-colour;
 
   .submit{
-    display: none;
+    
     margin-left: -4px;
-    height: 36px;
-    width: 36px;
+    height: 40px;
+    width: 40px;
     border: 1px solid #005ea5;
-    border-width: 0 0 0 1px;
-    border-left-color: #222;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
@@ -560,8 +626,9 @@ $palette: (
 
   #pattern-search-text{
     padding: 5px 5px 6px 15px;
-    width: 100%;
+    width: calc(100% - 62px);
     border: 2px solid #0b0c0c;
+    border-right: 0px;
     
     &:focus{
       outline: 3px solid #ffbf47;

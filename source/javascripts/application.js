@@ -13,20 +13,21 @@ $(function() {
   // Show current section
   $('.current-section > ul').show();
 
+  var $navItems = $('.js-toc-list > ul > li > a');
+
   // Toggle subnav if it's clicked
-  $('.js-toc-list > ul > li > a').click(function(){
+  $navItems.click(function() {
 
-    if($(this).siblings("ul").css('display') == 'block'){
+    var wasVisible = $(this).siblings("ul").css('display') == 'block';
 
-      $(this).siblings("ul").toggle('fast');
+    // Hide all open navs, including this one
+    $navItems.removeClass('is-active');
+    $navItems.siblings('ul').hide();
 
-    } else {
-      // Hide all navs
-      $('.js-toc-list > ul > li > ul').hide();
-
-      // Show this subnav
-      $(this).siblings("ul").toggle('fast');
-
+    // If the clicked nav wasn't visible, show it
+    if (!wasVisible) {
+      $(this).addClass('is-active');
+      $(this).siblings("ul").slideToggle('fast');
     }
 
   });
