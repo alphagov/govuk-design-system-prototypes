@@ -20,7 +20,7 @@ sections_in_order = patterns_by_section.keys.sort_by do |r|
 end
 %>
 
-<h3 class="nav-group">Global design patterns</h3>
+<h3 class="nav-group">Gov.uk design patterns</h3>
 
 <ul>
 <%
@@ -59,11 +59,13 @@ sections_in_order.each do |section|
 
 <ul>
   <li<% if (current_page.path == "v9/govuk_design_patterns/departmental_patterns/index.html") %> class="current-page"<% end %>><a href="/v9/govuk_design_patterns/departmental_patterns">Departmental  patterns</a></li>
+  <li<% if (current_page.path == "v9/govuk_design_patterns/departmental_patterns/index.html") %> class="current-page"<% end %>><a href="#">Campaign sites</a></li>
 </ul>
 
 <h3 class="nav-group">Patterns team</h3>
 
 <ul>
-  <li<% if (current_page.path == "v9/govuk_design_patterns/backlog/index.html") %> class="current-page"<% end %>><a href="/v9/govuk_design_patterns/backlog">Patterns backlog</a></li>
-  <li<% if (current_page.path == "v9/govuk_design_patterns/statistics/index.html") %> class="current-page"<% end %>><a href="/v9/govuk_design_patterns/statistics">Pattern statistics</a></li>
+  <li<% if (current_page.path == "v9/govuk_design_patterns/backlog/index.html") %> class="current-page"<% end %>><a href="/v9/govuk_design_patterns/backlog">Backlog</a></li>
+  <li<% if (current_page.path == "v9/govuk_design_patterns/statistics/index.html") %> class="current-page"<% end %>><a href="/v9/govuk_design_patterns/statistics">Statistics</a></li>
+  <li<% if (current_page.path == "v9/govuk_design_patterns/statistics/index.html") %> class="current-page"<% end %>><a href="#">Contact</a></li>
 </ul>
