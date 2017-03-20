@@ -130,9 +130,15 @@
 
   position: relative;
   // padding-left: 0 !important;
-  border-left: 0 !important;
+  border-left: 4px solid transparent !important;
   background-color: white;
   margin-top: 10px;
+  text-decoration: none !important;
+
+  &:hover {
+    border-left: 4px solid $light-blue !important;
+    color: $govuk-blue !important;
+  }
 
 
   &:before {
@@ -307,6 +313,7 @@ ul ul.section {
         color: $secondary-text-colour;
         font-size: 24px;
         margin: $gutter 0 0;
+
         &::first-letter{
             text-transform: uppercase;
         }     
