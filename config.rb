@@ -71,7 +71,7 @@ activate :search do |search|
 
     # Index these
     aliases: {boost: 50},
-    content: {index: true, store: false},
+    content: {boost: 1, index: true, store: false},
 
     # Just make these available when presenting search results
     url:     {index: false, store: true},

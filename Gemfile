@@ -18,7 +18,10 @@ gem 'middleman-compass', '>= 4.0.0'
 gem 'middleman-sprockets', '~> 4.0.0'
 gem 'middleman-autoprefixer', '~> 2.7.0'
 gem 'middleman-syntax', '~> 3.0.0'
-gem 'middleman-search'
+
+# Use ExecJS instead of therubyracer
+# https://github.com/manastech/middleman-search/pull/24/files
+gem 'middleman-search', git: 'git@github.com:/daniel-rikowski/middleman-search.git'
 
 gem 'redcarpet', '~> 3.3.2'
 
