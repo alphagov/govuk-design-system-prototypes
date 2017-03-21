@@ -371,7 +371,12 @@ ul ul.section {
     > ul{
         @extend .list;
         @extend .list-bullet;
-    }
+
+      }
+
+    ul {
+      list-style: disc;
+    }  
 
     .example + .highlight{
         margin-top: -31px;
