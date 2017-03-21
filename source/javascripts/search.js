@@ -69,7 +69,7 @@ $(function() {
   $('#pattern-search-text').on('blur', function (event) {
     setTimeout(function () {
       $resultsContainer.css('display', 'none');
-    }, 50);
+    }, 150);
   });
 
   $('#pattern-search-text').on('keydown', function (evt) {
