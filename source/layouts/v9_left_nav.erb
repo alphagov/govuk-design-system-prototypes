@@ -34,16 +34,16 @@ sections_in_order.each do |section|
 <%
 
   patterns_by_theme = patterns_by_section[section].group_by { |r| r.data.theme  || "Other"}
+  themes = patterns_by_theme.keys.sort
 
-  patterns_by_theme.each do |theme, arr|
-
+  themes.each do |theme|
 %>
 
     <ul class="section">
       <% if theme != "Other" %>
       <li class="theme-heading"><%= theme %></li>
       <% end %>
-      <% arr.sort_by{|res| res.data.title}.each do |res| %>
+      <% patterns_by_theme[theme].sort_by{|res| res.data.title}.each do |res| %>
         <li class="<% if (current_page.path == res.path) %>current-page <% end %>status-<%= res.data.status.downcase.tr(" ", "-") %>"><%= link_to res.data.title, res.url %></li>
       <% end %>
     </ul>
