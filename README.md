@@ -71,9 +71,23 @@ the HTML and asset files ready to be published.
 
 ## Publish
 
-Assuming you've been given access rights, you can publish your current branch to Heroku with:
+Prototypes are published to [govuk-design-system-prototypes.cloudapps.digital/](https://govuk-design-system-prototypes.cloudapps.digital/), using [GOV.UK PaaS](https://www.cloud.service.gov.uk/)
 
-`git push heroku +HEAD:master`
+You'll need access to the the `gds-design` org and `prototypes` space. Contact the team to get this.
+
+The latest version should always be pushed to:
+
+`govuk-design-system-prototypes.cloudapps.digital`
+
+Versions from previous rounds of research should be published as seperate apps, like this:
+
+````
+govuk-design-system-prototypes-round-3.cloudapps.digital
+govuk-design-system-prototypes-round-2.cloudapps.digital
+govuk-design-system-prototypes-round-1.cloudapps.digital
+````
+
+Remember to run ‘bundle exec middleman build’ before you publish the app.
 
 
 
