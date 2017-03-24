@@ -1,23 +1,23 @@
 <ul>
-  <li>
+  <li<% if current_page.path == "design-patterns/index.html" %> class="active"<% end %>>
     <a href="/design-patterns">
       About
     </a>
   </li>
 
-  <li class="active">
+  <li<% if current_page.path.start_with? "design-patterns/patterns" %> class="active"<% end %>>
     <a href="/design-patterns/patterns/styles/colour">
       Patterns
     </a>
   </li>
 
-  <li>
+  <li<% if current_page.path.start_with? "design-patterns/community" %> class="active"<% end %>>
     <a href="/design-patterns/community">
       Contribute
     </a>
   </li>
 
-  <li>
+  <li<% if current_page.path.start_with? "design-patterns/support" %> class="active"<% end %>>
     <a href="/design-patterns/support">
       Support
     </a>
