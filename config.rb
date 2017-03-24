@@ -21,13 +21,13 @@ page '/*.txt', layout: false
 
 
 # Design patterns have a different default layout
-page "/v9/govuk_design_patterns/patterns/*", :layout => "design_pattern"
+page "/design-patterns/patterns/*", :layout => "design_pattern"
 
 
 # Create discussion pages for all the patterns
 ready do
 
-  pattern_root = "/v9/govuk_design_patterns/patterns/" 
+  pattern_root = "/design-patterns/patterns/" 
 
   sitemap.resources.select { |r| 
     r.data.section && 
@@ -35,7 +35,7 @@ ready do
     r.url.start_with?(pattern_root)
   }.each do |pattern|
 
-    proxy "#{pattern.url}discussion.html", "/v9/govuk_design_patterns/discussion.html", :locals => { 
+    proxy "#{pattern.url}discussion.html", "/design-patterns/discussion.html", :locals => { 
       :discuss  => pattern.data.discuss,
       :section  => pattern.data.section,
       :title    => pattern.data.title,
@@ -50,7 +50,7 @@ end
 # Search
 # https://github.com/manastech/middleman-search#usage
 activate :search do |search|
-  search.resources = ['v9/govuk_design_patterns/patterns']
+  search.resources = ['design-patterns/patterns']
 
   search.fields = {
     # Index the title, but also make it available when showing results
