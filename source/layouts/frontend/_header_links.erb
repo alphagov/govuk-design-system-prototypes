@@ -1,11 +1,11 @@
 <ul>
-    <li>
+    <li<% if current_page.path == "frontend/index.html" %> class="active"<% end %>>
       <a href="/frontend/">
         About
       </a>
     </li>
 
-    <li class="active">
+    <li<% if current_page.path.start_with? "frontend/docs" %> class="active"<% end %>>
       <a href="/frontend/docs/">
         Documentation
       </a>
