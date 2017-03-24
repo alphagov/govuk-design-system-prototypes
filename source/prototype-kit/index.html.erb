@@ -1,147 +1,107 @@
 ---
-layout: govuk_prototype_kit
+layout: product_page
 productName: Prototype Kit
 ---
 
-<div class="product-overview-intro">
-  <div class="wrapper">
-    <div class="grid-row">
+<% content_for :service_title do %>
+  Prototype Kit
+<% end %>
 
-      <div class="column-two-thirds">
+<% content_for :service_link, '/prototype-kit' %>
+
+<% content_for :header_links do %>
+  <ul>
+    <li class="active">
+      <a href="/prototype-kit">
+        About
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        Documentation
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        Community
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        Support
+      </a>
+    </li>
+  </ul>
+<% end %>
+
+<div class="masthead">
+  <div class="hero">
+    <div class="hero__content">
+      <div class="hero__body">
         <p class="service-toolkit-link">Part of the <a href="/">Service Toolkit</a></p>
-        <h1 class="heading-xlarge">Rapid HMTL protoyping <br>for  government services</h1>
-        <p class="lede "> 
-        The GOV.UK Prototype Kit is the fastest way to create prototypes of UK goverment services
+        <h1 class="hero__title">Rapid HMTL protoyping <br>for government services</h1>
+        <p class="hero__description">
+          The GOV.UK Prototype Kit is the fastest way to create prototypes of UK goverment services
         </p>
 
-        <div class="button-container">
-            <a class="button button-start" href="#">
-              Download v3.2
-            </a>
-        </div>
-
+        <a href="#" role="button" class="hero-button">
+          Download v3.2
+        </a>
       </div>
-
     </div>
   </div>
 </div>
 
-<br>
-
-<main id="content" role="main">
-
-  <div class="grid-row">    
-
-    <div class="column-full">
-      <h2 class="heading-medium">Designed for designers</h2>
-    </div>
-
-    <div class="column-one-half">
-      <p>
-        Start building HTML prototypes of GOV.UK services.
-        the step by step instructions guide you through installation and use. 
-      </p>
-      <p>
-        <a href="#">Read the documentation</a>
-      </p>
-    </div>
-
-    <div class="column-one-half">
-    </div>
-
-  </div>
-
-  <hr class="mb_0">
-
-    <div class="grid-row">    
-
-    <div class="column-full">
-      <h2 class="heading-medium">Works with GOV.UK Design Patterns</h2>
-    </div>
-
-    <div class="column-one-half">
-      <p>
-        The Kit works with GOV.UK Design Patterns out of the box. Simply copy the Nunjucks template for the pattern you want to use into your prototypes.
-      </p>
-      <p>
-        <a href="/design-patterns">GOV.UK Design Patterns</a>
-      </p>
-    </div>
-
-    <div class="column-one-half">
-    </div>
-
-  </div>
-
-  <hr class="mb_0">
-
-  <div class="grid-row">    
-
-    <div class="column-full">
-      <h2 class="heading-medium">Move seamlessly from prototype to production</h2>
-    </div>
-
-    <div class="column-one-half">
-      <p>
-        If your service uses GOV.UK Frontend your developers will be able to reuse your prototype code.
-      </p>
-      <p>
-        <a href="/frontend">GOV.UK Frontend</a>
-      </p>
-    </div>
-
-    <div class="column-one-half">
-    </div>
-
-  </div>
-
-  <hr class="mb_0">
-
-  <div class="grid-row">    
-
-    <div class="column-full">
-      <h2 class="heading-medium">Community driven</h2>
-    </div>
-
-    <div class="column-one-half">
-      <p>
-        All code is open source and has been developed by service teams across government.
-      </p>
-
-      <p>
-          <a href="#">Contribute to the GOV.UK Prototype Kit</a>
-      </p>
-    </div>
-
-    <div class="column-one-half">
-    </div>
-
-  </div>
-
-  <hr class="mb_0">
-
+<div class="container">
   <div class="grid-row">
+    <div class="column-two-thirds">
+      <section class="content-section">
+        <h2 class="heading-medium content-section__first-heading">Designed for designers</h2>
+        <p>Start building HTML prototypes of GOV.UK services. The step by step instructions guide you through installation and use. </p>
 
-    <div class="column-full">
-      <h2 class="heading-medium">Fully supported</h2>
+        <p>
+          <a href="#">Read the documentation</a>
+        </p>
+      </section>
+
+      <section class="content-section content-section--with-top-border">
+        <h2 class="heading-medium content-section__first-heading">Works with GOV.UK Design Patterns</h2>
+        <p>The Kit works with GOV.UK Design Patterns out of the box. Simply copy the Nunjucks template for the pattern you want to use into your prototypes.</p>
+
+        <p>
+          <a href="/design-patterns">GOV.UK Design Patterns</a>
+        </p>
+      </section>
+
+      <section class="content-section content-section--with-top-border">
+        <h2 class="heading-medium content-section__first-heading">Move seamlessly from prototype to production</h2>
+        <p>If your service uses GOV.UK Frontend your developers will be able to reuse your prototype code.</p>
+
+        <p>
+          <a href="/frontend">GOV.UK Frontend</a>
+        </p>
+      </section>
+
+      <section class="content-section content-section--with-top-border">
+        <h2 class="heading-medium content-section__first-heading">Community driven</h2>
+        <p>All code is open source and has been developed by service teams across government.</p>
+
+        <p>
+          <a href="#">Contribute to the GOV.UK Prototype Kit</a>
+        </p>
+      </section>
+
+      <section class="content-section content-section--with-top-border">
+        <h2 class="heading-medium content-section__first-heading">Fully supported</h2>
+        <p>The GOV.UK Prototype Kit is built and supported by a full time team at the Government Digital Service.</p>
+
+        <p>
+          <a href="#">Contact the team</a>
+        </p>
+      </section>
     </div>
-
-
-    <div class="column-one-half">
-      <p>
-        The GOV.UK Prototype Kit is built and supported by a full time team at the Government Digital Service.
-      </p>
-      <p>
-        <a href="#">Contact the team</a>
-      </p>
-    </div>
-
-    <div class="column-one-half">
-
-    </div>
-
   </div>
-  
-
-
-</main>
+</div>

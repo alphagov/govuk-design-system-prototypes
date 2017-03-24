@@ -80,10 +80,6 @@
     margin-top: 18px; // Hack so the subheadings align nicely with the search box :-)
 }
 
-.service-toolkit-link{
-  margin: 20px 0 -15px;
-}
-
 .nav-group{
   font-size: 19px;
   margin: 30px 15px 15px 0;
@@ -701,39 +697,6 @@ $palette: (
   display: block;
 }
 
-.service-toolkit{
-
-  .product-name{
-    font-weight: 400;
-    font-size: 24px;
-    white-space: nowrap;
-  }
-
-  .section-header {
-    margin: $gutter 0 $gutter/2 0;
-    color: $grey-1;
-    font-size: em(19);
-    border-bottom: 1px solid $grey-2;
-    padding-bottom: 5px;
-  }
-
-  .page-header__context {
-      font-family: "nta", Arial, sans-serif;
-      font-weight: 400;
-      text-transform: none;
-      font-size: 24px;
-      line-height: 1.25;
-      color: #6f777b;
-      margin-bottom: em(10);
-      padding-bottom: .167em;
-
-      @media screen and (max-width: 640px) {
-        font-size: 18px;
-        line-height: 1.2;
-      }
-  }
-
-}
 
 
 .inline-thirds{

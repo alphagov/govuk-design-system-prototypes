@@ -1,150 +1,80 @@
 ---
-layout: frontend_product
+layout: product_page
 productName: Frontend
 ---
 
-<div class="product-overview-intro">
-  <div class="wrapper">
+<% content_for :service_title do %>
+  Frontend
+<% end %>
 
-    <div class="grid-row">
+<% content_for :service_link, '/frontend' %>
 
-      <div class="column-two-thirds">
+<% content_for :header_links do %>
+  <%= partial 'layouts/frontend/header_links' %> 
+<% end %>
 
+<div class="masthead">
+  <div class="hero">
+    <div class="hero__content">
+      <div class="hero__body">
         <p class="service-toolkit-link">Part of the <a href="/">Service Toolkit</a></p>
-
-        <h1 class="heading-xlarge">The web framework for government services</h1>
-        <p class="lede "> 
-        Build responsive, accessible web interfaces for GOV.UK
+        <h1 class="hero__title">The web framework for government services</h1>
+        <p class="hero__description">
+          Build responsive, accessible web interfaces for GOV.UK
         </p>
-
-        <div class="button-container">
-            <a class="button button-start" href="#">
-              Download v3.2
-            </a>
-        </div>
+        <a href="#" role="button" class="hero-button">
+          Download v3.2
+        </a>
       </div>
-
     </div>
-
   </div>
 </div>
 
-<br>
-
-<main id="content" role="main">
-
-  <div class="grid-row">    
-
-    <div class="column-full">
-      <h2 class="heading-medium">A single package</h2>
-    </div>
-
-    <div class="column-one-half">
-      <p>
-        A single Node or Rails package containing everything you need to build web interfaces for GOV.UK.
-      </p>
-      <p>
-        <a href="/frontend/docs">Read the documentation</a>
-      </p>
-    </div>
-
-    <div class="column-one-half">
-    </div>
-
-  </div>
-
-  <hr class="mb_0">
-
-    <div class="grid-row">    
-
-    <div class="column-full">
-      <h2 class="heading-medium">Nunjucks and Ruby templates</h2>
-    </div>
-
-    <div class="column-one-half">
-      <p>
-        Many of our design patterns now come with templates that you can use with GOV.UK Frontend.
-      </p>
-      <p>
-        <a href="/design-patterns">GOV.UK Design Patterns</a>
-      </p>
-    </div>
-
-    <div class="column-one-half">
-    </div>
-
-  </div>
-
-  <hr class="mb_0">
-
-  <div class="grid-row">    
-
-    <div class="column-full">
-      <h2 class="heading-medium">Move seamlessly from design to production</h2>
-    </div>
-
-    <div class="column-one-half">
-      <p>
-        GOV.UK Frontend is integrated into the GOV.UK Prototype Kit, so it's the
-        quickest way to turn a prototype into production code.
-      </p>
-      <p>
-        <a href="/prototype-kit">GOV.UK Prototype Kit</a>
-      </p>
-    </div>
-
-    <div class="column-one-half">
-    </div>
-
-  </div>
-
-  <hr class="mb_0">
-
-  <div class="grid-row">    
-
-    <div class="column-full">
-      <h2 class="heading-medium">Community driven</h2>
-    </div>
-
-    <div class="column-one-half">
-      <p>
-        All code is open source and has been developed by service teams across government.
-      </p>
-
-      <p>
-          <a href="#">Contribute to GOV.UK Frontend</a>
-      </p>
-    </div>
-
-    <div class="column-one-half">
-    </div>
-
-  </div>
-
-  <hr class="mb_0">
-
+<div class="container">
   <div class="grid-row">
+    <div class="column-two-thirds">
+      <section class="content-section">
+        <h2 class="heading-medium content-section__first-heading">A single package</h2>
+        <p>A single Node or Rails package containing everything you need to build web interfaces for GOV.UK.</p>
 
-    <div class="column-full">
-      <h2 class="heading-medium">Fully supported</h2>
+        <p>
+          <a href="/frontend/docs">Read the documentation</a>
+        </p>
+      </section>
+        
+      <section class="content-section content-section--with-top-border">
+        <h2 class="heading-medium content-section__first-heading">Nunjucks and Ruby templates</h2>
+        <p>Many of our design patterns now come with templates that you can use with GOV.UK Frontend.</p>
+        <p>
+          <a href="/design-patterns">GOV.UK Design Patterns</a>
+        </p>
+      </section>
+
+      <section class="content-section content-section--with-top-border">
+        <h2 class="heading-medium content-section__first-heading">Move seamlessly from design to production</h2>
+        <p>GOV.UK Frontend is integrated into the GOV.UK Prototype Kit, so it's the
+        quickest way to turn a prototype into production code.</p>
+        <p>
+          <a href="/prototype-kit">GOV.UK Prototype Kit</a>
+        </p>
+      </section>
+
+      <section class="content-section content-section--with-top-border">
+        <h2 class="heading-medium content-section__first-heading">Community driven</h2>
+        <p>All code is open source and has been developed by service teams across government.</p>
+
+        <p>
+          <a href="#">Contribute to GOV.UK Frontend</a>
+        </p>
+      </section>
+
+      <section class="content-section content-section--with-top-border">
+        <h2 class="heading-medium content-section__first-heading">Fully supported</h2>
+        <p>GOV.UK Frontend is built and supported by a full time team at the Government Digital Service.</p>
+        <p>
+          <a href="#">Contact the team</a>
+        </p>
+      </section>
     </div>
-
-
-    <div class="column-one-half">
-      <p>
-        GOV.UK Frontend is built and supported by a full time team at the Government Digital Service.
-      </p>
-      <p>
-        <a href="#">Contact the team</a>
-      </p>
-    </div>
-
-    <div class="column-one-half">
-
-    </div>
-
   </div>
-  
-
-
-</main>
+</div>
