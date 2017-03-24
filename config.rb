@@ -21,7 +21,7 @@ page '/*.txt', layout: false
 
 
 # Design patterns have a different default layout
-page "/v9/govuk_design_patterns/patterns/*", :layout => "v9_design_pattern"
+page "/v9/govuk_design_patterns/patterns/*", :layout => "design_pattern"
 
 
 # Create discussion pages for all the patterns

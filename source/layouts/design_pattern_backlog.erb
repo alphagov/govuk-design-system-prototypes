@@ -6,7 +6,7 @@
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
 
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= title || "GOV.UK Documentation" %></title>
+    <title><%= current_page.data.title || "GOV.UK Documentation" %></title>
 
     <!--[if gt IE 8]><!--><%= stylesheet_link_tag :screen, media: 'screen' %><!--<![endif]-->
     <!--[if lte IE 8]><%= stylesheet_link_tag 'screen-old-ie', media: 'screen' %><![endif]-->
@@ -86,6 +86,8 @@
         </a>
       </div>
 
+      <% html = yield %>
+
       <div class="app-pane__body" data-module="highlighted-nav">
 
         <div class="app-pane__toc">
@@ -99,7 +101,9 @@
           <div class="toc" data-module="table-of-contents">
             <a href="#" class="toc__close js-toc-close">Close</a>
             <nav  id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
-              <%= partial('/layouts/v9_left_nav') %>
+
+              <%= partial('/layouts/left_nav') %>
+
             </nav>
           </div>
         </div>
@@ -107,29 +111,10 @@
         <div class="app-pane__content">
           <main id="content" class="technical-documentation markdown" data-module="anchored-headings">
 
-          <div class="pattern-header">
+            <p class="section-heading"><%= current_page.data.section %></p>
+            <h1><%= current_page.data.title %></h1>
 
-            <p class="section-heading"><%= section %></p>
-            <h1><%= title %><span class="status"><%= status %></span></h1>
-
-            <div class="tabs-multi-page">
-              <div class="tab"><a href="<%= url %>">Guide</a></div>
-              <div class="tab"><a href="<%= url %>code.html">Code</a></div>
-              <div class="tab current"><a href="<%= url %>discussion.html">Discussion</a></div>
-            </div>
-
-          </div>
-
-          <p>You can discuss this pattern on the Hackpad below.</p>
-
-          <p>
-            Please note that this is not formal Cabinet Office guidance. <br>
-            All views expressed are those of the individual contributors. 
-          </p>
-
-          <div class="hackpad">
-            <script src="<%= discuss %>.js"></script><noscript><div>View <a href="<%= discuss %>">Tables</a> on Hackpad.</div></noscript>
-          </div> 
+            <%= html %>
 
           </main>
         </div>

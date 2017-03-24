@@ -1,5 +1,5 @@
 ---
-layout:		v9_frontend_docs
+layout:		frontend_docs
 title:		Template blocks
 ---
 

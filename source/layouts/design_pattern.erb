@@ -102,7 +102,7 @@
             <a href="#" class="toc__close js-toc-close">Close</a>
             <nav  id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
 
-              <%= partial('/layouts/v9_left_nav') %>
+              <%= partial('/layouts/left_nav') %>
 
             </nav>
           </div>
@@ -111,10 +111,39 @@
         <div class="app-pane__content">
           <main id="content" class="technical-documentation markdown" data-module="anchored-headings">
 
+          <div class="pattern-header">
             <p class="section-heading"><%= current_page.data.section %></p>
-            <h1><%= current_page.data.title %></h1>
+            <h1><%= current_page.data.title %><a href="/v9/govuk_design_patterns/community"><span class="status"><%= current_page.data.status %></span></a></h1>
+
+            <div class="grid-row">
+              <div class="column-two-thirds">
+
+                <div class="govuk-metadata">
+                  <dl>
+                      <dt>Last edited:</dt>
+                      <dd>15/03/2017</dd>                      
+                      <dt>Edit on:</dt>
+                      <dd><a href="<%= current_page.data.edit %>">Github</a></dd>
+                  </dl>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="tabs-multi-page">
+              <div class="tab current"><a href="<%= current_page.url %>">Guide</a></div>
+              <div class="tab"><a href="<%= current_page.url %>code.html">Code</a></div>
+              <div class="tab"><a href="<%= current_page.url %>discussion.html">Discussion</a></div>
+            </div>
 
             <%= html %>
+
+
+            <% if current_page.data.discuss %>
+
+                <p class="font-bold"><a href="<%= current_page.url %>discussion.html">Discuss this pattern on Hackpad</a></p>
+
+            <% end %>
 
           </main>
         </div>
