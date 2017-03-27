@@ -1,0 +1,98 @@
+---
+layout: design_pattern_backlog
+productName: Design Patterns
+sectionNav: patterns
+---
+
+
+<%
+pattern_root = "/design-patterns/patterns/" 
+status_order = ["Backlog", "Alpha", "Beta", "Approved"]
+
+# Get all the patterns
+# Sort them by title
+
+design_patterns = sitemap.resources													
+	.select { |r|		
+    	r.data.section && 								
+		r.url.start_with?(pattern_root)											
+	}
+	.sort_by { |r| r.data.title }
+%>
+
+
+
+<div class="stats">
+	<div class="stat">
+		<div>
+			<span class="stat-number"><%= design_patterns.length %></span>
+			<span class="stat-name">Patterns</span>
+		</div>
+	</div>
+	<div class="stat">&nbsp;</div>
+	<%
+	design_patterns_by_status = design_patterns.group_by { |r| r.data.status }
+
+	design_patterns_by_status_ordered = design_patterns_by_status.keys.sort_by do |r|
+	  status_order.index(r) || Float::INFINITY
+	end
+
+	design_patterns_by_status_ordered.each do |status|
+  		arr = design_patterns_by_status[status]		
+	%>
+
+	<div class="stat">
+		<div>
+			<span class="stat-number"><%= arr.size %></span>
+			<span class="stat-name"><%= status %></span>
+		</div>
+	</div>
+
+	<% end %>
+</div>
+
+
+<h3>Using these patterns</h3>
+
+<p>
+	These patterns build on the research and experience of teams across government
+	and help you make your design consistent with that of other services on GOV.UK.
+</p>
+
+<p>
+	In this collection you’ll find all the approved GOV.UK patterns, as well the backlog, alpha and beta patterns we’re currently working on.
+</p>
+
+<p><a href="/design-patterns/contribute">Find out how to contribute your own patterns</a></p>
+
+
+<h3>Meeting the Digital Service Standard</h3>
+
+<p>To pass <a href="#">point 13 (make the user experience consistent with GOV.UK)</a> in your <a href="#">service assessments</a>, you must use approved GOV.UK design patterns that are relevant to your service.</p>
+
+
+
+<h3>Full alphabetical list of patterns</h3>
+
+<br>
+
+<table class="patterns-table">
+	<tr>
+		<th style="width: 35%;">Pattern</th>
+		<th>Status</th>
+		<th>Section</th>
+		<!--<th>Priority</th>-->
+		<th>Scope</th>
+	</tr>
+<%			
+design_patterns.each do |res| 
+%>	 
+	<tr>
+		<td><%= link_to res.data.title, res.url %></td>
+		<td><%= res.data.status %></td>
+		<td><%= res.data.section %></td>
+		<!--<td><%= res.data.priority %></td>-->
+		<td><%= res.data.department %> departments</td>
+	</tr>
+<% end %>
+</table>

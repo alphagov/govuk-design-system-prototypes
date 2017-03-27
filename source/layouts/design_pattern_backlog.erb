@@ -13,8 +13,12 @@
 <% end %>
 
 <% wrap_layout :docs do %>
+  <% if current_page.data.section %>
   <p class="section-heading"><%= current_page.data.section %></p>
+  <% end %>
+  <% if current_page.data.title %>
   <h1><%= current_page.data.title %></h1>
+  <% end %>
 
   <%= yield %>
 <% end %>
