@@ -1,129 +1,103 @@
 ---
-layout: govuk_design_patterns
+title: GOV.UK Design Patterns
+layout: product_page
 productName: Design Patterns
 sectionNav: about
 ---
+<% content_for :service_title do %>
+  Design Patterns
+<% end %>
 
-<div class="product-overview-intro">
-  <div class="wrapper">
-    <div class="grid-row">
+<% content_for :service_link, '/design-patterns' %>
 
-      <div class="column-two-thirds">
+<% content_for :header_links do %>
+  <%= partial 'layouts/design-patterns/header_links' %> 
+<% end %>
+
+<div class="masthead">
+  <div class="hero">
+    <div class="hero__content">
+      <div class="hero__body">
         <p class="service-toolkit-link">Part of the <a href="/service-toolkit">Service Toolkit</a></p>
-        <h1 class="heading-xlarge">Design patterns for government services</h1>
-        <p class="lede">
+        <h1 class="hero__title">Design patterns for government services</h1>
+        <p class="hero__description">
           Design usable content and services for GOV.UK
         </p>
-
-
       </div>
-
     </div>
   </div>
 </div>
 
-<br>
-
-<main id="content" role="main">
-
-
-
-
-<div class="grid-row">  
-  <div class="column-two-thirds">
-    <h2 class="heading-large ">Patterns</h2>
-
-      <p>
-        All patterns come with coded examples, ready to use in your prototypes or production services with <a href="/prototype-kit">GOV.UK Prototype Kit</a> and <a href="/frontend">GOV.UK Frontend</a>
-      </p>
-    
-
-  </div>
-</div>
-
-<div class="grid-row">
-  <div class="column-one-third">
-    <h3 class="heading-medium"><a href="#">Styles</a></h3>
-    <p>Base level styles including colours, typography, grid system and buttons</p>
-  </div>
-  <div class="column-one-third">
-    <h3 class="heading-medium"><a href="#">Components</a></h3>
-    <p>Reusable parts to build your interface – navigation, form groups and search boxes</p>
-  </div>
-  <div class="column-one-third">
-    <h3 class="heading-medium"><a href="#">Pages</a></h3>
-    <p>Established page layouts, for example confirmation page, question page and search results</p>
-  </div>
-</div>
-<div class="grid-row">
-  <div class="column-one-third">
-    <h3 class="heading-medium"><a href="#">Tasks</a></h3>
-    <p>Patterns based around specific actions like making a decision, paying for something, signing something</p>
-  </div>
-  <div class="column-one-third">
-    <h3 class="heading-medium"><a href="#">Service</a></h3>
-    <p>High level guidance and examples for end to end service design</p>
-  </div>
-  <div class="column-one-third">
-    <h3 class="heading-medium"><a href="#">Departmental</a></h3>
-    <p>Patterns developed by individual Government departments</p>
-  </div>
-
-</div>
-
-
-  <hr class="mb_0">
-
-  <div class="grid-row">    
-
-    <div class="column-full">
-      <h2 class="heading-large">Contribute to the community</h2>
-    </div>
-
+<div class="container">
+  <div class="grid-row">
     <div class="column-two-thirds">
-      <p>
-        All design and code is open source and has been developed by service teams across government.
+      <section class="content-section">
+        <h2 class="heading-large content-section__first-heading">Patterns</h2>
+        <p>
+        All patterns come with coded examples, ready to use in your prototypes or production services with <a href="/prototype-kit">GOV.UK Prototype Kit</a> and <a href="/frontend">GOV.UK Frontend</a>.
       </p>
-
-      <p>
-          <a href="/design-patterns/community">Develop and submit your own patterns</a>
-      </p>
-
-      <p>
-        <a href="/design-patterns/backlog">Check our backlog to see what we're working on next</a>
-      </p>
+      </section>
     </div>
-
-    <div class="column-two-thirds">
-    </div>
-
   </div>
-
-  <hr class="mb_0">
 
   <div class="grid-row">
-
-    <div class="column-full">
-      <h2 class="heading-large">Fully supported</h2>
+    <div class="column-one-third">
+      <h3 class="heading-medium"><a href="#">Styles</a></h3>
+      <p>Base level styles including colours, typography, grid system and buttons</p>
     </div>
-
-
-    <div class="column-one-half">
-      <p>
-        GOV.UK Design Patterns is built and supported by a full time team at the Government Digital Service.
-      </p>
-      <p>
-        <a href="/design-patterns/support">Contact the team</a>
-      </p>
-      <p>
-        <a href="/design-patterns/statistics">View pattern statistics</a>
-      </p>
+    <div class="column-one-third">
+      <h3 class="heading-medium"><a href="#">Components</a></h3>
+      <p>Reusable parts to build your interface – navigation, form groups and search boxes</p>
     </div>
-
-    <div class="column-one-half">
-
+    <div class="column-one-third">
+      <h3 class="heading-medium"><a href="#">Pages</a></h3>
+      <p>Established page layouts, for example confirmation page, question page and search results</p>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="column-one-third">
+      <h3 class="heading-medium"><a href="#">Tasks</a></h3>
+      <p>Patterns based around specific actions like making a decision, paying for something, signing something</p>
+    </div>
+    <div class="column-one-third">
+      <h3 class="heading-medium"><a href="#">Service</a></h3>
+      <p>High level guidance and examples for end to end service design</p>
+    </div>
+    <div class="column-one-third">
+      <h3 class="heading-medium"><a href="#">Departmental</a></h3>
+      <p>Patterns developed by individual Government departments</p>
     </div>
 
   </div>
 
-</main>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <section class="content-section content-section--with-top-border">
+        <h2 class="heading-large content-section__first-heading">Contribute to the community</h2>
+        <p>All design and code is open source and has been developed by service teams across government.</p>
+
+        <p>
+          <a href="/design-patterns/community">Develop and submit your own patterns</a>
+        </p>
+
+        <p>
+          <a href="/design-patterns/backlog">Check our backlog to see what we're working on next</a>
+        </p>
+      </section>
+
+      <section class="content-section content-section--with-top-border">
+        <h2 class="heading-large content-section__first-heading">Fully supported</h2>
+        <p>GOV.UK Design Patterns is built and supported by a full time team at the Government Digital Service.</p>
+
+        <p>
+          <a href="/design-patterns/support">Contact the team</a>
+        </p>
+        <p>
+          <a href="/design-patterns/statistics">View pattern statistics</a>
+        </p>
+      </section>
+
+    </div>
+  </div>
+</div>
