@@ -1,19 +1,25 @@
 ---
-layout: govuk_design_patterns
+layout: plain
 productName: Design Patterns
 sectionNav: support
 ---
 
-<main id="content" role="main">
+<% content_for :service_title do %>
+  Design Patterns
+<% end %>
 
-  <div class="grid-row">    
+<% content_for :service_link, '/design-patterns' %>
 
-    <div class="column-full">
-      <h2 class="heading-large">Support</h2>
+<% content_for :header_links do %>
+  <%= partial 'layouts/design-patterns/header_links' %> 
+<% end %>
+
+<div class="container" style="margin-top: 30px;">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <div class="markdown">
+        <h2 class="heading-large">Support</h2>
+      </div>
     </div>
-
   </div>
-
-
-
-</main>
+</div>
