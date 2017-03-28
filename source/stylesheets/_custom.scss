@@ -16,7 +16,7 @@
     @include grid-column(1 / 6);
 
     div{
-      width: 70px;
+      min-width: 70px;
       span{
         text-align: center;
         display: block
