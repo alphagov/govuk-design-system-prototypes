@@ -47,7 +47,7 @@
 
     <div class="tabs-multi-page">
       <div class="tab<% unless current_page.data.filter %> current<% end %>">
-        <a href="/design-patterns/patterns">All Patterns <span class="tab-count">(<%= patterns.length %>)</span></a>
+        <a href="/design-patterns/patterns">All Patterns <span class="tab-count">(<%= all_patterns.length %>)</span></a>
       </div>
       <% statuses.each do |status|
         patterns = patterns_by_status[status] %>
