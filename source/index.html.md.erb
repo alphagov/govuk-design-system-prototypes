@@ -4,6 +4,7 @@ layout: blank
 ---
 <br>
 
+
 # GOV.UK design system prototypes
 
 These prototypes explore options for publishing design resources on GOV.UK. [The source code is available on GitHub](https://github.com/alphagov/govuk_design_prototypes)
@@ -18,11 +19,15 @@ These prototypes explore options for publishing design resources on GOV.UK. [The
 - updated the 'contribute' page based on the work we've been doing on our contribution model
 - list all patterns by section on the homepage to allow users to understand the structure of the thing
 
+
 ### [Version 1](https://govuk-design-system-prototypes-round-4-v1.cloudapps.digital/service-toolkit)
 
-- updated the styling of the navigation so users have a better understanding of hierarchy
-- changed styling of status tag (was confused with phase banner for Design patterns in research)
-- introduced a new client side search feature
+- Added working search functionality
+  * <span class="reason-for-change">Findings:</span> Many users in the previous round of research interacted with the search input or suggested search would be their preference.
+- Updated the styling of the navigation so users have a better understanding of hierarchy
+  * <span class="reason-for-change">Findings:</span> In research many users were unaware that the sections were expandable. Some users were unaware that there were multiple sections and not just one list.
+- Changed styling of status tag
+  * <span class="reason-for-change">Findings:</span> In research some users confused the pattern status with the status of the “Design Patterns” prototype as a whole.
 
 
 ## [Research round 3](https://govuk-design-system-prototypes-round-3.cloudapps.digital/v9/govuk_service_toolkit/)
@@ -31,22 +36,31 @@ In this version we:
 
 - refactored the code so we can generate pages and navigation using YAML frontmatter
 - added lots of missing patterns from the master list
-- added aliases for patterns (for when we implement auto-suggest)
+- added aliases for patterns
+  * <span class="reason-for-change">Findings:</span> Users have expressed that the search should be intelligent enough to recognise alternative names for patterns as well as related concepts.
 - added a prioritised backlog page
 - added a departmental patterns page
+  * <span class="reason-for-change">To:</span> test the concept of departmental patterns and talk about contribution models.
 - added an patterns statistics page
-- removed the anchored heading icon (it confused one user and is less relevant for multi-page docs)
+  * <span class="reason-for-change">Reckon:</span> By making a statistics page it gives context to the Design Patterns project, adds visibility outside of GDS, gives an overview of all of the patterns in the library.
+- removed the anchored heading icon 
+  * <span class="reason-for-change">Findings:</span> it confused one user and is less relevant for multi-page docs.
 - added the ability to style left nav items according to pattern status
 - Embedded the Hackpads in the pattern pages
+  * <span class="reason-for-change">Findings:</span> Users have continually voiced that “It's better to have everything in one place”. Despite some reservations around using the hackpad embed code it feels useful and will expose conversation, history and research of a pattern.
 - Added 'Guide', 'Code' and 'Discussion' tabs to the top of each pattern
+  * <span class="reason-for-change">Reckon:</span> That there are different users and different use cases for guidance, code and discussion. Presenting them all on one page might be confusing.
 - added pattern status to items in navigation
-- changed pattern status styling on pattern page
+  * <span class="reason-for-change">Findings:</span> In research some users mentioned navigating to “Backlog” patterns all the time was frustrating. This will help reveal the status of the pattern before any user interaction.
 - added more placeholder content for backlog patterns
 - updated typography to use “elements” sizing / spacing
 - added a 'theme' meta-data item and group patterns in each nav section by theme
+  * <span class="reason-for-change">Reckon:</span> As the components section increases in size it becomes hard to navigate. User's are more likely to be looking for related components at the same time.
 - added GOV.UK Frontend documentation
 - added "last edited date"
+  * <span class="reason-for-change">Findings:</span> In research many of the users mentioned looking for a “single source of truth” - a last edited date would help them justify a decision to prioritse one pattern over another. 
 - added link to community page from status tag
+  * <span class="reason-for-change">Findings:</span> In research many of the users were observed clicking the status tag to find out what it meant
 
 ---
 
@@ -55,21 +69,29 @@ In this version we:
 In this version we:
 
 - redesigned the Design Patterns landing page to make it consistent with other GDS product pages
+  * <span class="reason-for-change">To:</span> make experience consistant when browsing from the Service Toolkit page.
 - added primary nav to the Design Patterns header to make it more consistent with other GDS product pages
 - moved the search from the Design Patterns header into the left nav of the Patterns section
-- made it so users now jump straight into the first pattern (reckon: seeing a pattern is the best way to understand what they are)
+  * <span class="reason-for-change">To:</span> make it clearer that the search input was related to the content within the navigation  
+- made it so users now jump straight into the first pattern
+  * <span class="reason-for-change">Reckon:</span> By starting with the first section open we hope to give the users a hint about how the navigation works and how patterns are presented.
 - tweaked the colour pattern, as it's now the first one users see
 - removed previous and next links from pattern pages
+  * <span class="reason-for-change">Findings:</span> In research these were seen as unessasasry and there was confusion about what "next" would mean in this context.
 - updated Service Toolkit and Design Patterns landing page copy to use more keywords
 - reorganised the Service Toolkit page around activities
 - added a 'contact the team' call to action
 - made patterns order alphabetically within each category
 - changed the way nav works so we can add meta data (like status) against each pattern
 - updated the GOV.UK Frontend product page to make it consistent with other product pages
+  * <span class="reason-for-change">To:</span> avoid breaking user journey in prototype – When testing patterns with FE Developers we don't want to break their journey if they click this link from the toolkit.
 - added a product page for the GOV.UK Prototype Kit
+  * <span class="reason-for-change">To:</span> avoid breaking user journey in prototype.
 - removed seperate departmental libraries for now
 - added links back to the Service Toolkit from each product page
+  * <span class="reason-for-change">To:</span> avoid breaking user journey in prototype.
 - added status and meta data
+  * <span class="reason-for-change">To:</span> allow us to filter and sort by pattern status – It is assumed that there is a benefit to see patterns of all statuses and only individually.
 
 ---
 
@@ -81,3 +103,12 @@ In this version we:
 - explored the idea of a single 'design system' product
 - explored a single-page version of the patterns in the Service Manual that used the tech doc format
 
+---
+
+## Research round 0
+
+Before making a prototype we:
+
+- researched existing pattern libraries and style guides [Audit spreadsheet](https://docs.google.com/spreadsheets/d/11hp4fIAqAmonc4ATW7mJA7cdkN5soqRpU4AROBUGvBQ/edit?ts=58db7b35#gid=0) 
+- looked at some “Off the shelf” solutions
+- looked at how this could re-use some of the concepts and styling of the “Tech docs format”
