@@ -57,6 +57,8 @@
       <% end %>
     </div>
 
+    <%= yield_content :status_description %>
+
     <% sections.each do |section, description|
       patterns_in_section = patterns_by_section[section]
       next unless patterns_in_section %>
