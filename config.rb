@@ -72,7 +72,7 @@ end
 
 # Reload the browser automatically whenever files change
 configure :development do
-  # activate :livereload
+  activate :livereload
 end
 
 activate :autoprefixer
