@@ -1,0 +1,74 @@
+<% content_for :service_title do %>
+  Design Patterns
+<% end %>
+
+<% content_for :service_link, '/design-patterns' %>
+
+<% content_for :header_links do %>
+  <%= partial 'layouts/design-patterns/header_links' %> 
+<% end %>
+
+<% content_for :sidebar do %>
+ <%= partial 'layouts/design-patterns/nav' %>
+<% end %>
+
+<% wrap_layout :docs do %>
+
+  <h1 style="margin-bottom: 60px;">Design Patterns</h1>
+
+  <%
+    pattern_root = "/design-patterns/patterns/"
+    statuses = ["Backlog", "Alpha", "Beta", "Approved"]
+    sections = {
+      "Styles" => "The basic styles and elements from which all patterns are made",
+      "Components" => "Common UI components",
+      "Pages" => "Examples of common page types for government services",
+      "Tasks" => "Patterns for common tasks that users perform within a service",
+      "Services"  => "Guides for designing services"
+    }
+
+    # Get all the patterns
+    # Sort them by title
+    # 
+    all_patterns = sitemap.resources
+      .select { |r| r.data.section && r.url.start_with?(pattern_root) }
+
+    if (current_page.data.filter)
+      patterns = all_patterns.select { |r| r.data.status == current_page.data.filter }
+    else
+      patterns = all_patterns
+    end
+
+    patterns_by_section = patterns.sort_by { |r| r.data.title }
+      .group_by { |r| r.data.section }
+
+    patterns_by_status = all_patterns.group_by { |r| r.data.status }
+    %>
+
+    <div class="tabs-multi-page">
+      <div class="tab<% unless current_page.data.filter %> current<% end %>">
+        <a href="/design-patterns/patterns">All Patterns <span class="tab-count">(<%= patterns.length %>)</span></a>
+      </div>
+      <% statuses.each do |status|
+        patterns = patterns_by_status[status] %>
+      <div class="tab<% if current_page.data.filter == status %> current<% end %>">
+        <a href="/design-patterns/patterns/<%= status.downcase %>.html"><%= status %> <span class="tab-count">(<%= patterns.length %>)</span></a>
+      </div>
+      <% end %>
+    </div>
+
+    <% sections.each do |section, description|
+      patterns_in_section = patterns_by_section[section]
+      next unless patterns_in_section %>
+
+      <h2 class="section-title"><%= section %></h2>
+      <p class="section-description"><%= description %></p>
+
+      <ul class="pattern-list">
+        <% patterns_in_section.each do |pattern| %>
+          <li><%= link_to pattern.data.title, pattern.url %> <% if !current_page.data.filter && pattern.data.status != "Approved" %><span class="status"><%= pattern.data.status %></span><% end %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+<% end %>

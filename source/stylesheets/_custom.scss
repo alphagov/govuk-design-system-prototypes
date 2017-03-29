@@ -746,27 +746,40 @@ $palette: (
 
 // Status on h1 
 
+span.status {
+  @include box-sizing(border-box);
+  
+  vertical-align: middle;
+  font-size: 10px;
+  padding: 1px 3px;
+  font-weight: bold;
+  color: $secondary-text-colour;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid $border-colour;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
 h1 {
   position:relative;
+}
 
-  span.status {
-    @include box-sizing(border-box);
-    position: absolute;
-    font-size: 15px;
-    margin-left: $gutter-half;
-    margin-top: 12px;
-    
-    font-weight: bold;
-    color: $govuk-blue;
-    padding: 5px 7px 4px 7px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border: 2px solid $govuk-blue;
-
-    &:hover {
-      color: $light-blue;
-      border: 2px solid $light-blue;
-    }
+h1 span.status {
+  position: absolute;
+  font-size: 15px;
+  margin-left: $gutter-half;
+  margin-top: 12px;
+  
+  color: $govuk-blue;
+  
+  padding: 5px 7px 4px 7px;
+  border-width: 2px;
+  border-color: $govuk-blue;
+  
+  &:hover {
+    color: $light-blue;
+    border-color: $light-blue;
   }
 }
 
@@ -778,3 +791,36 @@ h1 {
     padding: 10px;
     margin: $gutter-half 0 0 0;
   }
+
+ul.pattern-list {
+  max-width: inherit;
+  margin-bottom: 30px;
+
+  column-gap: 15px;
+  column-width: 400px;
+  
+  margin: 0;
+  padding: 15px 0;
+  list-style: none;
+  
+  li {
+    break-inside: avoid;
+    margin: 0;
+    padding: 5px 0;
+  }
+}
+
+.tab-count {
+  color: $secondary-text-colour;
+  margin-left: 5px;
+}
+
+h2.section-title {
+  margin-bottom: 0;
+}
+
+p.section-description {
+  margin-top: 5px;
+  color: $secondary-text-colour;
+  @include core-24;
+}
