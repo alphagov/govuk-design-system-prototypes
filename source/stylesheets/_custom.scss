@@ -828,3 +828,37 @@ p.section-description {
   color: $secondary-text-colour;
   @include core-24;
 }
+
+body.blank {
+
+  ul ul {
+    list-style: none;
+    margin: 0 0 0 -20px;
+    padding: 0;
+    padding-top: 10px;
+    li {
+      background-color: $grey-3;
+      padding: 15px;
+      position: relative;
+      margin-bottom: 15px;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background-color: $grey-3;
+        top: -9px;
+        left: 20px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  span.reason-for-change {
+    font-weight: bold;
+    color: $govuk-blue;
+  }
+
+}
