@@ -127,7 +127,7 @@
   position: relative;
   // padding-left: 0 !important;
   border-left: 4px solid transparent !important;
-  background-color: white;
+  // background-color: white;
   margin-top: 10px;
   text-decoration: none !important;
   padding-top: 10px !important;
@@ -180,7 +180,7 @@
 }
 
 .toc__list .current-page a {
-    // background: $grey-4;
+    background: white;
     font-weight: bold;
     letter-spacing: 0;
     border-left: 4px solid $govuk-blue;
@@ -296,9 +296,9 @@
 // Add separation between sections
 
 ul ul.section {
-  background-color: $white;
-  border-bottom: 2px solid $border-colour;
-  padding: 10px 0;
+  // background-color: $white;
+  // border-bottom: 2px solid $border-colour;
+  // padding: 10px 0;
   margin-bottom: 0 !important;
 
   + ul.section {
@@ -828,6 +828,53 @@ p.section-description {
   color: $secondary-text-colour;
   @include core-24;
 }
+
+
+// Horizontal sub-nav branch
+
+.sub-nav {
+  background-color: darken($grey-4, 3%);
+  padding: 0px 10px 0px $gutter-half;
+  @extend %contain-floats;
+
+  .pattern-search {
+    float: left;
+    width: 300px;
+    margin: 10px 0px;
+  }
+
+  ul {
+    float: right;
+    @extend %contain-floats;
+
+    li {
+      float: left;
+
+      a {
+        @include box-sizing(border-box);
+        display: block;
+        height: 59px;
+        color: $govuk-blue;
+        text-decoration: none;
+        font-weight: 700;
+        line-height: 59px;
+        padding: 0 20px;
+        border-bottom: 4px solid transparent;
+        &:hover {
+          border-bottom: 4px solid $light-blue;
+        }
+        &.is-active {
+          border-bottom: 4px solid $govuk-blue;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+// Styles for Index page
 
 body.blank {
 
