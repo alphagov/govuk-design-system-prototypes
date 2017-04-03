@@ -1,3 +1,18 @@
+<%
+pattern_root = "/design-patterns/patterns/" 
+sections = ["Styles", "Components", "Page templates", "User tasks", "Services"]
+
+# Filter out backlog patterns
+# Group patterns into sections
+patterns_by_section = sitemap.resources
+  .select { |r| 
+    r.data.section && 
+    # r.data.status != "Backlog" &&
+    r.url.start_with?(pattern_root)
+  }
+  .group_by { |r| r.data.section }
+%>
+
 <div class="sub-nav">
   <div class="pattern-search">
     <input type="text" name="pattern-query" id="pattern-search-text" placeholder="Search patterns" autocomplete="off">
@@ -6,11 +21,9 @@
   </div>
 
   <ul>
-    <li><a href="">Overview</a></li>
-    <li><a class="is-active" href="">Styles</a></li>
-    <li><a href="">Components</a></li>
-    <li><a href="">Page templates</a></li>
-    <li><a href="">User tasks</a></li>
-    <li><a href="">Services</a></li>
+      <li><a href="/design-patterns/patterns"<% if current_page.data.section.nil? %> class="is-active"<% end %>>Overview</a></li>
+    <% sections.each do |section| %>
+      <li><a href="<%= patterns_by_section[section].first.url %>"<% if current_page.data.section == section %> class="is-active"<% end %>><%= section %></a></li>
+    <% end %>
   </ul>
 </div>
