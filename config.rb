@@ -23,30 +23,6 @@ page '/*.txt', layout: false
 # Design patterns have a different default layout
 page "/design-patterns/patterns/*", :layout => "design_pattern"
 
-
-# Create discussion pages for all the patterns
-ready do
-
-  pattern_root = "/design-patterns/patterns/" 
-
-  sitemap.resources.select { |r| 
-    r.data.section && 
-    r.data.discuss &&
-    r.url.start_with?(pattern_root)
-  }.each do |pattern|
-
-    proxy "#{pattern.url}discussion.html", "/design-patterns/discussion.html", :locals => { 
-      :discuss  => pattern.data.discuss,
-      :section  => pattern.data.section,
-      :title    => pattern.data.title,
-      :status   => pattern.data.status,
-      :url      => pattern.url
-    }, :ignore => true
-
-  end
-
-end
-
 # Search
 # https://github.com/manastech/middleman-search#usage
 activate :search do |search|
