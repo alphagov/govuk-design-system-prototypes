@@ -871,11 +871,27 @@ p.section-description {
   }
 }
 
-.masthead.full-width .hero {
-  margin: 0 $gutter 0 360px;
+.masthead__library {
+  margin: -18px -32px $gutter -32px;
+}
+
+.masthead__library.full-width .hero {
+  margin: 0 $gutter;
 
 }
 
+.heading-large_library {
+  margin-bottom: $gutter*2 !important;
+}
+
+.content-section {
+  
+}
+
+.content-section h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
 
 
 // Styles for Index page

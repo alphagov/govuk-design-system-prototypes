@@ -15,63 +15,54 @@
 <% wrap_layout :docs do %>
 
 
-  <h1 style="margin-bottom: 60px;">Design Patterns</h1>
 
-  <%
-    pattern_root = "/design-patterns/patterns/"
-    statuses = ["Backlog", "Alpha", "Beta", "Approved"]
-    sections = {
-      "Styles" => "The basic styles and elements from which all patterns are made",
-      "Components" => "Common UI components",
-      "Page templates" => "Examples of common page types for government services",
-      "User tasks" => "Patterns for common tasks that users perform within a service",
-      "Services"  => "Guides for designing services"
-    }
 
-    # Get all the patterns
-    # Sort them by title
-    # 
-    all_patterns = sitemap.resources
-      .select { |r| r.data.section && r.url.start_with?(pattern_root) }
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large_library">Design patterns for government services</h1>
 
-    if (current_page.data.filter)
-      patterns = all_patterns.select { |r| r.data.status == current_page.data.filter }
-    else
-      patterns = all_patterns
-    end
+      <section class="content-section ">
+        <h3 class="">All the styles and templates you’ll need</h3>
+        <p>From <a href="#">colour palettes</a> and <a href="#">typography</a> to <a href="#">form elements</a>, <a href="#">components</a> and <a href="#">full page templates</a>.</p>
+      </section>
 
-    patterns_by_section = patterns.sort_by { |r| r.data.title }
-      .group_by { |r| r.data.section }
+      <section class="content-section ">
+        <h3 class="">Ready to use in your prototypes and services</h3>
+        <p>All patterns come with coded examples, ready to use in your prototypes or production services with these tools:</p>
 
-    patterns_by_status = all_patterns.group_by { |r| r.data.status }
-    %>
+        <ul class="list">
+          <li><a href="/prototype-kit">GOV.UK Prototype Kit</a></li>
+          <li><a href="/frontend">GOV.UK Frontend</a></li>
+        </ul>
+      </section>
 
-    <div class="tabs-multi-page">
-      <div class="tab<% unless current_page.data.filter %> current<% end %>">
-        <a href="/design-patterns/patterns">All Patterns <span class="tab-count">(<%= all_patterns.length %>)</span></a>
-      </div>
-      <% statuses.each do |status|
-        patterns = patterns_by_status[status] %>
-      <div class="tab<% if current_page.data.filter == status %> current<% end %>">
-        <a href="/design-patterns/patterns/<%= status.downcase %>.html"><%= status %> <span class="tab-count">(<%= patterns.length %>)</span></a>
-      </div>
-      <% end %>
+      <section class="content-section ">
+        <h3 class="">Community driven</h3>
+        <p>All design and code is open source and has been developed by service teams across government.</p>
+
+        <p>
+          <a href="/design-patterns/community">Develop and submit your own patterns</a>
+        </p>
+
+        <p>
+          <a href="/design-patterns/backlog">Check our backlog to see what we're working on next</a>
+        </p>
+      </section>
+
+      <section class="content-section ">
+        <h3 class="heading-medium content-section__first-heading">Fully supported</h3>
+        <p>GOV.UK Design Patterns is built and supported by a full time team at the Government Digital Service.</p>
+
+        <p>
+          <a href="/design-patterns/support">Contact the team</a>
+        </p>
+        <p>
+          <a href="/design-patterns/statistics">View pattern statistics</a>
+        </p>
+      </section>
+
     </div>
+  </div>
 
-    <%= yield_content :status_description %>
-
-    <% sections.each do |section, description|
-      patterns_in_section = patterns_by_section[section]
-      next unless patterns_in_section %>
-
-      <h2 class="section-title"><%= section %></h2>
-      <p class="section-description"><%= description %></p>
-
-      <ul class="pattern-list">
-        <% patterns_in_section.each do |pattern| %>
-          <li><%= link_to pattern.data.title, pattern.url %> <% if !current_page.data.filter && pattern.data.status != "Approved" %><span class="status"><%= pattern.data.status %></span><% end %></li>
-        <% end %>
-      </ul>
-    <% end %>
 
 <% end %>
