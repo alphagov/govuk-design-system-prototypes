@@ -838,13 +838,13 @@ p.section-description {
   @extend %contain-floats;
 
   .pattern-search {
-    float: left;
+    float: right;
     width: 300px;
-    margin: 10px 0px;
+    margin: 10px $gutter-half 0 0;
   }
 
   ul {
-    float: right;
+    float: left;
     @extend %contain-floats;
 
     li {
@@ -871,6 +871,10 @@ p.section-description {
   }
 }
 
+.masthead.full-width .hero {
+  margin: 0 $gutter 0 360px;
+
+}
 
 
 
