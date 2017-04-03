@@ -1,5 +1,5 @@
 <% 
-pattern_root = "/design-patterns/patterns/" 
+pattern_root = "/design-patterns/" 
 
 # Filter out backlog patterns
 # Group patterns into sections
@@ -16,7 +16,7 @@ patterns_in_section = sitemap.resources
 
   <ul class="pattern-nav">
     <% patterns_in_section.each do |pattern| %>
-      <li class="status-<%= pattern.data.status.downcase.tr(" ", "-") %>"><%= link_to pattern.data.title, pattern.url %></li>
+      <li<% if pattern.data.has_key? 'status' %> class="status-<%= pattern.data.status.downcase.tr(" ", "-") %>"<% end %>><%= link_to pattern.data.title, pattern.url %></li>
     <% end %>
   <ul>
 

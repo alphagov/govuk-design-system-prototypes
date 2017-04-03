@@ -1,6 +1,6 @@
 <%
 pattern_root = "/design-patterns/patterns/" 
-sections = ["Styles", "Components", "Page templates", "User tasks", "Services"]
+sections = ["Overview", "Styles", "Components", "Page templates", "User tasks", "Services"]
 
 # Filter out backlog patterns
 # Group patterns into sections
@@ -21,7 +21,7 @@ patterns_by_section = sitemap.resources
   </div>
 
   <ul class="sub-nav-list">
-      <li><a href="/design-patterns/patterns"<% if current_page.data.section.nil? %> class="is-active"<% end %>>Overview</a></li>
+      
     <% sections.each do |section| %>
       <li><a href="<%= patterns_by_section[section].first.url %>"<% if current_page.data.section == section %> class="is-active"<% end %>><%= section %></a></li>
     <% end %>
