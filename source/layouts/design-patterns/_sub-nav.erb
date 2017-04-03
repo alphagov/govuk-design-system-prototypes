@@ -20,7 +20,7 @@ patterns_by_section = sitemap.resources
     </ul>
   </div>
 
-  <ul>
+  <ul class="sub-nav-list">
       <li><a href="/design-patterns/patterns"<% if current_page.data.section.nil? %> class="is-active"<% end %>>Overview</a></li>
     <% sections.each do |section| %>
       <li><a href="<%= patterns_by_section[section].first.url %>"<% if current_page.data.section == section %> class="is-active"<% end %>><%= section %></a></li>

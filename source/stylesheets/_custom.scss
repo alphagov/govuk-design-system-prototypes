@@ -843,7 +843,7 @@ p.section-description {
     margin: 10px $gutter-half 0 0;
   }
 
-  ul {
+  ul.sub-nav-list {
     float: left;
     @extend %contain-floats;
 
