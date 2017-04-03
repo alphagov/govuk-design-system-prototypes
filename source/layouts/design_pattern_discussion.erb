@@ -12,6 +12,10 @@
  <%= partial 'layouts/design-patterns/nav' %>
 <% end %>
 
+<% content_for :subnav do %>
+  <%= partial 'layouts/design-patterns/sub-nav' %>
+<% end %>
+
 <% wrap_layout :docs do %>
 
   <div class="pattern-header">

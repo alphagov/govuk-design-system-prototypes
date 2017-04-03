@@ -12,6 +12,10 @@
  <%= partial 'layouts/design-patterns/nav' %>
 <% end %>
 
+<% content_for :subnav do %>
+  <%= partial 'layouts/design-patterns/sub-nav' %>
+<% end %>
+
 <% wrap_layout :docs do %>
   <% if current_page.data.section %>
   <p class="section-heading"><%= current_page.data.section %></p>
