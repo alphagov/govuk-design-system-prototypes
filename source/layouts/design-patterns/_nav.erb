@@ -15,9 +15,17 @@ patterns_in_section = sitemap.resources
 <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
 
   <ul class="pattern-nav">
-    <% patterns_in_section.each do |pattern| %>
-      <li<% if pattern.data.has_key? 'status' %> class="status-<%= pattern.data.status.downcase.tr(" ", "-") %>"<% end %>><%= link_to pattern.data.title, pattern.url %></li>
+    <% patterns_in_section.each do |pattern|
+      classes = []
+      classes << "status-#{pattern.data.status.downcase.tr(" ", "-")}" if pattern.data.has_key? 'status'
+      classes << 'current-page' if current_page.path == pattern.path
+    %>
+      <li<% if classes.any? %> class="<%= classes.join(" ") %>"<% end %>><%= link_to pattern.data.title, pattern.url %></li>
     <% end %>
   <ul>
 
 </nav>
+
+
+
+

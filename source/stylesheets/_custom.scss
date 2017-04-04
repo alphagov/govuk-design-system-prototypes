@@ -391,6 +391,11 @@ ul ul.section {
       font-weight: bold;
     }
 
+    .list-no-bullet {
+      list-style: none;
+      padding-left: 0px;
+    }
+
 }
 
 
@@ -871,28 +876,6 @@ p.section-description {
   }
 }
 
-.masthead__library {
-  margin: -18px -32px $gutter -32px;
-}
-
-.masthead__library.full-width .hero {
-  margin: 0 $gutter;
-
-}
-
-.heading-large_library {
-  margin-bottom: $gutter !important;
-}
-
-.content-section {
-
-}
-
-.content-section h2 {
-  margin-top: 0;
-  padding-top: 0;
-}
-
 
 // Styles for Index page
 
@@ -937,3 +920,5 @@ body.blank {
     line-height: 1.25;
   }
 }
+
+
