@@ -180,8 +180,8 @@
 }
 
 .toc__list .current-page a {
-    background: white;
-    font-weight: bold;
+    background-color: darken($grey-4, 3%);
+    font-weight: bold !important;
     letter-spacing: 0;
     border-left: 4px solid $govuk-blue;
     // border-bottom: 1px solid darken($grey-4, 10%);
@@ -861,7 +861,7 @@ p.section-description {
         height: 59px;
         color: $govuk-blue;
         text-decoration: none;
-        font-weight: 700;
+        
         line-height: 59px;
         padding: 0 20px;
         border-bottom: 4px solid transparent;
@@ -870,6 +870,7 @@ p.section-description {
         }
         &.is-active {
           border-bottom: 4px solid $govuk-blue;
+          font-weight: 700;
         }
       }
     }
