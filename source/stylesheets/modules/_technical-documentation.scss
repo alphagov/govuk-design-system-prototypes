@@ -47,7 +47,7 @@
   }
 
   h2 {    
-    @include bold-36;
+    @include bold-24;
     @include heading-offset($gutter * 1.5);
   }
 
@@ -56,11 +56,12 @@
   }
 
   h3 {
-    @include bold-24;
+    @include bold-19;
   }
 
   h4 {
     @include bold-19;
+    color: $secondary-text-colour;
   }
 
   h5 {

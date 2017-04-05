@@ -7,20 +7,20 @@ This collection of patterns has been developed by the government design communit
 There are lots of ways that you can get involved.
 
 
-### How to suggest improvements to patterns
+## How to suggest improvements to patterns
 
 All design patterns have a discussion space, where you can share examples and ask questions.
 
 If you'd like to go further and suggest actual improvements to the guidance you can do this by raising a pull request on Github.
 
 
-### How to develop a new pattern
+## How to develop a new pattern
 
 We use Github to manage the development of all our design patterns. 
 Here's a step by step guide for developing a new pattern.
 
 
-#### 1. Submit your idea for a pattern
+### 1. Submit your idea for a pattern
 
 All ideas for patterns should be submitted to our backlog first. 
 
@@ -33,7 +33,7 @@ A pattern will be accepted if it is:
 [Submit a pattern idea to the backlog](#).
 
 
-#### 2. Develop a pattern on the backlog
+### 2. Develop a pattern on the backlog
 
 You can start developing a pattern on the backlog if you have the resources to develop it at least as far as beta.
 
@@ -49,7 +49,7 @@ Before you start developing a pattern you should have:
 
 We recommend a 2 phased approach to developing design patterns:
 
-##### Phase 1: Principles
+#### Phase 1: Principles
 
 In phase 1 the main activities are:
 
@@ -59,7 +59,7 @@ In phase 1 the main activities are:
 - gather evidence to support those principles
 
 
-##### Phase 2: Code
+#### Phase 2: Code
 
 In phase 2 the main activities are:
 
@@ -73,7 +73,7 @@ All patterns should follow our existing standards for design, code, content and 
 Once your pattern is working well you can submit a pull request to change its status to beta.
 
 
-#### 3. Beta patterns
+### 3. Beta patterns
 
 Beta patterns are ready to be used by the rest of the design community.
 
@@ -82,7 +82,7 @@ Be prepared to respond to suggestions and pull requests as teams try out your pa
 If you're unable to support the pattern in beta that's fine - just change the owner back to GDS.
 
 
-#### 4. Approved patterns
+### 4. Approved patterns
 
 Once the pattern is being used sucessfully in multiple live services and has become relatively stable it can be submitted for approval by the cross-governmentt patterns team.
 
