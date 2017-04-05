@@ -657,6 +657,22 @@ $palette: (
   }
 }
 
+.header__container .pattern-search{
+  margin-bottom: 0px;
+  background-color: $govuk-blue;
+  width: 300px;
+
+
+  #pattern-search-text {
+    border: 2px solid white;
+    
+    &:focus{
+
+      width: 300px;
+    }
+  }
+}
+
 .search-results {
   position: absolute;
   left: 0;
@@ -861,7 +877,7 @@ p.section-description {
         height: 59px;
         color: $govuk-blue;
         text-decoration: none;
-        
+        font-weight: 700;
         line-height: 59px;
         padding: 0 20px;
         border-bottom: 4px solid transparent;
@@ -870,7 +886,6 @@ p.section-description {
         }
         &.is-active {
           border-bottom: 4px solid $govuk-blue;
-          font-weight: 700;
         }
       }
     }
