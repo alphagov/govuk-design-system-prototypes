@@ -2,7 +2,20 @@
 title:		Form labels
 section:	Components
 theme:		Forms
-status:		Backlog
+status:		Approved
 department: All
 ---
 
+## Labels
+
+- all form fields should be given labels
+- don’t hide labels, unless the surrounding context makes them unnecessary
+- labels should be aligned above their fields
+- label text should be short, direct and in sentence case
+- avoid colons at the end of labels
+- labels should be associated with form fields using the `for` attribute
+
+<% partial "/layouts/example" do %>
+<label class="form-label" for="full-name-f1">Full name</label>
+<input class="form-control" id="full-name-f1" type="text">
+<% end %>

@@ -7,7 +7,7 @@ sections = ["Overview", "Styles", "Components", "Page templates", "User tasks", 
 patterns_by_section = sitemap.resources
   .select { |r| 
     r.data.section && 
-    # r.data.status != "Backlog" &&
+    r.data.status != "Backlog" &&
     r.url.start_with?(pattern_root)
   }
   .group_by { |r| r.data.section }

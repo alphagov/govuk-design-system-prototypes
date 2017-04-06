@@ -2,7 +2,67 @@
 title:		Radio buttons
 section:	Components
 theme:		Forms
-status:		Backlog
+status:		Approved
 department: All
 ---
 
+
+- use these to let users choose a single option from a list
+- for more than two options, radio buttons should be stacked
+- radio buttons with large hit areas are easier to select with a mouse or touch devices
+
+## Inline radio buttons
+
+<% partial "/layouts/example" do %>
+<h1 class="heading-medium">
+  Do you already have a personal user account?
+</h1>
+
+<form>
+  <div class="form-group">
+    <fieldset class="inline">
+
+      <legend class="visually-hidden">Do you already have a personal user account?</legend>
+
+      <label class="block-label selection-button-radio" for="radio-inline-1">
+        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+        Yes
+      </label>
+      <label class="block-label selection-button-radio" for="radio-inline-2">
+        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+        No
+      </label>
+
+    </fieldset>
+  </div>
+</form><% end %>
+
+
+## Stacked radio buttons
+
+<% partial "/layouts/example" do %>
+<h1 class="heading-medium">Where do you live?</h1>
+
+<form>
+  <div class="form-group">
+    <fieldset>
+
+      <legend class="visually-hidden">Where do you live?</legend>
+
+      <label class="block-label selection-button-radio" for="radio-1">
+        <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland">
+        Northern Ireland
+      </label>
+      <label class="block-label selection-button-radio" for="radio-2">
+        <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands">
+        Isle of Man or the Channel Islands
+      </label>
+      <p class="form-block">or</p>
+      <label class="block-label selection-button-radio" for="radio-3">
+        <input id="radio-3" type="radio" name="radio-group" value="I am a British citizen living abroad">
+        I am a British citizen living abroad
+      </label>
+
+    </fieldset>
+  </div>
+</form><% end %>

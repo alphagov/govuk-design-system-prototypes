@@ -1,8 +1,44 @@
 ---
-title:		Text fields
+title:		Form and Text fields
 section:	Components
 theme:		Forms
-status:		Backlog
+status:		Approved
 department: All
 ---
 
+
+Make field widths proportional to the input they take.
+
+Ensure that users can enter the information they need at smaller screen sizes.
+
+Snap form fields to 100% width at smaller screen sizes.
+
+
+## Form focus states
+
+All elements use the yellow focus style as a highlight, as either a fill or 3px outline.
+
+Click on the label “Full name” or inside the form field to show the focus state.
+
+<% partial "/layouts/example" do %>
+<label class="form-label" for="full-name-f1">Full name</label>
+<input class="form-control" id="full-name-f1" type="text"><% end %>
+
+
+## Hint text
+
+- don’t use placeholder text in form fields, as this will disappear once content is entered into the form field
+- use hint text for supporting contextual help, this will always be shown
+- hint text should sit above a form field
+- ensure hint text can be read correctly by screen readers
+
+<% partial "/layouts/example" do %>
+<label class="form-label" for="ni-number">
+  National Insurance number
+  <span class="form-hint">
+    It's on your National Insurance card, benefit letter, payslip or P60.
+    <br>
+    For example, ‘QQ 12 34 56 C’.
+  </span>
+</label>
+<input class="form-control" id="ni-number" type="text"><% end %>
