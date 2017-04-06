@@ -2,12 +2,16 @@
 pattern_root = "/design-patterns/" 
 
 # Filter out backlog patterns
+
+
+
 # Group patterns into sections
 patterns_in_section = sitemap.resources
   .select { |r| 
     r.data.section && 
     r.data.section == current_page.data.section &&
-    r.url.start_with?(pattern_root)
+    r.url.start_with?(pattern_root) &&
+    r.data.status != "Backlog"
   }
 
 %>
