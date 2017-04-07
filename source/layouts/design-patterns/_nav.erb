@@ -1,12 +1,12 @@
-<% 
-pattern_root = "/design-patterns/patterns/" 
+<%
+pattern_root = "/design-patterns/patterns/"
 section_order = ["Styles", "Components", "Page templates", "User tasks", "Services"]
 
 # Filter out backlog patterns
 # Group patterns into sections
 patterns_by_section = sitemap.resources
-  .select { |r| 
-    r.data.section && 
+  .select { |r|
+    r.data.section &&
     # r.data.status != "Backlog" &&
     r.url.start_with?(pattern_root)
   }
@@ -56,7 +56,7 @@ end
       </ul>
 
   <% end %>
-      
+
     </li>
 
   <% end %>

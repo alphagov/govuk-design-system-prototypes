@@ -12,7 +12,7 @@
   margin-bottom: $gutter-half;
 
   .stat{
-    
+
     @include grid-column(1 / 6);
 
     div{
@@ -212,7 +212,7 @@
 }
 
 // Style nav according to pattern status
-.toc__list 
+.toc__list
   {
 
     li[class^="status-"] a::after {
@@ -233,8 +233,8 @@
         content: "Backlog";
         // color: $secondary-text-colour;
         // border: 1px solid lighten($secondary-text-colour, 40%);
-        
-       }    
+
+       }
     }
 
     .status-alpha a {
@@ -243,9 +243,9 @@
         content: "Alpha";
         // color: $pink;
         // border: 1px solid lighten($pink, 40%);
-        
+
        }
-    }    
+    }
 
     .status-beta a {
 
@@ -253,7 +253,7 @@
         content: "Beta";
         // color: $orange;
         // border: 1px solid lighten($orange, 30%);
-        
+
        }
     }
 
@@ -264,7 +264,7 @@
         content: "Approved";
         // color: $turquoise;
         // border: 1px solid lighten($turquoise, 40%);
-        
+
        }
     }
 
@@ -305,7 +305,7 @@ ul ul.section {
     margin-bottom: 0;
 
   }
-} 
+}
 
 
 .markdown{
@@ -317,7 +317,7 @@ ul ul.section {
 
         &::first-letter{
             text-transform: uppercase;
-        }     
+        }
     }
 
     .example{
@@ -372,7 +372,7 @@ ul ul.section {
 
     ul {
       list-style: disc;
-    }  
+    }
 
     .example + .highlight{
         margin-top: -31px;
@@ -664,7 +664,7 @@ $palette: (
   max-height: 75vh;
   overflow-y: scroll;
   display: none;
-  
+
   li {
     font-size: 16px;
   }
@@ -675,11 +675,11 @@ $palette: (
     text-decoration: none;
     color: $text-colour;
   }
-  
+
   .active-result {
     background: $govuk-blue;
     color: $white;
-    
+
     a:link, a:visited {
       color: $white;
     }
@@ -748,11 +748,11 @@ $palette: (
     }
 }
 
-// Status on h1 
+// Status on h1
 
 span.status {
   @include box-sizing(border-box);
-  
+
   vertical-align: middle;
   font-size: 10px;
   padding: 1px 3px;
@@ -774,13 +774,13 @@ h1 span.status {
   font-size: 15px;
   margin-left: $gutter-half;
   margin-top: 12px;
-  
+
   color: $govuk-blue;
-  
+
   padding: 5px 7px 4px 7px;
   border-width: 2px;
   border-color: $govuk-blue;
-  
+
   &:hover {
     color: $light-blue;
     border-color: $light-blue;
@@ -802,11 +802,11 @@ ul.pattern-list {
 
   column-gap: 15px;
   column-width: 400px;
-  
+
   margin: 0;
   padding: 15px 0;
   list-style: none;
-  
+
   li {
     break-inside: avoid;
     margin: 0;
