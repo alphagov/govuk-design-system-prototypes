@@ -623,6 +623,79 @@ $palette: (
   width: 24.5%;
 }
 
+.pattern-search {
+  margin-bottom: 30px;
+  line-height: 25px;
+  position: relative;
+
+  background-color: $text-colour;
+  background-image: url(/images/search-button.png);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+
+  .typeahead__option {
+    color: $text-colour;
+    font-size: 16px;
+    padding: 0;
+
+    .result-inner {
+      padding: 10px $gutter-half;
+    }
+
+    .result-section {
+      font-size: 12px;
+      color: $grey-1;
+      display: block;
+    }
+
+    &--hovered,
+    &--focused {
+      background: $govuk-blue;
+      color: $white;
+
+      .result-section {
+        color: lighten($govuk-blue, 70%);
+      }
+    }
+
+    &--no-results {
+      display: none;
+    }
+  }
+
+  .typeahead__hint {
+    display: none;
+  }
+
+  .typeahead__menu {
+    max-height: 75vh;
+    overflow-y: scroll;
+  }
+
+  .typeahead__input {
+    background-color: white;
+    font-size: 16px;
+    line-height: inherit;
+    padding: 5px 15px;
+    border: 2px solid $text-colour;
+    margin-left: 35px;
+    width: calc(100% - 34px);
+    box-sizing: border-box;
+    transition: all 100ms ease-in-out;
+
+    &--focused {
+      outline: 3px solid #ffbf47;
+      outline-offset: 0;
+      margin-left: 0;
+      width: 100%;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $text-colour;
+      font-size: 16px;
+    }
+  }
+}
 
 .link-back{
   margin-left: 15px;
