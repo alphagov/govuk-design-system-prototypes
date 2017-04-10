@@ -335,6 +335,14 @@ ul ul.section {
           padding-top: 0;
         }
 
+        // Spacing of Radio and checkboxes examples. This needs looking at.
+        .form-group {
+          margin-bottom: 0;
+          & + .form-group, + .multiple-choice {
+            margin-top: $gutter-half;
+          }
+        }
+
         .form-block {
             margin-top: 0;
             margin-bottom: 10px;
