@@ -325,7 +325,18 @@ ul ul.section {
         border: 1px solid $border-colour;
         margin: $gutter 0;
         padding: $gutter;
+
+        p {
+          margin-bottom: $gutter-half;
+        }
+
+        h1, h2, h3, h4 {
+          margin-top: 0;
+          padding-top: 0;
+        }
     }
+
+
 
     p.example-grid {
       width: 100%;
