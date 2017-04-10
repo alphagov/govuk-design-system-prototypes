@@ -114,6 +114,10 @@
     padding-left: 20px;
   }
 
+  ol {
+    list-style: decimal;
+  }
+
   ol ol, ul ul, ol ul, ul ol {
     margin-top: 0;
   }
