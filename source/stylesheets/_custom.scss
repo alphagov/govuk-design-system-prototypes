@@ -12,7 +12,7 @@
   margin-bottom: $gutter-half;
 
   .stat{
-
+    
     @include grid-column(1 / 6);
 
     div{
@@ -212,7 +212,7 @@
 }
 
 // Style nav according to pattern status
-.toc__list
+.toc__list 
   {
 
     li[class^="status-"] a::after {
@@ -233,8 +233,8 @@
         content: "Backlog";
         // color: $secondary-text-colour;
         // border: 1px solid lighten($secondary-text-colour, 40%);
-
-       }
+        
+       }    
     }
 
     .status-alpha a {
@@ -243,9 +243,9 @@
         content: "Alpha";
         // color: $pink;
         // border: 1px solid lighten($pink, 40%);
-
+        
        }
-    }
+    }    
 
     .status-beta a {
 
@@ -253,7 +253,7 @@
         content: "Beta";
         // color: $orange;
         // border: 1px solid lighten($orange, 30%);
-
+        
        }
     }
 
@@ -264,7 +264,7 @@
         content: "Approved";
         // color: $turquoise;
         // border: 1px solid lighten($turquoise, 40%);
-
+        
        }
     }
 
@@ -305,7 +305,7 @@ ul ul.section {
     margin-bottom: 0;
 
   }
-}
+} 
 
 
 .markdown{
@@ -317,7 +317,7 @@ ul ul.section {
 
         &::first-letter{
             text-transform: uppercase;
-        }
+        }     
     }
 
     .example{
@@ -422,7 +422,7 @@ ul ul.section {
 
     ul {
       list-style: disc;
-    }
+    }  
 
     .example + .highlight{
         margin-top: -31px;
@@ -673,84 +673,112 @@ $palette: (
   }
 }
 
-.inline-thirds{
-  display: inline-block;
-  width: 24.5%;
-}
-
-.pattern-search {
+.pattern-search{
   margin-bottom: 30px;
   line-height: 25px;
   position: relative;
 
+  //background-color: #bfc1c3;
   background-color: $text-colour;
   background-image: url(/images/search-button.png);
   background-repeat: no-repeat;
   background-position: 0 50%;
 
-  .typeahead__option {
-    color: $text-colour;
-    font-size: 16px;
-    padding: 0;
-
-    .result-inner {
-      padding: 10px $gutter-half;
-    }
-
-    .result-section {
-      font-size: 12px;
-      color: $grey-1;
-      display: block;
-    }
-
-    &--hovered,
-    &--focused {
-      background: $govuk-blue;
-      color: $white;
-
-      .result-section {
-        color: lighten($govuk-blue, 70%);
-      }
-    }
-
-    &--no-results {
-      display: none;
-    }
-  }
-
-  .typeahead__hint {
-    display: none;
-  }
-
-  .typeahead__menu {
-    max-height: 75vh;
-    overflow-y: scroll;
-  }
-
-  .typeahead__input {
-    background-color: white;
-    font-size: 16px;
-    line-height: inherit;
+  #pattern-search-text {
     padding: 5px 15px;
+    //border: 2px solid #bfc1c3;
     border: 2px solid $text-colour;
     margin-left: 35px;
     width: calc(100% - 34px);
     box-sizing: border-box;
     transition: all 100ms ease-in-out;
-
-    &--focused {
+    
+    &:focus{
       outline: 3px solid #ffbf47;
       outline-offset: 0;
       margin-left: 0;
       width: 100%;
     }
+  }
 
-    &::-webkit-input-placeholder {
-      color: $text-colour;
-      font-size: 16px;
+  #pattern-search-text::-webkit-input-placeholder{
+    color: $text-colour;
+    font-size: 16px;
+  }
+}
+
+.header__container .pattern-search{
+  margin-bottom: 0px;
+  background-color: $govuk-blue;
+  width: 300px;
+
+
+  #pattern-search-text {
+    border: 2px solid white;
+    
+    &:focus{
+
+      width: 300px;
     }
   }
 }
+
+.search-results {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: $white;
+  border: 1px solid #bfc1c3;
+  border-bottom: 2px solid #bfc1c3;
+  top: 100%;
+  z-index: 100;
+  max-height: 75vh;
+  overflow-y: scroll;
+  display: none;
+  
+  li {
+    font-size: 16px;
+  }
+
+  a:link, a:visited {
+    display: block;
+    padding: 10px $gutter-half;
+    text-decoration: none;
+    color: $text-colour;
+  }
+  
+  .active-result {
+    background: $govuk-blue;
+    color: $white;
+    
+    a:link, a:visited {
+      color: $white;
+    }
+
+    .result-section {
+      color: lighten($govuk-blue, 70%);
+    }
+  }
+}
+
+.search-results.visible {
+  display: block;
+}
+
+.result-section {
+  font-size: 12px;
+  // text-transform: uppercase;
+  color: $grey-1;
+  display: block;
+}
+
+
+
+.inline-thirds{
+  display: inline-block;
+  width: 24.5%;
+}
+
 
 .link-back{
   margin-left: 15px;
@@ -791,11 +819,11 @@ $palette: (
     }
 }
 
-// Status on h1
+// Status on h1 
 
 span.status {
   @include box-sizing(border-box);
-
+  
   vertical-align: middle;
   font-size: 10px;
   padding: 1px 3px;
@@ -817,13 +845,13 @@ h1 span.status {
   font-size: 15px;
   margin-left: $gutter-half;
   margin-top: 12px;
-
+  
   color: $govuk-blue;
-
+  
   padding: 5px 7px 4px 7px;
   border-width: 2px;
   border-color: $govuk-blue;
-
+  
   &:hover {
     color: $light-blue;
     border-color: $light-blue;
@@ -845,11 +873,11 @@ ul.pattern-list {
 
   column-gap: 15px;
   column-width: 400px;
-
+  
   margin: 0;
   padding: 15px 0;
   list-style: none;
-
+  
   li {
     break-inside: avoid;
     margin: 0;

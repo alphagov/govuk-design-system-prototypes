@@ -16,8 +16,8 @@
 
     <link rel="canonical" href="<%= config[:tech_docs][:host] %><%= current_page.url %>">
 
-    <link rel="stylesheet" href="https://unpkg.com/accessible-typeahead@0.4.0/examples/styled.css" />
     <%= stylesheet_link_tag :print, media: 'print' %>
+    <%= javascript_include_tag :application %>
   </head>
 
   <body>
@@ -64,8 +64,5 @@
         </div>
       </div>
     </div>
-
-    <script src="https://unpkg.com/accessible-typeahead@0.4.0/dist/accessible-typeahead.min.js"></script>
-    <%= javascript_include_tag :application %>
   </body>
 </html>
