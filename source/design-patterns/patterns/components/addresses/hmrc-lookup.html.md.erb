@@ -1,0 +1,60 @@
+---
+title:      Addresses (HMRC)
+section:    Components
+status:     Approved
+discuss:    https://designpatterns.hackpad.com/CgrMSGRAhRc
+department: HMRC
+---
+
+**This is an HMRC pattern. You should only use this if the service you're
+designing is an HMRC service, or has the same database requirements as HMRC.**
+
+## Overview
+
+<% partial "/layouts/example" do %>
+<h1 class="heading-large">Find your address</h1>
+
+<div class="form-group">
+  <label class="form-label" for="postcode">Postcode</label>
+  <input class="form-control form-control-1-3" type="text" name="postcode" value="">
+</div>
+
+<div class="form-group">
+  <label class="form-label" for="house_number">House name or number (optional)</label>
+  <input class="form-control" type="text" name="house_number" value=""><br><br>
+</div>
+<% end %>
+
+## When to use this pattern
+
+Use an address lookup when you’re asking users for a UK address.
+
+## When not to use this pattern
+
+Address lookups generally only work for UK addresses. If you’re collecting only
+or mostly international addresses, you should use a manual option (either
+[multiple fields](index.html#using-multiple-fields) or a [free text
+box](index.html#using-a-free-text-box)) instead.
+
+## How it works
+
+An address lookup lets users specify a UK address by entering their postcode
+(and optionally their street name or number) and selecting their address from a
+list.
+
+### When using an address lookup, you should:
+
+- make it clear that it will only work for UK addresses
+- provide a manual option for people with international addresses or addresses
+  that are missing or not properly listed in the address lookup
+- let people enter their postcodes in upper or lower case and with or without
+  spaces
+
+## Why this pattern is different from the GOV.UK pattern
+
+This address lookup more closely matches the current back end database structure
+that HMRC has. Since introducing this pattern, HMRC has been able to increase
+the quality of addresses captured.
+
+
+

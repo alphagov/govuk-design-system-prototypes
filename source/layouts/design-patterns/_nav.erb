@@ -11,7 +11,8 @@ patterns_in_section = sitemap.resources
     r.data.section && 
     r.data.section == current_page.data.section &&
     r.url.start_with?(pattern_root) &&
-    r.data.status != "Backlog"
+    r.data.status != "Backlog" &&
+    r.data.department == "All"
   }
 
 %>
