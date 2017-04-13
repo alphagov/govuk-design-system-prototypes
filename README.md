@@ -2,7 +2,7 @@
 
 Prototypes exploring the idea of putting all our design guidance and tools in a single place.
 
-Currently hosted here: [https://gentle-crag-56748.herokuapp.com/](https://gentle-crag-56748.herokuapp.com/)
+Currently hosted here: https://govuk-design-system-prototypes.cloudapps.digital/
 
 ## Getting started
 
@@ -20,20 +20,6 @@ bundle install
 ## Making changes
 
 To make changes edit the source files in the `source` folder.
-
-The pattern content is stored in markdown files in `source/documentation`. This means the same patterns can be repourposed in different versions of the prototype.
-
-By default the folder structure in `source/documentation` determines the url for that page. 
-Make sure these match with the navigation data file, which is stored in the `data` folder.
-
-You can create new data files for new prototypes, but you'll need to also:
-
-- add a new route to `config.rb` that references the new data file
-- create a new template in `layouts` that references the new data file
-- update the pages in your prototype folder so they use the new template
-
-The navigation and page headings are generated from the data file in the `data` folder. This allows us to quickly try out different navigation structures. The values in the data file determine the URL path. The same values are transformed into the links and page titles by swapping underscores for spaces and capitalising the 1st letter.
-
 
 ## Preview
 
@@ -69,25 +55,33 @@ This will create a `build` subfolder in the application folder which contains
 the HTML and asset files ready to be published.
 
 
-## Publish
+## Deploy
 
-Prototypes are published to [govuk-design-system-prototypes.cloudapps.digital/](https://govuk-design-system-prototypes.cloudapps.digital/), using [GOV.UK PaaS](https://www.cloud.service.gov.uk/)
+Prototypes are deployed to [govuk-design-system-prototypes.cloudapps.digital/](https://govuk-design-system-prototypes.cloudapps.digital/), using [GOV.UK PaaS](https://www.cloud.service.gov.uk/).
 
-You'll need access to the the `gds-design` org and `prototypes` space. Contact the team to get this.
+To deploy run `./script/deploy`. This will build the latest version of the
+prototype and deploy it to the app name as specified in manifest.yml.
+
+You'll need access to the the `gds-design` org and `prototypes` space. Contact
+the team to get this.
 
 The latest version should always be pushed to:
 
 `govuk-design-system-prototypes.cloudapps.digital`
 
-Versions from previous rounds of research should be published as seperate apps, like this:
+When deploying a historical version from a previous round of research, update
+the app name in manifest.yml so that it deploys to a new app with the round
+number in, following the format:
 
 ````
+govuk-design-system-prototypes-round-4-v2.cloudapps.digital
+govuk-design-system-prototypes-round-4-v1.cloudapps.digital
 govuk-design-system-prototypes-round-3.cloudapps.digital
 govuk-design-system-prototypes-round-2.cloudapps.digital
 govuk-design-system-prototypes-round-1.cloudapps.digital
 ````
 
-Remember to run ‘bundle exec middleman build’ before you publish the app.
-
+The v1/v2 suffix is only required if substantial changes are made in the middle
+of a research round.
 
 
