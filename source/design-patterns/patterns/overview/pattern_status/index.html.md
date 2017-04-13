@@ -9,14 +9,14 @@ section: Overview
 
 # Pattern statuses
 
-## Approved patterns
+## Approved
 
 Approved patterns have been thoroughly tested and are ready to use in your
 service.
 
-To pass point 13 (make the user experience consistent with GOV.UK) in your
-service assessments, you must use approved GOV.UK design patterns that are
-relevant to the service you’re building.
+To pass [point 13 (make the user experience consistent with GOV.UK
+)][point-13] in your [service assessments][service-assessments], you must use
+approved GOV.UK design patterns that are relevant to the service you’re building.
 
 ### Creating or changing patterns
 
@@ -48,3 +48,6 @@ out and tested before it moves into beta.
 When a pattern is labelled ‘Backlog’, it means there’s an identified need to
 start developing a solution to a common user need, but nothing has yet been
 done.
+
+[point-13]: https://www.gov.uk/service-manual/service-standard/make-the-user-experience-consistent-with-govuk
+[service-assessments]: https://www.gov.uk/service-manual/service-assessments/check-if-you-need-a-service-assessment
