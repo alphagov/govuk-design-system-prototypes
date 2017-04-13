@@ -8,30 +8,69 @@ department: All
 discuss:	https://designpatterns.hackpad.com/Organising-long-tasks-qAPtTmL1GJm
 ---
 
-Use a task list page to show:
+## Overview
 
+Help users plan their time by breaking down long transactions into a list of
+manageable tasks.
+
+![Example of a task list page](example.png)
+
+See an [example task list page](https://govuk-prototype-kit.herokuapp.com/docs/examples/task-list-page)
+in the GOV.UK prototyping kit.
+
+## When to use this pattern
+
+Only use a task list page for longer transactions involving multiple tasks that
+users may need to complete over a number of sessions.
+
+Before using one, try to simplify the transaction. If you're able to reduce the
+number of tasks or steps involved, you may not need a task list page.
+
+If you do need one, you must show it:
+
+- at the start of the transaction
+- after completing each task
+- at the start of each returning session
+
+## How it works
+
+**This is a [beta pattern](/design-patterns/patterns/overview/pattern_status/)
+that’s still being tested and may change. If you use it in your service, you can
+share your feedback on Hackpad.**
+
+Use task list pages to show users:
 - the tasks involved in completing a transaction
-- what order the tasks can be completed in
-- which steps have already been completed
+- the order tasks should be completed in
+- when tasks have been completed
 
-Read the guide on using, adapting and creating patterns before you start designing or building anything.
+### Show the status of a task
 
-###Example of a task list page
-![Image of accordion](example-task-list.png)
+Whenever you show a task list page, make it clear to users which tasks they’ve
+completed by labelling them ‘Completed’.
 
+![Example clearly showing tasks as completed](completed.png)
 
-##When to use this pattern
-Only use this pattern for long transactions that users need multiple sessions to complete, or transactions that can be completed by multiple users.
+###Group things into tasks
 
-Before you use a task list in your transaction you should first try to make it simple enough that your users don’t need one.
+Group related activities and questions into tasks (for example, ‘Provide
+financial evidence’ and ‘Give medical information’). This will help users
+understand and plan what they need to do.
 
-##Research on this pattern
-[Read a blog post about testing and iterating this pattern.](#)
+Where possible, task names should:
 
-## Task lists in use
+- describe what the task or activity will involve
+- start with verbs (for example, ‘check’, ‘declare’, ‘report’)
 
-### In a live service
-- [DVSA - Apply for a vehicle operator licence](https://www.gov.uk/apply-vehicle-operator-licence)
+### Group tasks into sections
 
-### In a prototype
-- GDS - Become a childminder
+If your transaction involves lots of tasks, make it more manageable by splitting
+it into sections that represent stages in the process.
+
+For example, you could group all tasks which help users find out if your service
+is right for them in a section called ‘Check before you start’.
+
+## Research on this pattern
+
+Read a blog post about [testing and iterating this
+pattern](https://govuk-design-system-prototypes.cloudapps.digital/design-patterns/patterns/pages/task_list_page/)
+
