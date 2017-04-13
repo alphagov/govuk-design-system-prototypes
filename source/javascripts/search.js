@@ -1,12 +1,4 @@
 $(function() {
-
-  const kc = {
-    13: 'enter',
-    27: 'escape',
-    38: 'up',
-    40: 'down'
-  }
-
   // Download index data
   $.ajax({
     url: '/search.json',
@@ -18,118 +10,56 @@ $(function() {
     }
   });
 
-  var $resultsContainer = $('.js-search-results');
-
-  function getActiveResultPosition() {
-    return $('.active-result', $resultsContainer).index();
-  }
-
-  function handleUpArrow(event) {
-    if (getActiveResultPosition() == 0) {
-      $('.active-result').removeClass('active-result');
+  function typeaheadSource (searchTerms, syncResults) {
+    if (lunrIndex) {
+      var lunrResults = lunrIndex.search(searchTerms);
+      syncResults(lunrResults)
     } else {
-      var $prevElement = $('.active-result').prev();
-
-      $('li', $resultsContainer).removeClass('active-result');
-      $prevElement.addClass('active-result');
-    }
-
-    event.preventDefault();
-  }
-
-  function handleDownArrow(event) {
-    if (getActiveResultPosition() === -1) {
-      var $nextElement = $('li', $resultsContainer).first();
-    } else {
-      var $nextElement = $('li.active-result').next();
-    }
-
-    if ($nextElement.length) {
-      $('li', $resultsContainer).removeClass('active-result');
-      $nextElement.addClass('active-result');
-    }
-
-    event.preventDefault();
-  }
-
-  function handleEnter(event) {
-    var activeLink = $('li.active-result a');
-
-    if (activeLink.length) {
-      window.location = activeLink.attr('href');
+      syncResults([])
     }
   }
 
-  $('#pattern-search-text').on('focus', function (event) {
-    if ($('li', $resultsContainer).length) {
-      $resultsContainer.css('display', 'block');
+  function typeaheadOnSelect (lunrResult) {
+    if (lunrResult) {
+      var resultData = lunrData['docs'][lunrResult.ref];
+      window.location.href = resultData['url']
     }
-  });
+  }
 
-  $('#pattern-search-text').on('blur', function (event) {
-    setTimeout(function () {
-      $resultsContainer.css('display', 'none');
-    }, 150);
-  });
+  // The value that will be inserted into the `<input>` field when the user confirms.
+  function inputValueTemplate (lunrResult) {
+    return lunrResult
+      ? lunrData['docs'][lunrResult.ref]['title']
+      : ''
+  }
 
-  $('#pattern-search-text').on('keydown', function (evt) {
-    switch (kc[evt.keyCode]) {
-      case 'up':
-        handleUpArrow(evt)
-        break
-      case 'down':
-        handleDownArrow(evt)
-        break
-      case 'enter':
-        handleEnter(evt)
-        break
-      case 'escape':
-        // this.handleComponentBlur({
-        //   query: this.state.query
-        // })
-        break
-      default:
-        break
-    }
-  });
+  function suggestionTemplate (lunrResult) {
+    var resultData = lunrData['docs'][lunrResult.ref];
+    var breadcrumb = resultData['section'];
 
-  $resultsContainer.on('mouseover', 'li', function() {
-    $('.active-result').removeClass('active-result');
-    $(this).addClass('active-result');
-  })
-
-  $('#pattern-search-text').on('input', function() {
-    if (!lunrIndex) {
-      return;
+    if (resultData['theme']) {
+      breadcrumb = breadcrumb + " > " + resultData['theme']
     }
 
-    var searchTerms = $(this).val();
-    var results = lunrIndex.search(searchTerms);
+    var resultContent = $('<div>', {class: 'result-inner'}).text(resultData['title'])
+      .append(
+        $('<div>', {class: 'result-section'}).text(breadcrumb)
+      )
 
-    $resultsContainer.empty();
+    return resultContent.prop('outerHTML')
+  }
 
-    $.each(results, function(_, result) {
-      var resultData = lunrData['docs'][result.ref];
-      var breadcrumb = resultData['section'];
-
-      if (resultData['theme']) {
-        breadcrumb = breadcrumb + " > " + resultData['theme']
-      }
-
-      var resultItem = $('<li />').append(
-        $('<a>', {href: resultData['url']}).text(resultData['title']).append(
-          $('<span>', {class: 'result-section'}).text(breadcrumb)
-        )
-      );
-
-      $resultsContainer.append(resultItem);
-    });
-
-    if ($('li', $resultsContainer).length) {
-      $resultsContainer.css('display', 'block');
-    } else {
-      $resultsContainer.css('display', 'none');
+  AccessibleTypeahead({
+    displayMenu: 'overlay',
+    element: document.getElementById('search-typeahead'),
+    onSelect: typeaheadOnSelect,
+    placeholder: 'Search patterns',
+    selectOnBlur: false,
+    showNoOptionsFound: false,
+    source: typeaheadSource,
+    templates: {
+      inputValue: inputValueTemplate,
+      suggestion: suggestionTemplate
     }
-
   });
 });
