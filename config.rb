@@ -28,6 +28,11 @@ page "/design-patterns/patterns/*", :layout => "design_pattern"
 activate :search do |search|
   search.resources = ['design-patterns/patterns']
 
+  search.before_index = Proc.new do |to_index, to_store, resource|
+    throw(:skip) if resource.data.status&.downcase == "backlog" || 
+      !["all", nil].include?(resource.data.department&.downcase)
+  end
+
   search.fields = {
     # Index the title, but also make it available when showing results
     title:   {boost: 100, store: true, required: true},
