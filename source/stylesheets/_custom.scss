@@ -987,4 +987,20 @@ body.blank {
   }
 }
 
+// Quick gixes for Design Principles
+
+.design-principles {
+  ol {
+    color: $secondary-text-colour;
+  }
+}
+
+ol.principles {
+  list-style: none;
+  padding-left: 0;
+}
+
+.heading-large {
+  font-size: 36px !important;
+}
 

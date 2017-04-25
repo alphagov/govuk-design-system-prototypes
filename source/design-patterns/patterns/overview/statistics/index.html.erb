@@ -3,7 +3,7 @@
 layout: design_patterns_overview
 productName: Design Patterns
 title:	Statistics
-section: Overview
+section: About
 
 ---
 
@@ -18,7 +18,7 @@ status_order = ["Backlog", "Alpha", "Beta", "Approved"]
 design_patterns = sitemap.resources													
 	.select { |r|		
     	r.data.section &&
-    	r.data.section != "Overview" &&
+    	r.data.section != "About" &&
 		r.url.start_with?(pattern_root)						
 	}
 	.sort_by { |r| r.data.title }

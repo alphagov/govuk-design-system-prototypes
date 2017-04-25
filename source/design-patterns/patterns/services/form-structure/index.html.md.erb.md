@@ -1,6 +1,6 @@
 ---
 title:		Form structure
-section:	Services
+section:	Patterns
 status:		Approved
 department: All
 discuss:	https://designpatterns.hackpad.com/XDwY2wv3lCn

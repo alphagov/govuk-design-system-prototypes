@@ -2,8 +2,8 @@
 
 layout: design_patterns_overview
 productName: Design Patterns
-title:	Pattern statuses
-section: Overview
+title:	Statuses
+section: About
 
 ---
 
