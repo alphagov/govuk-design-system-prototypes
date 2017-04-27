@@ -657,7 +657,7 @@ $palette: (
     overflow: hidden;
     text-indent: -5000px;
     color: #fff;
-    background-color: #005ea5;
+    background-color: $govuk-blue;
     background-image: url("/images/search-button.png");
     background-repeat: no-repeat;
     background-position: 0 50%;
@@ -680,7 +680,7 @@ $palette: (
   position: relative;
 
   //background-color: #bfc1c3;
-  background-color: $text-colour;
+  background-color: $govuk-blue;
   background-image: url(/images/search-button.png);
   background-repeat: no-repeat;
   background-position: 0 50%;
@@ -1009,16 +1009,3 @@ ol.principles {
   margin-top: 30px;
 }
 
-// span.theme {
-//   margin-left: 20px;
-//   position: relative;
-
-//   &:before {
-//     content: ">";
-//     font-size: 16px;
-//     position: absolute;
-//     left: -15px;
-//     top: 8px;
-//     color: $grey-2;
-//   }
-// }
