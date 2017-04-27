@@ -54,9 +54,9 @@ set :use_theme_in_nav, true
 set :theme_orders, {
   "About" => [],
   "Visual styles" => [],
-  "Components" => ["Global", "Navigation", "Forms"],
+  "Components" => ["Global", "Navigation", "Form elements", "Content"],
   "Pages" => ["Single page", "Multi-page"],
-  "Patterns" => ["Forms", "Personal details", "Service design"]
+  "Patterns" => ["Form patterns", "Personal details", "Service design"]
 }
 
 # General configuration
