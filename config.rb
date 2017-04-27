@@ -48,9 +48,16 @@ activate :search do |search|
   }
 end
 
-# Feature Flags
+# Themes
 set :use_theme_in_nav, true
 
+set :theme_orders, {
+  "About" => [],
+  "Visual styles" => [],
+  "Components" => ["Global", "Navigation", "Forms"],
+  "Pages" => ["Single page", "Multi-page"],
+  "Patterns" => ["Forms", "Personal details", "Service design"]
+}
 
 # General configuration
 
