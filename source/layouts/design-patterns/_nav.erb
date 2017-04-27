@@ -15,7 +15,34 @@ patterns_in_section = sitemap.resources
     (r.data.department == "All" || r.data.department.nil?)
   }.sort_by { |r| r.data.title }
 
+
+if config[:use_theme_in_nav]
 %>
+
+<nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+
+  <ul class="pattern-nav">
+  <%
+    patterns_by_theme = patterns_in_section.group_by { |r| r.data.theme  || "Other"}
+    themes = patterns_by_theme.keys.sort
+    themes.each do |theme|
+  %>
+
+      <ul class="section">
+        <% if theme != "Other" %>
+        <li class="theme-heading"><%= theme %></li>
+        <% end %>
+        <% patterns_by_theme[theme].sort_by{|res| res.data.title}.each do |res| %>
+          <li class="<% if (current_page.path == res.path) %>current-page <% end %>status-<%= res.data.status.downcase.tr(" ", "-") %>"><%= link_to res.data.title, res.url %></li>
+        <% end %>
+      </ul>
+
+  <% end %>
+  <ul>
+
+</nav>
+
+<% else %>
 
 <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
 
@@ -31,6 +58,4 @@ patterns_in_section = sitemap.resources
 
 </nav>
 
-
-
-
+<% end %>

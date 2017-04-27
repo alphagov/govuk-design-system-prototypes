@@ -48,6 +48,9 @@ activate :search do |search|
   }
 end
 
+# Feature Flags
+set :use_theme_in_nav, true
+
 
 # General configuration
 

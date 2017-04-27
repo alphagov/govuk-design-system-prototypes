@@ -42,20 +42,20 @@
   <hr />
 
   <details id="hackpad">
-    <summary><span class="summary">Discuss ‘<%= current_page.data.title %>’ on Hackpad</a></summary>
+    <summary><span class="summary">Discuss ‘<%= current_page.data.title %>’ on Dropbox Paper</a></summary>
 
     <div>
 
-      <p>You can discuss this pattern on the Hackpad below.</p>
+      <p>You can discuss this pattern on the Dropbox Paper below.</p>
 
       <p>
         Please note that this is not formal Cabinet Office guidance. <br>
         All views expressed are those of the individual contributors. 
       </p>
 
-      <div class="hackpad">
-        <script src="<%= current_page.data.discuss %>.js"></script><noscript><div>View <a href="<%= current_page.data.discuss %>">Tables</a> on Hackpad.</div></noscript>
-      </div>
+      
+      <iframe class="hackpad" src="https://paper.dropbox.com/doc/Accordions-4lnTjyNru2mN1XXjA1Xf3" width="100%" height="100%" scrolling="no"></iframe>
+
     </div>
   </details>
   <% end %>
