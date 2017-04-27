@@ -988,7 +988,7 @@ body.blank {
   }
 }
 
-// Quick gixes for Design Principles
+// Quick fixes
 
 .design-principles {
   ol {
@@ -1008,3 +1008,17 @@ ol.principles {
 .panel-border-wide {
   margin-top: 30px;
 }
+
+// span.theme {
+//   margin-left: 20px;
+//   position: relative;
+
+//   &:before {
+//     content: ">";
+//     font-size: 16px;
+//     position: absolute;
+//     left: -15px;
+//     top: 8px;
+//     color: $grey-2;
+//   }
+// }
