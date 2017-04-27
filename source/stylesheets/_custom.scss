@@ -98,8 +98,9 @@
   margin: 10px 15px;
   text-transform: uppercase;
   color: $secondary-text-colour;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.04em;
+  font-weight: 700;
 }
 
 .toc__list {
@@ -299,7 +300,7 @@ ul ul.section {
   // background-color: $white;
   // border-bottom: 2px solid $border-colour;
   // padding: 10px 0;
-  margin-bottom: 0 !important;
+  margin-bottom: 30px !important;
 
   + ul.section {
     margin-bottom: 0;
