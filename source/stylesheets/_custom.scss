@@ -1009,3 +1009,47 @@ ol.principles {
   margin-top: 30px;
 }
 
+// Tile styles
+
+.grid-row.tile-wrapper {
+  padding: 0;
+}
+
+.tile {
+  background-color: lighten($light-blue, 46%);
+  padding: $gutter-half;
+  margin-bottom: $gutter;
+  // overflow: hidden;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0px;
+    padding-top: 0;
+
+    a {
+      color: $govuk-blue;
+      text-decoration: none;
+    }
+  }
+
+  a.image-link {
+    line-height: 0;
+    display: block;
+  }
+
+  p {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  img {
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+    filter: grayscale(100%);
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+  }
+}
