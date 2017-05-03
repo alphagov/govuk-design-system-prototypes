@@ -373,7 +373,12 @@ ul ul.section {
           line-height: 1.25;
           background: #bfc1c3;
           color: white;
-              }
+        }
+
+        &.example__mobile {
+          max-width: 320px;
+        }
+
     }
 
 

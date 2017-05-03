@@ -39,6 +39,9 @@ $desktop-breakpoint: 992px !default;
 @import "modules/technical-documentation";
 @import "modules/toc";
 @import "modules/previous-and-next-navigation";
+@import "modules/back-arrow";
+@import "modules/touch-friendly-links";
+@import "modules/new-breadcrumbs";
 //@import "modules/tabs";
 
 html, body {
