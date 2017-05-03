@@ -21,6 +21,29 @@ $desktop-breakpoint: 992px !default;
 
 @import "govuk_elements/govuk-elements";
 
+// basic styles for HTML5 and other elements
+html, body, div, h1, h2, h3, h4, h5, h6, article, aside, footer, header, hgroup, nav, section {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+a:link {
+  color: $link-colour;
+}
+
+a:visited {
+  color: $link-visited-colour;
+}
+
+a:hover {
+  color: $link-hover-colour;
+}
+
+a:active {
+  color: $link-active-colour;
+}
+
 @import "palette/syntax-highlighting";
 @import "syntax-highlighting";
 
@@ -55,25 +78,5 @@ html, body {
   @extend %site-width-container;
 }
 
-// basic styles for HTML5 and other elements
-html, body, div, h1, h2, h3, h4, h5, h6, article, aside, footer, header, hgroup, nav, section {
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
-}
 
-a:link {
-  color: $link-colour;
-}
 
-a:visited {
-  color: $link-visited-colour;
-}
-
-a:hover {
-  color: $link-hover-colour;
-}
-
-a:active {
-  color: $link-active-colour;
-}

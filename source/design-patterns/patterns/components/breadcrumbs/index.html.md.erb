@@ -28,7 +28,7 @@ Help users orientate themselves and navigate pages within a hierarchical structu
 	    </li>
 
 	    <li class="breadcrumbs__current-page">
-	        <a class="" aria-current="page" href="#content">Level three (Current page)</a>
+	        <a class="" aria-current="page" href="#content">Level three</a>
 	    </li>
 	  </ol>
 	</div>
@@ -37,15 +37,15 @@ Help users orientate themselves and navigate pages within a hierarchical structu
 
 ## When to use this component
 
-Breadcrumbs are a form of navigation to convey the hierarchical relationship between pages, the analogy of parent > child > grand child is often used to describe this. 
+Breadcrumbs are a form of navigation that convey the hierarchical relationship between pages. 
 
-They are used, not only as a form of navigation but for orientation. If a user was to arrive on a “child” page they should be able to understand where they currently are in the hierarchy of the website.
+They are also used for orientation. If a user lands on any page they should be able to understand where they currently are in the hierarchy of a website.
 
 ### When not to use this component
 
-Breadcrumbs are not appropriate for use in a flat website structure or to convey progress. We recommend using [back button](/design-patterns/patterns/components/back_button/) links as part of a linear journey or transaction.
+Breadcrumbs are not appropriate for use in a flat website structure, or to convey progress through a linear journey or transaction. We recommend using [back button](/design-patterns/patterns/components/back_button/) for this.
 
-Their use should also be considered against other navigational devices on the page. Breadcrumbs will not be necessary where there is permanently visible navigation, such as a sidebar.
+Their use should also be considered against other navigational devices on the page. Breadcrumbs are not always necessary where there is permanently visible navigation, such as a sidebar.
 
 ## How it works
 
@@ -76,16 +76,16 @@ Your breadcrumb should include the user’s current page, however it should be v
     </li>
 
     <li class="breadcrumbs__current-page">
-        <a class="" aria-current="page" href="#content">Level three (Current page)</a>
+        <a class="" aria-current="page" href="#content">Level three</a>
     </li>
   </ol></div><% end %>
 
 
 ### Mobile varient example (Alpha)
 
-When displayed on a mobile some of the visual relationship between pages in the breadcrumb are lost due to content wrapping over multiple lines. It also pushes the main content further down the page.
+When displayed on a small screen devive the visual relationship between pages in the breadcrumb are lost due to content wrapping over multiple lines. It also pushes the main content further down the page.
 
-This component has a CSS modifier to collapse the breadcrumb into a single link, similar to the [back button](/design-patterns/patterns/components/back_button/). 
+This component has a CSS modifier `breadcrumbs--collapse` which collapse the breadcrumb into a single link, similar to the [back button](/design-patterns/patterns/components/back_button/). 
 
 This reveals the parent of the current page so the user can travel up through the hierarchy of the site or section.
 
@@ -108,20 +108,26 @@ This reveals the parent of the current page so the user can travel up through th
     </li>
 
     <li class="breadcrumbs__current-page">
-        <a class="" aria-current="page" href="#content">Level three (Current page)</a>
+        <a class="" aria-current="page" href="#content">Level three</a>
     </li>
   </ol></div><% end %>
+
+
+### Navigation markup
+
+If the breadcrumb is the only form of navigation on the page then it should be marked up using `<nav>` in place of a `<div>`. This is to limit confusion screen reader users may face with multiple navigational components on the page. 
+
 
 ##Research on this component
 
 Many iterations of this component have been tested across Gov.uk. Some observations from research are
 
-- People do use breadcrumbs to navigate
-- People have a strong mental model of how breadcrumbs work (they show how content is organised)
-- There isn’t a common way to use them for orientation
-- People used them to go home - when they feel they were too deep in the website
-- Some users understood that they represent hierarchy of the content, although some expect breadcrumbs to show the path they have personally taken to reach that specific piece of content
-- People used them to go back one step - hence often compared to a back button - allowing to navigate in a smaller section of the website
+- People do use breadcrumbs to navigate and have a strong mental model of how breadcrumbs work (they show how content is organised)
+- There isn’t a common way they are used for orientation
+- People used them to “go home” when they feel too deep in the website
+- Some users understood that they represent hierarchy of the content, however some users expect breadcrumbs to show the path they have personally taken to reach that specific piece of content
+- People used them to go back one step, hence often compared to a back button - allowing to navigate in a smaller section of the website
+ - When the breadcrumbs were tested without the “Current page” users were observed jumping back two levels
 - Some people didn’t interact with them because they didn’t notice them and generally prefer to use the browser back button
 
 Very little research has been done on the mobile presentation of this component.
