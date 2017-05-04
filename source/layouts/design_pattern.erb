@@ -5,7 +5,7 @@
 <% content_for :service_link, '/design-patterns/patterns' %>
 
 <% content_for :header_links do %>
-  <%= partial 'layouts/design-patterns/header_links' %> 
+  <%= partial 'layouts/design-patterns/header_links' %>
 <% end %>
 
 <% content_for :sidebar do %>
@@ -27,14 +27,14 @@
     <h1><%= current_page.data.title %><a href="/design-patterns/patterns/overview/pattern_status/#<%= current_page.data.status.downcase %>"><span class="status"><%= current_page.data.status %></span></a></h1>
   </div>
 
-  
+
 
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="govuk-metadata">
         <dl>
           <dt>Last reviewed:</dt>
-          <dd>30 March 2017</dd>                      
+          <dd><% if current_page.data.edit %> <%= current_page.data.edit %> <% else %>30 March 2017<% end %></dd>                      
           <dt>Edit this page on:</dt>
           <dd><a href="<%= current_page.data.edit %>">Github</a></dd>
         </dl>
@@ -57,10 +57,10 @@
 
       <p>
         Please note that this is not formal Cabinet Office guidance. <br>
-        All views expressed are those of the individual contributors. 
+        All views expressed are those of the individual contributors.
       </p>
 
-      
+
       <iframe class="hackpad" src="https://paper.dropbox.com/doc/Accordions-4lnTjyNru2mN1XXjA1Xf3" width="100%" height="100%" scrolling="no"></iframe>
 
     </div>
