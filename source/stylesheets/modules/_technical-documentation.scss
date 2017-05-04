@@ -3,11 +3,11 @@
 @mixin heading-offset($tabletTopMargin) {
   // Scale margins with font size on mobile (16/19ths)
   $mobileTopMargin: ceil($tabletTopMargin * (16 / 19));
-  
+
   // Offset headings down on mobile so that linking to anchors they appear after
   // the sticky 'table of contents' element
   $stickyTocOffset: 20px + $gutter-half + 10px + 1px;
-  
+
   // Pad the heading so that when linking to an anchor there is at most a
   // $gutter-half (mobile) or $gutter (tablet and above) sized gap between the
   // top of the viewport and the heading.
@@ -25,9 +25,9 @@
   display: block;
   margin: 0 $gutter-half 10px;
   max-width: 40em;
-  
+
   line-height: 1.4;
-  
+
   color: $text-colour;
 
   @include media(tablet) {
@@ -40,13 +40,13 @@
   h1 {
     @include bold-48;
     @include heading-offset($gutter * 2);
-    
+
     &:first-of-type {
       @include heading-offset($gutter);
     }
   }
 
-  h2 {    
+  h2 {
     @include bold-24;
     @include heading-offset($gutter * 1.5);
   }
@@ -107,6 +107,13 @@
     max-width: 100%;
     width: auto;
     height: auto;
+    &.c-icon {
+      width: 1em;
+      height: 1em;
+      border: 0;
+      margin: 0;
+      padding: 0;
+    }
   }
 
   ol, ul {
@@ -128,7 +135,7 @@
 
   ol + p, ul + p, .table-container + p {
     margin-top: ceil($gutter * (16 / 19));
-    
+
     @include media(tablet) {
       margin-top: $gutter;
     }
@@ -159,11 +166,11 @@
     background: $code-01;
     padding: 3px 5px;
     border-radius: 1px;
-    
+
     font-family: monaco, Consolas, "Lucida Console", monospace;
     font-size: 15px;
     color: $code-0E;
-    
+
     @include media(tablet) {
       font-size: 16px;
     }
@@ -184,11 +191,11 @@
     display: block;
     max-width: 100%;
     overflow-x: auto;
-    
+
     margin-top: $gutter-half;
   }
 
-  table {    
+  table {
     width: 100%;
 
     border-collapse: collapse;
