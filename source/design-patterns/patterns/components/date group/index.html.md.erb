@@ -9,27 +9,197 @@ department: All
 
 
 
-## Example
+## Overview
 
-![](Dates_1.png)
+Use this component to collect dates from users.
 
-Use 3 fields as it’ll be easier for you to validate each part rather than trying to review a single field.
+<div class="example example--date-group">
+<form>
+  <div class="form-group">
+    <fieldset>
+      <legend>
+        <span class="form-label-bold">
+          What is your date of birth?
+        </span>
+        <span class="form-hint" id="dob-hint">For example, 31 3 1980</span>
+      </legend>
+      <div class="form-date">
+        <div class="form-group form-group-day">
+          <label class="form-label" for="dob-day">Day</label>
+          <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+        </div>
+        <div class="form-group form-group-month">
+          <label class="form-label" for="dob-month">Month</label>
+          <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+        </div>
+        <div class="form-group form-group-year">
+          <label class="form-label" for="dob-year">Year</label>
+          <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</form>	
+</div>
 
-Don’t automatically tab users between fields because this can clash with normal keyboard controls and confuse people.
+## When to use this component
 
-Calendar controls aren’t particularly useful for known dates and some users struggle with select boxes.
+In any form where you are collecting a date from a user, it can be modified to accept different date formats based on the context of it's usage.
+
+## How it works
+
+<div class="panel panel-border-wide">
+  <p>This is an <a href="/design-patterns/patterns/overview/pattern_status/#approved">approved pattern</a>.
+  If it’s relevant to your service, you must use it as part of meeting the Digital
+  Service Standard.</p>
+</div>
+
+- Use 3 fields as it’ll be easier for you to validate each part rather than trying to review a single field.
+
+- Don’t automatically tab users between fields because this can clash with normal keyboard controls and confuse people.
+
+- Calendar controls aren’t particularly useful for known dates and some users struggle with select boxes.
+
+
+###Asking for dates from documents and cards
+
+If you ask for a date exactly as it’s shown on a passport, credit card or similar item, make the fields match the format of the original. This will make it easier for users to copy it across accurately.
+
+
+<div class="example--date-group">
+
+<% partial "/layouts/example" do %>
+<form>
+  <div class="form-group">
+    <fieldset>
+      <legend>
+        <span class="form-label-bold">
+          What is your date of birth?
+        </span>
+        <span class="form-hint" id="dob-hint">For example, 31 3 1980</span>
+      </legend>
+      <div class="form-date">
+        <div class="form-group form-group-day">
+          <label class="form-label" for="dob-day">Day</label>
+          <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+        </div>
+        <div class="form-group form-group-month">
+          <label class="form-label" for="dob-month">Month</label>
+          <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+        </div>
+        <div class="form-group form-group-year">
+          <label class="form-label" for="dob-year">Year</label>
+          <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</form>	
+<% end %>
+
+</div>
 
 
 ### Triggering the iPhone numeric keyboard
 
 To trigger the numeric keyboard on iPhones, add a pattern attribute to the input element like this: ````pattern="[0-9]*"````
 
+### Error handling
 
-## Asking for dates from documents and cards
+####Example of an error on all inputs
 
-If you ask for a date exactly as it’s shown on a passport, credit card or similar item, make the fields match the format of the original. This will make it easier for users to copy it across accurately.
+<div class="example--date-group">
+<% partial "/layouts/example" do %>
+<form>
+  <div class="form-group form-group-error">
+    <fieldset>
+      <legend>
+        <span class="form-label-bold">
+          What is your date of birth?
+        </span>
+        <span class="form-hint" id="dob-hint-example">For example, 31 3 1980</span>
+        <span class="error-message">Error message goes here</span>
+      </legend>
+      <div class="form-date">
+        <div class="form-group form-group-day">
+          <label class="form-label" for="dob-day-example">Day</label>
+          <input class="form-control form-control-error" id="dob-day-example" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint-example">
+        </div>
+        <div class="form-group form-group-month">
+          <label class="form-label" for="dob-month-example">Month</label>
+          <input class="form-control form-control-error" id="dob-month-example" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+        </div>
+        <div class="form-group form-group-year">
+          <label class="form-label" for="dob-year-example">Year</label>
+          <input class="form-control form-control-error" id="dob-year-example" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</form><% end %></div>
+
+####Example of an error on a single field
+
+<div class="example example--date-group">
+<form>
+  <div class="form-group form-group-error">
+    <fieldset>
+      <legend>
+        <span class="form-label-bold">
+          What is your date of birth?
+        </span>
+        <span class="form-hint" id="dob-hint-example">For example, 31 3 1980</span>
+        <span class="error-message">Error message goes here</span>
+      </legend>
+      <div class="form-date">
+        <div class="form-group form-group-day">
+          <label class="form-label" for="dob-day-example">Day</label>
+          <input class="form-control form-control-error" id="dob-day-example" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint-example">
+        </div>
+        <div class="form-group form-group-month">
+          <label class="form-label" for="dob-month-example">Month</label>
+          <input class="form-control" id="dob-month-example" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+        </div>
+        <div class="form-group form-group-year">
+          <label class="form-label" for="dob-year-example">Year</label>
+          <input class="form-control" id="dob-year-example" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</form></div>
 
 
 ## Asking for approximate dates
 
 If you don’t need an exact date and you’re asking for one that users might struggle to remember (for example ‘the date you lost your passport’), make sure you allow them to enter an approximate date, like ‘June 1983’.
+
+### Month and year only
+
+<div class=" example example--date-group">
+<form>
+  <div class="form-group">
+    <fieldset>
+      <legend>
+        <span class="form-label-bold">
+          What is your date of birth?
+        </span>
+        <span class="form-hint" id="dob-hint-example">For example, June 1983</span>
+      </legend>
+      <div class="form-date">
+        <div class="form-group form-group-month-text">
+          <label class="form-label" for="dob-month-example">Month</label>
+          <input class="form-control" id="dob-month-example" name="dob-month" type="" pattern="" min="0" max="">
+        </div>
+        <div class="form-group form-group-year">
+          <label class="form-label" for="dob-year-example">Year</label>
+          <input class="form-control" id="dob-year-example" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</form>
+</div>
+
+
+
