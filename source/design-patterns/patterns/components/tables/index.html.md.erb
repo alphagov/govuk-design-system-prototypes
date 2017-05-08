@@ -7,19 +7,19 @@ department: All
 discuss:	https://designpatterns.hackpad.com/Organising-long-tasks-qAPtTmL1GJm
 ---
 
-#Overview
+##Overview
 When in what ways to display tabular data.
 
-# When to use this pattern
+## When to use this pattern
 Tables should only be used to present data.
 
-# When NOT to use this pattern
+### When NOT to use this pattern
 Don’t use tables for cosmetic changes to layout, eg to present a list because you think it looks better that way.
 
-# How it works
+## How it works
 Below are different was to implement tables to display data across different screen sizes.
 
-##Standard table
+###Standard table
 Use when columns are small enough to fit on a mobile screen
 
 <% partial "/layouts/example" do %>
@@ -72,7 +72,7 @@ Use when columns are small enough to fit on a mobile screen
 </table>
 <% end %>
 
-##Responsive tables
+###Responsive tables
 Use this pattern when there is not enough space on smaller screen to fit traditional table layout. This pattern requires adding data-* attribute to
 each row cell that mimics the column header text. On smaller screens this text is then displays before the cell value, making information easier to read.
 
@@ -126,7 +126,7 @@ each row cell that mimics the column header text. On smaller screens this text i
 </table>
 <% end %>
 
-##Responsive tables - Javascript solution
+###Responsive tables - Javascript solution
 This is a Javascript solution that turns a standard table into a responsive table using the above describedsolution without the need for manually adding
 data-* attributes
 
@@ -218,5 +218,5 @@ for (var i = 0, row; row = tablebody.rows[i]; i++) {
 ### Responsive tables - Table saw
 [Filament group "paginated tables" Javascript Solution](https://www.filamentgroup.com/lab/tablesaw.html)
 
-# Related work on this pattern
+## Related work on this pattern
 [Service Manual](https://www.gov.uk/guidance/content-design/tables)
