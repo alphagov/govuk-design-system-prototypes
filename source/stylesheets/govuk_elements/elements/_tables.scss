@@ -69,3 +69,14 @@ table {
     }
   }
 }
+.table--scroll {
+  overflow: initial;
+  white-space: nowrap;
+}
+.scrollable-table {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -ms-touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
