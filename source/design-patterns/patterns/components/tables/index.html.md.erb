@@ -2,9 +2,221 @@
 title:		Tables
 section:	Components
 theme:		Content
-status:		Approved
+status:		Alpha
 department: All
 discuss:	https://designpatterns.hackpad.com/Organising-long-tasks-qAPtTmL1GJm
 ---
 
-(There should be content for this)
+#Overview
+When in what ways to display tabular data.
+
+# When to use this pattern
+Tables should only be used to present data.
+
+# When NOT to use this pattern
+Don’t use tables for cosmetic changes to layout, eg to present a list because you think it looks better that way.
+
+# How it works
+Below are different was to implement tables to display data across different screen sizes.
+
+##Standard table
+Use when columns are small enough to fit on a mobile screen
+
+<% partial "/layouts/example" do %>
+<table class="table">
+<thead>
+<tr>
+<th></th>
+<th class="numeric">2017-18</th>
+<th class="numeric">2018-19</th>
+<th class="numeric">2019-20</th>
+<th class="numeric">2020-21</th>
+<th class="numeric">2021-22</th>
+</tr>
+</thead>
+<colgroup></colgroup> <colgroup span="5"></colgroup>
+<tbody>
+<tr>
+<th>i Doctoral loans</th>
+<td class="numeric">0</td>
+<td class="numeric">-5</td>
+<td class="numeric">-5</td>
+<td class="numeric">-10</td>
+<td class="numeric">-10</td>
+</tr>
+<tr>
+<th>ii Part-time maintenance loans</th>
+<td class="numeric">0</td>
+<td class="numeric">75</td>
+<td class="numeric">130</td>
+<td class="numeric">95</td>
+<td class="numeric">65</td>
+</tr>
+<tr>
+<th>iii Further Education maintenance loans</th>
+<td class="numeric">0</td>
+<td class="numeric">0</td>
+<td class="numeric">-15</td>
+<td class="numeric">-40</td>
+<td class="numeric">-70</td>
+</tr>
+<tr class="subtotal">
+<th>Total policy decisions</th>
+<td class="numeric">0</td>
+<td class="numeric">70</td>
+<td class="numeric">110</td>
+<td class="numeric">45</td>
+<td class="numeric">-15</td>
+</tr>
+</tbody>
+</table>
+<% end %>
+
+##Responsive tables
+Use this pattern when there is not enough space on smaller screen to fit traditional table layout. This pattern requires adding data-* attribute to
+each row cell that mimics the column header text. On smaller screens this text is then displays before the cell value, making information easier to read.
+
+<% partial "/layouts/example" do %>
+<table class="table table--responsive">
+<thead>
+<tr>
+<th></th>
+<th class="numeric">2017-18</th>
+<th class="numeric">2018-19</th>
+<th class="numeric">2019-20</th>
+<th class="numeric">2020-21</th>
+<th class="numeric">2021-22</th>
+</tr>
+</thead>
+<colgroup></colgroup> <colgroup span="5"></colgroup>
+<tbody>
+<tr>
+<th>i Doctoral loans</th>
+<td data-th="2017-18" class="numeric">0</td>
+<td data-th="2018-19" class="numeric">-5</td>
+<td data-th="2019-20" class="numeric">-5</td>
+<td data-th="2020-21" class="numeric">-10</td>
+<td data-th="2021-22" class="numeric">-10</td>
+</tr>
+<tr>
+<th>ii Part-time maintenance loans</th>
+<td data-th="2017-18" class="numeric">0</td>
+<td data-th="2018-19" class="numeric">75</td>
+<td data-th="2019-20" class="numeric">130</td>
+<td data-th="2020-21" class="numeric">95</td>
+<td data-th="2021-22" class="numeric">65</td>
+</tr>
+<tr>
+<th>iii Further Education maintenance loans</th>
+<td data-th="2017-18" class="numeric">0</td>
+<td data-th="2018-19" class="numeric">0</td>
+<td data-th="2019-20" class="numeric">-15</td>
+<td data-th="2020-21" class="numeric">-40</td>
+<td data-th="2021-22" class="numeric">-70</td>
+</tr>
+<tr class="subtotal">
+<th>Total policy decisions</th>
+<td data-th="2017-18" class="numeric">0</td>
+<td data-th="2018-19" class="numeric">70</td>
+<td data-th="2019-20" class="numeric">110</td>
+<td data-th="2020-21" class="numeric">45</td>
+<td data-th="2021-22" class="numeric">-15</td>
+</tr>
+</tbody>
+</table>
+<% end %>
+
+##Responsive tables - Javascript solution
+This is a Javascript solution that turns a standard table into a responsive table using the above describedsolution without the need for manually adding
+data-* attributes
+
+<div class="example">
+  <table class="table table--responsive js-make-table-responsive">
+  <thead>
+  <tr>
+  <th></th>
+  <th class="numeric">2017-18</th>
+  <th class="numeric">2018-19</th>
+  <th class="numeric">2019-20</th>
+  <th class="numeric">2020-21</th>
+  <th class="numeric">2021-22</th>
+  </tr>
+  </thead>
+  <colgroup></colgroup> <colgroup span="5"></colgroup>
+  <tbody>
+  <tr>
+  <th>i Doctoral loans</th>
+  <td class="numeric">0</td>
+  <td class="numeric">-5</td>
+  <td class="numeric">-5</td>
+  <td class="numeric">-10</td>
+  <td class="numeric">-10</td>
+  </tr>
+  <tr>
+  <th>ii Part-time maintenance loans</th>
+  <td class="numeric">0</td>
+  <td class="numeric">75</td>
+  <td class="numeric">130</td>
+  <td class="numeric">95</td>
+  <td class="numeric">65</td>
+  </tr>
+  <tr>
+  <th>iii Further Education maintenance loans</th>
+  <td class="numeric">0</td>
+  <td class="numeric">0</td>
+  <td class="numeric">-15</td>
+  <td class="numeric">-40</td>
+  <td class="numeric">-70</td>
+  </tr>
+  <tr class="subtotal">
+  <th>Total policy decisions</th>
+  <td class="numeric">0</td>
+  <td class="numeric">70</td>
+  <td class="numeric">110</td>
+  <td class="numeric">45</td>
+  <td class="numeric">-15</td>
+  </tr>
+  </tbody>
+  </table>
+</div>
+```
+var headertext = [],
+headers = document.querySelectorAll(".js-make-table-responsive th"),
+tablerows = document.querySelectorAll(".js-make-table-responsive th"),
+tablebody = document.querySelector(".js-make-table-responsive tbody");
+
+for(var i = 0; i < headers.length; i++) {
+  var current = headers[i];
+  headertext.push(current.textContent.replace(/\r?\n|\r/,""));
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+  for (var j = 0, col; col = row.cells[j]; j++) {
+    col.setAttribute("data-th", headertext[j]);
+  }
+}
+```
+<!-- move to propper modules -->
+<script>
+  (function() {
+    var headertext = [],
+    headers = document.querySelectorAll(".js-make-table-responsive th"),
+    tablerows = document.querySelectorAll(".js-make-table-responsive th"),
+    tablebody = document.querySelector(".js-make-table-responsive tbody");
+
+    for(var i = 0; i < headers.length; i++) {
+      var current = headers[i];
+      headertext.push(current.textContent.replace(/\r?\n|\r/,""));
+    }
+    for (var i = 0, row; row = tablebody.rows[i]; i++) {
+      for (var j = 0, col; col = row.cells[j]; j++) {
+        col.setAttribute("data-th", headertext[j]);
+      }
+    }
+  }());
+</script>
+
+### Responsive tables - Table saw
+[Filament group "paginated tables" Javascript Solution](https://www.filamentgroup.com/lab/tablesaw.html)
+
+# Related work on this pattern
+[Service Manual](https://www.gov.uk/guidance/content-design/tables)

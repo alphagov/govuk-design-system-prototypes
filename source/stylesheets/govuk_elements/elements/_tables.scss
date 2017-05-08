@@ -47,3 +47,25 @@ table {
     padding: em(12, 16) em(20, 16) em(9, 16) 0;
   }
 }
+.table--responsive {
+  @include media (mobile) {
+    thead {
+      display: none;
+    }
+    tbody th {
+      display: block;
+    }
+    tbody tr {
+      display: block;
+    }
+    tbody td {
+      display: block;
+      &:before {
+        content: attr(data-th) ": ";
+        font-weight: 700;
+        max-width: 150px;
+      }
+
+    }
+  }
+}
