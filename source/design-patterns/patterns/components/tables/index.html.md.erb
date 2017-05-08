@@ -19,6 +19,10 @@ Don’t use tables for cosmetic changes to layout, eg to present a list because 
 ## How it works
 Below are different was to implement tables to display data across different screen sizes.
 
+<div class="panel">
+  Add appropriate scope="col" to thead items and scope="row" and each th element in mobile view. 
+</div>
+
 ###Standard table
 Use when columns are small enough to fit on a mobile screen
 
@@ -26,18 +30,18 @@ Use when columns are small enough to fit on a mobile screen
 <table class="table">
 <thead>
 <tr>
-<th></th>
-<th class="numeric">2017-18</th>
-<th class="numeric">2018-19</th>
-<th class="numeric">2019-20</th>
-<th class="numeric">2020-21</th>
-<th class="numeric">2021-22</th>
+<th scope="col"></th>
+<th scope="col" class="numeric">2017-18</th>
+<th scope="col" class="numeric">2018-19</th>
+<th scope="col" class="numeric">2019-20</th>
+<th scope="col"class="numeric">2020-21</th>
+<th scope="col" class="numeric">2021-22</th>
 </tr>
 </thead>
 <colgroup></colgroup> <colgroup span="5"></colgroup>
 <tbody>
 <tr>
-<th>i Doctoral loans</th>
+<th scope="row">i Doctoral loans</th>
 <td class="numeric">0</td>
 <td class="numeric">-5</td>
 <td class="numeric">-5</td>
@@ -45,7 +49,7 @@ Use when columns are small enough to fit on a mobile screen
 <td class="numeric">-10</td>
 </tr>
 <tr>
-<th>ii Part-time maintenance loans</th>
+<th scope="row">ii Part-time maintenance loans</th>
 <td class="numeric">0</td>
 <td class="numeric">75</td>
 <td class="numeric">130</td>
@@ -53,7 +57,7 @@ Use when columns are small enough to fit on a mobile screen
 <td class="numeric">65</td>
 </tr>
 <tr>
-<th>iii Further Education maintenance loans</th>
+<th scope="row">iii Further Education maintenance loans</th>
 <td class="numeric">0</td>
 <td class="numeric">0</td>
 <td class="numeric">-15</td>
@@ -61,7 +65,7 @@ Use when columns are small enough to fit on a mobile screen
 <td class="numeric">-70</td>
 </tr>
 <tr class="subtotal">
-<th>Total policy decisions</th>
+<th scope="row">Total policy decisions</th>
 <td class="numeric">0</td>
 <td class="numeric">70</td>
 <td class="numeric">110</td>
