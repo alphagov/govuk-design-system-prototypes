@@ -1027,6 +1027,29 @@ ol.principles {
 
 .grid-row.tile-wrapper {
   padding: 0;
+  max-width: 1000px;
+}
+
+.tile__grid {
+  @include media(mobile) {
+    float: left;
+  }
+
+  @include media($min-width: 450px) {
+    width: 50%;
+  }
+
+  @include media(tablet) {
+    width: 100%;
+  }
+
+  @include media($min-width: 850px) {
+    width: 50%;
+  }
+
+  @include media(desktop) {
+    width: 33.333%;
+  }
 }
 
 .tile {
@@ -1039,6 +1062,15 @@ ol.principles {
     margin-top: 0;
     margin-bottom: 0px;
     padding-top: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: $govuk-blue;
+    
+    @include media(mobile) {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
 
     a {
       color: $govuk-blue;
@@ -1054,6 +1086,9 @@ ol.principles {
   p {
     font-size: 16px;
     margin-top: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   img {
