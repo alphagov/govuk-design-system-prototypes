@@ -75,7 +75,7 @@ table {
 }
 .scrollable-table {
   overflow-y: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
   -ms-touch-action: pan-x;
   -webkit-overflow-scrolling: touch;
   position: relative;
