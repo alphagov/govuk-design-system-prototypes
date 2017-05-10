@@ -1063,12 +1063,14 @@ ol.principles {
 }
 
 .tile {
-  background-color: lighten($light-blue, 46%);
+  background-color: lighten($light-blue, 48%);
   padding: $gutter-half;
   margin-bottom: $gutter;
+  position: relative;
+  z-index: 0;
   
   &:hover {
-    background-color: lighten($light-blue, 40%);
+    background-color: lighten($light-blue, 44%);
   }
 
   h2 {
@@ -1112,6 +1114,28 @@ ol.principles {
 
     &:hover {
       // filter: grayscale(0%);
+    }
+  }
+}
+
+.tile__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.tile__section-link {
+  position: relative;
+  display: block;
+  z-index: 1;
+  a {
+    &:hover {
+      color: $govuk-blue;
+      background-color: $yellow;
     }
   }
 }
