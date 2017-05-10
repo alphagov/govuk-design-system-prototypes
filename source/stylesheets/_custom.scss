@@ -226,6 +226,8 @@
         margin-top: 3px;
         letter-spacing: 1;
         color: $secondary-text-colour;
+        // hide status
+        // display: none;
     }
 
     .status-backlog a {
@@ -849,6 +851,8 @@ span.status {
   border: 1px solid $border-colour;
   text-decoration: none;
   margin-left: 10px;
+  // Hide status
+  // display: none;
 }
 
 h1 {
@@ -1027,7 +1031,7 @@ ol.principles {
 
 .grid-row.tile-wrapper {
   padding: 0;
-  max-width: 1000px;
+  max-width: 990px;
 }
 
 .tile__grid {
@@ -1056,7 +1060,10 @@ ol.principles {
   background-color: lighten($light-blue, 46%);
   padding: $gutter-half;
   margin-bottom: $gutter;
-  // overflow: hidden;
+  
+  &:hover {
+    background-color: lighten($light-blue, 40%);
+  }
 
   h2 {
     margin-top: 0;
@@ -1095,10 +1102,28 @@ ol.principles {
     padding: 0;
     margin-top: 10px;
     margin-bottom: 0;
-    filter: grayscale(100%);
+    // filter: grayscale(100%);
 
     &:hover {
-      filter: grayscale(0%);
+      // filter: grayscale(0%);
     }
   }
+}
+
+span.experimental {
+
+  @include box-sizing(border-box);
+  
+  vertical-align: middle;
+  font-size: 10px;
+  padding: 1px 3px;
+  font-weight: bold;
+  color: $secondary-text-colour;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid $border-colour;
+  text-decoration: none;
+  margin-left: 5px;
+  color: $govuk-blue;
+  border-color: $govuk-blue;
 }
