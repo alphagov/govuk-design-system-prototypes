@@ -3,7 +3,7 @@
 layout: design_patterns_overview
 productName: Design Patterns
 title:	Statuses
-section: About
+section: 
 
 ---
 

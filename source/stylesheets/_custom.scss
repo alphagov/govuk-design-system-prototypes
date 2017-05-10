@@ -725,13 +725,19 @@ $palette: (
 }
 
 .header__container .pattern-search{
-  margin-bottom: 0px;
-  background-color: $govuk-blue;
+  float: right;
+  margin: 7px $gutter-half 0px 0px;
   width: 300px;
 
+  @include media(mobile) {
+    position: absolute;
+    right: 0;
+    top: 5px;
+  }
 
   #pattern-search-text {
     border: 2px solid white;
+    padding: 3px 5px;
     
     &:focus{
 
@@ -943,11 +949,11 @@ p.section-description {
       a {
         @include box-sizing(border-box);
         display: block;
-        height: 59px;
+        height: 53px;
         color: $govuk-blue;
         text-decoration: none;
         font-weight: 700;
-        line-height: 59px;
+        line-height: 53px;
         padding: 0 20px;
         border-bottom: 4px solid transparent;
         &:hover {
