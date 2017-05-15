@@ -1,6 +1,6 @@
 ---
 applications:
-- name: govuk-design-system-prototype-design-system
+- name: govuk-design-system-prototype
   memory: 64M
   path: ./build
   buildpack: staticfile_buildpack
