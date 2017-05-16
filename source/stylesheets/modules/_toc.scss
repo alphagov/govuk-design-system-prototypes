@@ -29,6 +29,12 @@
         padding: 8px 0;
         letter-spacing: 0.03em;
 
+        &:hover {
+          text-decoration: none;
+          color: $govuk-blue;
+          border-left: 4px solid $light-blue;
+        }
+
         &.toc-link--in-view {
           font-weight: bold;
           letter-spacing: normal;

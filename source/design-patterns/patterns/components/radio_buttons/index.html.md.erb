@@ -1,0 +1,163 @@
+---
+title:		Radio buttons
+section:	Components
+theme:		Form elements
+status:		Approved
+department: All
+discuss:  https://designpatterns.hackpad.com/Radio-buttons-8eBuLm9eRaz
+---
+
+## Overview
+
+Let users select a single option from a list by using radio buttons.
+
+<div class="example">
+
+<h1 class="heading-medium">
+  Are you 18 or over?
+</h1>
+
+  <form>
+    <div class="form-group">
+      <fieldset>
+
+        <legend class="visually-hidden">Are you 18 or over?</legend>
+
+        <p class="form-block">You must be 18 or over to transport goods in lorries and vans.</p>
+
+        <div class="multiple-choice">
+          <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+          <label for="radio-inline-1">Yes</label>
+        </div>
+        <div class="multiple-choice">
+          <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+          <label for="radio-inline-2">No</label>
+        </div>
+
+      </fieldset>
+    </div>
+    <div class="form-group">
+      <input class="button" type="submit" value="Continue">
+    </div>  
+  </form>
+</div>  
+
+
+## When to use this pattern
+
+Use radio buttons when you need to let users choose only one option from a list. 
+
+### When not to use this pattern
+
+Don’t use radio buttons if you want users to be able to select more than one
+option. If you need to do this, you should use
+[checkboxes](/design-patterns/patterns/components/checkboxes/) instead.
+
+## How it works
+
+### Stacked radio buttons
+
+When there are more than two options, radio buttons should be stacked, like so:
+
+<% partial "/layouts/example" do %>
+<h1 class="heading-medium">What type of phone do you have access to?</h1>
+
+<form>
+  <div class="form-group">
+    <fieldset>
+
+      <legend class="visually-hidden">What type of phone do you have access to?</legend>
+
+      <p class="form-block">This will be used to send your security code</p>
+
+      <div class="multiple-choice">
+        <input id="radio-1" type="radio" name="radio-group" value="Mobile phone">
+        <label for="radio-1">Mobile phone</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-2" type="radio" name="radio-group" value="Landline phone">
+        <label for="radio-2">Landline phone</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-3" type="radio" name="radio-group" value="I don’t have access to a phone">
+        <label for="radio-3">I don’t have access to a phone</label>
+      </div>
+    </fieldset>
+  </div>
+</form><% end %>
+
+
+
+### Inline radio buttons
+
+If there are only two options, you can either stack them or use inline radio
+buttons, like this:
+
+<% partial "/layouts/example" do %>
+<h1 class="heading-medium">
+  Do you already have a personal user account?
+</h1>
+
+<form>
+  <div class="form-group">
+    <fieldset class="inline">
+
+      <legend class="visually-hidden">Do you already have a personal user account?</legend>
+
+      <div class="multiple-choice">
+        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+        <label for="radio-inline-1">Yes</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+        <label for="radio-inline-2">No</label>
+      </div>
+
+    </fieldset>
+  </div>
+</form><% end %>
+
+
+### Splitting options
+
+In some cases it may help to separate one option from the others, like this: 
+
+<% partial "/layouts/example" do %>
+<h1 class="heading-medium">Where do you live?</h1>
+
+<form>
+  <div class="form-group">
+    <fieldset>
+
+      <legend class="visually-hidden">Where do you live?</legend>
+
+      <div class="multiple-choice">
+        <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland">
+        <label for="radio-1">Northern Ireland</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands">
+        <label for="radio-2">Isle of Man or the Channel Islands</label>
+      </div>
+      <p class="form-block">or</p>
+      <div class="multiple-choice">
+        <input id="radio-3" type="radio" name="radio-group" value="I am a British citizen living abroad">
+        <label for="radio-3">I am a British citizen living abroad</label>
+      </div>
+    </fieldset>
+  </div>
+</form><% end %>
+
+In most cases, you won’t need to do this. 
+
+## Research on this pattern
+
+Read a blog post about [updates to this pattern](https://designnotes.blog.gov.uk/2016/11/30/weve-updated-the-radios-and-checkboxes-on-gov-uk/).  
+
+## Related patterns
+
+- [Checkboxes](/design-patterns/patterns/components/checkboxes) 
+- [Forms](/design-patterns/patterns/styles/forms/)
+- [Question pages](/design-patterns/patterns/pages/question_pages/) 
+
+

@@ -1,0 +1,113 @@
+---
+title:		Autocomplete
+aliases:	Typeahead, type ahead, auto suggest, auto complete
+section:	Components
+theme:		Forms
+status:		Alpha
+priority:	2
+department: Test
+discuss:	https://designpatterns.hackpad.com/Type-ahead-l3OHvWUmDml
+---
+
+## Overview
+
+An autocomplete component that:
+
+- helps users find something in a known list of options
+- helps you suggest results related to something a user has searched for
+- is accessible to all users
+
+Example:
+
+![Animation of the autocomplete being used](autocomplete.gif)
+
+You can try a [demo of the autocomplete component][demo] and [share your
+feedback on Hackpad](#hackpad).
+
+## When to use this pattern
+
+Use this autocomplete component when:
+
+- users need to pick from a known set of options (for example, medical
+  conditions or days of the week)
+- users are likely to recognise the right option when they see it
+- users can know what answer they need to give without seeing the full list
+  (e.g. what was the last country you visited?)
+- the list of options is too long for a set of radio buttons or checkboxes
+- there are multiple names or ways to describe something
+- you want to let users use their own language and allow for spelling errors
+
+## When not to use this pattern
+
+You shouldn’t use autocomplete when:
+
+- users won’t know the name of the option they need, or won’t be able to
+  identify it
+- users might not know the answer without seeing the full list (e.g. which
+  countries have you visited? - they might know some, but may need the full list
+  to prompt them) 
+- users won’t know what to search for
+- the results are too similar
+- you can’t predict the majority of answers (in this case, it’s better to use a
+  free text box)
+
+## How it works
+
+**This is an [alpha pattern](/design-patterns/patterns/overview/pattern_status/#alpha)
+that’s being researched by the GDS design team and is likely to change.**
+
+### Give clear options
+
+You shouldn’t use autocompletes as a solution to poor content or service design.
+
+If your options are confusingly named, avoid the temptation to use autocomplete
+to provide long lists of alternative names. Instead, work with your team to make
+the names clearer.
+
+### Start with an empty text box to inform options
+
+Autocomplete helps users choose from a given set of answers. If you don’t know
+what options to provide, start with an empty box when your service is in beta to
+see what sorts of things users answer with.
+
+For instance, you could use autocomplete to collect data about common complaints
+as part of a complaint form, but you may not initially know what options to fill
+it with, or the language people use.
+
+Start with an empty text box to find out what things people complain about and
+how they describe them.
+
+### Autocompletes are a form of progressive enhancement
+
+Autocomplete requires JavaScript, so you must provide a non-JavaScript fallback
+for users who don’t have it.
+
+This might be a dropdown menu (when the user must pick an option from a list),
+or an empty text box (when the user can type anything).
+
+## Research on this pattern
+
+This pattern is in alpha. It’s been tested as a country picker which helps users
+to select a country.
+
+Read a blog post about the [how the autocomplete component has been tested and iterated](https://docs.google.com/a/digital.cabinet-office.gov.uk/document/d/1OdLa3rioziYkB7f5QPFkRp-Fg2m-Vphq09BNeumq8Hc/edit?usp=sharing).
+
+### Next steps
+
+More research is needed to find out:
+
+- how it works in scenarios other than picking a country
+- what metadata is useful to show to users (for example, categorisation of
+  things)
+- how results should be ordered
+- how comfortable users are with changing previous answers
+- whether users are comfortable providing an answer that isn’t in the list
+- whether it would be helpful to show the list when users first focus it
+
+## Related patterns
+
+- [Radio buttons](/design-patterns/patterns/components/radio_buttons/)
+- [Checkboxes](/design-patterns/patterns/components/checkboxes/)
+- [Buttons](/design-patterns/patterns/components/buttons/)
+
+[demo]: https://govuk-location-picker-demo.herokuapp.com/

@@ -6,10 +6,8 @@
 
 // Allow an ID here, this is useful as it matches the GOV.UK template skiplink
 // scss-lint:disable IdSelector
-
-/*
 #content {
-  @extend %site-width-container;
+  // @extend %site-width-container; - Removed for tech docs format
   @extend %contain-floats;
   padding-bottom: $gutter;
 
@@ -20,7 +18,6 @@
   // Remove the blue outline
   outline: none;
 }
-*/
 
 
 // Grid layout

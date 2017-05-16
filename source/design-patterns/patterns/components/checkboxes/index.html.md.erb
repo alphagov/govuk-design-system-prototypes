@@ -1,0 +1,54 @@
+---
+title:		Checkboxes
+section:	Components
+theme:		Form elements
+status:		Approved
+department: All
+---
+
+use these to select either on/off toggles or multiple selections
+make it clear with words when users can select one or multiple options
+
+
+## Stacked checkboxes
+
+<% partial "/layouts/example" do %>
+<h3 class="heading-medium">Which types of waste do you transport regularly?</h3>
+<p>Select all that apply</p>
+
+<form>
+  <fieldset>
+
+    <legend class="visually-hidden">Which types of waste do you transport regularly?</legend>
+
+    <div class="multiple-choice">
+      <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
+      <label for="waste-type-1">Waste from animal carcasses</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+      <label for="waste-type-2">Waste from mines or quarries</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+      <label for="waste-type-3">Farm or agricultural waste</label>
+    </div>
+
+  </fieldset>
+</form><% end %>
+
+
+## Inline checkboxes
+
+- large hit areas aren’t always appropriate
+- only pre-select options if there’s a strong, user-centred reason to
+
+<% partial "/layouts/example" do %>
+<div class="form-group">
+  <label class="form-label" for="telephone-number">Enter your telephone number</label>
+  <input class="form-control" id="telephone-number" name="telephone-number" type="text">
+</div>
+<div class="multiple-choice">
+  <input id="checkbox-telephone-number" name="contact-by-text-phone" type="checkbox" value="true">
+  <label for="checkbox-telephone-number">I need to be contacted using a text phone</label>
+</div><% end %>

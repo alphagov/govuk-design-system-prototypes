@@ -1,0 +1,348 @@
+---
+title:    Forms
+section:  
+status:   Approved
+department: All
+---
+
+Keep forms as simple as possible – only ask what’s needed to run your service.
+
+## Optional and mandatory fields
+
+- only ask for the information you absolutely need
+- if you do ask for optional information, mark the labels of optional fields with ‘(optional)’
+- don’t mark mandatory fields with asterisks
+
+## Labels
+
+- all form fields should be given labels
+- don’t hide labels, unless the surrounding context makes them unnecessary
+- labels should be aligned above their fields
+- label text should be short, direct and in sentence case
+- avoid colons at the end of labels
+- labels should be associated with form fields using the `for` attribute
+
+<% partial "/layouts/example" do %>
+<label class="form-label" for="full-name-f1">Full name</label>
+<input class="form-control" id="full-name-f1" type="text">
+<% end %>
+
+## Form fields
+
+Make field widths proportional to the input they take.
+
+Ensure that users can enter the information they need at smaller screen sizes.
+
+Snap form fields to 100% width at smaller screen sizes.
+
+
+## Form focus states
+
+All elements use the yellow focus style as a highlight, as either a fill or 3px outline.
+
+Click on the label “Full name” or inside the form field to show the focus state.
+
+<% partial "/layouts/example" do %>
+<label class="form-label" for="full-name-f1">Full name</label>
+<input class="form-control" id="full-name-f1" type="text"><% end %>
+
+
+## Hint text
+
+- don’t use placeholder text in form fields, as this will disappear once content is entered into the form field
+- use hint text for supporting contextual help, this will always be shown
+- hint text should sit above a form field
+- ensure hint text can be read correctly by screen readers
+
+<% partial "/layouts/example" do %>
+<label class="form-label" for="ni-number">
+  National Insurance number
+  <span class="form-hint">
+    It's on your National Insurance card, benefit letter, payslip or P60.
+    <br>
+    For example, ‘QQ 12 34 56 C’.
+  </span>
+</label>
+<input class="form-control" id="ni-number" type="text"><% end %>
+
+
+## Spacing between form elements
+
+Ensure there is sufficient spacing between form elements.
+
+<% partial "/layouts/example" do %>
+<!-- Use .form-group to create spacing when wrapping label and input pairs -->
+<div class="form-group">
+  <label class="form-label" for="first-name-2">First name</label>
+  <input class="form-control" id="first-name-2" name="first-name-2" type="text">
+</div>
+<div class="form-group">
+  <label class="form-label" for="last-name-2">Last name</label>
+  <input class="form-control" id="last-name-2" name="last-name-2" type="text">
+</div>
+<% end %>
+
+
+## File upload
+
+A control that lets the user select a file.
+
+<% partial "/layouts/example" do %>
+<div class="form-group">
+  <label class="form-label" for="file-input">
+    Upload a file
+  </label>
+  <input type="file" id="file-input">
+</div><% end %>
+
+We recommend using a native input using `type="file"`, rather than a custom implementation.
+
+This is so:
+
+- the control gains focus when tabbing through the page
+- the control functions using a keyboard
+- the control functions using assistive technology
+- the control functions when javascript is not available
+
+A custom implementation of this control would need to meet the criteria above.
+
+
+## Fieldsets and legends
+
+Use fieldsets to group related form controls. The first element inside a fieldset must be a legend element which describes the group.
+
+
+## Select boxes
+
+Avoid using select boxes (drop-down lists) - use radio buttons or checkboxes instead.
+
+<% partial "/layouts/example" do %>
+<div class="form-group">
+  <label class="form-label" for="select-box">This is the label text</label>
+  <select class="form-control" id="select-box">
+    <option>GOV.UK elements option 1</option>
+    <option>GOV.UK elements option 2</option>
+    <option>GOV.UK elements option 3</option>
+  </select>
+</div><% end %>
+
+
+## Radio buttons
+
+use these to let users choose a single option from a list
+for more than two options, radio buttons should be stacked
+radio buttons with large hit areas are easier to select with a mouse or touch devices
+
+### Inline radio buttons
+
+<% partial "/layouts/example" do %>
+<h1 class="heading-medium">
+  Do you already have a personal user account?
+</h1>
+
+<form>
+  <div class="form-group">
+    <fieldset class="inline">
+
+      <legend class="visually-hidden">Do you already have a personal user account?</legend>
+
+      <label class="block-label selection-button-radio" for="radio-inline-1">
+        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+        Yes
+      </label>
+      <label class="block-label selection-button-radio" for="radio-inline-2">
+        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+        No
+      </label>
+
+    </fieldset>
+  </div>
+</form><% end %>
+
+
+### Stacked radio buttons
+
+<% partial "/layouts/example" do %>
+<h1 class="heading-medium">Where do you live?</h1>
+
+<form>
+  <div class="form-group">
+    <fieldset>
+
+      <legend class="visually-hidden">Where do you live?</legend>
+
+      <label class="block-label selection-button-radio" for="radio-1">
+        <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland">
+        Northern Ireland
+      </label>
+      <label class="block-label selection-button-radio" for="radio-2">
+        <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands">
+        Isle of Man or the Channel Islands
+      </label>
+      <p class="form-block">or</p>
+      <label class="block-label selection-button-radio" for="radio-3">
+        <input id="radio-3" type="radio" name="radio-group" value="I am a British citizen living abroad">
+        I am a British citizen living abroad
+      </label>
+
+    </fieldset>
+  </div>
+</form><% end %>
+
+
+## Checkboxes
+
+use these to select either on/off toggles or multiple selections
+make it clear with words when users can select one or multiple options
+
+
+### Stacked checkboxes
+
+<% partial "/layouts/example" do %>
+<h3 class="heading-medium">Which types of waste do you transport regularly?</h3>
+<p>Select all that apply</p>
+
+<form>
+  <fieldset>
+
+    <legend class="visually-hidden">Which types of waste do you transport regularly?</legend>
+
+    <label class="block-label selection-button-checkbox" for="waste-type-1">
+      <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
+      Waste from animal carcasses
+    </label>
+    <label class="block-label selection-button-checkbox" for="waste-type-2">
+      <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+      Waste from mines or quarries
+    </label>
+    <label class="block-label selection-button-checkbox" for="waste-type-3">
+      <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+      Farm or agricultural waste
+    </label>
+
+  </fieldset>
+</form><% end %>
+
+
+## Inline checkboxes
+
+- large hit areas aren’t always appropriate
+- only pre-select options if there’s a strong, user-centred reason to
+
+<% partial "/layouts/example" do %>
+<label class="form-label" for="telephone-number">Enter your telephone number</label>
+<input class="form-control" id="telephone-number" name="telephone-number" type="text">
+<label class="form-checkbox" for="checkbox-telephone-number">
+  <input id="checkbox-telephone-number" name="contact-by-text-phone" type="checkbox" value="true">
+  I need to be contacted using a text phone
+</label><% end %>
+
+
+## Conditionally revealing content
+
+- reveal additional questions, depending on the context
+- a left border is used to emphasise this supporting information
+
+
+### Radio buttons
+
+Choose an option below to see how this works.
+
+<% partial "/layouts/example" do %>
+<h1 class="heading-medium">
+  How do you want to be contacted?
+</h1>
+
+<form>
+  <div class="form-group">
+    <fieldset>
+
+      <legend class="visually-hidden">How do you want to be contacted?</legend>
+
+      <label class="block-label selection-button-radio" data-target="contact-by-email" for="example-contact-by-email">
+        <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+        Email
+      </label>
+      <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+        <label class="form-label" for="contact-email">Email address</label>
+        <input class="form-control" name="contact-email" type="text" id="contact-email">
+      </div>
+
+      <label class="block-label selection-button-radio" data-target="contact-by-phone" for="example-contact-by-phone">
+        <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
+        Phone
+      </label>
+      <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
+        <label class="form-label" for="contact-phone">Phone number</label>
+        <input class="form-control" name="contact-phone" type="text" id="contact-phone">
+      </div>
+
+      <label class="block-label selection-button-radio" data-target="contact-by-text" for="example-contact-by-text">
+        <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
+        Text message
+      </label>
+      <div class="panel panel-border-narrow js-hidden" id="contact-by-text">
+        <label class="form-label" for="contact-text-message">Mobile phone number</label>
+        <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
+      </div>
+
+    </fieldset>
+  </div>
+</form><% end %>
+
+In the code snippet above, the `data-target=""` attribute is present on every label, as each option reveals an extra field.
+
+A grey left hand border is used to visually connect the revealed content with the question above.
+
+<% partial "/layouts/example" do %>
+<div class="form-group">
+  <div class="panel panel-border-narrow" id="contact-by-text">
+    <label class="form-label" for="contact-text-message">Mobile phone number</label>
+    <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
+  </div>
+</div><% end %>
+
+The inset text section has more information on where and how to use panels (content with a grey left hand border).
+
+
+### Checkboxes
+
+Click on "Citizen of a different country" to see how this works.
+
+<% partial "/layouts/example" do %>
+<h1 class="heading-medium">
+  What is your nationality?
+</h1>
+<p>
+  Select all options that are relevant to you.
+</p>
+
+<form>
+  <div class="form-group">
+    <fieldset>
+
+      <legend class="visually-hidden">What is your nationality?</legend>
+
+      <label class="block-label selection-button-checkbox" for="nationalities-british">
+        <input id="nationalities-british" name="nationalities" type="checkbox" value="British">
+        British (including English, Scottish, Welsh and Northern Irish)
+      </label>
+      <label class="block-label selection-button-checkbox" for="nationalities-irish">
+        <input id="nationalities-irish" name="nationalities" type="checkbox" value="Irish">
+        Irish
+      </label>
+      <label class="block-label selection-button-checkbox" for="nationalities-other" data-target="example-different-country">
+        <input id="nationalities-other" name="nationalities" type="checkbox" value="Citizen of a different country">
+        Citizen of a different country
+      </label>
+      <div class="panel panel-border-narrow js-hidden" id="example-different-country">
+        <label class="form-label" for="nationalities-other-country">Country name</label>
+        <input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+      </div>
+
+    </fieldset>
+  </div>
+</form><% end %>
+
+
+

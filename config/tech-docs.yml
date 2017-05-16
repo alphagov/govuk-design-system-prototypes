@@ -3,15 +3,9 @@ host: n/a
 
 # Header-related options
 show_govuk_logo: true
-service_name: Design system
-service_link: https://www.larry-the-cat.service.gov.uk
+# service_name:
+# service_link: https://www.larry-the-cat.service.gov.uk
 
 # Links to show on right-hand-side of header
-header_links:
-  About: /
-  Design principles: /principles/
-  Design patterns: /patterns/
-  Design tools: /tools/
-
-# Tracking ID from Google Analytics (e.g. UA-XXXX-Y)
-ga_tracking_id:
+# header_links:
+#   About: /

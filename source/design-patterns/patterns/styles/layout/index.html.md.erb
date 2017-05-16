@@ -1,0 +1,133 @@
+---
+title:		Layout
+section:	Visual styles
+status:		Approved
+department: All
+---
+
+Use white space to create a visual hierarchy on the page.
+
+## Page width
+
+The default maximum page width is 1020px, but go wider if the content requires it.
+
+Use a grid to lay out your content. To prevent long lines of text, content should sit in a column which is two-thirds of the page width.
+
+Long lines reduce legibility, so all lines of text should be no longer than 70 to 80 characters.
+
+
+## Screen size
+
+Design for small screens first using a single column layout.
+
+Optimise for different screen sizes, but don’t make assumptions about what devices people are using.
+
+
+## Spacing
+
+* spacing between elements is usually 5px, 10px, 15px or multiples of 15px
+* gutters are 15px for smaller screens and 30px for larger screens
+
+<div class="example example-images">
+    <div class="grid-row">
+  		<div class="column-one-half">
+    		<img src="/images/15px-gutter-example.png" alt="15px gutter example">
+  		</div>
+  		<div class="column-one-half">
+    		<img src="/images/30px-gutter-example.png" alt="30px gutter example">
+  		</div>
+	</div>
+</div>
+
+
+## Grid unit proportions
+
+* introduce columns as the content requires it – base column ratios on halves, thirds or quarters of the page width
+* for screen breakpoints use media queries – find these in the GOV.UK frontend toolkit _conditionals.scss file
+
+## Full width
+
+<% partial "/layouts/example" do %>
+    <div class="grid-row">
+        <div class="column-full">
+            <p class="example-grid">Content</p>
+        </div>
+    </div>
+<% end %>
+
+## Halves
+
+<% partial "/layouts/example" do %>
+	<div class="grid-row">
+     	<div class="column-half">
+        	<p class="example-grid">Content</p>
+      	</div>
+     	<div class="column-half">
+        	<p class="example-grid">Content</p>
+      	</div>
+    </div>
+<% end %>
+
+## Thirds
+
+<% partial "/layouts/example" do %>
+    <div class="grid-row">
+     	<div class="column-third">
+        	<p class="example-grid">Content</p>
+      	</div>
+     	<div class="column-third">
+        	<p class="example-grid">Content</p>
+      	</div>
+     	<div class="column-third">
+        	<p class="example-grid">Content</p>
+      	</div>
+    </div>
+<% end %>
+
+
+## Two thirds / One third
+
+<% partial "/layouts/example" do %>
+	<div class="grid-row">
+	  <div class="column-two-thirds">
+	    <p class="example-grid">Content</p>
+	  </div>
+	  <div class="column-one-third">
+	    <p class="example-grid">Content</p>
+	  </div>
+	</div>
+<% end %>
+
+
+## One third / Two thirds
+
+<% partial "/layouts/example" do %>
+	<div class="grid-row">
+	  <div class="column-one-third">
+	    <p class="example-grid">Content</p>
+	  </div>
+	  <div class="column-two-thirds">
+	    <p class="example-grid">Content</p>
+	  </div>
+	</div>
+<% end %>
+
+
+## Quarters
+
+<% partial "/layouts/example" do %>
+	<div class="grid-row">
+	  <div class="column-one-quarter">
+	    <p class="example-grid">Content</p>
+	  </div>
+	  <div class="column-one-quarter">
+	    <p class="example-grid">Content</p>
+	  </div>
+	  <div class="column-one-quarter">
+	    <p class="example-grid">Content</p>
+	  </div>
+	  <div class="column-one-quarter">
+	    <p class="example-grid">Content</p>
+	  </div>
+	</div>
+<% end %>

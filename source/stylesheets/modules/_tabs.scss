@@ -1,0 +1,51 @@
+// TAB PANELS
+
+
+// MULTI PAGE TABS
+
+
+.tabs-multi-page{
+  @extend %contain-floats;
+  margin: 30px 0;
+  border-bottom: 4px solid #f8f8f8;
+  background: white;
+  height: 39px;
+
+  .tab{
+    float: left;
+    a {
+        color: $link-colour;
+        text-decoration: none;
+        padding: 15px 30px;
+        margin: 0;
+        font-size: 16px;
+        z-index: 999;
+        margin-bottom: -4px;
+        list-style-type: none;
+        background: white;
+
+        &:hover {
+          // background-color: $grey-4;
+          border-bottom: 4px solid $light-blue;
+        }
+        
+    }
+
+    &.current{
+      
+      a {
+        text-decoration: none;
+        color: $link-colour;
+        font-weight: bold;
+        background-color: darken($grey-4, 3%);
+        border-bottom: 4px solid $govuk-blue;
+      }
+    }
+  }
+}
+
+.pattern-page .full-width-container{
+  padding-bottom: 0;
+}
+
+

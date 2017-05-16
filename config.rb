@@ -19,91 +19,45 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-# With alternative layout
-# page "/path/to/file.html", layout: :otherlayout
 
-# Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
+# Design patterns have a different default layout
+page "/design-patterns/patterns/*", :layout => "design_pattern"
 
-# Set up routes for V1 prototype
+# Search
+# https://github.com/manastech/middleman-search#usage
+activate :search do |search|
+  search.resources = ['design-patterns/patterns']
 
-data.v1nav.sections.each do |section|
-
-  # Iterate over pages in section
-  if defined?(section.pages)
-    section.pages.each do |page|
-
-      # Set up proxy
-      proxy "/v1/#{section.name}/#{page}/index.html", "/v1/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
-    
-    end
+  search.before_index = Proc.new do |to_index, to_store, resource|
+    throw(:skip) if resource.data.status&.downcase == "backlog" || 
+      !["all", nil].include?(resource.data.department&.downcase)
   end
 
+  search.fields = {
+    # Index the title, but also make it available when showing results
+    title:   {boost: 100, store: true, required: true},
+
+    # Index these
+    aliases: {boost: 50},
+    content: {boost: 1, index: true, store: false},
+
+    # Just make these available when presenting search results
+    url:     {index: false, store: true},
+    section: {index: false, store: true, required: true},
+    theme:   {index: false, store: true}
+  }
 end
 
-# Set up routes for V2 prototype
+# Themes
+set :use_theme_in_nav, true
 
-data.v2bnav.sections.each do |section|
-
-  # Iterate over pages in section
-  if defined?(section.pages)
-    section.pages.each do |page|
-
-      # Set up proxy
-      proxy "/v2/#{section.name}/#{page}/index.html", "/v2/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
-    
-    end
-  end
-
-end
-
-# Set up routes for V3 prototype
-
-data.v3nav.sections.each do |section|
-
-  # Iterate over pages in section
-  if defined?(section.pages)
-    section.pages.each do |page|
-
-      # Set up proxy
-      proxy "/v3/#{section.name}/#{page}/index.html", "/v3/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
-    
-    end
-  end
-
-end
-
-# Set up routes for V4 prototype
-
-data.v4nav.sections.each do |section|
-
-  # Iterate over pages in section
-  if defined?(section.pages)
-    section.pages.each do |page|
-
-      # Set up proxy
-      proxy "/v4/#{section.name}/#{page}/index.html", "/v4/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
-    
-    end
-  end
-
-end
-
-# Set up routes for V5 prototype
-
-data.v5nav.sections.each do |section|
-
-  # Iterate over pages in section
-  if defined?(section.pages)
-    section.pages.each do |page|
-
-      # Set up proxy
-      proxy "/v5/#{section.name}/#{page}/index.html", "/v5/index.html", :locals => { :page => page, :section => section.name }, :ignore => true
-    
-    end
-  end
-
-end
-
+set :theme_orders, {
+  "About" => [],
+  "Visual styles" => [],
+  "Components" => ["Global", "Navigation", "Form elements", "Content"],
+  "Pages" => ["Single page", "Multi-page"],
+  "Patterns" => ["Form design", "Service design"]
+}
 
 # General configuration
 

@@ -1,0 +1,35 @@
+---
+layout: design_pattern_backlog
+title:	Departmental design patterns
+---
+
+<p>
+	These patterns are being developed by departments specifically for their services.
+	If they prove to have wider value they will be moved to the main collection.
+</p>
+
+
+<% 
+pattern_root = "/design-patterns/patterns/" 
+
+# Ignore global patterns
+# Group patterns by department
+sitemap.resources
+  .select { |r| 
+  	r.data.department &&
+  	r.data.department != "All" &&
+  	r.url.start_with?(pattern_root) 
+  }
+  .group_by { |r| r.data.department }
+  .each do |department, arr|
+%>
+
+<h2><%= department %></h2>
+
+<ul>
+	<% arr.each do |res| %>
+	<li><%= link_to res.data.title, res.url %></li>
+	<% end %>
+</ul>
+
+<% end %>

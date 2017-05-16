@@ -1,0 +1,30 @@
+---
+title:		File upload
+section:	Components
+theme:		Form elements
+status:		Alpha
+priority:	5
+department: All
+discuss:	https://designpatterns.hackpad.com/ckOoXgLkW3w
+---
+
+##Before you start
+
+- avoid uploading, if possible
+- design for first or single use
+- allow multiple file formats and upload methods
+- check what’s been uploaded and provide feedback
+
+Some services may need users to upload documents as part of their application. Where possible, services should avoid the need for users to provide separate documents - if it's evidence, could this information come via an API or another government department?
+
+Uploading is a challenging interaction for many users, particularly on desktop devices. It's somewhat easier on mobile devices, but still presents challenges. Users lower on the digital literacy scale will struggle and may not be able to use a service if they need to upload as part of it.
+
+###File picker
+The most basic upload mechanism is the file picker. This can be difficult to use on desktop devices, but works well on mobile devices. You should support using a file picker as a minimum before adding alternatives.
+
+###Drag and drop
+Proficient  computer users may prefer to drag and drop from their file system onto the browser. 
+Always use another upload method alongside drag and drop.
+Drag and drop only works in modern browsers
+Users with dexterity problems such as tremor may have difficulty dragging a file.
+You may want to support drag and drop to support users who attempt to drag a file, and would otherwise lose their progress in the service.

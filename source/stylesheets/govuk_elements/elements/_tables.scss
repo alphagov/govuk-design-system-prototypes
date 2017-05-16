@@ -18,17 +18,17 @@ table {
 
   th {
     font-weight: 700;
-    // Right align headings for numeric content
-    &.numeric {
-      text-align: right;
-    }
+  }
+
+  // Right align table header cells and table cells with a numeric class
+  .numeric {
+    text-align: right;
   }
 
   // Allow a qualifying element, only table data cells should use tabular numbers
   // scss-lint:disable QualifyingElement
   td.numeric {
-    @include core-16($tabular-numbers: true);
-    text-align: right;
+    font-family: $toolkit-font-stack-tabular;
   }
 }
 
@@ -46,4 +46,37 @@ table {
   td {
     padding: em(12, 16) em(20, 16) em(9, 16) 0;
   }
+}
+.table--responsive {
+  @include media (mobile) {
+    thead {
+      display: none;
+    }
+    tbody th {
+      display: block;
+    }
+    tbody tr {
+      display: block;
+    }
+    tbody td {
+      display: block;
+      &:before {
+        content: attr(data-th) ": ";
+        font-weight: 700;
+        max-width: 150px;
+      }
+
+    }
+  }
+}
+.table--scroll {
+  overflow: initial;
+  white-space: nowrap;
+}
+.scrollable-table {
+  overflow-y: hidden;
+  overflow-x: auto;
+  -ms-touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
 }

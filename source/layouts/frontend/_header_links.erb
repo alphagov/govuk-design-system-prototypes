@@ -1,0 +1,25 @@
+<ul>
+    <li<% if current_page.path == "frontend/index.html" %> class="active"<% end %>>
+      <a href="/frontend/">
+        About
+      </a>
+    </li>
+
+    <li<% if current_page.path.start_with? "frontend/docs" %> class="active"<% end %>>
+      <a href="/frontend/docs/">
+        Documentation
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        Contribute
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        Support
+      </a>
+    </li>
+</ul>

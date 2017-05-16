@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title><%= current_page.data.title %></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if gt IE 8]><!--><%= stylesheet_link_tag :screen, media: 'screen' %><!--<![endif]-->
+    <!--[if lte IE 8]><%= stylesheet_link_tag 'screen-old-ie', media: 'screen' %><![endif]-->
+    <%= stylesheet_link_tag :print, media: 'print' %>
+
+    <!--[if IE 8]><%= stylesheet_link_tag "fonts-ie8", media: :all %><![endif]-->
+    <!--[if gte IE 9]><!--><%= stylesheet_link_tag :fonts, media: :all %><!--<![endif]-->
+
+    <!--[if lt IE 9]><%= javascript_include_tag "ie.js" %><![endif]-->
+  </head>
+
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+      <%= partial 'layouts/header' %>
+    </header>
+
+    <main role="main" id="main">
+      <%= yield %>
+    </main>
+
+    <footer class="footer">
+      <%= partial 'layouts/footer' %>
+    </footer>
+
+    <%= javascript_include_tag :application %>
+  </body>
+</html>

@@ -100,3 +100,29 @@
   min-height: 38px;
   line-height: 38px;
 }
+* svg {
+  position: relative;
+  top: .125em;
+  height: 1em;
+  width: 1em;
+}
+.c-icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  position: relative;
+  top: .125em;
+  &--search {
+    background: url(../images/icons/icon--search.png);
+    background: url(../images/icons/icon--search.svg),
+    linear-gradient(transparent, transparent);
+  }
+  &--has-bg-icon {
+    background-size: 1em;
+  }
+}
+.icon-icon--search {
+  background-image: url(../images/icons/sprite.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}

@@ -1,0 +1,37 @@
+.collection {
+  border-bottom: 1px solid $border-colour;
+
+  padding-bottom: $gutter-half;
+  margin-bottom: $gutter-half;
+
+  @include media(tablet) {
+    padding-bottom: $gutter;
+    margin-bottom: $gutter;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+
+  &__title {
+    @include bold-36;
+    margin-bottom: 5px;
+    margin-top: 1.25em;
+  }
+
+  &__description {
+    @include core-24;
+    color: $secondary-text-colour;
+    margin-top: 0;
+  }
+
+  &__link {
+    @include bold-24;
+    margin: 0.8333333333em 0;
+  }
+
+  &__link-description {
+    @include core-19;
+  }
+}

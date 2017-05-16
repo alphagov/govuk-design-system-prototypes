@@ -1,0 +1,77 @@
+---
+layout: design_pattern_backlog
+productName: Design Patterns
+sectionNav: patterns
+title:	Statistics
+---
+
+
+<%
+pattern_root = "/design-patterns/patterns/" 
+status_order = ["Backlog", "Alpha", "Beta", "Approved"]
+
+# Get all the patterns
+# Sort them by title
+
+design_patterns = sitemap.resources													
+	.select { |r|		
+    	r.data.section && 								
+		r.url.start_with?(pattern_root)											
+	}
+	.sort_by { |r| r.data.title }
+%>
+
+<div class="stats">
+	<div class="stat">
+		<div>
+			<span class="stat-number"><%= design_patterns.length %></span>
+			<span class="stat-name">Patterns</span>
+		</div>
+	</div>
+	<div class="stat">&nbsp;</div>
+	<%
+	design_patterns_by_status = design_patterns.group_by { |r| r.data.status }
+
+	design_patterns_by_status_ordered = design_patterns_by_status.keys.sort_by do |r|
+	  status_order.index(r) || Float::INFINITY
+	end
+
+	design_patterns_by_status_ordered.each do |status|
+  		arr = design_patterns_by_status[status]		
+	%>
+
+	<div class="stat">
+		<div>
+			<span class="stat-number"><%= arr.size %></span>
+			<span class="stat-name"><%= status %></span>
+		</div>
+	</div>
+
+	<% end %>
+</div>
+
+
+<h3>Full list of patterns</h3>
+
+<br>
+
+<table class="patterns-table">
+	<tr>
+		<th style="width: 35%;">Title</th>
+		<th>Section</th>
+		<th>Priority</th>
+		<th>Department</th>
+		<th>Status</th>
+	</tr>
+<%			
+design_patterns.each do |res| 
+%>	 
+	<tr>
+		<td><%= link_to res.data.title, res.url %></td>
+		<td><%= res.data.section %></td>
+		<td><%= res.data.priority %></td>
+		<td><%= res.data.department %></td>
+		<td><%= res.data.status %></td>
+	</tr>
+<% end %>
+</table>

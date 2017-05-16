@@ -1,0 +1,342 @@
+---
+title:		Tables
+section:	Components
+theme:		Content
+status:		Alpha
+department: All
+discuss:	https://designpatterns.hackpad.com/Organising-long-tasks-qAPtTmL1GJm
+---
+
+##Overview
+When in what ways to display tabular data.
+
+## When to use this pattern
+Tables should only be used to present data.
+
+### When NOT to use this pattern
+Don’t use tables for cosmetic changes to layout, eg to present a list because you think it looks better that way.
+
+## How it works
+Below are different was to implement tables to display data across different screen sizes.
+
+<div class="panel panel-border-wide">
+  Add appropriate scope="col" to thead items and scope="row" and each th element in mobile view. 
+</div>
+
+###Standard table
+Use when columns are small enough to fit on a mobile screen
+
+<% partial "/layouts/example" do %>
+<table class="table">
+<thead>
+<tr>
+<th scope="col"></th>
+<th scope="col" class="numeric">2017-18</th>
+<th scope="col" class="numeric">2018-19</th>
+<th scope="col" class="numeric">2019-20</th>
+<th scope="col"class="numeric">2020-21</th>
+<th scope="col" class="numeric">2021-22</th>
+</tr>
+</thead>
+<colgroup></colgroup> <colgroup span="5"></colgroup>
+<tbody>
+<tr>
+<th scope="row">i Doctoral loans</th>
+<td class="numeric">0</td>
+<td class="numeric">-5</td>
+<td class="numeric">-5</td>
+<td class="numeric">-10</td>
+<td class="numeric">-10</td>
+</tr>
+<tr>
+<th scope="row">ii Part-time maintenance loans</th>
+<td class="numeric">0</td>
+<td class="numeric">75</td>
+<td class="numeric">130</td>
+<td class="numeric">95</td>
+<td class="numeric">65</td>
+</tr>
+<tr>
+<th scope="row">iii Further Education maintenance loans</th>
+<td class="numeric">0</td>
+<td class="numeric">0</td>
+<td class="numeric">-15</td>
+<td class="numeric">-40</td>
+<td class="numeric">-70</td>
+</tr>
+<tr class="subtotal">
+<th scope="row">Total policy decisions</th>
+<td class="numeric">0</td>
+<td class="numeric">70</td>
+<td class="numeric">110</td>
+<td class="numeric">45</td>
+<td class="numeric">-15</td>
+</tr>
+</tbody>
+</table>
+<% end %>
+
+### Horizontal scrolling
+In cases where tables are complex and a responsive layout would be confusing for users, a scrollable table pattern can be adopted.
+It will keep the table at the desktop size, but will provide a scrolling option on mobile screens to view the intire table.
+
+<% partial "/layouts/example" do %>
+<div class="scrollable-table">
+  <table class="table table--scroll">
+  <thead>
+  <tr>
+  <td></td>
+  <th class="numeric">2017-18</th>
+  <th class="numeric">2018-19</th>
+  <th class="numeric">2019-20</th>
+  <th class="numeric">2020-21</th>
+  <th class="numeric">2021-22 (4)</th>
+  </tr>
+  </thead>
+  <colgroup></colgroup> <colgroup span="5"></colgroup>
+  <tbody>
+  <tr class="section-heading">
+  <th colspan="6">Housing</th>
+  </tr>
+  <tr>
+  <th>Accelerated construction</th>
+  <td class="numeric">285</td>
+  <td class="numeric">635</td>
+  <td class="numeric">665</td>
+  <td class="numeric">380</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr>
+  <th>Affordable housing (2)</th>
+  <td class="numeric">1,120</td>
+  <td class="numeric">1,125</td>
+  <td class="numeric">880</td>
+  <td class="numeric">340</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr>
+  <th>Housing Infrastructure Fund</th>
+  <td class="numeric">60</td>
+  <td class="numeric">300</td>
+  <td class="numeric">945</td>
+  <td class="numeric">1,425</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr class="section-heading">
+  <th colspan="6">Transport</th>
+  </tr>
+  <tr>
+  <th>Roads and local transport</th>
+  <td class="numeric">365</td>
+  <td class="numeric">500</td>
+  <td class="numeric">430</td>
+  <td class="numeric">650</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr>
+  <th>Next generation vehicles</th>
+  <td class="numeric">75</td>
+  <td class="numeric">100</td>
+  <td class="numeric">110</td>
+  <td class="numeric">115</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr>
+  <th>Digital railways enhancements</th>
+  <td class="numeric">30</td>
+  <td class="numeric">55</td>
+  <td class="numeric">165</td>
+  <td class="numeric">285</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr>
+  <th>Cambridge-Milton Keynes-Oxford corridor</th>
+  <td class="numeric">5</td>
+  <td class="numeric">135</td>
+  <td class="numeric">0</td>
+  <td class="numeric">0</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr class="section-heading">
+  <th colspan="6">Digital Communications (3)</th>
+  </tr>
+  <tr>
+  <th>Fibre and 5G investment</th>
+  <td class="numeric">25</td>
+  <td class="numeric">150</td>
+  <td class="numeric">275</td>
+  <td class="numeric">290</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr class="section-heading">
+  <th colspan="6">Research and Development</th>
+  </tr>
+  <tr>
+  <th>Research and Development funding</th>
+  <td class="numeric">425</td>
+  <td class="numeric">820</td>
+  <td class="numeric">1,500</td>
+  <td class="numeric">2,000</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr class="subtotal">
+  <th>Total</th>
+  <td class="numeric">2,390</td>
+  <td class="numeric">3,820</td>
+  <td class="numeric">4,970</td>
+  <td class="numeric">5,485</td>
+  <td class="numeric">7,000</td>
+  </tr>
+  </tbody>
+  </table>
+</div>
+<% end %>
+
+###Responsive tables
+Use this pattern when there is not enough space on smaller screen to fit traditional table layout. This pattern requires adding data-* attribute to
+each row cell that mimics the column header text. On smaller screens this text is then displays before the cell value, making information easier to read.
+
+<% partial "/layouts/example" do %>
+<table class="table table--responsive">
+<thead>
+<tr>
+<th></th>
+<th class="numeric">2017-18</th>
+<th class="numeric">2018-19</th>
+<th class="numeric">2019-20</th>
+<th class="numeric">2020-21</th>
+<th class="numeric">2021-22</th>
+</tr>
+</thead>
+<colgroup></colgroup> <colgroup span="5"></colgroup>
+<tbody>
+<tr>
+<th>i Doctoral loans</th>
+<td data-th="2017-18" class="numeric">0</td>
+<td data-th="2018-19" class="numeric">-5</td>
+<td data-th="2019-20" class="numeric">-5</td>
+<td data-th="2020-21" class="numeric">-10</td>
+<td data-th="2021-22" class="numeric">-10</td>
+</tr>
+<tr>
+<th>ii Part-time maintenance loans</th>
+<td data-th="2017-18" class="numeric">0</td>
+<td data-th="2018-19" class="numeric">75</td>
+<td data-th="2019-20" class="numeric">130</td>
+<td data-th="2020-21" class="numeric">95</td>
+<td data-th="2021-22" class="numeric">65</td>
+</tr>
+<tr>
+<th>iii Further Education maintenance loans</th>
+<td data-th="2017-18" class="numeric">0</td>
+<td data-th="2018-19" class="numeric">0</td>
+<td data-th="2019-20" class="numeric">-15</td>
+<td data-th="2020-21" class="numeric">-40</td>
+<td data-th="2021-22" class="numeric">-70</td>
+</tr>
+<tr class="subtotal">
+<th>Total policy decisions</th>
+<td data-th="2017-18" class="numeric">0</td>
+<td data-th="2018-19" class="numeric">70</td>
+<td data-th="2019-20" class="numeric">110</td>
+<td data-th="2020-21" class="numeric">45</td>
+<td data-th="2021-22" class="numeric">-15</td>
+</tr>
+</tbody>
+</table>
+<% end %>
+
+###Responsive tables - Javascript solution
+This is a Javascript solution that turns a standard table into a responsive table using the above describedsolution without the need for manually adding
+data-* attributes
+
+<div class="example">
+  <table class="table table--responsive js-make-table-responsive">
+  <thead>
+  <tr>
+  <th></th>
+  <th class="numeric">2017-18</th>
+  <th class="numeric">2018-19</th>
+  <th class="numeric">2019-20</th>
+  <th class="numeric">2020-21</th>
+  <th class="numeric">2021-22</th>
+  </tr>
+  </thead>
+  <colgroup></colgroup> <colgroup span="5"></colgroup>
+  <tbody>
+  <tr>
+  <th>i Doctoral loans</th>
+  <td class="numeric">0</td>
+  <td class="numeric">-5</td>
+  <td class="numeric">-5</td>
+  <td class="numeric">-10</td>
+  <td class="numeric">-10</td>
+  </tr>
+  <tr>
+  <th>ii Part-time maintenance loans</th>
+  <td class="numeric">0</td>
+  <td class="numeric">75</td>
+  <td class="numeric">130</td>
+  <td class="numeric">95</td>
+  <td class="numeric">65</td>
+  </tr>
+  <tr>
+  <th>iii Further Education maintenance loans</th>
+  <td class="numeric">0</td>
+  <td class="numeric">0</td>
+  <td class="numeric">-15</td>
+  <td class="numeric">-40</td>
+  <td class="numeric">-70</td>
+  </tr>
+  <tr class="subtotal">
+  <th>Total policy decisions</th>
+  <td class="numeric">0</td>
+  <td class="numeric">70</td>
+  <td class="numeric">110</td>
+  <td class="numeric">45</td>
+  <td class="numeric">-15</td>
+  </tr>
+  </tbody>
+  </table>
+</div>
+```
+var headertext = [],
+headers = document.querySelectorAll(".js-make-table-responsive th"),
+tablerows = document.querySelectorAll(".js-make-table-responsive th"),
+tablebody = document.querySelector(".js-make-table-responsive tbody");
+
+for(var i = 0; i < headers.length; i++) {
+  var current = headers[i];
+  headertext.push(current.textContent.replace(/\r?\n|\r/,""));
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+  for (var j = 0, col; col = row.cells[j]; j++) {
+    col.setAttribute("data-th", headertext[j]);
+  }
+}
+```
+<!-- move to propper modules -->
+<script>
+  (function() {
+    var headertext = [],
+    headers = document.querySelectorAll(".js-make-table-responsive th"),
+    tablerows = document.querySelectorAll(".js-make-table-responsive th"),
+    tablebody = document.querySelector(".js-make-table-responsive tbody");
+
+    for(var i = 0; i < headers.length; i++) {
+      var current = headers[i];
+      headertext.push(current.textContent.replace(/\r?\n|\r/,""));
+    }
+    for (var i = 0, row; row = tablebody.rows[i]; i++) {
+      for (var j = 0, col; col = row.cells[j]; j++) {
+        col.setAttribute("data-th", headertext[j]);
+      }
+    }
+  }());
+</script>
+
+### Responsive tables - Table saw
+[Filament group "paginated tables" Javascript Solution](https://www.filamentgroup.com/lab/tablesaw.html)
+
+## Related work on this pattern
+[Service Manual](https://www.gov.uk/guidance/content-design/tables)

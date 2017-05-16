@@ -1,0 +1,22 @@
+<% content_for :service_title do %>
+  Frontend
+<% end %>
+
+<% content_for :service_link, '/frontend' %>
+
+<% content_for :header_links do %>
+  <%= partial 'layouts/frontend/header_links' %> 
+<% end %>
+
+<% content_for :sidebar do %>
+ <%= partial 'layouts/frontend/docs_nav' %>
+<% end %>
+
+<% wrap_layout :docs do %>
+  <% if current_page.data.section %>
+    <p class="section-heading"><%= current_page.data.section %></p>
+  <% end %>
+  <h1><%= current_page.data.title %></h1>
+
+  <%= yield %>
+<% end %>

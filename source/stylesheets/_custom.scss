@@ -1,25 +1,120 @@
 // CUSTOM STYLES
 
+
+// Stats
+
+.stats{
+  // @extend %grid-row;
+  @extend %contain-floats;
+  padding: $gutter !important;
+  //border-top: 1px solid $border-colour;
+  border-bottom: 1px solid $border-colour;
+  margin-bottom: $gutter-half;
+
+  .stat{
+    
+    @include grid-column(1 / 6);
+
+    div{
+      min-width: 70px;
+      span{
+        text-align: center;
+        display: block
+      }
+      .stat-name{
+        font-size: 19px;
+      }
+      .stat-number{
+        font-size: 42px;
+        font-weight: bold;
+      }
+    }
+
+  }
+
+}
+
+// Patterns table
+
+.patterns-table{
+  th, td{
+    font-size: 16px;
+  }
+}
+
+// Discuss on Hackpad
+.discuss{
+  border-top: 3px solid $black;
+  padding-top: $gutter;
+  margin-top: $gutter;
+
+  details {
+
+    summary{
+      font-weight: bold;
+    }
+
+    p{
+      margin-top: 15px;
+    }
+  }
+}
+
+.hackpad{
+  margin-top: $gutter;
+  border-top: 1px solid $border-colour;
+  background: $grey-4;
+
+  margin-left: -32px;
+  padding-right: 110px;
+  padding-top: 30px;
+  margin-right: -32px;
+}
+
+#navigation{
+    margin-right: 15px;
+}
+
 .technical-documentation {
     max-width: none;
+    margin-top: 18px; // Hack so the subheadings align nicely with the search box :-)
+}
+
+.nav-group{
+  font-size: 19px;
+  margin: 30px 15px 15px 0;
+  //color: $secondary-text-colour
+}
+
+#toc > .nav-group {
+  margin-top: 15px;
 }
 
 .toc {
     padding: 15px;
 }
 
+.theme-heading{
+  margin: 10px 15px;
+  text-transform: uppercase;
+  color: $secondary-text-colour;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
 .toc__list {
 
     a:link{
         padding-left: 11px;
+        position: relative;
+        padding-right: 60px;
     }
 
 }
 
 .toc__list a:visited {
-
     color: $link-colour;
-
 }
 
 .toc__list a:first-letter {
@@ -28,16 +123,85 @@
 
 }
 
-.toc__list li a,
-.toc__list li li a{
+.toc__list .section-heading {
 
-    border-left: 4px solid transparent;
+  position: relative;
+  // padding-left: 0 !important;
+  border-left: 4px solid transparent !important;
+  // background-color: white;
+  margin-top: 10px;
+  text-decoration: none !important;
+  padding-top: 10px !important;
+
+
+  &:hover {
+    border-left: 4px solid $light-blue !important;
+    color: $govuk-blue !important;
+  }
+
+
+  &:before {
+    content:"";
+    display: block;
+    position: absolute;
+    background-image: url('/images/down-2x.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 12px;
+    width: 12px;
+    height: 12px;
+    top: 14px;
+    right: 15px;
+  }
 
 }
 
+.section-heading.is-active {
+    &:before {
+    content:"";
+    display: block;
+    position: absolute;
+    background-image: url('/images/down-2x.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 12px;
+    width: 12px;
+    height: 12px;
+    top: 14px;
+    right: 15px;
+    transform: rotate(180deg);
+  }
+}
+
+
+
+.toc__list li a,
+.toc__list li li a{
+    border-left: 4px solid transparent;
+}
+
 .toc__list .current-page a {
-    background: $grey-4;
-    border-left: 4px solid #005ea5;
+    background-color: darken($grey-4, 3%);
+    font-weight: bold !important;
+    letter-spacing: 0;
+    border-left: 4px solid $govuk-blue;
+    // border-bottom: 1px solid darken($grey-4, 10%);
+
+    &:hover {
+      border-left-color: $govuk-blue;
+    }
+      //Copy of pattern status
+      &::after {
+        position: absolute;
+        right: 0;
+        font-size: 12px;
+        padding: 0 10px 0 3px;
+        min-width: 56px;
+        text-align: right;
+        margin-top: 3px;
+        letter-spacing: 1;
+        color: $secondary-text-colour;
+      }
 }
 
 .toc__list li li li {
@@ -48,8 +212,69 @@
     }
 }
 
+// Style nav according to pattern status
+.toc__list 
+  {
+
+    li[class^="status-"] a::after {
+        position: absolute;
+        right: 0;
+        font-size: 12px;
+        padding: 0 10px 0 3px;
+        min-width: 56px;
+        text-align: right;
+        margin-top: 3px;
+        letter-spacing: 1;
+        color: $secondary-text-colour;
+        // hide status
+        display: none;
+    }
+
+    .status-backlog a {
+
+      &::after {
+        content: "Backlog";
+        // color: $secondary-text-colour;
+        // border: 1px solid lighten($secondary-text-colour, 40%);
+        
+       }    
+    }
+
+    .status-alpha a {
+
+      &::after {
+        content: "Alpha";
+        // color: $pink;
+        // border: 1px solid lighten($pink, 40%);
+        
+       }
+    }    
+
+    .status-beta a {
+
+      &::after {
+        content: "Beta";
+        // color: $orange;
+        // border: 1px solid lighten($orange, 30%);
+        
+       }
+    }
+
+
+    .status-approved-by-gds a {
+
+      &::after {
+        content: "Approved";
+        // color: $turquoise;
+        // border: 1px solid lighten($turquoise, 40%);
+        
+       }
+    }
+
+}
+
 .toc__list li li li:before{
-	content: "— ";
+	  content: "— ";
     float: left;
     font-size: 8px;
     margin-top: 12px;
@@ -61,19 +286,38 @@
 .toc__list > ul > li > .group-heading:link{
   color: $secondary-text-colour;
   font-weight: normal;
-  font-size: 19px;
+  font-size: 24px;
   margin-top: $gutter-half;
 }
+
 .toc__list > ul > li > .group-heading:visited{
   color: $secondary-text-colour;
 }
+
+
+
+// Add separation between sections
+
+ul ul.section {
+  // background-color: $white;
+  // border-bottom: 2px solid $border-colour;
+  // padding: 10px 0;
+  margin-bottom: 30px !important;
+
+  + ul.section {
+    margin-bottom: 0;
+
+  }
+} 
+
 
 .markdown{
 
     .section-heading{
         color: $secondary-text-colour;
         font-size: 24px;
-        margin: 15px 0 0;
+        margin: $gutter 0 0;
+
         &::first-letter{
             text-transform: uppercase;
         }     
@@ -81,10 +325,74 @@
 
     .example{
         @extend %contain-floats;
+        position: relative;
         border: 1px solid $border-colour;
         margin: $gutter 0;
-        padding: $gutter;
+        padding: $gutter*2 $gutter $gutter $gutter;
+
+        p {
+          margin-bottom: $gutter-half;
+        }
+
+        h1, h2, h3, h4 {
+          margin-top: 0;
+          padding-top: 0;
+        }
+
+        @include media(mobile) {
+          h1:first-child {
+            margin-top: -5px;
+          }
+        }
+
+        // Spacing of Radio and checkboxes examples. This needs looking at.
+        .form-group {
+          margin-bottom: 15px;
+          &:nth-last-of-type(1){
+            margin-bottom: 0px;
+          }
+          & + .form-group, + .multiple-choice {
+            margin-top: $gutter-half;
+          }
+        }
+
+        .form-block {
+            margin-top: 0;
+            margin-bottom: 10px;
+            max-width: 100%;
+        }
+
+        &:before {
+          content: "EXAMPLE";
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 5px 15px 5px 15px;
+          font-family: "nta", Arial, sans-serif;
+          font-weight: 400;
+          text-transform: none;
+          font-size: 12px;
+          line-height: 1.25;
+          background: #bfc1c3;
+          color: white;
+        }
+
+        &.example__mobile {
+          max-width: 320px;
+        }
+
     }
+
+    .example--date-group {
+      .form-group {
+        margin-top: 15px;
+      }
+      .form-group-month-text {
+        width: 150px;
+      }
+    }
+
+
 
     p.example-grid {
       width: 100%;
@@ -107,6 +415,8 @@
         @extend .heading-xlarge;
         margin-top: 0;
         border-top: 0;
+        margin-bottom: $gutter;
+        padding-top: 5px;
     }
 
     h1:first-letter{
@@ -124,7 +434,12 @@
     > ul{
         @extend .list;
         @extend .list-bullet;
-    }
+
+      }
+
+    ul {
+      list-style: disc;
+    }  
 
     .example + .highlight{
         margin-top: -31px;
@@ -137,7 +452,16 @@
     blockquote {
       margin: 15px 0;
       border-left: 4px solid #dee0e2;
-  }
+    }
+
+    strong{
+      font-weight: bold;
+    }
+
+    .list-no-bullet {
+      list-style: none;
+      padding-left: 0px;
+    }
 
 }
 
@@ -349,7 +673,7 @@ $palette: (
     overflow: hidden;
     text-indent: -5000px;
     color: #fff;
-    background-color: #005ea5;
+    background-color: $govuk-blue;
     background-image: url("/images/search-button.png");
     background-repeat: no-repeat;
     background-position: 0 50%;
@@ -366,40 +690,111 @@ $palette: (
   }
 }
 
+.pattern-search{
+  margin-bottom: 30px;
+  line-height: 25px;
+  position: relative;
 
-.service-toolkit{
+  //background-color: #bfc1c3;
+  background-color: $govuk-blue;
+  background-image: url(/images/search-button.png);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
 
-  .product-name{
-    font-weight: 400;
-    font-size: 24px;
-    white-space: nowrap;
+  #pattern-search-text {
+    padding: 5px 15px;
+    //border: 2px solid #bfc1c3;
+    border: 2px solid $text-colour;
+    margin-left: 35px;
+    width: calc(100% - 34px);
+    box-sizing: border-box;
+    transition: all 100ms ease-in-out;
+    
+    &:focus{
+      outline: 3px solid #ffbf47;
+      outline-offset: 0;
+      margin-left: 0;
+      width: 100%;
+    }
   }
 
-  .section-header {
-    margin: $gutter 0 $gutter/2 0;
-    color: $grey-1;
-    font-size: em(19);
-    border-bottom: 1px solid $grey-2;
-    padding-bottom: 5px;
+  #pattern-search-text::-webkit-input-placeholder{
+    color: $text-colour;
+    font-size: 16px;
   }
-
-  .page-header__context {
-      font-family: "nta", Arial, sans-serif;
-      font-weight: 400;
-      text-transform: none;
-      font-size: 24px;
-      line-height: 1.25;
-      color: #6f777b;
-      margin-bottom: em(10);
-      padding-bottom: .167em;
-
-      @media screen and (max-width: 640px) {
-        font-size: 18px;
-        line-height: 1.2;
-      }
-  }
-
 }
+
+.header__container .pattern-search{
+  float: right;
+  margin: 7px $gutter-half 0px 0px;
+  width: 300px;
+
+  @include media(mobile) {
+    position: absolute;
+    right: 0;
+    top: 5px;
+  }
+
+  #pattern-search-text {
+    border: 2px solid white;
+    padding: 3px 5px;
+    
+    &:focus{
+
+      width: 300px;
+    }
+  }
+}
+
+.search-results {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: $white;
+  border: 1px solid #bfc1c3;
+  border-bottom: 2px solid #bfc1c3;
+  top: 100%;
+  z-index: 100;
+  max-height: 75vh;
+  overflow-y: scroll;
+  display: none;
+  
+  li {
+    font-size: 16px;
+  }
+
+  a:link, a:visited {
+    display: block;
+    padding: 10px $gutter-half;
+    text-decoration: none;
+    color: $text-colour;
+  }
+  
+  .active-result {
+    background: $govuk-blue;
+    color: $white;
+    
+    a:link, a:visited {
+      color: $white;
+    }
+
+    .result-section {
+      color: lighten($govuk-blue, 70%);
+    }
+  }
+}
+
+.search-results.visible {
+  display: block;
+}
+
+.result-section {
+  font-size: 12px;
+  // text-transform: uppercase;
+  color: $grey-1;
+  display: block;
+}
+
 
 
 .inline-thirds{
@@ -420,4 +815,345 @@ $palette: (
       font-weight: bold;
     }
   }
+}
+
+
+// Replicating Govuk Metadata
+
+.govuk-metadata {
+    @extend %contain-floats;
+    font-size: 14px;
+    line-height: 1.42857;
+    margin-bottom: $gutter;
+
+
+    dl {
+      dt{
+        float: left;
+        clear: left;
+        width: auto;
+        min-width: 130px;
+        padding-right: 10px;
+      }
+      dd {
+        float: left;
+        width: 55%;
+      }
+    }
+}
+
+// Status on h1 
+
+span.status {
+  @include box-sizing(border-box);
+  
+  vertical-align: middle;
+  font-size: 10px;
+  padding: 1px 3px;
+  font-weight: bold;
+  color: $secondary-text-colour;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid $border-colour;
+  text-decoration: none;
+  margin-left: 10px;
+  // Hide status
+  display: none;
+}
+
+h1 {
+  position:relative;
+}
+
+h1 span.status {
+  position: absolute;
+  font-size: 15px;
+  margin-left: $gutter-half;
+  margin-top: 12px;
+  
+  color: $govuk-blue;
+  
+  padding: 5px 7px 4px 7px;
+  border-width: 2px;
+  border-color: $govuk-blue;
+  
+  &:hover {
+    color: $light-blue;
+    border-color: $light-blue;
+  }
+}
+
+// Add border and padding to images
+
+  img {
+    @include box-sizing(border-box);
+    border: 1px solid $border-colour;
+    padding: 10px;
+    margin: $gutter-half 0 0 0;
+  }
+
+ul.pattern-list {
+  max-width: inherit;
+  margin-bottom: 30px;
+
+  column-gap: 15px;
+  column-width: 400px;
+  
+  margin: 0;
+  padding: 15px 0;
+  list-style: none;
+  
+  li {
+    break-inside: avoid;
+    margin: 0;
+    padding: 5px 0;
+  }
+}
+
+.tab-count {
+  color: $secondary-text-colour;
+  margin-left: 5px;
+}
+
+h2.section-title {
+  margin-bottom: 0;
+}
+
+p.section-description {
+  margin-top: 5px;
+  color: $secondary-text-colour;
+  @include core-24;
+}
+
+
+// Horizontal sub-nav branch
+
+.sub-nav {
+  background-color: darken($grey-4, 3%);
+  padding: 0px 10px 0px $gutter-half;
+  @extend %contain-floats;
+
+  .pattern-search {
+    float: right;
+    width: 300px;
+    margin: 10px $gutter-half 0 0;
+  }
+
+  ul.sub-nav-list {
+    float: left;
+    @extend %contain-floats;
+
+    li {
+      float: left;
+
+      a {
+        @include box-sizing(border-box);
+        display: block;
+        height: 53px;
+        color: $govuk-blue;
+        text-decoration: none;
+        font-weight: 700;
+        line-height: 53px;
+        padding: 0 20px;
+        border-bottom: 4px solid transparent;
+        &:hover {
+          border-bottom: 4px solid $light-blue;
+        }
+        &.is-active {
+          border-bottom: 4px solid $govuk-blue;
+        }
+      }
+    }
+  }
+}
+
+
+// Styles for Index page
+
+body.blank {
+
+  ul ul {
+    list-style: none;
+    margin: 0 0 0 -20px;
+    padding: 0;
+    padding-top: 10px;
+    li {
+      background-color: $grey-3;
+      padding: 15px;
+      position: relative;
+      margin-bottom: 15px;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background-color: $grey-3;
+        top: -9px;
+        left: 20px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  span.reason-for-change {
+    font-weight: bold;
+    color: $govuk-blue;
+  }
+
+}
+
+.toc__list ul.pattern-nav {
+  a:link {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+// Quick fixes
+
+.design-principles {
+  ol {
+    color: $secondary-text-colour;
+  }
+}
+
+ol.principles {
+  list-style: none;
+  padding-left: 0;
+}
+
+.heading-large {
+  font-size: 36px !important;
+}
+
+.panel-border-wide {
+  margin-top: 30px;
+}
+
+// Tile styles
+
+.grid-row.tile-wrapper {
+  padding: 0;
+  max-width: 990px;
+}
+
+.tile__grid {
+  @include media(mobile) {
+    float: left;
+  }
+
+  @include media($min-width: 450px) {
+    width: 50%;
+  }
+
+  @include media(tablet) {
+    width: 100%;
+  }
+
+  @include media($min-width: 850px) {
+    width: 50%;
+  }
+
+  @include media(desktop) {
+    width: 33.333%;
+  }
+}
+
+.tile {
+  background-color: lighten($light-blue, 48%);
+  padding: $gutter-half;
+  margin-bottom: $gutter;
+  position: relative;
+  z-index: 0;
+  
+  &:hover {
+    background-color: lighten($light-blue, 44%);
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0px;
+    padding-top: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: $govuk-blue;
+    
+    @include media(mobile) {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    a {
+      color: $govuk-blue;
+      text-decoration: none;
+    }
+  }
+
+  a.image-link {
+    line-height: 0;
+    display: block;
+  }
+
+  p {
+    font-size: 16px;
+    margin-top: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  img {
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+    // filter: grayscale(100%);
+
+    &:hover {
+      // filter: grayscale(0%);
+    }
+  }
+}
+
+.tile__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.tile__section-link {
+  position: relative;
+  display: block;
+  z-index: 1;
+  a {
+    &:hover {
+      color: $govuk-blue;
+      background-color: $yellow;
+    }
+  }
+}
+
+span.experimental {
+
+  @include box-sizing(border-box);
+  
+  vertical-align: middle;
+  font-size: 10px;
+  padding: 1px 3px;
+  font-weight: bold;
+  color: $secondary-text-colour;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid $border-colour;
+  text-decoration: none;
+  margin-left: 5px;
+  color: $govuk-blue;
+  border-color: $govuk-blue;
 }

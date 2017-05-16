@@ -1,0 +1,28 @@
+<% content_for :service_title do %>
+  Design
+<% end %>
+
+<% content_for :service_link, '/design-patterns/patterns' %>
+
+<% content_for :header_links do %>
+  <%= partial 'layouts/design-patterns/header_links' %> 
+<% end %>
+
+<% content_for :sidebar do %>
+ <%= partial 'layouts/design-patterns/nav' %>
+<% end %>
+
+<% content_for :subnav do %>
+  <%= partial 'layouts/design-patterns/sub-nav' %>
+<% end %>
+
+<% wrap_layout :docs do %>
+  <% if current_page.data.section %>
+  <p class="section-heading"><%= current_page.data.section %></p>
+  <% end %>
+  <% if current_page.data.title %>
+  <h1><%= current_page.data.title %></h1>
+  <% end %>
+
+  <%= yield %>
+<% end %>

@@ -1,0 +1,118 @@
+---
+title:		Icon implementation
+section:	Components
+theme:		Content
+status:		Alpha
+department: All
+date: 4th May 2017
+---
+
+<div class="visually-hidden">
+	<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" aria-describedby="description" role="img">
+		<symbol id="c-icon--search" viewBox="0 0 18 18">
+			<title id="title">Search icon</title>
+			<description id="description">magnifying glass graphic indicating search functionality</description>
+			<path d="M6.5 1.6c2.7 0 4.9 2.2 4.9 4.9s-2.2 4.9-4.9 4.9-4.9-2.2-4.9-4.9 2.2-4.9 4.9-4.9m0-1.6C2.9 0 0 2.9 0 6.5S2.9 13 6.5 13 13 10.1 13 6.5 10.1 0 6.5 0zm6.6 11.5l4.9 4.9-1.6 1.6-4.9-4.9v-.8l.8-.8h.8z"></path>
+		</symbol>
+	</svg>
+</div>
+
+## Overview
+Provides documentation on best practices in usaging and implementing iconography in a service.
+
+## When to use this component
+
+Use this pattern when the users of your service need it.
+
+### When not to use this component
+Don't use it for unnecessary decoration
+
+## How it works
+There is a historical record of discussions on polarazing approaches to delivering iconography.
+One approach is using a typeface (font) to distribute and show icon sets.
+Second approach is using vector graphic (SVG) files.
+Both approaches deliver crisp icons at retina screen resolutions, but have pros and cons in technical implementation.
+
+Our recommendation, as outlined below, favours SVG approach that adheres to accessibility guidlines and browser support policy.
+
+SVG's can be coloured using CSS properties, will scale with text and align with it.
+
+### Using icons with SVG element inline and proving bitmap image fallback
+Use this approach when you want to either insert a standalone icon or one that is adjacent to text.
+
+Modern browsers will use the SVG asset, older browsers will interpret `<image>` as `<img />` tag and show the .PNG bitmap asset.
+
+#### Using full svg declaration inline
+<% partial "/layouts/example" do %>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" aria-labelledby="title" aria-describedby="description" role="img">
+	<title id="title">Search icon</title>
+	<description id="description">magnifying glass graphic indicating search functionality</description>
+	<path d="M6.5 1.6c2.7 0 4.9 2.2 4.9 4.9s-2.2 4.9-4.9 4.9-4.9-2.2-4.9-4.9 2.2-4.9 4.9-4.9m0-1.6C2.9 0 0 2.9 0 6.5S2.9 13 6.5 13 13 10.1 13 6.5 10.1 0 6.5 0zm6.6 11.5l4.9 4.9-1.6 1.6-4.9-4.9v-.8l.8-.8h.8z"></path>
+</svg><% end %>
+
+#### Declaring symbols at the top of the page, visually hidden and calling them with `<use>`
+<% partial "/layouts/example" do %>
+<svg class="c-icon" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" aria-describedby="description" role="img">
+  <use xlink:href="#c-icon--search"></use>
+  <image src="images/icons/icon--search.png" xlink:href="">
+</svg><% end %>
+
+### Using icons as a background CSS property
+Use this this approach when you are restricted in include the icon inline in the document
+
+Modern browsers will use the SVG asset and legacy browsers will use the PNG asset.
+By combining svg `background` and `linear-gradient` declarations we are insuring that browsers that don't understand the latter, ship this entirely.
+
+<div class="example">
+<i class="c-icon c-icon--has-bg-icon c-icon--search"></i>
+</div>
+<div class="example">
+.c-icon--search {
+	background: url(../images/icons/icon--search.png);
+	background: url(../images/icons/icon--search.svg),linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+</div>
+
+## Alternative technical implementations
+These my not match with our guidelines and browser support policy but they do work
+
+### Use SVG in an img tag
+To provide in inline .PNG fallback it's recommended to use SVG in an `<img />` tag. If .SVG is not supported by the browser a .PNG equivalent is shown.
+Note: cannot style SVG content with CSS
+<% partial "/layouts/example" do %>
+<img alt="magnifying glass icon indicating search" class="c-icon" src="/images/icons/icon--search.svg" onerror="this.src='/images/icons/icon--search.png';this.onerror=null;">
+<% end %>
+
+### SVG icons from an external file
+A technique that is very similar to traditional image sprites: combining multiple assets into a larger file to reduce a number of HTTP requests.
+Usually combined with a build process to reduce manual ammends.
+NOTE: Low browser support, requires Javascript to make it work in supported all IE browsers.
+
+#### As background CSS property:
+<i class="c-icon icon-icon--search"></i>
+
+<div class="example">
+<i class="c-icon icon-icon--search"></i>
+.icon-icon--search {
+  background-image: url(../images/icons/sprite.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+</div>
+
+#### As inline SVG
+<% partial "/layouts/example" do %>
+	<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" aria-describedby="description" role="img">
+	  <use xlink:href="/images/icons/sprite.svg#icon-icon--search"></use>
+	</svg>
+<% end %>
+
+## Related work on this pattern
+- [Accessible SVG] (https://www.sitepoint.com/tips-accessible-svg/)
+- [CSS tricks](https://css-tricks.com/a-complete-guide-to-svg-fallbacks/)
+- [Lonely Planet](http://ianfeather.co.uk/ten-reasons-we-switched-from-an-icon-font-to-svg/)
+
+## Related patterns
+- [Icons](/design-patterns/patterns/styles/icons/)

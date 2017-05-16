@@ -1,0 +1,126 @@
+---
+title:		Addresses
+section:	Components
+theme:    Form elements
+status:		Approved
+discuss:	https://designpatterns.hackpad.com/CgrMSGRAhRc
+department: All
+---
+
+## Overview
+This guide explains the 3 ways to ask users for an address and when to use them:
+
+- [Address lookup](#using-an-address-lookup)
+- [Multiple fields](#using-multiple-fields)
+- [Free text box](#using-a-free-text-box)
+
+## Using an address lookup
+
+Example
+![Example of an address lookup](address-lookup.gif)
+
+### When to use this pattern
+
+Use an address lookup when you’re asking users for a UK address.
+
+### When not to use this pattern
+
+Address lookups generally only work for UK addresses. If you’re collecting only
+or mostly international addresses, you should use a manual option (either
+multiple fields or a free text box) instead.
+
+### How it works
+
+An address lookup lets users specify a UK address by entering their postcode
+(and optionally their street name or number) and selecting their address from a
+list.
+
+When using an address lookup, you should:
+
+- make it clear that it will only work for UK addresses
+- provide a manual option for people with international addresses or addresses
+  that are missing or not properly listed in the address lookup
+- let people enter their postcodes in upper or lower case and with or without
+  spaces
+
+### Variations
+- [HMRC address lookup](hmrc-lookup.html)
+
+## Using multiple fields
+![Example using multiple fields](multiple-fields.png)
+
+### When to use this pattern
+
+Only use multiple address fields when you know which countries the addresses
+will come from and can find a format that supports them all. This can be
+difficult to know if you’re asking for addresses outside of the UK.
+
+### How it works
+
+Using multiple fields means:
+
+- you can easily extract and use specific parts of an address
+- you can give help for individual fields
+- you can validate each part of the address separately
+- users can complete the form using their browser’s auto-complete function
+
+The disadvantages of multiple address fields are that:
+
+- it’s hard to find a single format that works for all addresses
+- there’s no guarantee that users will use the fields the way you think they
+  will
+- users can’t easily paste addresses from their clipboards
+
+If you use multiple fields, you should:
+
+- only make individual fields mandatory if you really need the information
+- make the fields the appropriate length for the content - it helps people
+  understand the form (for example, make postcode fields shorter than street
+  fields
+- let people enter their postcodes in upper or lower case and with or without
+  spaces
+
+Make sure there are enough fields to accommodate longer addresses if you know
+your users will need them. For example, to allow them to include a company name
+or flat number.
+
+Royal mail doesn’t need a county as long as the town and postcode are included.
+You should include an optional county field so that people who don’t know their
+postcode can give a valid address.
+
+## Using a free text box
+
+Example:
+![Example using a free text box](free-text-box.png)
+
+### When to use this pattern
+
+Use a free text box if you expect a broad range of address formats and you don’t
+need to use specific sub-parts of the address (for example, street or postcode).
+
+### When not to use this pattern
+
+You shouldn’t use free text boxes if you:
+
+- need to separate an address into accurate sub-parts (for example, street or
+  postcode)
+- are using a legacy backend system that can only use multiple field addresses
+- need to help users look up an address
+
+### How it works
+
+Free text boxes let users enter any possible address format, meaning they don’t
+need to work out which part of the address goes in which field.
+
+Free text boxes make it easy for users to copy and paste addresses from their
+clipboard.
+
+## Research on this pattern
+
+Read a blog post about testing and iterating the check before you start pattern.
+
+## Related patterns
+
+- [Question pages](/design-patterns/patterns/pages/question_pages/)
+- [Email addresses](/design-patterns/patterns/tasks/email_addresses/)
+- [Postcodes](http://localhost:4567/design-patterns/patterns/tasks/postcodes/)

@@ -1,0 +1,55 @@
+---
+title:		Buttons
+section:	Components
+theme:		Form elements
+status:		Approved
+department: All
+---
+
+## Button text
+
+Button text should be short and describe the action the button performs.
+
+<% partial "/layouts/example" do %>
+<input class="button" type="submit" value="Save and continue">
+<% end %>
+
+## Start now button
+
+Launch your service with a Start now button.
+
+<% partial "/layouts/example" do %>
+<a class="button button-start" href="#" role="button">Start now</a>
+<% end %>
+
+## Button alignment
+
+Align the primary action button to the left edge of your form, in the user’s line of sight.
+
+<% partial "/layouts/example" do %>
+<form action="/" method="post" class="form">
+  <div class="form-group">
+    <label for="form-email-address-1" class="form-label">Email address</label>
+    <input type="text" class="form-control" id="form-email-address-1">
+  </div>
+  <div class="form-group">
+    <button class="button">Save and continue</button>
+  </div>
+</form>
+<% end %>
+
+## Disabled buttons
+
+- don’t disable buttons, unless there’s a good reason to
+if you have to disable buttons, make sure they look like you can’t click them (use 50% opacity)
+- an example of a useful disabled option is a calendar with greyed out days where no bookings are available
+- provide another way for the user to continue, add an error message or text to explain why the button is disabled
+
+<% partial "/layouts/example" do %>
+<input class="button" type="submit" value="Save and continue" disabled="disabled">
+<% end %>
+
+
+## Creating buttons
+
+Use the GOV.UK Sass button mixin – find this in the GOV.UK frontend toolkit [buttons.scss](https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/design-patterns/_buttons.scss) file.

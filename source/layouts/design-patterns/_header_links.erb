@@ -1,0 +1,26 @@
+<ul>
+  <li<% if current_page.path == "design-patterns/index.html" %> class="active"<% end %>>
+    <a href="/design-patterns">
+      About
+    </a>
+  </li>
+
+  <li<% if current_page.path.start_with? "design-patterns/patterns" %> class="active"<% end %>>
+    <a href="/design-patterns/patterns/">
+      Patterns
+    </a>
+  </li>
+
+  <li<% if current_page.path.start_with? "design-patterns/contribute" %> class="active"<% end %>>
+    <a href="/design-patterns/contribute">
+      Contribute
+    </a>
+  </li>
+
+  <li<% if current_page.path.start_with? "design-patterns/support" %> class="active"<% end %>>
+    <a href="/design-patterns/support">
+      Support
+    </a>
+  </li>
+</ul>
+

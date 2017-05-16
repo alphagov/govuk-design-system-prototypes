@@ -1,0 +1,21 @@
+<% content_for :service_title do %>
+  Design
+<% end %>
+
+<% content_for :service_link, '/design-patterns/patterns' %>
+
+<% content_for :header_links do %>
+  <%= partial 'layouts/design-patterns/header_links' %> 
+<% end %>
+
+<% content_for :sidebar do %>
+ <%= partial 'layouts/design-patterns/nav' %>
+<% end %>
+
+<% content_for :subnav do %>
+  <%= partial 'layouts/design-patterns/sub-nav' %>
+<% end %>
+
+<% wrap_layout :docs do %>
+  <%= yield %>
+<% end %>

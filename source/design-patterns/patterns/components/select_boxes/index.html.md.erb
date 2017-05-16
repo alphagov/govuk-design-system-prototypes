@@ -1,0 +1,20 @@
+---
+title:		Select boxes
+aliases:	Drop down list, Dropdown list
+section:	Components
+theme:		Form elements
+status:		Approved
+department: All
+---
+
+Avoid using select boxes (drop-down lists) - use radio buttons or checkboxes instead.
+
+<% partial "/layouts/example" do %>
+<div class="form-group">
+  <label class="form-label" for="select-box">This is the label text</label>
+  <select class="form-control" id="select-box">
+    <option>GOV.UK elements option 1</option>
+    <option>GOV.UK elements option 2</option>
+    <option>GOV.UK elements option 3</option>
+  </select>
+</div><% end %>
