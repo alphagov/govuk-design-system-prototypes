@@ -1,0 +1,34 @@
+---
+title:      Header [HMRC]
+section:    Components
+theme:      Global
+status:     Approved
+department: All
+# discuss:  https://designpatterns.hackpad.com/VXZSfnj33dn
+---
+
+HMRC header
+
+### Example
+
+<% partial "/layouts/example" do %>
+<header role="banner" id="global-header" class="with-proposition">
+    <div class="header-wrapper">
+        <div class="header-global">
+            <div class="header-logo">
+                <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+                    <img src="/public/images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt="">                    GOV.UK
+                </a>
+            </div>
+        </div>
+        <div class="header-proposition">
+            <div class="content">
+                <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+                <nav id="proposition-menu">
+                    <a href="/docs" id="proposition-name">Service name</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<% end %>
