@@ -15,7 +15,7 @@ GIT
       nokogiri (~> 1.6)
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     activesupport (5.0.2)
       concurrent-ruby (~> 1.0, >= 1.0.2)
