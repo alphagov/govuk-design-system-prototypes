@@ -6,7 +6,8 @@ require 'lib/tech_docs_html_renderer'
 
 activate :deploy do |deploy|
   deploy.deploy_method = :git
-  deploy.build_before = true
+  deploy.remote = 'heroku'
+  deploy.branch = 'master'
 end
 
 ###
