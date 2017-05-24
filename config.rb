@@ -1,6 +1,15 @@
 require 'lib/tech_docs_html_renderer'
 
 ###
+# Deploying to github pages
+###
+
+activate :deploy do |deploy|
+  deploy.deploy_method = :git
+  deploy.build_before = true
+end
+
+###
 # Page options, layouts, aliases and proxies
 ###
 
@@ -29,7 +38,7 @@ activate :search do |search|
   search.resources = ['design-patterns/patterns']
 
   search.before_index = Proc.new do |to_index, to_store, resource|
-    throw(:skip) if resource.data.status&.downcase == "backlog" || 
+    throw(:skip) if resource.data.status&.downcase == "backlog" ||
       !["all", nil].include?(resource.data.department&.downcase)
   end
 
