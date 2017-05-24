@@ -6,7 +6,7 @@ GIT
       nokogiri
 
 GIT
-  remote: https://github.com/daniel-rikowski/middleman-search.git
+  remote: http://github.com/daniel-rikowski/middleman-search
   revision: d47432696c5dfb74e2ce6d43667edda26427bc45
   specs:
     middleman-search (0.10.0)
