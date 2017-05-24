@@ -1,5 +1,5 @@
 ---
-title:		Structure
+title:		Form structure
 section:	Patterns
 theme:		Form design
 status:		Approved
