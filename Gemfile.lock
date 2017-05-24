@@ -1,12 +1,12 @@
 GIT
-  remote: git@github.com:/alphagov/table_of_contents
+  remote: git://github.com/alphagov/table_of_contents.git
   revision: 2b3639c05eb68e5d00e63469f784b203eb6257a1
   specs:
     table_of_contents (0.1.0)
       nokogiri
 
 GIT
-  remote: git@github.com:/daniel-rikowski/middleman-search.git
+  remote: https://github.com/daniel-rikowski/middleman-search.git
   revision: d47432696c5dfb74e2ce6d43667edda26427bc45
   specs:
     middleman-search (0.10.0)
@@ -121,7 +121,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
-    nokogiri (1.7.1)
+    nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     padrino-helpers (0.13.3.3)
       i18n (~> 0.6, >= 0.6.7)

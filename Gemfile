@@ -27,4 +27,4 @@ gem 'middleman-search', git: 'https://github.com/daniel-rikowski/middleman-searc
 gem 'redcarpet', '~> 3.3.2'
 
 # gem 'table_of_contents', git: 'git@github.com:/alphagov/table_of_contents'
-gem 'table_of_contents', github: 'https://github.com/alphagov/table_of_contents.git'
+gem 'table_of_contents', github: 'alphagov/table_of_contents'
