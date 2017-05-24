@@ -11,12 +11,12 @@ There are lots of ways that you can get involved.
 
 All design patterns have a discussion space, where you can share examples and ask questions.
 
-If you'd like to go further and suggest actual improvements to the guidance you can do this by raising a pull request on Github.
+If you'd like to go further and suggest actual improvements to the guidance you can do this by raising a pull request on GitHub.
 
 
 ## How to develop a new pattern
 
-We use Github to manage the development of all our design patterns. 
+We use GitHub to manage the development of all our design patterns. 
 Here's a step by step guide for developing a new pattern.
 
 

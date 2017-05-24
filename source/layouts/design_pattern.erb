@@ -37,7 +37,7 @@
           <dd><% if current_page.data.date %> <%= current_page.data.date %> <% else %>30 March 2017<% end %></dd>
         <% if current_page.file_descriptor&.normalized_relative_path %>
           <dt>Edit this page on:</dt>
-          <dd><a href="https://github.com/alphagov/govuk_design_prototypes/edit/master/source/<%= current_page.file_descriptor.normalized_relative_path %>">Github</a></dd>
+          <dd><a href="https://github.com/alphagov/govuk_design_prototypes/edit/master/source/<%= current_page.file_descriptor.normalized_relative_path %>">GitHub</a></dd>
           <dt>View history on:</dt>
           <dd><a href="https://github.com/alphagov/govuk_design_prototypes/commits/master/source/<%= current_page.file_descriptor.normalized_relative_path %>">GitHub</a> (<a href="https://github.com/alphagov/govuk_design_prototypes/commits/master/source/<%= current_page.file_descriptor.normalized_relative_path %>.atom">feed</a>)</dd>
         <% end %>
