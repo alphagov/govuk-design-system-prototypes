@@ -1,4 +1,6 @@
 #!/bin/bash
+# Ensure script exits if there is an error
+set -e
 
 echo "Building documentation..."
 bundle exec middleman build
