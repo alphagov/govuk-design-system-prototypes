@@ -21,8 +21,10 @@ gem 'middleman-syntax', '~> 3.0.0'
 
 # Use ExecJS instead of therubyracer
 # https://github.com/manastech/middleman-search/pull/24/files
-gem 'middleman-search', git: 'git@github.com:/daniel-rikowski/middleman-search.git'
+# gem 'middleman-search', git: 'git@github.com:/daniel-rikowski/middleman-search.git'
+gem 'middleman-search', git: 'https://github.com/daniel-rikowski/middleman-search.git'
 
 gem 'redcarpet', '~> 3.3.2'
 
-gem 'table_of_contents', git: 'git@github.com:/alphagov/table_of_contents'
+# gem 'table_of_contents', git: 'git@github.com:/alphagov/table_of_contents'
+gem 'table_of_contents', github: 'https://github.com/alphagov/table_of_contents.git'
