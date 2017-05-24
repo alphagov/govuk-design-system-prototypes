@@ -1,0 +1,475 @@
+
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js tech-docs">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="robots" content="noindex">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Design principles</title>
+
+    <!--[if gt IE 8]><!--><link href="/stylesheets/screen.css" rel="stylesheet" media="screen" /><!--<![endif]-->
+    <!--[if lte IE 8]><link href="/stylesheets/screen-old-ie.css" rel="stylesheet" media="screen" /><![endif]-->
+
+    <link rel="canonical" href="n/a/design-patterns/patterns/overview/design principles/principles.html">
+
+    <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+    <script src="/javascripts/application.js"></script>
+  </head>
+
+  <body>
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="skip-link">Skip to main content</a>
+
+        <header class="header header--full-width">
+          <div class="header__container">
+  <div class="header__brand">
+      <a href="/design-patterns/patterns">
+      <span class="govuk-logo">
+        <img class="govuk-logo__printable-crown" src="/images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+        GOV.UK
+      </span>
+      <span class="header__title">
+          Design
+
+      </span>
+      </a>
+
+  </div>
+
+  <div class="pattern-search pattern-search--in-header">
+    <input type="text" name="pattern-query" id="pattern-search-text" placeholder="Search GOV.UK design" autocomplete="off">
+    <ul class="search-results js-search-results">
+    </ul>
+  </div>
+
+<!--   
+    <div data-module="navigation">
+      <button type="button" class="header__navigation-toggle js-nav-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation">Menu</button>
+
+      <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
+          <ul>
+  <li>
+    <a href="/design-patterns">
+      About
+    </a>
+  </li>
+
+  <li class="active">
+    <a href="/design-patterns/patterns/">
+      Patterns
+    </a>
+  </li>
+
+  <li>
+    <a href="/design-patterns/contribute">
+      Contribute
+    </a>
+  </li>
+
+  <li>
+    <a href="/design-patterns/support">
+      Support
+    </a>
+  </li>
+</ul>
+
+ 
+
+      </nav>
+    </div>
+   -->
+</div>
+
+
+        </header>
+        
+          
+<div class="sub-nav">
+  <!-- <div class="pattern-search">
+    <input type="text" name="pattern-query" id="pattern-search-text" placeholder="Search design system" autocomplete="off">
+    <ul class="search-results js-search-results">
+    </ul>
+  </div> -->
+
+  <ul class="sub-nav-list">
+      
+      <li><a href="/design-patterns/patterns/" class="is-active">About</a></li>
+      <li><a href="/design-patterns/patterns/styles/colour/">Visual styles</a></li>
+      <li><a href="/design-patterns/patterns/components/alpha_and_beta_banners/">Components</a></li>
+      <li><a href="/design-patterns/patterns/pages/404_pages/">Pages</a></li>
+      <li><a href="/design-patterns/patterns/tasks/additional information/">Patterns</a></li>
+  </ul>
+</div>
+
+
+
+      </div>
+
+      <div id="toc-heading" class="toc-show fixedsticky">
+        <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
+          Table of contents <span class="toc-show__icon"></span>
+        </a>
+      </div>
+
+      <div class="app-pane__body">
+        <div class="app-pane__toc">
+          <div class="toc" data-module="table-of-contents">
+            <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
+            <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+               
+<nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+
+  <ul class="pattern-nav">
+      <li><a href="/design-patterns/patterns/">About GOV.UK Design</a></li>
+      <li class="current-page"><a href="/design-patterns/patterns/overview/design%20principles/principles.html">Design principles</a></li>
+      <li><a href="/design-patterns/patterns/overview/contribute/contribute.html">How to contribute</a></li>
+      <li><a href="/design-patterns/patterns/overview/statistics/">Site map</a></li>
+      <li><a href="/design-patterns/patterns/overview/support/support.html">Support</a></li>
+  <ul>
+
+</nav>
+
+
+
+            </nav>
+          </div>
+        </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation markdown" data-module="anchored-headings">
+              <h1 id="design-principles">Design Principles</h1>
+
+<p>Listed below are our design principles and examples of how we’ve used them so far.</p>
+
+<nav class="design-principles">
+<ol>
+<li>
+<a href="#first"><span class="caption">Start with user needs</span></a>
+</li>
+<li>
+<a href="#second"><span class="caption">Do less</span></a>
+</li>
+<li>
+<a href="#third"><span class="caption">Design with data</span></a>
+</li>
+<li>
+<a href="#fourth"><span class="caption">Do the hard work to make it simple</span></a>
+</li>
+<li>
+<a href="#fifth"><span class="caption">Iterate. Then iterate again.</span></a>
+</li>
+<li>
+<a href="#sixth"><span class="caption">This is for everyone</span></a>
+</li>
+<li>
+<a href="#seventh"><span class="caption">Understand context</span></a>
+</li>
+<li>
+<a href="#eighth"><span class="caption">Build digital services, not websites</span></a>
+</li>
+<li>
+<a href="#ninth"><span class="caption">Be consistent, not uniform</span></a>
+</li>
+<li>
+<a href="#tenth"><span class="caption">Make things open: it makes things better</span></a>
+</li>
+</ol>
+</nav>
+
+<ol class="principles">
+<li class="principle">
+<article>
+<hgroup>
+<h2 class="heading-large" id="first">Start with user needs</h2>
+</hgroup>
+
+<div class="outline">
+<p>
+Service design starts with identifying user needs. If you don’t
+know what the user needs are, you won’t build the right thing. Do
+research, analyse data, talk to users. Don’t make assumptions. Have
+empathy for users, and remember that what they ask for isn’t
+always what they need.
+</p>
+
+<ul>
+<li>
+<a href="https://gds.blog.gov.uk/2014/07/03/what-we-mean-when-we-say-service-transformation/">What we mean when we say “service transformation”</a>, by Mike Bracken</li>
+<li>
+<a href="http://blog.mattedgar.com/2015/05/12/most-of-government-is-mostly-service-design-most-of-the-time-discuss/">Most of government is mostly service design most of the time</a>, by Matt Edgar</li>
+<li>
+<a href="https://gds.blog.gov.uk/2014/09/03/vertical-campfires-our-user-research-walls/">Vertical campfires: our user research walls</a>, by Kate Towsey</li>
+</ul>
+</div>
+</article>
+</li>
+
+<li class="principle">
+<article>
+
+<h2 class="heading-large" id="second">Do less</h2>
+
+<div class="outline">
+<p>
+Government should only do what only government can do. If we’ve
+found a way of doing something that works, we should make it
+reusable and shareable instead of reinventing the wheel every time.
+This means building platforms and registers others can build upon,
+providing resources (like APIs) that others can use, and linking to
+the work of others. We should concentrate on the irreducible core.
+</p>
+
+<ul>
+<li>
+<a href="https://gds.blog.gov.uk/2014/10/15/building-digital-civic-infrastructure-from-the-ground-up/">Building digital civic infrastructure from the ground up</a>, by Mike Bracken</li>
+<li>
+<a href="https://gds.blog.gov.uk/2012/10/26/what-weve-learnt-about-scaling-agile/">What we’ve learned about scaling agile</a>, by Jamie Arnold</li>
+</ul>
+</div>
+</article>
+</li>
+
+<li class="principle">
+<article>
+
+<h2 class="heading-large" id="third">Design with data</h2>
+
+<div class="outline">
+<p>
+In most cases, we can learn from real world behaviour by looking at
+how existing services are used. Let data drive decision-making, not
+hunches or guesswork. Keep doing that after taking your service
+live, prototyping and testing with users then iterating in
+response. Analytics should be built-in, always on and easy to read.
+They’re an essential tool.
+</p>
+<ul>
+<li><a href="https://www.gov.uk/performance">Performance data for government services</a></li>
+<li>
+<a href="https://gds.blog.gov.uk/2013/06/18/retiring-our-icons/">Retiring our icons</a>, by Guy Moorhouse</li>
+<li>
+<a href="https://gds.blog.gov.uk/2014/10/10/combining-user-research-and-analytics-to-improve-the-user-experience/">Combining user research and analytics to improve the user experience</a>, by Lana Gibson and Charlotte Clancy</li>
+</ul>
+</div>
+</article>
+</li>
+
+<li class="principle">
+<article>
+
+<h2 class="heading-large" id="fourth">Do the hard work to make it simple</h2>
+
+<div class="outline">
+<p>
+Making something look simple is easy. Making something simple to
+use is much harder — especially when the underlying systems are
+complex — but that’s what we should be doing. Don’t take “It’s
+always been that way” for an answer. It’s usually more and harder
+work to make things simple, but it’s the right thing to do.
+</p>
+<ul>
+<li>
+<a href="https://gds.blog.gov.uk/2014/07/28/doing-the-hard-work-to-make-things-simple/">Doing the hard work to make things simple</a>, by Mike Bracken</li>
+<li>
+<a href="https://gds.blog.gov.uk/2014/06/20/i-fought-the-law-and-the-users-won-delivering-online-voter-registration/">I fought the law and the users won</a>, by Pete Herlihy</li>
+<li>
+<a href="https://gds.blog.gov.uk/2014/07/03/what-we-mean-when-we-say-service-transformation/">This is what we mean when we say “service transformation”</a>, by Mike Bracken</li>
+</ul>
+</div>
+</article>
+</li>
+
+<li class="principle">
+<article>
+
+<h2 class="heading-large" id="fifth">Iterate. Then iterate again.</h2>
+
+<div class="outline">
+<p>
+The best way to build good services is to start small and iterate
+wildly. Release <a href="https://en.wikipedia.org/wiki/Minimum_viable_product">Minimum
+Viable Products</a> early, test them with actual users, move from
+<a href="https://en.wikipedia.org/wiki/Software_release_life_cycle#Alpha">Alpha</a>
+to <a href="https://en.wikipedia.org/wiki/Software_release_life_cycle#Beta">Beta</a>
+to Live adding features, deleting things that don’t work and making
+refinements based on feedback. Iteration reduces risk. It makes big
+failures unlikely and turns small failures into lessons. If a
+prototype isn’t working, don’t be afraid to scrap it and start
+again.
+</p>
+<ul>
+<li>
+<a href="http://makeitquotidian.co.uk/2015/06/16/discovering-discovery/">Discovering discovery</a>, by Sarah Prag</li>
+<li>
+<a href="https://userresearch.blog.gov.uk/2014/09/17/6-case-studies-using-research-and-data-to-improve-a-live-service/">6 case studies using research and data to improve a live service</a>, by Ben Holliday</li>
+<li>
+<a href="https://gds.blog.gov.uk/2015/02/05/exemplars-making-examples-of-themselves/">Exemplars making examples of themselves</a>, by Mike Bracken</li>
+</ul>
+
+</div>
+</article>
+</li>
+
+<li class="principle">
+<article>
+
+<h2 class="heading-large" id="sixth">This is for everyone</h2>
+
+<div class="outline">
+<p>
+Accessible design is good design. Everything we build should be as
+inclusive, legible and readable as possible. If we have to
+sacrifice elegance — so be it. We’re building for needs, not
+audiences. We’re designing for the whole country, not just the
+ones who are used to using the web. The people who most need our
+services are often the people who find them hardest to use. Let’s
+think about those people from the start.
+</p>
+<ul>
+<li>
+<a href="https://accessibility.blog.gov.uk/2016/05/16/what-we-mean-when-we-talk-about-accessibility-2/">What we mean when we talk about accessibility</a>, by Alistair Duggin</li>
+<li>
+<a href="https://accessibility.blog.gov.uk/2016/05/16/consider-the-range-of-people-that-will-use-your-product-or-service/">Consider the range of people that will use your product or service</a>, by Alistair Duggin</li>
+<li>
+<a href="https://accessibility.blog.gov.uk/2016/05/17/hope-inspiration-and-inclusion/">Hope, inspiration and inclusion</a>, by Steven Mark</li>
+<li>
+<a href="https://gds.blog.gov.uk/2012/10/01/building-for-inclusion/">Building for inclusion</a>, by Léonie Watson</li>
+
+</ul>
+</div>
+</article>
+</li>
+
+<li class="principle">
+<article>
+<h2 class="heading-large" id="seventh">Understand context</h2>
+<div class="outline">
+<p>
+We’re not designing for a screen, we’re designing for people. We
+need to think hard about the context in which they’re using our
+services.  Are they in a library? Are they on a phone? Are they
+only really familiar with Facebook? Have they never used the web
+before?
+</p>
+<ul>
+<li>
+<a href="https://userresearch.blog.gov.uk/2015/02/13/how-we-recruited-people-with-lowno-digital-skills-on-carers-allowance/">How we recruited people with low/no digital skills on Carer&rsquo;s Allowance</a>, by Simon Hurst</li>
+<li>
+<a href="https://userresearch.blog.gov.uk/2015/03/11/the-right-place-to-do-rural-research/">The right place to do rural research</a>, by Emily Ball</li>
+</ul>
+</div>
+</article>
+</li>
+
+<li class="principle">
+<article>
+
+<h2 class="heading-large" id="eighth">Build digital services, not websites</h2>
+
+<div class="outline">
+<p>
+A service is something that helps people to do something. Our job
+is to uncover user needs, and build the service that meets those
+needs. Of course much of that will be pages on the web, but we’re
+not here to build websites. The digital world has to connect to the
+real world, so we have to think about all aspects of a service, and
+make sure they add up to something that meets user needs.
+</p>
+<ul>
+<li>
+<a href="https://speakerdeck.com/kitcollingwood/digital-leadership-presentation">Digital leadership</a>, by Kit Collingwood-Richardson</li>
+<li>
+<a href="https://gds.blog.gov.uk/2014/12/17/revealing-the-hidden-side-of-transformation/">Revealing the hidden side of transformation</a>, by Mike Bracken</li>
+<li>
+<a href="https://gds.blog.gov.uk/2015/03/27/not-the-hmrc-of-old/">Not the HMRC of old</a>, by Mike Bracken</li>
+</ul>
+</div>
+</article>
+</li>
+
+<li class="principle">
+<article>
+
+<h2 class="heading-large" id="ninth">Be consistent, not uniform</h2>
+
+<div class="outline">
+<p>
+We should use the same language and the same design patterns
+wherever possible. This helps people get familiar with our
+services, but when this isn’t possible we should make sure our
+approach is consistent.
+</p>
+<p>
+This isn’t a straitjacket or a rule book. Every circumstance is
+different. When we find patterns that work we should share them, and
+talk about why we use them. But that shouldn’t stop us from
+improving or changing them in the future when we find better ways of
+doing things or the needs of users change.
+</p>
+<ul>
+<li><a href="https://designpatterns.hackpad.com/">The GOV.UK Design Patterns Hackpad</a></li>
+<li>
+<a href="https://gds.blog.gov.uk/2014/07/18/whats-the-design-process-at-gds/">What’s the design process at GDS?</a> by Ben Terrett</li>
+</ul>
+</div>
+</article>
+</li>
+
+<li class="principle">
+<article>
+
+<h2 class="heading-large" id="tenth">Make things open: it makes things better</h2>
+
+<div class="outline">
+<p>
+We should share what we’re doing whenever we can. With
+colleagues, with users, with the world. Share code, share
+designs, share ideas, share intentions, share failures. The more
+eyes there are on a service the better it gets — howlers are
+spotted, better alternatives are pointed out, the bar is raised.
+</p>
+<p>
+Much of what we’re doing is only possible because of open source
+code and the generosity of the web design community. We should
+pay that back.
+</p>
+<ul>
+<li>
+<a href="https://gds.blog.gov.uk/2015/01/20/gds-usds/">GDS, USDS, and sharing expertise</a>, by Mike Bracken</li>
+<li>
+<a href="https://gds.blog.gov.uk/2014/08/22/how-sharing-helps-us-improve-digital-services/">How sharing helps us improve digital services</a>, by Mike Bracken</li>
+</ul>
+</div>
+</article>
+</li>
+</ol>
+
+
+          </main>
+
+          <footer class="footer footer--full-width">
+            <div class="footer-container">
+  <div class="footer__licence">
+    <a class="footer__licence-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a>
+    <p class="footer__licence-description">All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+  </div>
+
+  <div class="footer__copyright">
+    <a class="footer__copyright-logo" href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+  </div>
+</div>
+
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

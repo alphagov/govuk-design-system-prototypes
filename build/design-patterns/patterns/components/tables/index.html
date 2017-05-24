@@ -1,0 +1,803 @@
+
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js tech-docs">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="robots" content="noindex">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Tables</title>
+
+    <!--[if gt IE 8]><!--><link href="/stylesheets/screen.css" rel="stylesheet" media="screen" /><!--<![endif]-->
+    <!--[if lte IE 8]><link href="/stylesheets/screen-old-ie.css" rel="stylesheet" media="screen" /><![endif]-->
+
+    <link rel="canonical" href="n/a/design-patterns/patterns/components/tables/">
+
+    <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+    <script src="/javascripts/application.js"></script>
+  </head>
+
+  <body>
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="skip-link">Skip to main content</a>
+
+        <header class="header header--full-width">
+          <div class="header__container">
+  <div class="header__brand">
+      <a href="/design-patterns/patterns">
+      <span class="govuk-logo">
+        <img class="govuk-logo__printable-crown" src="/images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+        GOV.UK
+      </span>
+      <span class="header__title">
+          Design
+
+      </span>
+      </a>
+
+  </div>
+
+  <div class="pattern-search pattern-search--in-header">
+    <input type="text" name="pattern-query" id="pattern-search-text" placeholder="Search GOV.UK design" autocomplete="off">
+    <ul class="search-results js-search-results">
+    </ul>
+  </div>
+
+<!--   
+    <div data-module="navigation">
+      <button type="button" class="header__navigation-toggle js-nav-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation">Menu</button>
+
+      <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
+          <ul>
+  <li>
+    <a href="/design-patterns">
+      About
+    </a>
+  </li>
+
+  <li class="active">
+    <a href="/design-patterns/patterns/">
+      Patterns
+    </a>
+  </li>
+
+  <li>
+    <a href="/design-patterns/contribute">
+      Contribute
+    </a>
+  </li>
+
+  <li>
+    <a href="/design-patterns/support">
+      Support
+    </a>
+  </li>
+</ul>
+
+
+
+      </nav>
+    </div>
+   -->
+</div>
+
+
+        </header>
+        
+          
+<div class="sub-nav">
+  <!-- <div class="pattern-search">
+    <input type="text" name="pattern-query" id="pattern-search-text" placeholder="Search design system" autocomplete="off">
+    <ul class="search-results js-search-results">
+    </ul>
+  </div> -->
+
+  <ul class="sub-nav-list">
+      
+      <li><a href="/design-patterns/patterns/">About</a></li>
+      <li><a href="/design-patterns/patterns/styles/colour/">Visual styles</a></li>
+      <li><a href="/design-patterns/patterns/components/alpha_and_beta_banners/" class="is-active">Components</a></li>
+      <li><a href="/design-patterns/patterns/pages/404_pages/">Pages</a></li>
+      <li><a href="/design-patterns/patterns/tasks/additional information/">Patterns</a></li>
+  </ul>
+</div>
+
+
+
+      </div>
+
+      <div id="toc-heading" class="toc-show fixedsticky">
+        <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
+          Table of contents <span class="toc-show__icon"></span>
+        </a>
+      </div>
+
+      <div class="app-pane__body">
+        <div class="app-pane__toc">
+          <div class="toc" data-module="table-of-contents">
+            <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
+            <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+               
+<nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+
+  <ul class="pattern-nav">
+
+      <ul class="section">
+        <li class="theme-heading">Global</li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/alpha_and_beta_banners/">Alpha and beta banners</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/cookie_banner/">Cookie banner</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/footer/">Footer</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/footer/hmrc.html.md.1">Footer [HMRC]</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/header/">Header</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/header/header.html">Header [HMRC]</a></li>
+      </ul>
+
+
+      <ul class="section">
+        <li class="theme-heading">Navigation</li>
+          <li class="status-beta"><a href="/design-patterns/patterns/components/accordions/">Accordions</a></li>
+          <li class="status-beta"><a href="/design-patterns/patterns/components/back_button/">Back button</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/breadcrumbs/">Breadcrumbs</a></li>
+          <li class="status-beta"><a href="/design-patterns/patterns/components/page_navigation/">Page navigation</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/pagination/">Pagination</a></li>
+          <li class="status-alpha"><a href="/design-patterns/patterns/components/primary_navigation/">Primary navigation</a></li>
+      </ul>
+
+
+      <ul class="section">
+        <li class="theme-heading">Form elements</li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/addresses/">Addresses</a></li>
+          <li class="status-alpha"><a href="/design-patterns/patterns/components/autocomplete/">Autocomplete</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/buttons/">Buttons</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/checkboxes/">Checkboxes</a></li>
+          <li class="status-alpha"><a href="/design-patterns/patterns/components/country_selector/">Country selector</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/date%20group/">Date group</a></li>
+          <li class="status-alpha"><a href="/design-patterns/patterns/components/file_upload/">File upload</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/text_fields/">Form and Text fields</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/form_labels/">Form labels</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/radio_buttons/">Radio buttons</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/search_box/">Search box</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/select_boxes/">Select boxes</a></li>
+      </ul>
+
+
+      <ul class="section">
+        <li class="theme-heading">Content</li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/code/">Code</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/download_links/">Download links</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/feedback_link/">Feedback link</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/help_text/">Help text</a></li>
+          <li class="status-alpha"><a href="/design-patterns/patterns/components/using-icons/">Icon implementation</a></li>
+          <li class="status-approved"><a href="/design-patterns/patterns/components/progress_indicators/">Progress indicators</a></li>
+          <li class="status-alpha"><a href="/design-patterns/patterns/components/social_media_links/">Social media links</a></li>
+          <li class="status-alpha current-page"><a href="/design-patterns/patterns/components/tables/">Tables</a></li>
+          <li class="status-beta"><a href="/design-patterns/patterns/components/tabs/">Tabs</a></li>
+          <li class="status-beta"><a href="/design-patterns/patterns/components/video/">Video</a></li>
+      </ul>
+
+  <ul>
+
+</nav>
+
+
+
+            </nav>
+          </div>
+        </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation markdown" data-module="anchored-headings">
+              <div class="pattern-header">
+      <p class="section-heading">Content</p>
+
+    <h1>Tables<a href="/design-patterns/patterns/overview/pattern_status/#alpha"><span class="status">Alpha</span></a></h1>
+  </div>
+
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <div class="govuk-metadata">
+        <dl>
+          <dt>Last reviewed:</dt>
+          <dd>30 March 2017</dd>
+          <dt>Edit this page on:</dt>
+          <dd><a href="">Github</a></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="overview">Overview</h2>
+
+<p>When in what ways to display tabular data.</p>
+
+<h2 id="when-to-use-this-pattern">When to use this pattern</h2>
+
+<p>Tables should only be used to present data.</p>
+
+<h3 id="when-not-to-use-this-pattern">When NOT to use this pattern</h3>
+
+<p>Don’t use tables for cosmetic changes to layout, eg to present a list because you think it looks better that way.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>Below are different was to implement tables to display data across different screen sizes.</p>
+
+<div class="panel panel-border-wide">
+  Add appropriate scope=&ldquo;col&rdquo; to thead items and scope=&ldquo;row&rdquo; and each th element in mobile view. 
+</div>
+
+<h3 id="standard-table">Standard table</h3>
+
+<p>Use when columns are small enough to fit on a mobile screen</p>
+
+<div class="example">
+<table class="table">
+<thead>
+<tr>
+<th scope="col"></th>
+<th scope="col" class="numeric">2017-18</th>
+<th scope="col" class="numeric">2018-19</th>
+<th scope="col" class="numeric">2019-20</th>
+<th scope="col"class="numeric">2020-21</th>
+<th scope="col" class="numeric">2021-22</th>
+</tr>
+</thead>
+<colgroup></colgroup> <colgroup span="5"></colgroup>
+<tbody>
+<tr>
+<th scope="row">i Doctoral loans</th>
+<td class="numeric">0</td>
+<td class="numeric">-5</td>
+<td class="numeric">-5</td>
+<td class="numeric">-10</td>
+<td class="numeric">-10</td>
+</tr>
+<tr>
+<th scope="row">ii Part-time maintenance loans</th>
+<td class="numeric">0</td>
+<td class="numeric">75</td>
+<td class="numeric">130</td>
+<td class="numeric">95</td>
+<td class="numeric">65</td>
+</tr>
+<tr>
+<th scope="row">iii Further Education maintenance loans</th>
+<td class="numeric">0</td>
+<td class="numeric">0</td>
+<td class="numeric">-15</td>
+<td class="numeric">-40</td>
+<td class="numeric">-70</td>
+</tr>
+<tr class="subtotal">
+<th scope="row">Total policy decisions</th>
+<td class="numeric">0</td>
+<td class="numeric">70</td>
+<td class="numeric">110</td>
+<td class="numeric">45</td>
+<td class="numeric">-15</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<pre class="highlight html"><code><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;thead&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;&lt;/th&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2017-18<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2018-19<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2019-20<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2020-21<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2021-22<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/thead&gt;</span>
+<span class="nt">&lt;colgroup&gt;&lt;/colgroup&gt;</span> <span class="nt">&lt;colgroup</span> <span class="na">span=</span><span class="s">"5"</span><span class="nt">&gt;&lt;/colgroup&gt;</span>
+<span class="nt">&lt;tbody&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>i Doctoral loans<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-5<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-5<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-10<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-10<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>ii Part-time maintenance loans<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>75<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>130<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>95<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>65<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>iii Further Education maintenance loans<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-15<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-40<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-70<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"subtotal"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>Total policy decisions<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>70<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>110<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>45<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-15<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre>
+
+<h3 id="horizontal-scrolling">Horizontal scrolling</h3>
+
+<p>In cases where tables are complex and a responsive layout would be confusing for users, a scrollable table pattern can be adopted.
+It will keep the table at the desktop size, but will provide a scrolling option on mobile screens to view the intire table.</p>
+
+<div class="example">
+<div class="scrollable-table">
+  <table class="table table--scroll">
+  <thead>
+  <tr>
+  <td></td>
+  <th class="numeric">2017-18</th>
+  <th class="numeric">2018-19</th>
+  <th class="numeric">2019-20</th>
+  <th class="numeric">2020-21</th>
+  <th class="numeric">2021-22 (4)</th>
+  </tr>
+  </thead>
+  <colgroup></colgroup> <colgroup span="5"></colgroup>
+  <tbody>
+  <tr class="section-heading">
+  <th colspan="6">Housing</th>
+  </tr>
+  <tr>
+  <th>Accelerated construction</th>
+  <td class="numeric">285</td>
+  <td class="numeric">635</td>
+  <td class="numeric">665</td>
+  <td class="numeric">380</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr>
+  <th>Affordable housing (2)</th>
+  <td class="numeric">1,120</td>
+  <td class="numeric">1,125</td>
+  <td class="numeric">880</td>
+  <td class="numeric">340</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr>
+  <th>Housing Infrastructure Fund</th>
+  <td class="numeric">60</td>
+  <td class="numeric">300</td>
+  <td class="numeric">945</td>
+  <td class="numeric">1,425</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr class="section-heading">
+  <th colspan="6">Transport</th>
+  </tr>
+  <tr>
+  <th>Roads and local transport</th>
+  <td class="numeric">365</td>
+  <td class="numeric">500</td>
+  <td class="numeric">430</td>
+  <td class="numeric">650</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr>
+  <th>Next generation vehicles</th>
+  <td class="numeric">75</td>
+  <td class="numeric">100</td>
+  <td class="numeric">110</td>
+  <td class="numeric">115</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr>
+  <th>Digital railways enhancements</th>
+  <td class="numeric">30</td>
+  <td class="numeric">55</td>
+  <td class="numeric">165</td>
+  <td class="numeric">285</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr>
+  <th>Cambridge-Milton Keynes-Oxford corridor</th>
+  <td class="numeric">5</td>
+  <td class="numeric">135</td>
+  <td class="numeric">0</td>
+  <td class="numeric">0</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr class="section-heading">
+  <th colspan="6">Digital Communications (3)</th>
+  </tr>
+  <tr>
+  <th>Fibre and 5G investment</th>
+  <td class="numeric">25</td>
+  <td class="numeric">150</td>
+  <td class="numeric">275</td>
+  <td class="numeric">290</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr class="section-heading">
+  <th colspan="6">Research and Development</th>
+  </tr>
+  <tr>
+  <th>Research and Development funding</th>
+  <td class="numeric">425</td>
+  <td class="numeric">820</td>
+  <td class="numeric">1,500</td>
+  <td class="numeric">2,000</td>
+  <td class="numeric">*</td>
+  </tr>
+  <tr class="subtotal">
+  <th>Total</th>
+  <td class="numeric">2,390</td>
+  <td class="numeric">3,820</td>
+  <td class="numeric">4,970</td>
+  <td class="numeric">5,485</td>
+  <td class="numeric">7,000</td>
+  </tr>
+  </tbody>
+  </table>
+</div>
+
+<p></div></p>
+
+<pre class="highlight html"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"scrollable-table"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table--scroll"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2017-18<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2018-19<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2019-20<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2020-21<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2021-22 (4)<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;colgroup&gt;&lt;/colgroup&gt;</span> <span class="nt">&lt;colgroup</span> <span class="na">span=</span><span class="s">"5"</span><span class="nt">&gt;&lt;/colgroup&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+  <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"section-heading"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">"6"</span><span class="nt">&gt;</span>Housing<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;th&gt;</span>Accelerated construction<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>285<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>635<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>665<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>380<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>*<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;th&gt;</span>Affordable housing (2)<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>1,120<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>1,125<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>880<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>340<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>*<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;th&gt;</span>Housing Infrastructure Fund<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>60<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>300<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>945<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>1,425<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>*<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"section-heading"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">"6"</span><span class="nt">&gt;</span>Transport<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;th&gt;</span>Roads and local transport<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>365<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>500<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>430<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>650<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>*<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;th&gt;</span>Next generation vehicles<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>75<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>100<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>110<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>115<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>*<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;th&gt;</span>Digital railways enhancements<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>30<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>55<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>165<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>285<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>*<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;th&gt;</span>Cambridge-Milton Keynes-Oxford corridor<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>5<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>135<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>*<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"section-heading"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">"6"</span><span class="nt">&gt;</span>Digital Communications (3)<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;th&gt;</span>Fibre and 5G investment<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>25<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>150<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>275<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>290<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>*<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"section-heading"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">"6"</span><span class="nt">&gt;</span>Research and Development<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;th&gt;</span>Research and Development funding<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>425<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>820<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>1,500<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2,000<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>*<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"subtotal"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;th&gt;</span>Total<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2,390<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>3,820<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>4,970<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>5,485<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>7,000<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+  <span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+
+<h3 id="responsive-tables">Responsive tables</h3>
+
+<p>Use this pattern when there is not enough space on smaller screen to fit traditional table layout. This pattern requires adding data-* attribute to
+each row cell that mimics the column header text. On smaller screens this text is then displays before the cell value, making information easier to read.</p>
+
+<div class="example">
+<table class="table table--responsive">
+<thead>
+<tr>
+<th></th>
+<th class="numeric">2017-18</th>
+<th class="numeric">2018-19</th>
+<th class="numeric">2019-20</th>
+<th class="numeric">2020-21</th>
+<th class="numeric">2021-22</th>
+</tr>
+</thead>
+<colgroup></colgroup> <colgroup span="5"></colgroup>
+<tbody>
+<tr>
+<th>i Doctoral loans</th>
+<td data-th="2017-18" class="numeric">0</td>
+<td data-th="2018-19" class="numeric">-5</td>
+<td data-th="2019-20" class="numeric">-5</td>
+<td data-th="2020-21" class="numeric">-10</td>
+<td data-th="2021-22" class="numeric">-10</td>
+</tr>
+<tr>
+<th>ii Part-time maintenance loans</th>
+<td data-th="2017-18" class="numeric">0</td>
+<td data-th="2018-19" class="numeric">75</td>
+<td data-th="2019-20" class="numeric">130</td>
+<td data-th="2020-21" class="numeric">95</td>
+<td data-th="2021-22" class="numeric">65</td>
+</tr>
+<tr>
+<th>iii Further Education maintenance loans</th>
+<td data-th="2017-18" class="numeric">0</td>
+<td data-th="2018-19" class="numeric">0</td>
+<td data-th="2019-20" class="numeric">-15</td>
+<td data-th="2020-21" class="numeric">-40</td>
+<td data-th="2021-22" class="numeric">-70</td>
+</tr>
+<tr class="subtotal">
+<th>Total policy decisions</th>
+<td data-th="2017-18" class="numeric">0</td>
+<td data-th="2018-19" class="numeric">70</td>
+<td data-th="2019-20" class="numeric">110</td>
+<td data-th="2020-21" class="numeric">45</td>
+<td data-th="2021-22" class="numeric">-15</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<pre class="highlight html"><code><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table--responsive"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;thead&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;th&gt;&lt;/th&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2017-18<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2018-19<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2019-20<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2020-21<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;th</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>2021-22<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/thead&gt;</span>
+<span class="nt">&lt;colgroup&gt;&lt;/colgroup&gt;</span> <span class="nt">&lt;colgroup</span> <span class="na">span=</span><span class="s">"5"</span><span class="nt">&gt;&lt;/colgroup&gt;</span>
+<span class="nt">&lt;tbody&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;th&gt;</span>i Doctoral loans<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2017-18"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2018-19"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-5<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2019-20"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-5<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2020-21"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-10<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2021-22"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-10<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;th&gt;</span>ii Part-time maintenance loans<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2017-18"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2018-19"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>75<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2019-20"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>130<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2020-21"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>95<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2021-22"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>65<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+<span class="nt">&lt;th&gt;</span>iii Further Education maintenance loans<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2017-18"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2018-19"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2019-20"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-15<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2020-21"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-40<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2021-22"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-70<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"subtotal"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;th&gt;</span>Total policy decisions<span class="nt">&lt;/th&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2017-18"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2018-19"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>70<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2019-20"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>110<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2020-21"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>45<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">data-th=</span><span class="s">"2021-22"</span> <span class="na">class=</span><span class="s">"numeric"</span><span class="nt">&gt;</span>-15<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre>
+
+<h3 id="responsive-tables-javascript-solution">Responsive tables - Javascript solution</h3>
+
+<p>This is a Javascript solution that turns a standard table into a responsive table using the above describedsolution without the need for manually adding
+data-* attributes</p>
+
+<div class="example">
+  <table class="table table--responsive js-make-table-responsive">
+  <thead>
+  <tr>
+  <th></th>
+  <th class="numeric">2017-18</th>
+  <th class="numeric">2018-19</th>
+  <th class="numeric">2019-20</th>
+  <th class="numeric">2020-21</th>
+  <th class="numeric">2021-22</th>
+  </tr>
+  </thead>
+  <colgroup></colgroup> <colgroup span="5"></colgroup>
+  <tbody>
+  <tr>
+  <th>i Doctoral loans</th>
+  <td class="numeric">0</td>
+  <td class="numeric">-5</td>
+  <td class="numeric">-5</td>
+  <td class="numeric">-10</td>
+  <td class="numeric">-10</td>
+  </tr>
+  <tr>
+  <th>ii Part-time maintenance loans</th>
+  <td class="numeric">0</td>
+  <td class="numeric">75</td>
+  <td class="numeric">130</td>
+  <td class="numeric">95</td>
+  <td class="numeric">65</td>
+  </tr>
+  <tr>
+  <th>iii Further Education maintenance loans</th>
+  <td class="numeric">0</td>
+  <td class="numeric">0</td>
+  <td class="numeric">-15</td>
+  <td class="numeric">-40</td>
+  <td class="numeric">-70</td>
+  </tr>
+  <tr class="subtotal">
+  <th>Total policy decisions</th>
+  <td class="numeric">0</td>
+  <td class="numeric">70</td>
+  <td class="numeric">110</td>
+  <td class="numeric">45</td>
+  <td class="numeric">-15</td>
+  </tr>
+  </tbody>
+  </table>
+</div>
+<pre class="highlight plaintext"><code>var headertext = [],
+headers = document.querySelectorAll(".js-make-table-responsive th"),
+tablerows = document.querySelectorAll(".js-make-table-responsive th"),
+tablebody = document.querySelector(".js-make-table-responsive tbody");
+
+for(var i = 0; i &lt; headers.length; i++) {
+  var current = headers[i];
+  headertext.push(current.textContent.replace(/\r?\n|\r/,""));
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+  for (var j = 0, col; col = row.cells[j]; j++) {
+    col.setAttribute("data-th", headertext[j]);
+  }
+}
+</code></pre>
+<!-- move to propper modules -->
+
+<script>
+  (function() {
+    var headertext = [],
+    headers = document.querySelectorAll(".js-make-table-responsive th"),
+    tablerows = document.querySelectorAll(".js-make-table-responsive th"),
+    tablebody = document.querySelector(".js-make-table-responsive tbody");
+
+    for(var i = 0; i < headers.length; i++) {
+      var current = headers[i];
+      headertext.push(current.textContent.replace(/\r?\n|\r/,""));
+    }
+    for (var i = 0, row; row = tablebody.rows[i]; i++) {
+      for (var j = 0, col; col = row.cells[j]; j++) {
+        col.setAttribute("data-th", headertext[j]);
+      }
+    }
+  }());
+</script>
+
+<h3 id="responsive-tables-table-saw">Responsive tables - Table saw</h3>
+
+<p><a href="https://www.filamentgroup.com/lab/tablesaw.html">Filament group &ldquo;paginated tables&rdquo; Javascript Solution</a></p>
+
+<h2 id="related-work-on-this-pattern">Related work on this pattern</h2>
+
+<p><a href="https://www.gov.uk/guidance/content-design/tables">Service Manual</a></p>
+
+
+
+  <hr />
+
+  
+    <a href="https://paper.dropbox.com/doc/GOV.UK-Design-Patterns-Wiki-hkou7bpzKya8Dadv24V1z">Discuss ‘Tables’ on Dropbox Paper</a>
+
+    
+
+
+          </main>
+
+          <footer class="footer footer--full-width">
+            <div class="footer-container">
+  <div class="footer__licence">
+    <a class="footer__licence-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a>
+    <p class="footer__licence-description">All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+  </div>
+
+  <div class="footer__copyright">
+    <a class="footer__copyright-logo" href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+  </div>
+</div>
+
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

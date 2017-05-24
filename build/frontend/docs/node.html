@@ -1,0 +1,316 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js tech-docs">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="robots" content="noindex">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Node instructions</title>
+
+    <!--[if gt IE 8]><!--><link href="/stylesheets/screen.css" rel="stylesheet" media="screen" /><!--<![endif]-->
+    <!--[if lte IE 8]><link href="/stylesheets/screen-old-ie.css" rel="stylesheet" media="screen" /><![endif]-->
+
+    <link rel="canonical" href="n/a/frontend/docs/node.html">
+
+    <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+    <script src="/javascripts/application.js"></script>
+  </head>
+
+  <body>
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="skip-link">Skip to main content</a>
+
+        <header class="header header--full-width">
+          <div class="header__container">
+  <div class="header__brand">
+      <a href="/frontend">
+      <span class="govuk-logo">
+        <img class="govuk-logo__printable-crown" src="/images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+        GOV.UK
+      </span>
+      <span class="header__title">
+          Frontend
+
+      </span>
+      </a>
+
+  </div>
+
+  <div class="pattern-search pattern-search--in-header">
+    <input type="text" name="pattern-query" id="pattern-search-text" placeholder="Search GOV.UK design" autocomplete="off">
+    <ul class="search-results js-search-results">
+    </ul>
+  </div>
+
+<!--   
+    <div data-module="navigation">
+      <button type="button" class="header__navigation-toggle js-nav-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation">Menu</button>
+
+      <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
+          <ul>
+    <li>
+      <a href="/frontend/">
+        About
+      </a>
+    </li>
+
+    <li class="active">
+      <a href="/frontend/docs/">
+        Documentation
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        Contribute
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        Support
+      </a>
+    </li>
+</ul>
+ 
+
+      </nav>
+    </div>
+   -->
+</div>
+
+
+        </header>
+        
+        
+
+      </div>
+
+      <div id="toc-heading" class="toc-show fixedsticky">
+        <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
+          Table of contents <span class="toc-show__icon"></span>
+        </a>
+      </div>
+
+      <div class="app-pane__body">
+        <div class="app-pane__toc">
+          <div class="toc" data-module="table-of-contents">
+            <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
+            <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+               
+<h3 class="nav-group">Documentation</h3>
+
+<ul>
+  <li>
+    <a href="/frontend/docs/">Overview</a>
+  </li>
+  <li class="current-page">
+    <a href="/frontend/docs/node.html">Node instructions</a>
+  </li>
+  <li>
+    <a href="/frontend/docs/rails.html">Rails instructions</a>
+  </li>
+  <li>
+    <a href="/frontend/docs/template_blocks.html">Template blocks</a>
+  </li>
+</ul>
+
+
+            </nav>
+          </div>
+        </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation markdown" data-module="anchored-headings">
+              <h1>Node instructions</h1>
+
+  <p><em>Note: These instructions describe setting up the alpha version of govuk_frontend and can/will change</em></p>
+
+<ul>
+<li><a href="#quick-start">Quick start</a></li>
+<li><a href="#setting-up-gov-uk-frontend">Setting up GOV.UK Frontend</a>
+
+<ul>
+<li><a href="#installing">Installing</a></li>
+<li><a href="#using-the-gov-uk-frontend-layout">Using the GOV.UK Frontend layout</a></li>
+<li><a href="#customising-the-gov-uk-frontend-layout">Customising the GOV.UK Frontend layout</a></li>
+<li><a href="#setting-page-content">Setting page content</a></li>
+</ul></li>
+<li><a href="#styling-the-layout">Styling the layout</a>
+
+<ul>
+<li><a href="#having-multiple-stylesheets">Having multiple stylesheets</a></li>
+<li><a href="#having-a-single-stylesheet">Having a single stylesheet</a></li>
+<li><a href="#configuring-includepaths-optional">Configuring includePaths (optional)</a></li>
+</ul></li>
+<li><a href="#using-gov-uk-frontend-components">Using GOV.UK Frontend components</a></li>
+</ul>
+
+<h2 id="quick-start">Quick start</h2>
+
+<p><strong>1.</strong> Add govuk<em>frontend</em>alpha as a dependency</p>
+<pre class="highlight shell"><code>npm install govuk_frontend_alpha --save
+</code></pre>
+<blockquote>
+<p>❗️<strong>Alpha Note:</strong> <em><code>govuk_frontend_alpha</code> isn&rsquo;t available on the NPM registry. You&rsquo;ll need to install it manually (see below).</em></p>
+</blockquote>
+
+<p>Add this line to your dependencies in <code>package.json</code>:</p>
+<pre class="highlight shell"><code>  <span class="s2">"govuk_frontend_alpha"</span>: <span class="s2">"https://github.com/alphagov/govuk_frontend_alpha/releases/download/0.0.1-alpha/govuk_frontend_alpha-0.0.1-npm.tgz"</span>
+</code></pre>
+<p>Install the govuk<em>frontend</em>alpha package:</p>
+<pre class="highlight shell"><code>npm install
+</code></pre>
+<p><strong>2.</strong> Extend the GOV.UK Frontend layout by updating your application layout, to look like this:</p>
+<pre class="highlight plaintext"><code>{% raw %}{% extends "govuk_template.njk" %}{% endraw %}
+</code></pre>
+<p>You can find the GOV.UK Frontend layout in</p>
+<pre class="highlight shell"><code>node_modules/govuk_frontend_alpha/templates/
+</code></pre>
+<p><strong>3.</strong> Start your application, you should see the familiar GOV.UK brand.</p>
+
+<h2 id="setting-up-gov-uk-frontend">Setting up GOV.UK Frontend</h2>
+
+<h3 id="installing">Installing</h3>
+
+<ul>
+<li>Add govuk<em>frontend</em>alpha as a dependency</li>
+</ul>
+
+<p>Follow the <a href="/docs/using-with-node#quick-start">quick start</a> instructions above.</p>
+
+<h3 id="using-the-gov-uk-frontend-layout">Using the GOV.UK Frontend layout</h3>
+
+<p>Create a layout file in your application&rsquo;s views directory:</p>
+<pre class="highlight plaintext"><code>views/layout.njk
+</code></pre>
+<p>In your <code>views/layout.njk</code> file:</p>
+<pre class="highlight plaintext"><code>{% raw %}{% extends "govuk_template.njk" %}{% endraw %}
+</code></pre>
+<p>You may need to configure your application&rsquo;s views to find the GOV.UK Frontend template.</p>
+<pre class="highlight javascript"><code><span class="c1">// Set the location of the component and template files</span>
+<span class="kd">var</span> <span class="nx">appViews</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'views'</span><span class="p">),</span>
+  <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'/node_modules/govuk_frontend_alpha/templates/'</span><span class="p">),</span>
+  <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'/node_modules/govuk_frontend_alpha/components/'</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1">// Tell nunjucks we are using express to serve the templates within</span>
+<span class="c1">// the views defined in appViews</span>
+<span class="nx">nunjucks</span><span class="p">.</span><span class="nx">configure</span><span class="p">(</span><span class="nx">appViews</span><span class="p">,</span> <span class="p">{</span> <span class="na">express</span><span class="p">:</span> <span class="nx">app</span> <span class="p">})</span>
+</code></pre>
+<h3 id="customising-the-gov-uk-frontend-layout">Customising the GOV.UK Frontend layout</h3>
+
+<p>GOV.UK Frontend has <a href="/docs/template-blocks">template blocks</a> that you can use to override bits of the layout.</p>
+
+<h3 id="setting-page-content">Setting page content</h3>
+
+<p>Add a <code>content</code> block to your page:</p>
+<pre class="highlight plaintext"><code>{% raw %}{% block content %}
+  Hello world!
+{% endblock %}{% endraw %}
+</code></pre>
+<p>Update the <code>page_title</code> block:</p>
+<pre class="highlight plaintext"><code>{% raw %}{% block page_title %}
+  My page title
+{% endblock %}{% endraw %}
+</code></pre>
+<h2 id="styling-the-layout">Styling the layout</h2>
+
+<p>By default the GOV.UK Frontend layout will load its own stylesheet, separate from your application.</p>
+
+<h3 id="having-multiple-stylesheets">Having multiple stylesheets</h3>
+
+<p>The quickest way to add your own styling is to add a new stylesheet to the <code>head</code> block.</p>
+<pre class="highlight plaintext"><code>{% raw %}{% block head %}
+  &lt;link href="{{ asset_path }}stylesheets/application.css" media="screen" rel="stylesheet" /&gt;
+{% endblock %}{% endraw %}
+</code></pre>
+<p>If you want to use any of the GOV.UK Frontend SCSS mixins or variables you&rsquo;ll need to import them in to your application SCSS.</p>
+
+<p>For example, to use the <code>$govuk-blue</code> variable you&rsquo;ll need to do this:</p>
+<pre class="highlight plaintext"><code>// GOV.UK Frontend colour variables
+@import '../../node_modules/govuk_frontend_alpha/assets/scss/settings/colours';
+</code></pre>
+<h3 id="having-a-single-stylesheet">Having a single stylesheet</h3>
+
+<blockquote>
+<p>To use a single stylesheet, you will need to override the default <code>stylesheet</code> block.</p>
+</blockquote>
+
+<p>To set a <code>stylesheet</code> block, in your application&rsquo;s layout file:</p>
+<pre class="highlight plaintext"><code>{% raw %}{% block stylesheet %}
+  &lt;link href="{{ asset_path }}stylesheets/application.css" media="screen" rel="stylesheet" /&gt;
+{% endblock %}{% endraw %}
+</code></pre>
+<blockquote>
+<p>❗️<strong>The <code>stylesheet</code> block replaces the default stylesheet.</strong></p>
+
+<p>Until you import the govuk<em>frontend</em>alpha scss files in your application stylesheet, your application styling will be broken.</p>
+</blockquote>
+
+<ul>
+<li>To <em>import all</em> of the scss files, add this line to your application.scss file:</li>
+</ul>
+<pre class="highlight scss"><code><span class="k">@import</span> <span class="s1">'../../node_modules/govuk_frontend_alpha/assets/scss/govuk-frontend'</span><span class="p">;</span>
+</code></pre>
+<ul>
+<li>To <em>import some</em> of the scss files,
+choose files to add to your application.scss file from:</li>
+</ul>
+<pre class="highlight shell"><code>node_modules/govuk_frontend_alpha/assets/scss/
+</code></pre>
+<h3 id="configuring-includepaths-optional">Configuring includePaths (optional)</h3>
+
+<p>If you&rsquo;d prefer to configure includePaths to include the path to the govuk<em>frontend</em>alpha package, instead use:</p>
+<pre class="highlight scss"><code><span class="k">@import</span> <span class="s1">'govuk-frontend'</span><span class="p">;</span>
+</code></pre>
+<p>If you haven&rsquo;t defined includePaths, you may well see an error:</p>
+<pre class="highlight plaintext"><code>Parent style sheet: /assets/scss/application.scss
+        on line 4 of assets/scss/application.scss
+&gt;&gt; @import 'govuk-frontend';
+</code></pre>
+<p>Fix this by configuring includePaths for gulp-sass, in your gulpfile.js:</p>
+<pre class="highlight plaintext"><code>.pipe(sass({
+  includePaths: ['node_modules/govuk_frontend_alpha/assets/scss/']
+})
+</code></pre>
+<h2 id="using-gov-uk-frontend-components">Using GOV.UK Frontend components</h2>
+
+<p><a href="http://govuk-frontend-alpha.herokuapp.com/">You can find all the GOV.UK Frontend components here</a>.</p>
+
+<h3 id="an-example-component">An example component</h3>
+
+<p>Here is an example of a button component:</p>
+<pre class="highlight plaintext"><code>{% raw %}{{ govuk.button(text="Save and continue") }}{% endraw %}
+</code></pre>
+<p>This will render a Button component with the text &lsquo;Save and continue&rsquo;</p>
+
+
+          </main>
+
+          <footer class="footer footer--full-width">
+            <div class="footer-container">
+  <div class="footer__licence">
+    <a class="footer__licence-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a>
+    <p class="footer__licence-description">All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+  </div>
+
+  <div class="footer__copyright">
+    <a class="footer__copyright-logo" href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+  </div>
+</div>
+
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

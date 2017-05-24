@@ -1,0 +1,307 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js tech-docs">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="robots" content="noindex">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Rails instructions</title>
+
+    <!--[if gt IE 8]><!--><link href="/stylesheets/screen.css" rel="stylesheet" media="screen" /><!--<![endif]-->
+    <!--[if lte IE 8]><link href="/stylesheets/screen-old-ie.css" rel="stylesheet" media="screen" /><![endif]-->
+
+    <link rel="canonical" href="n/a/frontend/docs/rails.html">
+
+    <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+    <script src="/javascripts/application.js"></script>
+  </head>
+
+  <body>
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="skip-link">Skip to main content</a>
+
+        <header class="header header--full-width">
+          <div class="header__container">
+  <div class="header__brand">
+      <a href="/frontend">
+      <span class="govuk-logo">
+        <img class="govuk-logo__printable-crown" src="/images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+        GOV.UK
+      </span>
+      <span class="header__title">
+          Frontend
+
+      </span>
+      </a>
+
+  </div>
+
+  <div class="pattern-search pattern-search--in-header">
+    <input type="text" name="pattern-query" id="pattern-search-text" placeholder="Search GOV.UK design" autocomplete="off">
+    <ul class="search-results js-search-results">
+    </ul>
+  </div>
+
+<!--   
+    <div data-module="navigation">
+      <button type="button" class="header__navigation-toggle js-nav-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation">Menu</button>
+
+      <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
+          <ul>
+    <li>
+      <a href="/frontend/">
+        About
+      </a>
+    </li>
+
+    <li class="active">
+      <a href="/frontend/docs/">
+        Documentation
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        Contribute
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        Support
+      </a>
+    </li>
+</ul>
+ 
+
+      </nav>
+    </div>
+   -->
+</div>
+
+
+        </header>
+        
+        
+
+      </div>
+
+      <div id="toc-heading" class="toc-show fixedsticky">
+        <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
+          Table of contents <span class="toc-show__icon"></span>
+        </a>
+      </div>
+
+      <div class="app-pane__body">
+        <div class="app-pane__toc">
+          <div class="toc" data-module="table-of-contents">
+            <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
+            <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+               
+<h3 class="nav-group">Documentation</h3>
+
+<ul>
+  <li>
+    <a href="/frontend/docs/">Overview</a>
+  </li>
+  <li>
+    <a href="/frontend/docs/node.html">Node instructions</a>
+  </li>
+  <li class="current-page">
+    <a href="/frontend/docs/rails.html">Rails instructions</a>
+  </li>
+  <li>
+    <a href="/frontend/docs/template_blocks.html">Template blocks</a>
+  </li>
+</ul>
+
+
+            </nav>
+          </div>
+        </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation markdown" data-module="anchored-headings">
+              <h1>Rails instructions</h1>
+
+  <ul>
+<li><a href="#quick-start">Quick start</a></li>
+<li><a href="#setting-up-gov-uk-frontend">Setting up GOV.UK Frontend</a>
+
+<ul>
+<li><a href="#installing">Installing</a></li>
+<li><a href="#using-the-gov-uk-layout">Using the GOV.UK layout</a></li>
+<li><a href="#customising-the-gov-uk-layout">Customising the GOV.UK layout</a></li>
+<li><a href="#setting-page-content">Setting page content</a></li>
+</ul></li>
+<li><a href="#styling-the-layout">Styling the layout</a>
+
+<ul>
+<li><a href="#having-a-single-stylesheet">Having a single stylesheet</a></li>
+<li><a href="#having-separate-stylesheets">Having separate stylesheets</a></li>
+</ul></li>
+<li><a href="#using-govuk-components">Using GOV.UK Components</a></li>
+</ul>
+
+<h2 id="quick-start">Quick start</h2>
+
+<p><strong>1.</strong> Add it to your <code>Gemfile</code>:</p>
+<pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'govuk_frontend_alpha'</span>
+</code></pre>
+<blockquote>
+<p>❗️ <strong>Alpha:</strong> <code>govuk_frontend_alpha</code> isn&rsquo;t on RubyGems yet.</p>
+
+<p>Using <a href="https://github.com/alphagov/govuk-frontend-alpha-starter-kit-rails">govuk-frontend-alpha-starter-kit-rails</a>? Run <code>./bin/install-govuk-frontend</code></p>
+</blockquote>
+
+<p><strong>2.</strong> Replace your application layout, to look like this:</p>
+<pre class="highlight erb"><code><span class="cp">&lt;%</span> <span class="n">content_for</span> <span class="ss">:head</span> <span class="k">do</span> <span class="cp">%&gt;</span>
+  <span class="c">&lt;%# Move your `&lt;head&gt;` includes here, like:
+    - `stylesheet_link_tag`
+    - `csrf_meta_tags`
+    - `javascript_include_tag`
+  %&gt;
+&lt;% end %&gt;
+
+&lt;% content_for :content do %&gt;
+  &lt;%# Any content not inside a `content_for` block, in this layout, or in a view
+      that uses this layout, will be `yield`ed here, inside the `content` block.
+      See: http://guides.rubyonrails.org/layouts_and_rendering.html#understanding-yield %&gt;
+
+  &lt;%= yield %&gt;
+
+&lt;% end %&gt;
+
+&lt;%= render file: 'layouts/govuk_template' %&gt;</span>
+</code></pre>
+<p><strong>3.</strong> In your view template set a page title like this:</p>
+<pre class="highlight erb"><code><span class="cp">&lt;%</span> <span class="n">content_for</span> <span class="ss">:page_title</span><span class="p">,</span> <span class="s2">"My page title"</span> <span class="cp">%&gt;</span>
+
+<span class="nt">&lt;h1&gt;</span>My page<span class="nt">&lt;/h1&gt;</span>
+</code></pre>
+<p><strong>4.</strong> Use the <code>govuk</code> helper to add a component to your page:</p>
+<pre class="highlight erb"><code><span class="cp">&lt;%=</span> <span class="n">govuk</span><span class="p">.</span><span class="nf">button</span><span class="p">(</span><span class="ss">text: </span><span class="s1">'Submit'</span><span class="p">)</span> <span class="cp">%&gt;</span>
+</code></pre>
+<hr>
+
+<h2 id="setting-up-gov-uk-frontend">Setting up GOV.UK Frontend</h2>
+
+<p>This is the slow start section. If you want more detail, or are having problems with the quick start.</p>
+
+<h3 id="installing">Installing</h3>
+
+<p>Add GOV.UK Frontend to your <code>Gemfile</code>:</p>
+<pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'govuk_frontend_alpha'</span>
+</code></pre>
+<blockquote>
+<p>❗️ <strong>Alpha Note:</strong> <em><code>govuk_frontend_alpha</code> isn&rsquo;t on RubyGems yet. You&rsquo;ll need to install it manually (instructions to be added)</em></p>
+
+<p><em>If you&rsquo;re using <a href="https://github.com/alphagov/govuk-frontend-alpha-starter-kit-rails">govuk-frontend-alpha-starter-kit-rails</a> then you can run <code>./bin/install-govuk-frontend</code> and follow the instructions.</em></p>
+</blockquote>
+
+<h3 id="using-the-gov-uk-layout">Using the GOV.UK layout</h3>
+
+<p>Add this line to the <strong>bottom</strong> of your application layout view (usually found in <code>app/views/layouts/application.html.erb</code>):</p>
+<pre class="highlight erb"><code><span class="cp">&lt;%=</span> <span class="n">render</span> <span class="ss">file: </span><span class="s1">'layouts/govuk_template'</span> <span class="cp">%&gt;</span>
+</code></pre>
+<p>When you reload the application you should see the familiar GOV.UK brand, but you might notice your own styles aren&rsquo;t working, or you page <code>&lt;title&gt;</code> isn&rsquo;t being rendered.</p>
+
+<h3 id="customising-the-gov-uk-layout">Customising the GOV.UK layout</h3>
+
+<p>The GOV.UK Frontend uses <a href="http://guides.rubyonrails.org/layouts_and_rendering.html#using-the-content-for-method">content blocks</a> that you can override to customise the layout and add your own content.</p>
+
+<p>At a minimum you&rsquo;ll need to set your own <code>page_title</code> and <code>head</code> content blocks, but there are <a href="docs/template-block.md">many other blocks</a> you can use.</p>
+<pre class="highlight erb"><code><span class="cp">&lt;%</span> <span class="n">content_for</span> <span class="ss">:page_title</span><span class="p">,</span> <span class="s2">"My page title"</span> <span class="cp">%&gt;</span>
+
+<span class="cp">&lt;%</span> <span class="n">content_for</span> <span class="ss">:head</span> <span class="k">do</span> <span class="cp">%&gt;</span>
+  <span class="cp">&lt;%=</span> <span class="n">stylesheet_link_tag</span> <span class="s1">'application'</span><span class="p">,</span> <span class="ss">media: </span><span class="s1">'all'</span> <span class="cp">%&gt;</span>
+  <span class="cp">&lt;%=</span> <span class="n">csrf_meta_tags</span> <span class="cp">%&gt;</span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span>
+
+<span class="cp">&lt;%=</span> <span class="n">render</span> <span class="ss">file: </span><span class="s1">'layouts/govuk_template'</span> <span class="cp">%&gt;</span>
+</code></pre>
+<p>Not familiar with content blocks in Rails? Take a look at the <a href="http://guides.rubyonrails.org/layouts_and_rendering.html#using-the-content-for-method">Rails documentation on <code>content_for</code></a> or try setting some content blocks in your app to see how it works.</p>
+
+<h3 id="setting-page-content">Setting page content</h3>
+
+<p>Any content in your layout (or views that extend it) <strong>not inside a content block</strong> will be yielded to the <code>content</code> block.</p>
+
+<p>In this example, <code>&lt;h1&gt;Hello World&lt;/h1&gt;</code> will be automatically placed in the content section of the GOV.UK layout.</p>
+<pre class="highlight erb"><code><span class="cp">&lt;%</span> <span class="n">content_for</span> <span class="ss">:page_title</span><span class="p">,</span> <span class="s2">"My page title"</span> <span class="cp">%&gt;</span>
+
+<span class="nt">&lt;h1&gt;</span>Hello World<span class="nt">&lt;/h1&gt;</span>
+
+<span class="cp">&lt;%=</span> <span class="n">render</span> <span class="ss">file: </span><span class="s1">'layouts/govuk_template'</span> <span class="cp">%&gt;</span>
+</code></pre>
+<h2 id="styling-the-layout">Styling the layout</h2>
+
+<p>By default the GOV.UK Frontend layout will load it&rsquo;s own  stylesheet, separate from your application.</p>
+
+<h3 id="having-a-single-stylesheet">Having a single stylesheet</h3>
+
+<p>In your application&rsquo;s stylesheet (usually <code>application.scss</code>) you can import all of the GOV.UK Frontend styling.</p>
+<pre class="highlight scss"><code><span class="c1">// GOV.UK Frontend: All styling, layout, mixins, helpers and variables
+</span><span class="k">@import</span> <span class="s1">'govuk-frontend'</span><span class="p">;</span>
+
+<span class="nc">.my-app-css</span> <span class="p">{</span>
+  <span class="c1">// goes here
+</span><span class="p">}</span>
+</code></pre>
+<p>Next you need to customise the layout to not load it&rsquo;s own stylesheet, and instead load your application&rsquo;s instead.</p>
+<pre class="highlight erb"><code><span class="cp">&lt;%</span> <span class="n">content_for</span> <span class="ss">:head</span> <span class="k">do</span> <span class="cp">%&gt;</span>
+  <span class="c">&lt;%# Move your own &lt;link&gt; tag to the :stylesheet block %&gt;
+  &lt;%= csrf_meta_tags %&gt;
+&lt;% end %&gt;
+
+&lt;% content_for :stylesheet do %&gt;
+  &lt;%# Overriding this block prevents GOV.UK Frontend loading it's own CSS %&gt;
+  &lt;%= stylesheet_link_tag 'application', media: 'all' %&gt;
+&lt;% end %&gt;
+
+&lt;%= render file: 'layouts/govuk_template' %&gt;</span>
+</code></pre>
+<p>All the GOV.UK Frontend styling will be included by default, and all of it&rsquo;s SCSS mixins and variables will be imported too. So you can reference <code>$govuk-blue</code> in your SCSS without having to import it.</p>
+
+<h3 id="having-separate-stylesheets">Having separate stylesheets</h3>
+
+<p>If you want to use any of the GOV.UK Frontend SCSS mixins or variables you&rsquo;ll need to import them in to your application SCSS.</p>
+
+<p>For example, to use the <code>$govuk-blue</code> variable you&rsquo;ll need to do this:</p>
+<pre class="highlight plaintext"><code>// GOV.UK Frontend colour variables
+@import 'settings/colours';
+</code></pre>
+<h2 id="using-gov-uk-components">Using GOV.UK Components</h2>
+
+<p>GOV.UK Frontend provides a rails helper, that you can call like this:</p>
+<pre class="highlight erb"><code><span class="cp">&lt;%=</span> <span class="n">govuk</span><span class="p">.</span><span class="nf">button</span><span class="p">(</span><span class="ss">text: </span><span class="s1">'Start now'</span><span class="p">)</span> <span class="cp">%&gt;</span>
+</code></pre>
+<p>This will render a Button component with the <code>text</code> of &lsquo;Start now&rsquo;.</p>
+
+
+          </main>
+
+          <footer class="footer footer--full-width">
+            <div class="footer-container">
+  <div class="footer__licence">
+    <a class="footer__licence-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a>
+    <p class="footer__licence-description">All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+  </div>
+
+  <div class="footer__copyright">
+    <a class="footer__copyright-logo" href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+  </div>
+</div>
+
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

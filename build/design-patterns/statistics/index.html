@@ -1,0 +1,1352 @@
+
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js tech-docs">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta name="robots" content="noindex">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Statistics</title>
+
+    <!--[if gt IE 8]><!--><link href="/stylesheets/screen.css" rel="stylesheet" media="screen" /><!--<![endif]-->
+    <!--[if lte IE 8]><link href="/stylesheets/screen-old-ie.css" rel="stylesheet" media="screen" /><![endif]-->
+
+    <link rel="canonical" href="n/a/design-patterns/statistics/">
+
+    <link href="/stylesheets/print.css" rel="stylesheet" media="print" />
+    <script src="/javascripts/application.js"></script>
+  </head>
+
+  <body>
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="skip-link">Skip to main content</a>
+
+        <header class="header header--full-width">
+          <div class="header__container">
+  <div class="header__brand">
+      <a href="/design-patterns/patterns">
+      <span class="govuk-logo">
+        <img class="govuk-logo__printable-crown" src="/images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+        GOV.UK
+      </span>
+      <span class="header__title">
+          Design
+
+      </span>
+      </a>
+
+  </div>
+
+  <div class="pattern-search pattern-search--in-header">
+    <input type="text" name="pattern-query" id="pattern-search-text" placeholder="Search GOV.UK design" autocomplete="off">
+    <ul class="search-results js-search-results">
+    </ul>
+  </div>
+
+<!--   
+    <div data-module="navigation">
+      <button type="button" class="header__navigation-toggle js-nav-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation">Menu</button>
+
+      <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
+          <ul>
+  <li>
+    <a href="/design-patterns">
+      About
+    </a>
+  </li>
+
+  <li>
+    <a href="/design-patterns/patterns/">
+      Patterns
+    </a>
+  </li>
+
+  <li>
+    <a href="/design-patterns/contribute">
+      Contribute
+    </a>
+  </li>
+
+  <li>
+    <a href="/design-patterns/support">
+      Support
+    </a>
+  </li>
+</ul>
+
+ 
+
+      </nav>
+    </div>
+   -->
+</div>
+
+
+        </header>
+        
+          
+<div class="sub-nav">
+  <!-- <div class="pattern-search">
+    <input type="text" name="pattern-query" id="pattern-search-text" placeholder="Search design system" autocomplete="off">
+    <ul class="search-results js-search-results">
+    </ul>
+  </div> -->
+
+  <ul class="sub-nav-list">
+      
+      <li><a href="/design-patterns/patterns/">About</a></li>
+      <li><a href="/design-patterns/patterns/styles/colour/">Visual styles</a></li>
+      <li><a href="/design-patterns/patterns/components/alpha_and_beta_banners/">Components</a></li>
+      <li><a href="/design-patterns/patterns/pages/404_pages/">Pages</a></li>
+      <li><a href="/design-patterns/patterns/tasks/additional information/">Patterns</a></li>
+  </ul>
+</div>
+
+
+
+      </div>
+
+      <div id="toc-heading" class="toc-show fixedsticky">
+        <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
+          Table of contents <span class="toc-show__icon"></span>
+        </a>
+      </div>
+
+      <div class="app-pane__body">
+        <div class="app-pane__toc">
+          <div class="toc" data-module="table-of-contents">
+            <a href="#" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></a>
+            <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+               
+<nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+
+  <ul class="pattern-nav">
+  <ul>
+
+</nav>
+
+
+
+            </nav>
+          </div>
+        </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation markdown" data-module="anchored-headings">
+              <h1>Statistics</h1>
+
+  
+
+<div class="stats">
+	<div class="stat">
+		<div>
+			<span class="stat-number">160</span>
+			<span class="stat-name">Patterns</span>
+		</div>
+	</div>
+	<div class="stat">&nbsp;</div>
+
+	<div class="stat">
+		<div>
+			<span class="stat-number">87</span>
+			<span class="stat-name">Backlog</span>
+		</div>
+	</div>
+
+
+	<div class="stat">
+		<div>
+			<span class="stat-number">11</span>
+			<span class="stat-name">Alpha</span>
+		</div>
+	</div>
+
+
+	<div class="stat">
+		<div>
+			<span class="stat-number">6</span>
+			<span class="stat-name">Beta</span>
+		</div>
+	</div>
+
+
+	<div class="stat">
+		<div>
+			<span class="stat-number">51</span>
+			<span class="stat-name">Approved</span>
+		</div>
+	</div>
+
+
+	<div class="stat">
+		<div>
+			<span class="stat-number">5</span>
+			<span class="stat-name"></span>
+		</div>
+	</div>
+
+</div>
+
+
+<h3>Full list of patterns</h3>
+
+<br>
+
+<table class="patterns-table">
+	<tr>
+		<th style="width: 35%;">Title</th>
+		<th>Section</th>
+		<th>Priority</th>
+		<th>Department</th>
+		<th>Status</th>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/404_pages/">404 page [HMRC]</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/500_page/">500 page [HMRC]</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/">About GOV.UK Design</a></td>
+		<td>About</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/accordions/">Accordions</a></td>
+		<td>Components</td>
+		<td>10</td>
+		<td>All</td>
+		<td>Beta</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/account_navigation/">Account navigation</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/account_permissions/">Account permissions</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/add_and_remove_items/">Add and remove items</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/additional%20information/">Additional information</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/addresses/">Addresses</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/addresses/hmrc-lookup.html">Addresses (HMRC)</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>HMRC</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/alerts/">Alerts</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/alpha_and_beta_banners/">Alpha and beta banners</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/apply_for_something/">Apply for something</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/autocomplete/expanded.html">Autocomplete</a></td>
+		<td>Components</td>
+		<td>2</td>
+		<td>Test</td>
+		<td>Alpha</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/autocomplete/expanded_original.html">Autocomplete</a></td>
+		<td>Components</td>
+		<td>2</td>
+		<td>Test</td>
+		<td>Alpha</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/autocomplete/">Autocomplete</a></td>
+		<td>Components</td>
+		<td>2</td>
+		<td>All</td>
+		<td>Alpha</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/back_button/">Back button</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Beta</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/badges/">Badges</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/bank_details/">Bank details</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/blank_page/">Blank page</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/book_an_appointment/">Book an appointment</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/breadcrumbs/">Breadcrumbs</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/business_details/">Business details</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/buttons/">Buttons</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/calendar_controls/">Calendar controls</a></td>
+		<td>Components</td>
+		<td>2</td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/case_working_systems/">Case working systems</a></td>
+		<td>Patterns</td>
+		<td>7</td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/character_count/">Character count</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/check_before_you_start/">Check before you start</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/check_progress/">Check progress</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/check_your_answers_pages/">Check your answers page</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/checkboxes/">Checkboxes</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/code/">Code</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/styles/colour/">Colour</a></td>
+		<td>Visual styles</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/compare_options/">Compare options</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/confirm_an_email_address/">Confirm an email address</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/confirmation_pages/">Confirmation page</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/contact_preferences/">Contact preferences</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/cookie_banner/">Cookie banner</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/cookie_pages/">Cookie pages</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/country_selector/">Country selector</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Alpha</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/credit_cards/">Credit cards</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/currency/">Currency</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/dashboard_pages/">Dashboard pages</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/data/">Data</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/data_protection_pages/">Data protection pages</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/date%20group/">Date group</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/date_picker/">Date picker</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/dates/">Dates</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/declaration_pages/">Declaration pages</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/delegate_authority/">Delegate authority</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/design_pattern_pages/">Design pattern page</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Alpha</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/overview/design%20principles/principles.html">Design principles</a></td>
+		<td>About</td>
+		<td></td>
+		<td>All</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/document_management_systems/">Document management</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/download_links/">Download links</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/email_addresses/">Email addresses</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/emails/">Emails</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/employment_details/">Employment details</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/error_messages/">Error messages</a></td>
+		<td>Patterns</td>
+		<td>4</td>
+		<td>All</td>
+		<td>Alpha</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/error_pages/">Error pages</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/ethnicity/">Ethnicity</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/feedback_link/">Feedback link</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/feedback_pages/">Feedback page</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/file_upload/">File upload</a></td>
+		<td>Components</td>
+		<td>5</td>
+		<td>All</td>
+		<td>Alpha</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/find_your_GP/">Find your GP</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>DWP</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/footer/">Footer</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/footer/hmrc.html.md.1">Footer [HMRC]</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/text_fields/">Form and Text fields</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/form_labels/">Form labels</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/forms/">Forms</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/gender_and_sex/">Gender and sex</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/get_a_notification/">Get a notification</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/give_consent/">Give consent</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/header/">Header</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/header/header.html">Header [HMRC]</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/health_related_conditions/">Health related conditions</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/help_systems/">Help systems</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/help_text/">Help text</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/overview/contribute/contribute.html">How to contribute</a></td>
+		<td>About</td>
+		<td></td>
+		<td>All</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/using-icons/">Icon implementation</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Alpha</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/styles/icons/">Icons</a></td>
+		<td>Visual styles</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/styles/identity/">Identity</a></td>
+		<td>Visual styles</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/styles/images/">Images</a></td>
+		<td>Visual styles</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/knowledge_based_authentication/">Knowledge based authentication</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/language_support/">Language support</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/styles/layout/">Layout</a></td>
+		<td>Visual styles</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/letters/">Letters</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/loaders/">Loaders</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/make_a_decision/">Make a decision</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/make_a_declaration/">Make a declaration</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/maps/">Maps</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/modals/">Modals</a></td>
+		<td>Components</td>
+		<td>3</td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/name_your_representative/">Name your representative</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/names/">Names</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/naming_your_service/">Naming your service</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/national_insurance_numbers/">National Insurance Numbers</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/nationality_and_residency/">Nationality and residency</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/next_steps/">Next steps</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/numbers/">Numbers</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/opt_in_or_out/">Opt in or out</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/page_navigation/">Page navigation</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Beta</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/pagination/">Pagination</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/passports/">Passports</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/passwords/">Passwords</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/pay_for_something/">Pay for something</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/postcodes/">Postcodes</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/previous_and_next_links/">Previous and next links</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/primary_navigation/">Primary navigation</a></td>
+		<td>Components</td>
+		<td>8</td>
+		<td>All</td>
+		<td>Alpha</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/print_page/">Print page</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/product_pages/">Product pages</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/progress_indicators/">Progress indicators</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/protected_characteristics/">Protected characteristics</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/publishing_systems/">Publishing systems</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/question_pages/">Question page</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/radio_buttons/">Radio buttons</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/range_of_values/">Range of values</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/re-use_my_data/">Re-use my data</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/recover_your_account/">Recover your account</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/reference_numbers/">Reference numbers</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/register_for_something/">Register for something</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/renew_something/">Renew something</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/save_your_progress/">Save your progress</a></td>
+		<td>Patterns</td>
+		<td>6</td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/search_box/">Search box</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/search_filters/">Search filters</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/search_results_page/">Search results page</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/section_navigation/">Section navigation</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/select_boxes/">Select boxes</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/service_disruption_message/">Service disruption message</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/session_timeout/">Session timeout</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/shopping_basket_pages/">Shopping basket page</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/shutter_pages/">Shutter page [HMRC]</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/sign_in/">Sign in</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/sign_in_pages/">Sign in pages</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/sign_out/">Sign out</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/sign_something/">Sign something</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/overview/statistics/">Site map</a></td>
+		<td>About</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/social_media_links/">Social media links</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Alpha</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/start_pages/">Start page</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/steps/">Steps</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/form-structure/">Structure</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/submit_evidence/">Submit evidence</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/summary_pages/">Summary pages</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/overview/support/support.html">Support</a></td>
+		<td>About</td>
+		<td></td>
+		<td>All</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/tables/">Tables</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Alpha</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/tabs/">Tabs</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Beta</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/task_list_page/">Task list page</a></td>
+		<td>Pages</td>
+		<td>1</td>
+		<td>All</td>
+		<td>Beta</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/tax_year/">Tax year</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/technical_documentation_pages/">Technical documentation pages</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/telephone_numbers/">Telephone numbers</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/telephone_support/">Telephone support</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/pages/terms_and_conditions_pages/">Terms and conditions pages</a></td>
+		<td>Pages</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/text_editor/">Text editor</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/time/">Time</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/timelines/">Timelines</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/tooltips/">Tooltips</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/styles/typography/">Typography</a></td>
+		<td>Visual styles</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/user_accounts/">User accounts</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/usernames/">Usernames</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Approved</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/verify_your_identity/">Verify your identity</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/components/video/">Video</a></td>
+		<td>Components</td>
+		<td></td>
+		<td>All</td>
+		<td>Beta</td>
+	</tr>
+	<tr>
+		<td><a href="/design-patterns/patterns/tasks/web_chat/">Web chat</a></td>
+		<td>Patterns</td>
+		<td></td>
+		<td>All</td>
+		<td>Backlog</td>
+	</tr>
+</table>
+
+
+          </main>
+
+          <footer class="footer footer--full-width">
+            <div class="footer-container">
+  <div class="footer__licence">
+    <a class="footer__licence-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a>
+    <p class="footer__licence-description">All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+  </div>
+
+  <div class="footer__copyright">
+    <a class="footer__copyright-logo" href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+  </div>
+</div>
+
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
