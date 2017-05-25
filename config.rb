@@ -74,11 +74,6 @@ activate :syntax
 # Helpers
 ###
 
-helpers do
-  require 'table_of_contents/helpers'
-  include TableOfContents::Helpers
-end
-
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
