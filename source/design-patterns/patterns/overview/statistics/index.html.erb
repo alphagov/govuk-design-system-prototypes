@@ -66,7 +66,7 @@ design_patterns = sitemap.resources
 		<th>Section</th>
 		<th>Priority</th>
 		<th>Department</th>
-		<!-- <th>Status</th> -->
+		<th>Status</th>
 	</tr>
 <%			
 design_patterns.each do |res| 
@@ -76,7 +76,13 @@ design_patterns.each do |res|
 		<td><%= res.data.section %></td>
 		<td><%= res.data.priority %></td>
 		<td><%= res.data.department %></td>
-		<!-- <td><%= res.data.status %></td> -->
+			
+		<td>
+		<% if res.data.status.downcase == "backlog" %>
+			<%= res.data.status %>
+		<% end %>
+		</td>
+
 	</tr>
 <% end %>
 </table>
