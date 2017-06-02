@@ -4,6 +4,12 @@ Prototypes exploring the idea of putting all our design guidance and tools in a 
 
 Currently hosted here: https://govuk-design-system-prototypes.cloudapps.digital/
 
+## HMRC design patterns
+
+HMRC versions of patterns are documented on a fork of this repo located here: https://github.com/hmrc/govuk_design_prototypes
+
+The prototype contaning these patterns is hosted here: http://hmrc-design-language-prototype.herokuapp.com/design-patterns/patterns/
+
 ## Getting started
 
 To preview or build the prototype:
