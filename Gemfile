@@ -24,5 +24,3 @@ gem 'middleman-syntax', '~> 3.0.0'
 gem 'middleman-search', git: 'git@github.com:/daniel-rikowski/middleman-search.git'
 
 gem 'redcarpet', '~> 3.3.2'
-
-gem 'table_of_contents', github: 'alphagov/table_of_contents'
