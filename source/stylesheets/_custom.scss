@@ -1007,7 +1007,6 @@ p.section-description {
         display: block;
         color: $govuk-blue;
         text-decoration: none;
-        font-weight: 700;
         height: 35px;
         line-height: 35px;
         border-left: 4px solid transparent;
@@ -1042,6 +1041,40 @@ p.section-description {
   }
 }
 
+.nav-leaf {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.nav-section {
+  font-weight: 700;
+  font-size: 19px;
+  margin-bottom: 15px;
+}
+
+.nav-theme {
+  margin-bottom: 20px;
+}
+
+.nav-theme-header {
+  margin: 10px 15px 10px 19px;
+  text-transform: uppercase;
+  color: $secondary-text-colour;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+@include media(tablet) {
+  .nav-theme, .nav-leaf {
+    display: none;
+  }
+
+  .nav-section {
+    margin-bottom: 0;
+  }
+}
 
 // Styles for Index page
 

@@ -23,15 +23,44 @@ patterns_by_section = sitemap.resources
         patterns_by_theme = patterns_by_section[section].group_by { |r| r.data.theme || "Other" }
         first_theme = config[:theme_orders][section].first
         first_pattern = patterns_by_theme[first_theme].first
+        themes = config[:theme_orders][section]
     %>
-      <li>
+      <li class="nav-section">
         <a href="<%= first_pattern.url %>"<% if current_page.data.section == section %> class="is-active"<% end %>><%= section %></a>
+        <ul>
+          <% themes.each do |theme| %>
+          <li class="nav-theme">
+            <% if theme != "Other" %>
+            <div class="nav-theme-header"><%= theme %></div>
+            <% end %>
+            <ul>
+              <% patterns_by_theme[theme].sort_by{|pattern| pattern.data.title}.each do |pattern|
+                classes = ['nav-leaf']
+                classes << "status-#{pattern.data.status.downcase.tr(" ", "-")}" if pattern.data.has_key? 'status'
+                classes << 'current-page' if current_page.path == pattern.path
+                %>
+                <li<% if classes.any? %> class="<%= classes.join(" ") %>"<% end %>><%= link_to pattern.data.title, pattern.url %></li>
+              <% end %>
+            </ul>
+          </li>
+      <% end %>
+        </ul>
       </li>
     <% else
-        first_pattern = patterns_by_section[section].first
+      patterns_in_section = patterns_by_section[section]
+      first_pattern = patterns_in_section.first
     %>
-      <li>
+      <li class="nav-section">
         <a href="<%= first_pattern.url %>"<% if current_page.data.section == section %> class="is-active"<% end %>><%= section %></a>
+        <ul>
+        <% patterns_in_section.each do |pattern|
+          classes = ['nav-leaf']
+          classes << "status-#{pattern.data.status.downcase.tr(" ", "-")}" if pattern.data.has_key? 'status'
+          classes << 'current-page' if current_page.path == pattern.path
+        %>
+          <li<% if classes.any? %> class="<%= classes.join(" ") %>"<% end %>><%= link_to pattern.data.title, pattern.url %></li>
+        <% end %>
+        </ul>
       </li>
     <% end %>
 
