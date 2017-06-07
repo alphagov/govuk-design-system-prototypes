@@ -15,26 +15,26 @@ patterns_by_section = sitemap.resources
 %>
 
 <div id="sub-nav" class="sub-nav">
-  <!-- <div class="pattern-search">
-    <input type="text" name="pattern-query" id="pattern-search-text" placeholder="Search design system" autocomplete="off">
-    <ul class="search-results js-search-results">
-    </ul>
-  </div> -->
 
   <ul class="sub-nav-list">
       
     <% sections.each do |section|
-      if config[:use_theme_in_nav] && patterns_by_section[section].any? { |pattern| pattern.data.theme }
+      if patterns_by_section[section].any? { |pattern| pattern.data.theme }
         patterns_by_theme = patterns_by_section[section].group_by { |r| r.data.theme || "Other" }
         first_theme = config[:theme_orders][section].first
         first_pattern = patterns_by_theme[first_theme].first
-      else
-        first_pattern = patterns_by_section[section].first
-      end
-      %>
+    %>
       <li>
         <a href="<%= first_pattern.url %>"<% if current_page.data.section == section %> class="is-active"<% end %>><%= section %></a>
       </li>
+    <% else
+        first_pattern = patterns_by_section[section].first
+    %>
+      <li>
+        <a href="<%= first_pattern.url %>"<% if current_page.data.section == section %> class="is-active"<% end %>><%= section %></a>
+      </li>
+    <% end %>
+
 
     <% end %>
   </ul>

@@ -18,7 +18,7 @@
 
 <% wrap_layout :docs do %>
   <div class="pattern-header">
-    <% if config[:use_theme_in_nav] && current_page.data.theme? %>
+    <% if current_page.data.theme? %>
       <p class="section-heading"><%= current_page.data.theme %></p>
 
     <% else %>
