@@ -40,3 +40,15 @@ $(function() {
   });
 
 });
+
+// Menu toggle
+
+function toggleNav(elem) {
+    var x = document.getElementById('sub-nav');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+

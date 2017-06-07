@@ -32,14 +32,14 @@
       </div>
 
       <% if content_for? :sidebar %>
-      <div id="toc-heading" class="toc-show fixedsticky">
+<!--       <div id="toc-heading" class="toc-show fixedsticky">
         <a href="#toc" class="toc-show__label js-toc-show" aria-controls="toc">
           Table of contents <span class="toc-show__icon"></span>
         </a>
-      </div>
+      </div> -->
       <% end %>
 
-      <div class="app-pane__body"<%= " data-module=\"#{yield_content(:toc_module)}\"" if content_for? :toc_module %>>
+      <div style="clear:left;" class="app-pane__body"<%= " data-module=\"#{yield_content(:toc_module)}\"" if content_for? :toc_module %>>
         <% if content_for? :sidebar %>
         <div class="app-pane__toc">
           <div class="toc" data-module="table-of-contents">

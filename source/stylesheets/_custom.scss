@@ -103,6 +103,36 @@
   font-weight: 700;
 }
 
+.theme-heading__grid {
+  font-weight: 700;
+  text-transform: none;
+  font-size: 24px;
+}
+
+ul.theme-grid {
+  margin: 0;
+  padding: 0;
+
+  li {
+      margin: 0;
+      padding: 0;
+
+      a {
+          margin: 0 !important;
+          padding-bottom: 0 !important;
+          padding-left: 0 !important;
+          border-left: 0;
+
+          &:hover {
+            border-left: 0 !important;
+            text-decoration: underline !important;
+            color: $link-hover-colour !important;
+          }
+      }
+  }
+
+}
+
 .toc__list {
 
     a:link{
@@ -725,15 +755,21 @@ $palette: (
 }
 
 .header__container .pattern-search{
-  float: right;
-  margin: 7px $gutter-half 0px 0px;
-  width: 300px;
 
   @include media(mobile) {
-    position: absolute;
-    right: 0;
-    top: 5px;
+    clear: both;
+    float: left;
+    width: 75%;
+    margin: 0 0 $gutter-half 0;
+
   }
+
+  @include media(tablet) {
+    float: right;
+    margin: 7px $gutter-half 0px 0px;
+    width: 300px;
+  }
+
 
   #pattern-search-text {
     border: 2px solid white;
@@ -928,10 +964,21 @@ p.section-description {
 
 // Horizontal sub-nav branch
 
+#sub-nav {
+  @include media(mobile) {
+    display: none;
+  }
+}  
+
 .sub-nav {
+  
   background-color: darken($grey-4, 3%);
-  padding: 0px 10px 0px $gutter-half;
+  
   @extend %contain-floats;
+
+  @include media(tablet) {
+    padding: 0px 10px 0px $gutter-half;
+  }
 
   .pattern-search {
     float: right;
@@ -943,27 +990,55 @@ p.section-description {
     float: left;
     @extend %contain-floats;
 
+    padding: 10px 0;
+
+    @include media(tablet) {
+      padding: 0;
+    }
+
     li {
-      float: left;
+ 
+      @include media(tablet) {
+        float: left;
+      }     
 
       a {
         @include box-sizing(border-box);
         display: block;
-        height: 53px;
         color: $govuk-blue;
         text-decoration: none;
         font-weight: 700;
-        line-height: 53px;
-        padding: 0 20px;
-        border-bottom: 4px solid transparent;
-        &:hover {
-          border-bottom: 4px solid $light-blue;
-        }
+        height: 35px;
+        line-height: 35px;
+        border-left: 4px solid transparent;
+        padding-left: $gutter-half;
+
         &.is-active {
-          border-bottom: 4px solid $govuk-blue;
+            border-left: 4px solid $govuk-blue;
         }
+
+        @include media(tablet) {
+          padding: 0 20px;
+          border-left: 0px;
+          border-bottom: 4px solid transparent;
+          height: 53px;
+          line-height: 53px;
+
+          &:hover {
+            border-bottom: 4px solid $light-blue;
+          }
+
+          &.is-active {
+            border-left: 0px;
+            border-bottom: 4px solid $govuk-blue;
+          }
+        }
+
       }
+
     }
+
+
   }
 }
 

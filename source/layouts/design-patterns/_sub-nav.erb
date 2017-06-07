@@ -14,7 +14,7 @@ patterns_by_section = sitemap.resources
   .group_by { |r| r.data.section }
 %>
 
-<div class="sub-nav">
+<div id="sub-nav" class="sub-nav">
   <!-- <div class="pattern-search">
     <input type="text" name="pattern-query" id="pattern-search-text" placeholder="Search design system" autocomplete="off">
     <ul class="search-results js-search-results">
@@ -32,7 +32,10 @@ patterns_by_section = sitemap.resources
         first_pattern = patterns_by_section[section].first
       end
       %>
-      <li><a href="<%= first_pattern.url %>"<% if current_page.data.section == section %> class="is-active"<% end %>><%= section %></a></li>
+      <li>
+        <a href="<%= first_pattern.url %>"<% if current_page.data.section == section %> class="is-active"<% end %>><%= section %></a>
+      </li>
+
     <% end %>
   </ul>
 </div>

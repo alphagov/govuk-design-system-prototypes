@@ -1,0 +1,82 @@
+---
+layout: design_patterns_overview
+productName: Design Patterns
+sectionNav: patterns
+section: Components
+title: About Components
+---
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="" style="padding-top: 15px;">Components</h1>
+
+    <p style="margin-bottom: 60px;">From small form elements such as <a href="#">Radio buttons</a> to larger components like <a href="#">Autocomplete</a> and <a href="">Address lookup</a></p>
+
+                      <% 
+      pattern_root = "/design-patterns/"
+
+
+      # Group patterns into sections
+      patterns_in_section = sitemap.resources
+        .select { |r| 
+          r.data.section && 
+          r.data.section == current_page.data.section &&
+          r.url.start_with?(pattern_root) &&
+          r.data.status != "Backlog" &&
+          (r.data.department == "All" || r.data.department.nil?)
+        }.sort_by { |r| r.data.title }
+
+
+      if config[:use_theme_in_nav] && patterns_in_section.any? { |pattern| pattern.data.theme }
+      %>
+
+      <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+<div class="grid-row">
+            <ul class="" style="margin: 0; padding: 0" >
+            <%
+              patterns_by_theme = patterns_in_section.group_by { |r| r.data.theme || "Other"}
+              themes = config[:theme_orders][current_page.data.section]
+              themes.each do |theme|
+            %>
+      
+          
+          <div class="column-one-half">
+                <ul class="section theme-grid" style="list-style: none">
+                  <% if theme != "Other" %>
+                  <li class="theme-heading__grid"><%= theme %></li>
+                  <% end %>
+                  <% patterns_by_theme[theme].sort_by{|pattern| pattern.data.title}.each do |pattern|
+                    classes = []
+                    classes << "status-#{pattern.data.status.downcase.tr(" ", "-")}" if pattern.data.has_key? 'status'
+                    classes << 'current-page' if current_page.path == pattern.path
+                    %>
+                    <li<% if classes.any? %> class="<%= classes.join(" ") %>"<% end %>><%= link_to pattern.data.title, pattern.url %></li>
+                  <% end %>
+                </ul>
+          </div>
+        
+            
+
+                <% end %>
+                <ul>
+</div>
+      <% else %>
+
+      <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
+
+        <ul class="pattern-nav">
+          <% patterns_in_section.each do |pattern|
+            classes = []
+            classes << "status-#{pattern.data.status.downcase.tr(" ", "-")}" if pattern.data.has_key? 'status'
+            classes << 'current-page' if current_page.path == pattern.path
+          %>
+            <li<% if classes.any? %> class="<%= classes.join(" ") %>" <% end %>><%= link_to pattern.data.title, pattern.url %></li>
+          <% end %>
+        <ul>
+
+      </nav>
+
+      <% end %>
+    
+  </div>
+</div>    
