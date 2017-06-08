@@ -1066,6 +1066,10 @@ p.section-description {
   font-weight: normal;
   font-size: 16px;
   line-height: 1.25;
+
+  &.current-page a {
+    border-left: 4px solid $govuk-blue;
+  }
 }
 
 .mobile-nav__section {
