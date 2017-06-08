@@ -63,10 +63,10 @@ $active-nav-color: #1d8feb;
   .govuk-logo {
     float: left;
     background-position: 0 4px;
-    margin-right: 5px;
+    margin-right: 8px;
 
     @include media(tablet) {
-      margin-right: 0;
+      margin-right: 5px;
     }
   }
   
@@ -98,18 +98,17 @@ $active-nav-color: #1d8feb;
 }
 
 .header__title {
-  @include core-24;
+  font-size: 20px;
   display: block;
-  padding-top: 16px;
-  // float: left;
-  // clear: left;
+  padding-top: 12px;
   
   @include media(tablet) {
+    @include core-24;
     display: inherit;
     float: none;
     clear: none;
     padding-top: 0px;
-    
+    padding-left: 0px;
   }
 
   .phase-banner {
