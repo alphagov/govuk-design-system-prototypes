@@ -78,7 +78,7 @@ design_patterns.each do |res|
 		<td><%= res.data.department %></td>
 			
 		<td>
-		<% if res.data.status.downcase == "backlog" %>
+		<% if res.data.status&.downcase == "backlog" %>
 			<%= res.data.status %>
 		<% end %>
 		</td>
