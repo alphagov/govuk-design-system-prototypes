@@ -1064,7 +1064,7 @@ p.section-description {
 }
 
 .mobile-nav__list {
-  padding: 10px 0;
+  // padding: 10px 0;
 }
 
 .mobile-nav__leaf {
@@ -1100,7 +1100,7 @@ p.section-description {
 
 .mobile-nav__section--is-open {
   
-  
+  border-top: 1px solid white;
 
   ul {
     background-color: $grey-4;
