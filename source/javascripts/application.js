@@ -10,45 +10,28 @@
 var lunrIndex = null;
 var lunrData  = null;
 
-$(function() {
-
-  $('.fixedsticky').fixedsticky();
-
-  // Hide sub-nav by default
-  $('.js-toc-list > ul > li > ul').hide();
-
-  // Show current section
-  $('.current-section > ul').show();
-
-  var $navItems = $('.js-toc-list > ul > li > a');
-
-  // Toggle subnav if it's clicked
-  $navItems.click(function() {
-
-    var wasVisible = $(this).siblings("ul").css('display') == 'block';
-
-    // Hide all open navs, including this one
-    $navItems.removeClass('is-active');
-    $navItems.siblings('ul').hide();
-
-    // If the clicked nav wasn't visible, show it
-    if (!wasVisible) {
-      $(this).addClass('is-active');
-      $(this).siblings("ul").slideToggle('fast');
-    }
-
-  });
-
-});
-
 // Menu toggle
 
-function toggleNav() {
-    var $subNav = $('#sub-nav');
-    if ($subNav.css('display') === 'none') {
-        $subNav.css('display', 'block');
-    } else {
-        $subNav.css('display', 'none');
-    }
-}
+$(function () {
+  $navToggle = $('.js-mobile-nav-toggle');
 
+  $navToggle.on('click', function () {
+    var $subNav = $('.mobile-nav');
+    if ($subNav.css('display') === 'none') {
+      $subNav.css('display', 'block');
+    } else {
+      $subNav.css('display', 'none');
+    }
+  });
+
+  $subNavToggles = $('.mobile-nav__section > a');
+  $subNavToggles.on('click', function (event) {
+    event.preventDefault();
+    $thisSection = $(this).parents('.mobile-nav__section');
+
+    $thisSection.toggleClass('mobile-nav__section--is-open');
+    $('.mobile-nav__section').not($thisSection).removeClass('mobile-nav__section--is-open');
+
+    return false;
+  })
+});

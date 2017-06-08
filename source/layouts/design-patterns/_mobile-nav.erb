@@ -1,0 +1,70 @@
+<%
+pattern_root = "/design-patterns/patterns/" 
+sections = ["About", "Visual styles", "Components", "Pages", "Patterns"]
+
+# Filter out backlog patterns
+# Group patterns into sections
+patterns_by_section = sitemap.resources
+  .select { |r| 
+    r.data.section && 
+    r.data.status != "Backlog" &&
+    r.url.start_with?(pattern_root)
+  }
+  .sort_by { |r| r.data.title }
+  .group_by { |r| r.data.section }
+%>
+
+<div class="mobile-nav">
+
+  <ul class="mobile-nav__list">
+      
+    <% sections.each do |section|
+      if patterns_by_section[section].any? { |pattern| pattern.data.theme }
+        patterns_by_theme = patterns_by_section[section].group_by { |r| r.data.theme || "Other" }
+        first_theme = config[:theme_orders][section].first
+        first_pattern = patterns_by_theme[first_theme].first
+        themes = config[:theme_orders][section]
+    %>
+      <li class="mobile-nav__section<% if current_page.data.section == section %> mobile-nav__section--is-open<% end %>">
+        <a href="<%= first_pattern.url %>"><%= section %></a>
+        <ul>
+          <% themes.each do |theme| %>
+          <li class="mobile-nav__theme">
+            <% if theme != "Other" %>
+            <div class="mobile-nav__theme-header"><%= theme %></div>
+            <% end %>
+            <ul>
+              <% patterns_by_theme[theme].sort_by{|pattern| pattern.data.title}.each do |pattern|
+                classes = ['mobile-nav__leaf']
+                classes << "status-#{pattern.data.status.downcase.tr(" ", "-")}" if pattern.data.has_key? 'status'
+                classes << 'current-page' if current_page.path == pattern.path
+                %>
+                <li<% if classes.any? %> class="<%= classes.join(" ") %>"<% end %>><%= link_to pattern.data.title, pattern.url %></li>
+              <% end %>
+            </ul>
+          </li>
+      <% end %>
+        </ul>
+      </li>
+    <% else
+      patterns_in_section = patterns_by_section[section]
+      first_pattern = patterns_in_section.first
+    %>
+      <li class="mobile-nav__section<% if current_page.data.section == section %> mobile-nav__section--is-open<% end %>">
+        <a href="<%= first_pattern.url %>"><%= section %></a>
+        <ul>
+        <% patterns_in_section.each do |pattern|
+          classes = ['mobile-nav__leaf']
+          classes << "status-#{pattern.data.status.downcase.tr(" ", "-")}" if pattern.data.has_key? 'status'
+          classes << 'current-page' if current_page.path == pattern.path
+        %>
+          <li<% if classes.any? %> class="<%= classes.join(" ") %>"<% end %>><%= link_to pattern.data.title, pattern.url %></li>
+        <% end %>
+        </ul>
+      </li>
+    <% end %>
+
+
+    <% end %>
+  </ul>
+</div>

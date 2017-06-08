@@ -964,43 +964,25 @@ p.section-description {
 
 // Horizontal sub-nav branch
 
-#sub-nav {
-  @include media(mobile) {
-    display: none;
-  }
-}  
-
 .sub-nav {
-  
-  background-color: darken($grey-4, 3%);
   
   @extend %contain-floats;
 
-  @include media(tablet) {
-    padding: 0px 10px 0px $gutter-half;
+  @include media(mobile) {
+    display: none;
   }
 
-  .pattern-search {
-    float: right;
-    width: 300px;
-    margin: 10px $gutter-half 0 0;
-  }
+  padding: 0px 10px 0px $gutter-half;
+  background-color: darken($grey-4, 3%);
 
   ul.sub-nav-list {
-    float: left;
     @extend %contain-floats;
 
-    padding: 10px 0;
-
-    @include media(tablet) {
-      padding: 0;
-    }
+    padding: 0;
 
     li {
  
-      @include media(tablet) {
-        float: left;
-      }     
+      float: left;
 
       a {
         @include box-sizing(border-box);
@@ -1022,6 +1004,7 @@ p.section-description {
           border-bottom: 4px solid transparent;
           height: 53px;
           line-height: 53px;
+          font-weight: 700;
 
           &:hover {
             border-bottom: 4px solid $light-blue;
@@ -1041,23 +1024,59 @@ p.section-description {
   }
 }
 
-.nav-leaf {
+.mobile-nav {
+  display: none;
+
+  @include media(tablet) {
+    // Don't want nav toggle to override this, as you could expand at smaller
+    // viewport, resize and end up with double navigation elements
+    display: none !important;
+  }
+
+  background-color: darken($grey-4, 3%);
+}
+
+.mobile-nav a {
+  @include box-sizing(border-box);
+  display: block;
+  color: $govuk-blue;
+  text-decoration: none;
+  height: 35px;
+  line-height: 35px;
+  border-left: 4px solid transparent;
+  padding-left: $gutter-half;
+
+  &.is-active {
+    border-left: 4px solid $govuk-blue;
+  }
+}
+
+.mobile-nav__list {
+  padding: 10px 0;
+}
+
+.mobile-nav__leaf {
   font-weight: normal;
   font-size: 16px;
   line-height: 1.25;
 }
 
-.nav-section {
+.mobile-nav__section {
   font-weight: 700;
   font-size: 19px;
   margin-bottom: 15px;
+  display: block;
 }
 
-.nav-theme {
+.mobile-nav__section:last-child {
+  margin-bottom: 0;
+}
+
+.mobile-nav__theme {
   margin-bottom: 20px;
 }
 
-.nav-theme-header {
+.mobile-nav__theme-header {
   margin: 10px 15px 10px 19px;
   text-transform: uppercase;
   color: $secondary-text-colour;
@@ -1066,12 +1085,20 @@ p.section-description {
   font-weight: 700;
 }
 
+.mobile-nav__section ul {
+  display: none;
+}
+
+.mobile-nav__section--is-open ul {
+  display: block;
+}
+
 @include media(tablet) {
-  .nav-theme, .nav-leaf {
+  .mobile-nav__theme, .mobile-nav__leaf {
     display: none;
   }
 
-  .nav-section {
+  .mobile-nav__section {
     margin-bottom: 0;
   }
 }

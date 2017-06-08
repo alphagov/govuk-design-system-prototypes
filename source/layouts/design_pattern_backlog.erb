@@ -16,6 +16,10 @@
   <%= partial 'layouts/design-patterns/sub-nav' %>
 <% end %>
 
+<% content_for :mobile_nav do %>
+  <%= partial 'layouts/design-patterns/mobile-nav' %>
+<% end %>
+
 <% wrap_layout :docs do %>
   <% if current_page.data.section %>
   <p class="section-heading"><%= current_page.data.section %></p>
