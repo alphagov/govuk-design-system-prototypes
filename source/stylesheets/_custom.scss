@@ -776,8 +776,11 @@ $palette: (
     padding: 3px 5px;
     
     &:focus{
+      width: 100%;
 
-      width: 300px;
+      @include media(tablet) {
+        width: 300px;
+      }
     }
   }
 }
@@ -791,9 +794,13 @@ $palette: (
   border-bottom: 2px solid #bfc1c3;
   top: 100%;
   z-index: 100;
-  max-height: 75vh;
+  max-height: 25vh;
   overflow-y: scroll;
   display: none;
+
+  @include media(tablet) {
+    max-height: 75vh;
+  }
   
   li {
     font-size: 16px;
