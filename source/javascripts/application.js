@@ -17,11 +17,11 @@ $(function () {
 
   $navToggle.on('click', function () {
     var $subNav = $('.mobile-nav');
-    if ($subNav.css('display') === 'none') {
-      $subNav.css('display', 'block');
-    } else {
-      $subNav.css('display', 'none');
-    }
+    $subNav.toggle();
+
+    $navToggle.toggleClass('active', function () {
+      $(subNav).is(":visible"); 
+    })
   });
 
   $subNavToggles = $('.mobile-nav__section > a');
