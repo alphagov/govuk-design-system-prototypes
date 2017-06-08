@@ -1082,6 +1082,11 @@ p.section-description {
   font-size: 19px;
   // margin-bottom: 15px;
   display: block;
+  border-top: 1px solid transparent;
+
+  ul {
+    border-bottom: 1px solid transparent;
+  }
 
   a {
     padding-top: 10px;

@@ -25,8 +25,8 @@ patterns_by_section = sitemap.resources
         first_pattern = patterns_by_theme[first_theme].first
         themes = config[:theme_orders][section]
     %>
-      <li class="mobile-nav__section<% if current_page.data.section == section %> mobile-nav__section--is-open<% end %>">
-        <a href="<%= first_pattern.url %>"><%= section %></a>
+      <li id="<%= section.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>" class="mobile-nav__section<% if current_page.data.section == section %> mobile-nav__section--is-open<% end %>">
+        <a href="#<%= section.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>"><%= section %></a>
         <ul>
           <% themes.each do |theme| %>
           <li class="mobile-nav__theme">
@@ -50,8 +50,8 @@ patterns_by_section = sitemap.resources
       patterns_in_section = patterns_by_section[section]
       first_pattern = patterns_in_section.first
     %>
-      <li class="mobile-nav__section<% if current_page.data.section == section %> mobile-nav__section--is-open<% end %>">
-        <a href="<%= first_pattern.url %>"><%= section %></a>
+      <li id="<%= section.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>" class="mobile-nav__section<% if current_page.data.section == section %> mobile-nav__section--is-open<% end %>">
+        <a href="#<%= section.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>"><%= section %></a>
         <ul>
         <% patterns_in_section.each do |pattern|
           classes = ['mobile-nav__leaf']

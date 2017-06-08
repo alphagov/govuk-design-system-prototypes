@@ -26,7 +26,7 @@ $(function () {
 
   $subNavToggles = $('.mobile-nav__section > a');
   $subNavToggles.on('click', function (event) {
-    event.preventDefault();
+    // event.preventDefault();
     $thisSection = $(this).parents('.mobile-nav__section');
 
     $thisSection.toggleClass('mobile-nav__section--is-open');
