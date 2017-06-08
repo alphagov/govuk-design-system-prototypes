@@ -798,7 +798,7 @@ $palette: (
   border-bottom: 2px solid #bfc1c3;
   top: 100%;
   z-index: 100;
-  max-height: 25vh;
+  max-height: 28vh;
   overflow-y: scroll;
   display: none;
 
@@ -1048,7 +1048,7 @@ p.section-description {
 }
 
 .mobile-nav a {
-  @include box-sizing(border-box);
+  // @include box-sizing(border-box);
   display: block;
   color: $govuk-blue;
   text-decoration: none;
@@ -1056,6 +1056,7 @@ p.section-description {
   line-height: 35px;
   border-left: 4px solid transparent;
   padding-left: $gutter-half;
+  
 
   &.is-active {
     border-left: 4px solid $govuk-blue;
@@ -1079,12 +1080,39 @@ p.section-description {
 .mobile-nav__section {
   font-weight: 700;
   font-size: 19px;
-  margin-bottom: 15px;
+  // margin-bottom: 15px;
   display: block;
+
+  a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  ul li a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 }
 
 .mobile-nav__section:last-child {
   margin-bottom: 0;
+}
+
+.mobile-nav__section--is-open {
+  
+  
+
+  ul {
+    background-color: $grey-4;
+    border-top: 1px solid $grey-3;
+    border-bottom: 1px solid $grey-3;
+    padding: 10px 0;
+
+    & ul {
+      border-top: 0px;
+      border-bottom: 0px;
+    }
+  }
 }
 
 .mobile-nav__theme {
@@ -1098,6 +1126,10 @@ p.section-description {
   font-size: 16px;
   letter-spacing: 0.04em;
   font-weight: 700;
+
+  + ul {
+    padding-top: 0;
+  }
 }
 
 .mobile-nav__section ul {
