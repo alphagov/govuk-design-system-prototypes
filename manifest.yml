@@ -1,6 +1,6 @@
 ---
 applications:
-- name: govuk-design-system-prototypes-navigation-alternative
+- name: govuk-design-system-prototypes-variant-c
   memory: 64M
   path: ./build
   buildpack: staticfile_buildpack
