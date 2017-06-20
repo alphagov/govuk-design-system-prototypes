@@ -729,7 +729,7 @@ $palette: (
   background-color: $govuk-blue;
   background-image: url(/images/search-button.png);
   background-repeat: no-repeat;
-  background-position: 0 50%;
+  background-position: right -70px center;
   border-radius: 0;
   -webkit-appearance: none;
 
@@ -737,7 +737,7 @@ $palette: (
     padding: 5px 15px;
     //border: 2px solid #bfc1c3;
     border: 2px solid $text-colour;
-    margin-left: 35px;
+    margin-right: 35px;
     width: calc(100% - 34px);
     box-sizing: border-box;
     transition: all 100ms ease-in-out;
@@ -747,8 +747,6 @@ $palette: (
     &:focus{
       outline: 3px solid #ffbf47;
       outline-offset: 0;
-      margin-left: 0;
-      width: 100%;
     }
   }
 
@@ -778,14 +776,6 @@ $palette: (
   #pattern-search-text {
     border: 2px solid white;
     padding: 3px 5px;
-    
-    &:focus{
-      width: 100%;
-
-      @include media(tablet) {
-        width: 300px;
-      }
-    }
   }
 }
 
