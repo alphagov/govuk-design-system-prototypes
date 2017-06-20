@@ -37,14 +37,14 @@ patterns_by_section = sitemap.resources
       <h3 class="sitemap-theme"><%= theme %></h3>
       <ul>
         <% patterns.each do |pattern| %>
-          <li><%= link_to pattern.data.title, pattern.url %><% if pattern.data.aliases %> <span class="aliases">&mdash; also known as <%= pattern.data.aliases %></span><% end %></li>
+          <li><%= link_to pattern.data.title, pattern.url %><% if pattern.data.aliases %> <span class="aliases">&mdash; also known as <%= list_as_sentence pattern.data.aliases %></span><% end %></li>
         <% end %>
       </ul>
     <% end %>
 <% else %>
   <ul>
     <% patterns_by_section[section].each do |pattern| %>
-      <li><%= link_to pattern.data.title, pattern.url %><% if pattern.data.aliases %> <span class="aliases">&mdash; also known as <%= pattern.data.aliases %></span><% end %></li>
+      <li><%= link_to pattern.data.title, pattern.url %><% if pattern.data.aliases %> <span class="aliases">&mdash; also known as <%= list_as_sentence pattern.data.aliases %></span><% end %></li>
     <% end %>
   </ul>
 <% end

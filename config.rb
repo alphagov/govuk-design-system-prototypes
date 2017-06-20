@@ -70,6 +70,22 @@ activate :syntax
 ###
 # Helpers
 ###
+helpers do
+  def list_as_sentence(list, separator = "or")
+    list = list.split(",").map(&:strip)
+
+    case list.length
+      when 0
+        ""
+      when 1
+        list[0].to_s
+      when 2
+        "#{list[0]} #{separator} #{list[1]}"
+      else
+        "#{list[0...-1].join(", ")}, #{separator} #{list[-1]}"
+    end
+  end
+end
 
 # Build-specific configuration
 configure :build do
