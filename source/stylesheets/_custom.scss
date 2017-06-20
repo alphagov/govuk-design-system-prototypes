@@ -1356,3 +1356,20 @@ span.experimental {
     color: $secondary-text-colour !important;
   }
 }
+
+.aliases {
+  color: $secondary-text-colour;
+}
+
+.sitemap-theme {
+  text-transform: uppercase !important;
+  color: $secondary-text-colour;
+  letter-spacing: 0.04em;
+}
+
+a.sitemap-link:link, a.sitemap-link:visited {
+  float: right;
+  margin: 12px 0;
+  color: #fff;
+  font-size: 19px;
+}
