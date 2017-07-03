@@ -1,0 +1,567 @@
+<html>
+  <head>
+
+   <style>
+    body { font-family: Helvetica, Arial, sans-serif; }
+    ul { margin-bottom: 15px; list-style: circle; }
+    .column {float: left; width: 25%; border: 2px solid black; padding: 10px 20px; margin-right: 20px;}
+    .mobile-nav__section, .mobile-nav__theme { list-style: none; margin: 0; padding: 0; }
+    .mobile-nav__section > a { font-size: 22px; }
+    .mobile-nav__section > a + ul { margin-top: 15px; }
+    .mobile-nav__theme { margin-top: 15px; }
+    .mobile-nav__sub-theme { list-style: none; }
+    .mobile-nav__theme-header { color: grey; text-transform: uppercase; margin-left: -18px; margin-bottom: 5px;}
+    .mobile-nav__theme-header + ul { padding-left: 0;}
+    .mobile-nav__sub-theme-header { color: grey; margin-left: -18px; margin-bottom: 5px;}
+    .mobile-nav__sub-theme-header + ul { padding-left: 0; }
+   </style>
+
+  </head>
+
+  <body>
+
+  <div class="column">
+      <h2>Alpha</h2>
+       <ul class="mobile-nav__list">
+      
+      <li id="about" class="mobile-nav__section mobile-nav__section--is-open">
+        <a href="#about">About</a>
+        <ul>
+          <li class="mobile-nav__leaf current-page"><a href="/design-patterns/patterns/">About the Design System</a></li>
+          <li class="mobile-nav__leaf"><a href="/design-patterns/patterns/overview/design%20principles/principles.html">Design principles</a></li>
+          <li class="mobile-nav__leaf"><a href="/design-patterns/patterns/overview/contribute/contribute.html">How to contribute</a></li>
+          <li class="mobile-nav__leaf"><a href="/design-patterns/patterns/overview/support/support.html">Support</a></li>
+        </ul>
+      </li>
+
+
+      <li id="visual-styles" class="mobile-nav__section">
+        <a href="#visual-styles">Visual styles</a>
+        <ul>
+          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/colour/">Colour</a></li>
+          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/icons/">Icons</a></li>
+          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/identity/">Identity</a></li>
+          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/images/">Images</a></li>
+          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/layout/">Layout</a></li>
+          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/typography/">Typography</a></li>
+        </ul>
+      </li>
+
+
+      <li id="components" class="mobile-nav__section">
+        <a href="#components">Components</a>
+        <ul>
+          <li class="mobile-nav__theme">
+            <div class="mobile-nav__theme-header">Global</div>
+            <ul>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/alpha_and_beta_banners/">Alpha and beta banners</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/cookie_banner/">Cookie banner</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/footer/">Footer</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/header/">Header</a></li>
+            </ul>
+          </li>
+          <li class="mobile-nav__theme">
+            <div class="mobile-nav__theme-header">Navigation</div>
+            <ul>
+                <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/components/accordions/">Accordions</a></li>
+                <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/components/back_button/">Back button</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/breadcrumbs/">Breadcrumbs</a></li>
+                <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/components/page_navigation/">Page navigation</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/pagination/">Pagination</a></li>
+                <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/components/primary_navigation/">Primary navigation</a></li>
+            </ul>
+          </li>
+          <li class="mobile-nav__theme">
+            <div class="mobile-nav__theme-header">Form elements</div>
+            <ul>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/addresses/">Addresses</a></li>
+                <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/components/autocomplete/">Autocomplete</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/buttons/">Buttons</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/checkboxes/">Checkboxes</a></li>
+                <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/components/country_selector/">Country selector</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/date%20group/">Date group</a></li>
+                <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/components/file_upload/">File upload</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Form and Text fields</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/form_labels/">Form labels</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/radio_buttons/">Radio buttons</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/search_box/">Search box</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/select_boxes/">Select boxes</a></li>
+            </ul>
+          </li>
+          <li class="mobile-nav__theme">
+            <div class="mobile-nav__theme-header">Content</div>
+            <ul>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/code/">Code</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/download_links/">Download links</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/feedback_link/">Feedback link</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/help_text/">Help text</a></li>
+                <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/components/using-icons/">Icon implementation</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/progress_indicators/">Progress indicators</a></li>
+                <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/components/social_media_links/">Social media links</a></li>
+                <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/components/tables/">Tables</a></li>
+                <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/components/tabs/">Tabs</a></li>
+                <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/components/video/">Video</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+
+      <li id="pages" class="mobile-nav__section">
+        <a href="#pages">Pages</a>
+        <ul>
+          <li class="mobile-nav__theme">
+            <div class="mobile-nav__theme-header">Single page</div>
+            <ul>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/pages/check_your_answers_pages/">Check your answers page</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/pages/confirmation_pages/">Confirmation page</a></li>
+                <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/pages/design_pattern_pages/">Design pattern page</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/pages/feedback_pages/">Feedback page</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/pages/question_pages/">Question page</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/pages/start_pages/">Start page</a></li>
+                <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/pages/task_list_page/">Task list page</a></li>
+            </ul>
+          </li>
+          <li class="mobile-nav__theme">
+            <div class="mobile-nav__theme-header">Multi-page</div>
+            <ul>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/check_before_you_start/">Check before you start</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+
+      <li id="patterns" class="mobile-nav__section">
+        <a href="#patterns">Patterns</a>
+        <ul>
+          <li class="mobile-nav__theme">
+            <div class="mobile-nav__theme-header">Form design</div>
+            <ul>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/additional%20information/">Additional information</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/confirm_an_email_address/">Confirm an email address</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/dates/">Dates</a></li>
+                <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/tasks/error_messages/">Error messages</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/form-structure/">Form structure</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/knowledge_based_authentication/">Knowledge based authentication</a></li>
+            </ul>
+          </li>
+          <li class="mobile-nav__theme">
+            <div class="mobile-nav__theme-header">Personal details</div>
+            <ul>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/email_addresses/">Email addresses</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/gender_and_sex/">Gender and sex</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/names/">Names</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/national_insurance_numbers/">National Insurance Numbers</a></li>
+            </ul>
+          </li>
+          <li class="mobile-nav__theme">
+            <div class="mobile-nav__theme-header">Service design</div>
+            <ul>
+                <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/tasks/apply_for_something/">Apply for something</a></li>
+                <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/tasks/book_an_appointment/">Book an appointment</a></li>
+                <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/tasks/give_consent/">Give consent</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/naming_your_service/">Naming your service</a></li>
+                <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/tasks/pay_for_something/">Pay for something</a></li>
+            </ul>
+          </li>
+          <li class="mobile-nav__theme">
+            <div class="mobile-nav__theme-header">Account information</div>
+            <ul>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/passwords/">Passwords</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/user_accounts/">User accounts</a></li>
+                <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/usernames/">Usernames</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+
+  </ul>
+
+  </div>
+
+
+
+<div class="column">
+      <h2>Iteration A</h2>
+      <ul class="mobile-nav__list">
+        
+        <li id="about" class="mobile-nav__section">
+          <a href="#about">About</a>
+          <ul>
+            <li class="mobile-nav__leaf"><a href="/design-patterns/patterns/">About the Design System</a></li>
+            <li class="mobile-nav__leaf"><a href="/design-patterns/patterns/overview/design%20principles/principles.html">Design principles</a></li>
+            <li class="mobile-nav__leaf"><a href="/design-patterns/patterns/overview/contribute/contribute.html">How to contribute</a></li>
+            <li class="mobile-nav__leaf"><a href="/design-patterns/patterns/overview/statistics/">Site map</a></li>
+            <li class="mobile-nav__leaf"><a href="/design-patterns/patterns/overview/support/support.html">Support</a></li>
+          </ul>
+        </li>
+
+
+        <li id="styles" class="mobile-nav__section">
+          <a href="#styles">Styles</a>
+          <ul>
+            <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/colour/">Colour</a></li>
+            <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/icons/">Icons</a></li>
+            <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/identity/">Identity</a></li>
+            <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/images/">Images</a></li>
+            <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/layout/">Layout</a></li>
+            <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/typography/">Typography</a></li>
+          </ul>
+        </li>
+
+
+        <li id="components" class="mobile-nav__section">
+          <a href="#components">Components</a>
+          <ul>
+            <li class="mobile-nav__theme">
+              <div class="mobile-nav__theme-header">Global</div>
+              <ul>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/header/">Header</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/footer/">Footer</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/alpha_and_beta_banners/">Alpha and beta banners</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/cookie_banner/">Cookie banner</a></li>
+              </ul>
+            </li>
+            <li class="mobile-nav__theme">
+              <div class="mobile-nav__theme-header">Navigation</div>
+              <ul>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/components/primary_navigation/">Primary navigation</a></li>
+                  <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/components/accordions/">Accordions</a></li>
+                  <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/components/back_button/">Back button</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/breadcrumbs/">Breadcrumbs</a></li>
+                  <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/components/page_navigation/">Page navigation</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/pagination/">Pagination</a></li>
+                  
+              </ul>
+            </li>
+            <li class="mobile-nav__theme">
+              <div class="mobile-nav__theme-header">Form elements</div>
+              <ul>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Form and Text fields</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/addresses/">Addresses</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/addresses/hmrc-lookup.html">Addresses (HMRC)</a></li>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/components/autocomplete/">Autocomplete</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/buttons/">Buttons</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/checkboxes/">Checkboxes</a></li>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/components/country_selector/">Country selector</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/date%20group/">Date group</a></li>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/components/file_upload/">File upload</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/form_labels/">Form labels</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/radio_buttons/">Radio buttons</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/search_box/">Search box</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/select_boxes/">Select boxes</a></li>
+              </ul>
+            </li>
+            <li class="mobile-nav__theme">
+              <div class="mobile-nav__theme-header">Everything else - what do we call this?</div>
+              <ul>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/code/">Code</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/download_links/">Download links</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/feedback_link/">Feedback link</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/help_text/">Help text</a></li>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/components/using-icons/">Icon implementation</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/progress_indicators/">Progress indicators</a></li>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/components/social_media_links/">Social media links</a></li>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/components/tables/">Tables</a></li>
+                  <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/components/tabs/">Tabs</a></li>
+                  <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/components/video/">Video</a></li>
+
+                  <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/components/tabs/">Task list (component)</a></li>
+                  <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/components/video/">Panels</a></li>
+                  <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/components/tabs/">Check your answers (table)</a></li>
+                  <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/components/video/">Feedback form group</a></li>
+
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+
+        <li id="guidance" class="mobile-nav__section mobile-nav__section--is-open">
+          <a href="#guidance">Guidance</a>
+          <ul>
+            <li class="mobile-nav__theme">
+              <div class="mobile-nav__theme-header">Form design</div>
+              <ul>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/confirm_an_email_address/">Confirm an email address</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/dates/">Dates</a></li>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/tasks/error_messages/">Error messages</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/form-structure/">Form structure</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/knowledge_based_authentication/">Knowledge based authentication</a></li>
+                  <li class="mobile-nav__leaf status-approved current-page"><a href="/design-patterns/patterns/tasks/additional%20information/">Additional information</a></li>
+              </ul>
+            </li>
+            <li class="mobile-nav__theme">
+              <div class="mobile-nav__theme-header">Personal details</div>
+              <ul>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/email_addresses/">Email addresses</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/gender_and_sex/">Gender and sex</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/names/">Names</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/national_insurance_numbers/">National Insurance Numbers</a></li>
+              </ul>
+            </li>
+            <li class="mobile-nav__theme">
+              <div class="mobile-nav__theme-header">Service design</div>
+              <ul>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/tasks/apply_for_something/">Apply for something</a></li>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/tasks/book_an_appointment/">Book an appointment</a></li>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/tasks/give_consent/">Give consent</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/naming_your_service/">Naming your service</a></li>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/tasks/pay_for_something/">Pay for something</a></li>
+              </ul>
+            </li>
+            <li class="mobile-nav__theme">
+              <div class="mobile-nav__theme-header">Account information</div>
+              <ul>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/passwords/">Passwords</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/user_accounts/">User accounts</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/usernames/">Usernames</a></li>
+              </ul>
+            </li>
+            <li class="mobile-nav__theme">
+              <div class="mobile-nav__theme-header">Page templates</div>
+              <ul>
+                  
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/pages/start_pages/">Start page</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/pages/confirmation_pages/">Confirmation page</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/pages/question_pages/">Question page</a></li>
+                  <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/pages/task_list_page/">Task list page</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/pages/feedback_pages/">Feedback page</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/pages/check_your_answers_pages/">Check your answers page</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/check_before_you_start/">Check before you start</a></li>
+      
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+
+    </ul>
+
+  </div>
+
+
+
+
+
+  <div class="column">
+      <h2>Iteration B</h2>
+      <!-- Main ul -->
+      <ul class="mobile-nav__list">
+
+        <li id="about" class="mobile-nav__section">
+            <a href="#about">About</a>
+              <ul>
+                <li class="mobile-nav__leaf"><a href="/design-patterns/patterns/">About the Design System</a></li>
+                <li class="mobile-nav__leaf"><a href="/design-patterns/patterns/overview/design%20principles/principles.html">Design principles</a></li>
+                <li class="mobile-nav__leaf"><a href="/design-patterns/patterns/overview/contribute/contribute.html">How to contribute</a></li>
+                <li class="mobile-nav__leaf"><a href="/design-patterns/patterns/overview/statistics/">Site map</a></li>
+                <li class="mobile-nav__leaf"><a href="/design-patterns/patterns/overview/support/support.html">Support</a></li>
+              </ul>
+        </li>
+
+        <li id="styles" class="mobile-nav__section">
+            <a href="#styles">Foundations</a>
+
+            <ul> <!-- Theme ul -->
+                <li class="mobile-nav__theme">
+                  <div class="mobile-nav__theme-header">Styles</div>
+                  <ul>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/colour/">Colour</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/icons/">Icons</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/identity/">Identity</a></li>
+                  </ul>
+                </li>
+
+                <li class="mobile-nav__theme">
+                  <div class="mobile-nav__theme-header">Structure</div>
+                  <ul>
+                       <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/layout/">Layout</a></li>
+                       <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/header/">Header</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/footer/">Footer</a></li>
+                  </ul>
+                </li>
+                        
+                <li class="mobile-nav__theme">
+                  <div class="mobile-nav__theme-header">Typography</div>
+                  <ul>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/layout/">Headings</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/header/">Paragraphs</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/footer/">Lists</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/footer/">Callout</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/footer/">Help text</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/footer/">Link text</a></li>
+                  </ul>
+                </li>
+                
+                <li class="mobile-nav__theme">
+                  <div class="mobile-nav__theme-header">Content blocks</div>
+                  <ul>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/images/">Images</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/images/">Video</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/images/">Panels</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/styles/images/">Tables</a></li>
+                  </ul>
+                </li>
+                        
+                <li class="mobile-nav__theme">
+                  <div class="mobile-nav__theme-header">Forms</div>
+                  <ul>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Form structure</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Form and Text fields</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/radio_buttons/">Radio buttons</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/checkboxes/">Checkboxes</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/select_boxes/">Select boxes</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/buttons/">Buttons</a></li>
+                      <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/tasks/error_messages/">Error messages</a></li>
+
+                  </ul>
+                </li>
+
+              </ul> <!-- End theme ul -->
+        </li>
+
+        <li id="components" class="mobile-nav__section">
+          <a href="#components">Components</a>
+                <ul> <!-- Theme ul -->
+                  
+                  <li class="mobile-nav__theme">
+                      <div class="mobile-nav__theme-header">Finding things</div>
+                      <ul>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Search box</a></li>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Autocomplete</a></li>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/radio_buttons/">Country selector</a></li>
+                      </ul>
+                    </li>
+
+                    <li class="mobile-nav__theme">
+                      <div class="mobile-nav__theme-header">Collecting informaton</div>
+                      <ul>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Dates</a></li>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Feedback form group</a></li>  
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Addresses</a></li>                    
+                      </ul>
+                    </li>
+
+                    <li class="mobile-nav__theme">
+                      <div class="mobile-nav__theme-header">Navigation and orientation</div>
+                      <ul>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Primary navigation</a></li>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Accordions</a></li>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Back button</a></li> 
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Breadcrumbs</a></li>     
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Page navigation (jump links)</a></li>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Pagination</a></li>   
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Progress indicators</a></li>                                   
+                      </ul>
+                    </li>
+                    
+                    <li class="mobile-nav__theme">
+                      <div class="mobile-nav__theme-header">Links and actions</div>
+                      <ul>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Download links</a></li>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Feedback links</a></li>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Social media links</a></li>                                    
+                      </ul>
+                    </li>
+
+                    <li class="mobile-nav__theme">
+                      <div class="mobile-nav__theme-header">Compare and review</div>
+                      <ul>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Check your answers (table)</a></li>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Task list (component)</a></li>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Tabs</a></li> 
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Code</a></li>                                     
+                      </ul>
+                    </li>
+
+                    <li class="mobile-nav__theme">
+                      <div class="mobile-nav__theme-header">Notifications and banners</div>
+                      <ul>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Alpha and Beta banners</a></li>
+                          <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/components/text_fields/">Cookie banner</a></li>                                   
+                      </ul>
+                    </li>
+                </ul> <!-- End theme ul -->
+        </li> 
+
+        <li id="guidance" class="mobile-nav__section mobile-nav__section--is-open">
+          <a href="#guidance">Guidance</a>
+          <ul>
+           
+            <li class="mobile-nav__theme">
+              <div class="mobile-nav__theme-header">Asking users for information</div>
+              <ul>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/email_addresses/">Email addresses</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/confirm_an_email_address/">Confirm an email address</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/gender_and_sex/">Gender and sex</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/names/">Names</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/national_insurance_numbers/">National Insurance Numbers</a></li>
+                  <li class="mobile-nav__leaf status-approved current-page"><a href="/design-patterns/patterns/tasks/additional%20information/">Additional information</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/knowledge_based_authentication/">Knowledge based authentication</a></li>
+                  
+              </ul>
+            </li>
+
+            <li class="mobile-nav__theme">
+              <div class="mobile-nav__theme-header">Common user tasks</div>
+              <ul>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/tasks/apply_for_something/">Apply for something</a></li>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/tasks/book_an_appointment/">Book an appointment</a></li>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/tasks/give_consent/">Give consent</a></li>
+                  <li class="mobile-nav__leaf status-alpha"><a href="/design-patterns/patterns/tasks/pay_for_something/">Pay for something</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/check_before_you_start/">Check before you start</a></li>
+              </ul>
+            </li> 
+
+            <li class="mobile-nav__theme">
+              <div class="mobile-nav__theme-header">Account information</div>
+              <ul>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/passwords/">Passwords</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/user_accounts/">User accounts</a></li>
+                  <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/usernames/">Usernames</a></li>
+              </ul>
+            </li>                     
+
+            <li class="mobile-nav__theme">
+              <div class="mobile-nav__theme-header">Building a service</div>
+              <ul>
+                  <li class="mobile-nav__sub-theme">
+                    <div class="mobile-nav__sub-theme-header">Page templates</div>
+                    <ul>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/pages/start_pages/">Start page</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/pages/confirmation_pages/">Confirmation page</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/pages/question_pages/">Question page</a></li>
+                      <li class="mobile-nav__leaf status-beta"><a href="/design-patterns/patterns/pages/task_list_page/">Task list page</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/pages/feedback_pages/">Feedback page</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/pages/check_your_answers_pages/">Check your answers page</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="mobile-nav__sub-theme">
+                    <div class="mobile-nav__sub-theme-header">Tools and resources</div>
+                    <ul>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/naming_your_service/">GOV.UK Frontend</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/naming_your_service/">GOV.UK Prototype kit</a></li>
+                      <li class="mobile-nav__leaf status-approved"><a href="/design-patterns/patterns/tasks/naming_your_service/">GOV.UK Service Manual</a></li>
+                    </ul>
+                  </li>                  
+              </ul>
+
+
+            </li>                     
+
+      </ul> <!-- end main ul -->
+
+  </div>
+
+
+
+
+
+  </body>
+</html>
+
+
