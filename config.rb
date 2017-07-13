@@ -51,8 +51,7 @@ end
 set :theme_orders, {
   "About" => [],
   "Visual styles" => [],
-  "Components" => ["Global", "Navigation", "Form elements", "Content"],
-  "Pages" => ["Single page", "Multi-page"],
+  "Components" => ["Global", "Navigation", "Form elements", "Content", "Pages"],
   "Patterns" => ["Form design", "Personal details", "Service design", "Account information"]
 }
 
