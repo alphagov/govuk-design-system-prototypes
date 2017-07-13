@@ -103,6 +103,36 @@
   font-weight: 700;
 }
 
+.theme-heading__grid {
+  font-weight: 700;
+  text-transform: none;
+  font-size: 24px;
+}
+
+ul.theme-grid {
+  margin: 0;
+  padding: 0;
+
+  li {
+      margin: 0;
+      padding: 0;
+
+      a {
+          margin: 0 !important;
+          padding-bottom: 0 !important;
+          padding-left: 0 !important;
+          border-left: 0;
+
+          &:hover {
+            border-left: 0 !important;
+            text-decoration: underline !important;
+            color: $link-hover-colour !important;
+          }
+      }
+  }
+
+}
+
 .toc__list {
 
     a:link{
@@ -700,6 +730,8 @@ $palette: (
   background-image: url(/images/search-button.png);
   background-repeat: no-repeat;
   background-position: 0 50%;
+  border-radius: 0;
+  -webkit-appearance: none;
 
   #pattern-search-text {
     padding: 5px 15px;
@@ -709,6 +741,8 @@ $palette: (
     width: calc(100% - 34px);
     box-sizing: border-box;
     transition: all 100ms ease-in-out;
+    border-radius: 0;
+    -webkit-appearance: none;
     
     &:focus{
       outline: 3px solid #ffbf47;
@@ -725,23 +759,32 @@ $palette: (
 }
 
 .header__container .pattern-search{
-  float: right;
-  margin: 7px $gutter-half 0px 0px;
-  width: 300px;
 
   @include media(mobile) {
-    position: absolute;
-    right: 0;
-    top: 5px;
+    clear: both;
+    float: left;
+    width: 75%;
+    margin: 0 0 $gutter-half 0;
+
   }
+
+  @include media(tablet) {
+    float: right;
+    margin: 7px $gutter-half 0px 0px;
+    width: 300px;
+  }
+
 
   #pattern-search-text {
     border: 2px solid white;
     padding: 3px 5px;
     
     &:focus{
+      width: 100%;
 
-      width: 300px;
+      @include media(tablet) {
+        width: 300px;
+      }
     }
   }
 }
@@ -755,9 +798,13 @@ $palette: (
   border-bottom: 2px solid #bfc1c3;
   top: 100%;
   z-index: 100;
-  max-height: 75vh;
+  max-height: 28vh;
   overflow-y: scroll;
   display: none;
+
+  @include media(tablet) {
+    max-height: 75vh;
+  }
   
   li {
     font-size: 16px;
@@ -929,44 +976,184 @@ p.section-description {
 // Horizontal sub-nav branch
 
 .sub-nav {
-  background-color: darken($grey-4, 3%);
-  padding: 0px 10px 0px $gutter-half;
+  
   @extend %contain-floats;
 
-  .pattern-search {
-    float: right;
-    width: 300px;
-    margin: 10px $gutter-half 0 0;
+  @include media(mobile) {
+    display: none;
   }
 
+  padding: 0px 10px 0px $gutter-half;
+  background-color: darken($grey-4, 3%);
+
   ul.sub-nav-list {
-    float: left;
     @extend %contain-floats;
 
+    padding: 0;
+
     li {
+ 
       float: left;
 
       a {
         @include box-sizing(border-box);
         display: block;
-        height: 53px;
         color: $govuk-blue;
         text-decoration: none;
-        font-weight: 700;
-        line-height: 53px;
-        padding: 0 20px;
-        border-bottom: 4px solid transparent;
-        &:hover {
-          border-bottom: 4px solid $light-blue;
-        }
+        height: 35px;
+        line-height: 35px;
+        border-left: 4px solid transparent;
+        padding-left: $gutter-half;
+
         &.is-active {
-          border-bottom: 4px solid $govuk-blue;
+            border-left: 4px solid $govuk-blue;
         }
+
+        @include media(tablet) {
+          padding: 0 20px;
+          border-left: 0px;
+          border-bottom: 4px solid transparent;
+          height: 53px;
+          line-height: 53px;
+          font-weight: 700;
+
+          &:hover {
+            border-bottom: 4px solid $light-blue;
+          }
+
+          &.is-active {
+            border-left: 0px;
+            border-bottom: 4px solid $govuk-blue;
+          }
+        }
+
       }
+
+    }
+
+
+  }
+}
+
+.mobile-nav {
+  display: none;
+
+  @include media(tablet) {
+    // Don't want nav toggle to override this, as you could expand at smaller
+    // viewport, resize and end up with double navigation elements
+    display: none !important;
+  }
+
+  background-color: darken($grey-4, 3%);
+}
+
+.mobile-nav a {
+  // @include box-sizing(border-box);
+  display: block;
+  color: $govuk-blue;
+  text-decoration: none;
+  height: 35px;
+  line-height: 35px;
+  border-left: 4px solid transparent;
+  padding-left: $gutter-half;
+  
+
+  &.is-active {
+    border-left: 4px solid $govuk-blue;
+  }
+}
+
+.mobile-nav__list {
+  // padding: 10px 0;
+}
+
+.mobile-nav__leaf {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.25;
+
+  &.current-page a {
+    border-left: 4px solid $govuk-blue;
+  }
+}
+
+.mobile-nav__section {
+  font-weight: 700;
+  font-size: 19px;
+  // margin-bottom: 15px;
+  display: block;
+  border-top: 1px solid transparent;
+
+  ul {
+    border-bottom: 1px solid transparent;
+  }
+
+  a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  ul li a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+.mobile-nav__section:last-child {
+  margin-bottom: 0;
+}
+
+.mobile-nav__section--is-open {
+  
+  border-top: 1px solid white;
+
+  ul {
+    background-color: $grey-4;
+    border-top: 1px solid $grey-3;
+    border-bottom: 1px solid $grey-3;
+    padding: 10px 0;
+
+    & ul {
+      border-top: 0px;
+      border-bottom: 0px;
     }
   }
 }
 
+.mobile-nav__theme {
+  margin-bottom: 20px;
+}
+
+.mobile-nav__theme-header {
+  margin: 10px 15px 10px 19px;
+  text-transform: uppercase;
+  color: $secondary-text-colour;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+
+  + ul {
+    padding-top: 0;
+  }
+}
+
+.mobile-nav__section ul {
+  display: none;
+}
+
+.mobile-nav__section--is-open ul {
+  display: block;
+}
+
+@include media(tablet) {
+  .mobile-nav__theme, .mobile-nav__leaf {
+    display: none;
+  }
+
+  .mobile-nav__section {
+    margin-bottom: 0;
+  }
+}
 
 // Styles for Index page
 

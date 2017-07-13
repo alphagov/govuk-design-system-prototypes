@@ -183,7 +183,8 @@
 
       // Allow space header on mobile
       .technical-documentation {
-        $offset: 20px + $gutter-half + 10px + 1px;
+        // $offset: 20px + $gutter-half + 10px + 1px;
+        $offset: $gutter-half;
 
         h1, h2, h3, h4, h5, h6 {
           // Line height + padding + border of .toc-show

@@ -13,7 +13,7 @@ patterns_in_section = sitemap.resources
   }.sort_by { |r| r.data.title }
 
 
-if config[:use_theme_in_nav] && patterns_in_section.any? { |pattern| pattern.data.theme }
+if patterns_in_section.any? { |pattern| pattern.data.theme }
 %>
 
 <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">

@@ -62,7 +62,12 @@ $active-nav-color: #1d8feb;
 
   .govuk-logo {
     float: left;
-    background-position: 0 2px;
+    background-position: 0 4px;
+    margin-right: 8px;
+
+    @include media(tablet) {
+      margin-right: 5px;
+    }
   }
   
   @include screen {
@@ -75,6 +80,7 @@ $active-nav-color: #1d8feb;
       
       .govuk-logo {
         float: none;
+        background-position: 0 2px;
       }
       
       a:hover {
@@ -92,16 +98,17 @@ $active-nav-color: #1d8feb;
 }
 
 .header__title {
-  @include core-24;
+  font-size: 20px;
   display: block;
-  float: left;
-  clear: left;
+  padding-top: 12px;
   
   @include media(tablet) {
+    @include core-24;
     display: inherit;
     float: none;
     clear: none;
-    padding-left: 5px;
+    padding-top: 0px;
+    padding-left: 0px;
   }
 
   .phase-banner {
@@ -161,6 +168,30 @@ $active-nav-color: #1d8feb;
   }
 
   @include print {
+    display: none;
+  }
+}
+
+.mobile-nav-trigger {
+  float: left;
+  width: 25%;
+  padding-left: 15px;
+  @include box-sizing(border-box);
+  height: 35px;
+
+  input.button {
+    padding: 7px 4px 6px 4px !important;
+    box-shadow: 0px 0px 0px;
+    background-color: $black;
+    border: 1px solid white;
+    font-size: 16px;
+  }
+
+  input.button.active {
+    background-color: $govuk-blue;
+  }
+
+  @include media(tablet) {
     display: none;
   }
 }
