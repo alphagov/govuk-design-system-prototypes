@@ -50,7 +50,7 @@ end
 
 set :theme_orders, {
   "About" => [],
-  "Visual styles" => [],
+  "Styles" => [],
   "Components" => ["Global", "Navigation", "Form elements", "Content", "Pages"],
   "Patterns" => ["Form design", "Personal details", "Service design", "Account information"]
 }
