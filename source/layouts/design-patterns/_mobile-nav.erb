@@ -1,70 +1,34 @@
-<%
-pattern_root = "/design-patterns/patterns/" 
-sections = ["About", "Styles", "Components", "Patterns"]
-
-# Filter out backlog patterns
-# Group patterns into sections
-patterns_by_section = sitemap.resources
-  .select { |r| 
-    r.data.section && 
-    r.data.status != "Backlog" &&
-    r.url.start_with?(pattern_root)
-  }
-  .sort_by { |r| r.data.title }
-  .group_by { |r| r.data.section }
-%>
-
 <div class="mobile-nav">
-
   <ul class="mobile-nav__list">
-      
-    <% sections.each do |section|
-      if patterns_by_section[section].any? { |pattern| pattern.data.theme }
-        patterns_by_theme = patterns_by_section[section].group_by { |r| r.data.theme || "Other" }
-        first_theme = config[:theme_orders][section].first
-        first_pattern = patterns_by_theme[first_theme].first
-        themes = config[:theme_orders][section]
-    %>
-      <li id="<%= section.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>" class="mobile-nav__section<% if current_page.data.section == section %> mobile-nav__section--is-open<% end %>">
-        <a href="#<%= section.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>"><%= section %></a>
+    <li class="mobile-nav__section">
+      <a href="/design-patterns/patterns">About</a>
+    </li>
+    <% sections.each do |section_slug, section_title| %>
+      <li id="<%= section_slug %>" class="mobile-nav__section<% if current_section == section_slug %> mobile-nav__section--is-open<% end %>">
+        <a href="#<%= section_slug %>"><%= section_title %></a>
         <ul>
-          <% themes.each do |theme| %>
-          <li class="mobile-nav__theme">
-            <% if theme != "Other" %>
-            <div class="mobile-nav__theme-header"><%= theme %></div>
-            <% end %>
-            <ul>
-              <% patterns_by_theme[theme].sort_by{|pattern| pattern.data.title}.each do |pattern|
-                classes = ['mobile-nav__leaf']
-                classes << "status-#{pattern.data.status.downcase.tr(" ", "-")}" if pattern.data.has_key? 'status'
-                classes << 'current-page' if current_page.path == pattern.path
-                %>
-                <li<% if classes.any? %> class="<%= classes.join(" ") %>"<% end %>><%= link_to pattern.data.title, pattern.url %></li>
-              <% end %>
-            </ul>
-          </li>
-      <% end %>
-        </ul>
-      </li>
-    <% else
-      patterns_in_section = patterns_by_section[section]
-      first_pattern = patterns_in_section.first
-    %>
-      <li id="<%= section.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>" class="mobile-nav__section<% if current_page.data.section == section %> mobile-nav__section--is-open<% end %>">
-        <a href="#<%= section.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>"><%= section %></a>
-        <ul>
-        <% patterns_in_section.each do |pattern|
-          classes = ['mobile-nav__leaf']
-          classes << "status-#{pattern.data.status.downcase.tr(" ", "-")}" if pattern.data.has_key? 'status'
-          classes << 'current-page' if current_page.path == pattern.path
-        %>
-          <li<% if classes.any? %> class="<%= classes.join(" ") %>"<% end %>><%= link_to pattern.data.title, pattern.url %></li>
+        <% if section_uses_themes?(section_slug) %>
+          <% themes_for_section(section_slug).each do |theme_slug, theme_title| %>
+            <li class="mobile-nav__theme">
+              <div class="mobile-nav__theme-header"><%= theme_title %></div>
+              <ul>
+                <% patterns_in_theme(section_slug, theme_slug).each do |pattern| %>
+                  <li class="mobile-nav__leaf<%= current_page.path == pattern.path ? ' current-page' : '' %>">
+                    <%= link_to pattern.data.title, pattern.url %>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+          <% end %>
+        <% else %>
+          <% patterns_in_section(section_slug).each do |pattern| %>
+            <li class="mobile-nav__leaf<%= current_page.path == pattern.path ? ' current-page' : '' %>">
+              <%= link_to pattern.data.title, pattern.url %>
+            </li>
+          <% end %>
         <% end %>
         </ul>
       </li>
-    <% end %>
-
-
     <% end %>
   </ul>
 </div>

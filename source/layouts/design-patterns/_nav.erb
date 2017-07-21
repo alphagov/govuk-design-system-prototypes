@@ -1,43 +1,16 @@
-<% 
-pattern_root = "/design-patterns/"
-
-
-# Group patterns into sections
-patterns_in_section = sitemap.resources
-  .select { |r| 
-    r.data.section && 
-    r.data.section == current_page.data.section &&
-    r.url.start_with?(pattern_root) &&
-    r.data.status != "Backlog" &&
-    (r.data.department == "All" || r.data.department.nil?)
-  }.sort_by { |r| r.data.title }
-
-
-if patterns_in_section.any? { |pattern| pattern.data.theme }
-%>
-
 <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
 
   <ul class="pattern-nav">
   <%
-    patterns_by_theme = patterns_in_section.group_by { |r| r.data.theme || "Other"}
-    themes = config[:theme_orders][current_page.data.section]
-    themes.each do |theme|
+    if section_uses_themes?(current_section)
+      themes_for_section(current_section).each do |theme_slug, theme_title|
   %>
-
-      <ul class="section">
-        <% if theme != "Other" %>
-        <li class="theme-heading"><%= theme %></li>
-        <% end %>
-        <% patterns_by_theme[theme].sort_by{|pattern| pattern.data.title}.each do |pattern|
-          classes = []
-          classes << "status-#{pattern.data.status.downcase.tr(" ", "-")}" if pattern.data.has_key? 'status'
-          classes << 'current-page' if current_page.path == pattern.path
-          %>
-          <li<% if classes.any? %> class="<%= classes.join(" ") %>"<% end %>><%= link_to pattern.data.title, pattern.url %></li>
-        <% end %>
-      </ul>
-
+    <ul class="section">
+      <li class="theme-heading"><%= theme_title %></li>
+      <% patterns_in_theme(current_section, theme_slug).each do |pattern| %>
+      <li<% if current_page.path == pattern.path %> class="current-page"<% end %>><%= link_to pattern.data.title, pattern.url %></li>
+      <% end %>
+    </ul>
   <% end %>
   <ul>
 
@@ -48,12 +21,8 @@ if patterns_in_section.any? { |pattern| pattern.data.theme }
 <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading">
 
   <ul class="pattern-nav">
-    <% patterns_in_section.each do |pattern|
-      classes = []
-      classes << "status-#{pattern.data.status.downcase.tr(" ", "-")}" if pattern.data.has_key? 'status'
-      classes << 'current-page' if current_page.path == pattern.path
-    %>
-      <li<% if classes.any? %> class="<%= classes.join(" ") %>"<% end %>><%= link_to pattern.data.title, pattern.url %></li>
+    <% patterns_in_section(current_section).each do |pattern| %>
+      <li<% if current_page.path == pattern.path %> class="current-page"<% end %>><%= link_to pattern.data.title, pattern.url %></li>
     <% end %>
   <ul>
 

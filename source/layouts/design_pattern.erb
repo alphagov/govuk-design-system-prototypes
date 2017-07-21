@@ -22,13 +22,12 @@
 
 <% wrap_layout :docs do %>
   <div class="pattern-header">
-    <% if current_page.data.theme? %>
-      <p class="section-heading"><%= current_page.data.theme %></p>
-
+    <% if section_uses_themes?(current_section) %>
+      <p class="section-heading"><%= theme_for_current_pattern %></p>
     <% else %>
-      <p class="section-heading"><%= current_page.data.section %></p>
+      <p class="section-heading"><%= current_section %></p>
     <% end %>
-    <h1><%= current_page.data.title %><a href="/design-patterns/patterns/overview/pattern_status/#<%= current_page.data.status.downcase %>"><span class="status"><%= current_page.data.status %></span></a></h1>
+    <h1><%= current_page.data.title %><% if current_page.data.status %><a href="/design-patterns/patterns/overview/pattern_status/#<%= current_page.data.status.downcase %>"><span class="status"><%= current_page.data.status %></span></a><% end %></h1>
     
     <% if current_page.data.aliases? %>  
     <p class="aka"><span>Also known as:</span> <%= current_page.data.aliases %></p>
