@@ -4,7 +4,7 @@
       <a href="/design-patterns/patterns">About</a>
     </li>
     <% sections.each do |section_slug, section_title| %>
-      <li id="<%= section_slug %>" class="mobile-nav__section<% if current_section == section_slug %> mobile-nav__section--is-open<% end %>">
+      <li id="<%= section_slug %>" class="mobile-nav__section js-mobile-nav-section<% if current_section == section_slug %> mobile-nav__section--is-open<% end %>">
         <a href="#<%= section_slug %>"><%= section_title %></a>
         <ul>
         <% if section_uses_themes?(section_slug) %>

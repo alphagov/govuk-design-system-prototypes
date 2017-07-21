@@ -24,13 +24,13 @@ $(function () {
     })
   });
 
-  $subNavToggles = $('.mobile-nav__section > a');
+  $subNavToggles = $('.js-mobile-nav-section > a');
   $subNavToggles.on('click', function (event) {
     // event.preventDefault();
-    $thisSection = $(this).parents('.mobile-nav__section');
+    $thisSection = $(this).parents('.js-mobile-nav-section');
 
     $thisSection.toggleClass('mobile-nav__section--is-open');
-    $('.mobile-nav__section').not($thisSection).removeClass('mobile-nav__section--is-open');
+    $('.js-mobile-nav-section').not($thisSection).removeClass('mobile-nav__section--is-open');
 
     return false;
   })
