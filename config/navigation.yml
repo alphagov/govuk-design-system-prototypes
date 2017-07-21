@@ -1,12 +1,12 @@
 Styles:
 Components:
-  - Global
-  - Navigation
-  - Form elements
-  - Content
-  - Pages
+  # - Global
+  # - Navigation
+  # - Form elements
+  # - Page content
 Patterns:
-  - Form design
-  - Personal details
-  - Service design
-  - Account information
+  # - Form design
+  # - Personal details
+  # - Service design
+  # - Account information
+  # - Pages
