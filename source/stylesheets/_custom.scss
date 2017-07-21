@@ -1356,3 +1356,20 @@ span.experimental {
     color: $secondary-text-colour !important;
   }
 }
+
+
+// Full width home page
+
+.column-constrained {
+  padding: 0 $gutter-half;
+  @media (min-width: 1200px ) {
+    padding: 0 10%;
+  }
+  @media (min-width: 1367px ) {
+    padding: 0 20%;
+  }
+}
+
+section {
+  padding-bottom: $gutter;
+}

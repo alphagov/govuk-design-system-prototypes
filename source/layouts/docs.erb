@@ -33,6 +33,7 @@
 
       <%= yield_content :mobile_nav %>
 
+
       <div style="clear:left;" class="app-pane__body"<%= " data-module=\"#{yield_content(:toc_module)}\"" if content_for? :toc_module %>>
         <% if content_for? :sidebar %>
         <div class="app-pane__toc">
@@ -45,6 +46,10 @@
         <% end %>
 
         <div class="app-pane__content toc-open-disabled">
+                
+        <%= yield_content :masthead %>    
+      
+
           <main id="content" class="technical-documentation markdown" data-module="anchored-headings">
             <%= yield %>
           </main>

@@ -12,5 +12,26 @@
  */
 
 .masthead {
-  background-color: $govuk-blue;
+	background-color: $govuk-blue;
+	padding: $gutter;
+	color: white;
+
+	@include media(mobile) {
+	  padding: $gutter-half;
+	}
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  .hero__title {
+  	display: block;
+  	max-width: 13em;
+  }
+  .hero__description {
+  	margin-bottom: 10px;
+  }
+  ul {
+  	margin-bottom: 0;
+  }
 }

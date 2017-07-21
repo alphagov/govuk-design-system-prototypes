@@ -8,7 +8,9 @@
   <%= partial 'layouts/design-patterns/header_links' %> 
 <% end %>
 
-
+<% content_for :masthead do %>
+  <%= partial 'layouts/design-patterns/masthead' %> 
+<% end %>
 
 <% content_for :subnav do %>
   <%= partial 'layouts/design-patterns/sub-nav' %>
