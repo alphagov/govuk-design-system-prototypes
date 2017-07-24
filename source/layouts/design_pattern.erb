@@ -37,7 +37,9 @@
 
 
 
-  <div class="grid-row">
+  <%= yield %>
+
+    <div class="grid-row">
     <div class="column-two-thirds">
       <div class="govuk-metadata">
         <dl>
@@ -53,8 +55,6 @@
       </div>
     </div>
   </div>
-
-  <%= yield %>
 
   <% if current_page.data.has_key? 'discuss' %>
 
