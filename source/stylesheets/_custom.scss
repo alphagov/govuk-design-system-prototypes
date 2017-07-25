@@ -1429,6 +1429,9 @@ section {
 .footer__navigation--column {
   flex: 1;
   max-width: 25%;
+  @include media(mobile) {
+      max-width: 100%;
+  }
 }
 
 // Move meta data and add margin
