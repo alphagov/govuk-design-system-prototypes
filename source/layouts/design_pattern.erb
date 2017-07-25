@@ -36,15 +36,23 @@
   </div>
 
 
+<div class="grid-row">
+    <div class="column-two-thirds">
+      <div class="govuk-metadata govuk-metadata-top">
+        <dl>
+          <dt>Last reviewed:</dt>
+          <dd><% if current_page.data.date %> <%= current_page.data.date %> <% else %>30 March 2017<% end %></dd>
+      </div>
+    </div>
+  </div>
+
 
   <%= yield %>
 
     <div class="grid-row">
     <div class="column-two-thirds">
-      <div class="govuk-metadata">
+      <div class="govuk-metadata govuk-metadata-bottom">
         <dl>
-          <dt>Last reviewed:</dt>
-          <dd><% if current_page.data.date %> <%= current_page.data.date %> <% else %>30 March 2017<% end %></dd>
         <% if current_page.file_descriptor&.normalized_relative_path %>
           <dt>Edit this page on:</dt>
           <dd><a href="https://github.com/alphagov/govuk_design_prototypes/edit/master/source/<%= current_page.file_descriptor.normalized_relative_path %>">GitHub</a></dd>
