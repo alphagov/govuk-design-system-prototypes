@@ -1443,3 +1443,34 @@ section {
 .govuk-metadata-bottom {
   margin-top: $gutter*2;
 }
+
+.callout {
+  padding: $gutter;
+  background-color: $govuk-blue;
+  color: white;
+  margin-top: $gutter;
+
+  h2 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .govuk-metadata-bottom {
+    margin-top: $gutter*2;
+    margin-bottom: 0;
+  }
+
+  ul {
+    margin-bottom: $gutter;
+  }
+
+  a {
+    color: white;
+    &:hover {
+      color: lighten($light-blue, 20%);
+    }
+  }
+}
+
+#content {
+  padding-bottom: 0;
+}

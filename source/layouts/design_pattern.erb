@@ -49,7 +49,7 @@
 
   <%= yield %>
 
-    <div class="grid-row">
+<!--     <div class="grid-row">
     <div class="column-two-thirds">
       <div class="govuk-metadata govuk-metadata-bottom">
         <dl>
@@ -62,9 +62,33 @@
         </dl>
       </div>
     </div>
+  </div> -->
+
+  <div class="callout">
+    <h2 class="heading-large">Get in touch</h2>
+    <p>If you’ve got a question, idea or suggestion:</p>
+    <ul class="list list-bullet">
+      <li>share it on <a href="#">Design System Slack channel</a></li>
+      <li><a href="#">email the Design System team</a></li>
+      <li>raise an issue on <a href="#">Github</a></li>
+    </ul>
+
+    You can also suggest changes to <%= current_page.data.title.downcase %> by creating a <a href="">pull request on GitHub</a>.
+
+<!--       <div class="govuk-metadata govuk-metadata-bottom">
+        <dl>
+        <% if current_page.file_descriptor&.normalized_relative_path %>
+          <dt>Edit this page on:</dt>
+          <dd><a href="https://github.com/alphagov/govuk_design_prototypes/edit/master/source/<%= current_page.file_descriptor.normalized_relative_path %>">GitHub</a></dd>
+          <dt>View history on:</dt>
+          <dd><a href="https://github.com/alphagov/govuk_design_prototypes/commits/master/source/<%= current_page.file_descriptor.normalized_relative_path %>">GitHub</a> (<a href="https://github.com/alphagov/govuk_design_prototypes/commits/master/source/<%= current_page.file_descriptor.normalized_relative_path %>.atom">feed</a>)</dd>
+        <% end %>
+        </dl>
+      </div> -->
+
   </div>
 
-  <% if current_page.data.has_key? 'discuss' %>
+<!--   <% if current_page.data.has_key? 'discuss' %>
 
   <hr />
 
@@ -72,6 +96,6 @@
     <a href="https://paper.dropbox.com/doc/GOV.UK-Design-Patterns-Wiki-hkou7bpzKya8Dadv24V1z">Discuss ‘<%= current_page.data.title %>’ on Dropbox Paper</a>
 
     
-  <% end %>
+  <% end %> -->
 
 <% end %>
