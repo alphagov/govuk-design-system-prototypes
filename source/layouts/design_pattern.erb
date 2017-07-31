@@ -68,12 +68,12 @@
     <h2 class="heading-large">Get in touch</h2>
     <p>If you’ve got a question, idea or suggestion:</p>
     <ul class="list list-bullet">
-      <li>share it on <a href="#">Design System Slack channel</a></li>
+      <li>share it in <%= link_to '#govuk-design-system', slack_link %> on cross-government Slack (<%= link_to 'open in app', slack_app_link %>)</li>
       <li><a href="#">email the Design System team</a></li>
-      <li>raise an issue on <a href="#">Github</a></li>
+      <li><%= link_to 'raise an issue on GitHub', issues_link(current_page.data.title) %></li>
     </ul>
 
-    You can also suggest changes to <%= current_page.data.title.downcase %> by creating a <a href="">pull request on GitHub</a>.
+    You can also suggest changes by <%= link_to 'editing this page', edit_link %> and creating a pull request on GitHub</a>.
 
 <!--       <div class="govuk-metadata govuk-metadata-bottom">
         <dl>
