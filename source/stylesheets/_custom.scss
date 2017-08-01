@@ -1,5 +1,8 @@
 // CUSTOM STYLES
 
+ul {
+  max-width: 34em;
+}
 
 // Stats
 
@@ -1349,8 +1352,8 @@ span.experimental {
 }
 
 .aka {
-  font-size: 16px;
-  margin-top: -20px !important;
+  // font-size: 16px;
+  // margin-top: -20px !important;
   margin-bottom: $gutter-half !important;
   color: $black;
 
@@ -1391,6 +1394,11 @@ section {
 }
 
 // Extra Footer styles
+
+.footer {
+  margin-top: 5px;
+}
+
 .footer-container {
   flex-flow: wrap;
 
@@ -1450,9 +1458,18 @@ section {
   color: white;
   margin-top: $gutter;
 
+  @include media(mobile) {
+      padding: $gutter-half;
+  }
+
   h2 {
     margin-top: 0;
     padding-top: 0;
+    &.heading-medium {
+      @include media(mobile) {
+        padding-top: $gutter-half;
+      }
+    }
   }
   .govuk-metadata-bottom {
     margin-top: $gutter*2;
@@ -1479,4 +1496,44 @@ section {
 // Shift section heading up
 .markdown .section-heading {
   margin-top: 5px;
+}
+
+// Related content panel
+.related-content {
+  font-size: 16px;
+  margin-top: $gutter;
+  border-top: 10px solid $govuk-blue;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  ul {
+    // font-size: 16px;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+}
+
+.related-content-grid-item {
+  @include media(tablet) {
+      width: 100%;
+  }
+  @include media(desktop) {
+      width: 25%;
+  }
+
+}
+
+dl.meta-data-bottom {
+  margin-top: $gutter;
+  font-size: 16px;
+  dt {
+    font-weight: 700;
+    margin-top: $gutter-half;
+  }
+  dt + dd {
+    display: inline;
+  }
 }

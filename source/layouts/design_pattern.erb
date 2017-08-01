@@ -21,81 +21,93 @@
 <% end %>
 
 <% wrap_layout :docs do %>
-  <div class="pattern-header">
-    <% if section_uses_themes?(current_section) %>
-      <p class="section-heading"><%= theme_for_current_pattern %></p>
-    <% else %>
-      <p class="section-heading"><%= current_section %></p>
-    <% end %>
-    <h1><%= current_page.data.title %><% if current_page.data.status %><a href="/design-patterns/patterns/overview/pattern_status/#<%= current_page.data.status.downcase %>"><span class="status"><%= current_page.data.status %></span></a><% end %></h1>
-    
-    <% if current_page.data.aliases? %>  
-    <p class="aka"><span>Also known as:</span> <%= current_page.data.aliases %></p>
-    <% end %>
-
-  </div>
-
+   
 
 <div class="grid-row">
-    <div class="column-two-thirds">
-      <div class="govuk-metadata govuk-metadata-top">
-        <dl>
-          <dt>Last reviewed:</dt>
-          <dd><% if current_page.data.date %> <%= current_page.data.date %> <% else %>30 March 2017<% end %></dd>
+  <div class="column-full">
+
+        <div class="pattern-header">
+        <% if section_uses_themes?(current_section) %>
+          <p class="section-heading"><%= theme_for_current_pattern %></p>
+        <% else %>
+          <p class="section-heading"><%= current_section %></p>
+        <% end %>
+        <h1><%= current_page.data.title %><% if current_page.data.status %><a href="/design-patterns/patterns/overview/pattern_status/#<%= current_page.data.status.downcase %>"><span class="status"><%= current_page.data.status %></span></a><% end %></h1>
+
       </div>
-    </div>
-  </div>
-
-
-  <%= yield %>
 
 <!--     <div class="grid-row">
-    <div class="column-two-thirds">
-      <div class="govuk-metadata govuk-metadata-bottom">
-        <dl>
-        <% if current_page.file_descriptor&.normalized_relative_path %>
-          <dt>Edit this page on:</dt>
-          <dd><a href="https://github.com/alphagov/govuk_design_prototypes/edit/master/source/<%= current_page.file_descriptor.normalized_relative_path %>">GitHub</a></dd>
-          <dt>View history on:</dt>
-          <dd><a href="https://github.com/alphagov/govuk_design_prototypes/commits/master/source/<%= current_page.file_descriptor.normalized_relative_path %>">GitHub</a> (<a href="https://github.com/alphagov/govuk_design_prototypes/commits/master/source/<%= current_page.file_descriptor.normalized_relative_path %>.atom">feed</a>)</dd>
-        <% end %>
-        </dl>
+        <div class="column-two-thirds">
+          
+          <div class="govuk-metadata govuk-metadata-top">
+            <dl>
+              <dt>Last reviewed:</dt>
+              <dd><% if current_page.data.date %> <%= current_page.data.date %> <% else %>30 March 2017<% end %></dd>
+          </div>
+
+        </div>
+
+    </div> -->
+
+
+    <%= yield %>
+
+
+
+    <div class="related-content">
+
+      <div class="grid-row">
+        <div class="column-one-quarter related-content-grid-item">
+              <h2>Related patterns</h2>
+              <ul class="list">
+                <li><a href="">{{pattern}}</a></li>
+                <li><a href="">{{pattern}}</a></li>
+              </ul>
+        </div>
+        <div class="column-one-quarter related-content-grid-item">
+              <h2>Similar components</h2>
+              <ul class="list">
+                <li><a href="">{{component}}</a></li>
+              </ul>    
+        </div>
+        <div class="column-one-quarter related-content-grid-item">
+              <h2>Resources</h2>
+              <ul class="list">
+                <li><a href="">{{Component repository}}</a></li>
+                <li><a href="">{{Edit this page}}</a></li>
+                <li><a href="">{{Current Issues}}</a></li>
+                <li><a href="">{{History of this page}}</a></li>
+              </ul>
+        </div>
+        <div class="column-one-quarter related-content-grid-item">
+
+
+              <dl class="meta-data-bottom">
+                <% if current_page.data.aliases? %>  
+                <dt>Also known as:</dt>
+                <dd><%= current_page.data.aliases %></dd>
+                <% end %>
+                <dt>Last reviewed:</dt>
+                <dd><% if current_page.data.date %> <%= current_page.data.date %> <% else %>30 March 2017<% end %></dd>
+                
+              </dl>   
+        </div>
       </div>
+    
     </div>
-  </div> -->
 
-  <div class="callout">
-    <h2 class="heading-large">Get in touch</h2>
-    <p>If you’ve got a question, idea or suggestion:</p>
-    <ul class="list list-bullet">
-      <li>share it in <%= link_to '#govuk-design-system', slack_link %> on cross-government Slack (<%= link_to 'open in app', slack_app_link %>)</li>
-      <li><a href="#">email the Design System team</a></li>
-      <li><%= link_to 'raise an issue on GitHub', issues_link(current_page.data.title) %></li>
-    </ul>
+    <div class="callout">
+        <h2 class="heading-medium">Get in touch</h2>
+        <p>If you’ve got a question, idea or suggestion share it in <%= link_to '#govuk-design-system', slack_link %> on cross-government Slack (<%= link_to 'open in app', slack_app_link %>) or <a href="#">email the Design System team</a></p>
+    </div> 
 
-    You can also suggest changes by <%= link_to 'editing this page', edit_link %> and creating a pull request on GitHub</a>.
 
-<!--       <div class="govuk-metadata govuk-metadata-bottom">
-        <dl>
-        <% if current_page.file_descriptor&.normalized_relative_path %>
-          <dt>Edit this page on:</dt>
-          <dd><a href="https://github.com/alphagov/govuk_design_prototypes/edit/master/source/<%= current_page.file_descriptor.normalized_relative_path %>">GitHub</a></dd>
-          <dt>View history on:</dt>
-          <dd><a href="https://github.com/alphagov/govuk_design_prototypes/commits/master/source/<%= current_page.file_descriptor.normalized_relative_path %>">GitHub</a> (<a href="https://github.com/alphagov/govuk_design_prototypes/commits/master/source/<%= current_page.file_descriptor.normalized_relative_path %>.atom">feed</a>)</dd>
-        <% end %>
-        </dl>
-      </div> -->
+
 
   </div>
 
-<!--   <% if current_page.data.has_key? 'discuss' %>
 
-  <hr />
+</div>    
 
-  
-    <a href="https://paper.dropbox.com/doc/GOV.UK-Design-Patterns-Wiki-hkou7bpzKya8Dadv24V1z">Discuss ‘<%= current_page.data.title %>’ on Dropbox Paper</a>
-
-    
-  <% end %> -->
 
 <% end %>
