@@ -5,8 +5,7 @@ Components:
   # - Form elements
   # - Page content
 Patterns:
-  # - Form design
-  # - Personal details
-  # - Service design
-  # - Account information
-  # - Pages
+  - Ask for
+  - How to
+  - When to
+  - Templates
