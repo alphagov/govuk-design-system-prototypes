@@ -9,11 +9,11 @@ On the most part, if you are using the <a href="">GOV.UK Prototype Kit</a> or ha
 
 Some larger components, such as <a href="#">Autocomplete</a> may have their own GitHub repository which will need to be included in your build separately.
 
-##Rules for services
+##Services on GOV.UK
 
 If you are creating a service that will be hosted on a <strong>service.gov.uk</strong> domain you should use the appropriate <a href="#">patterns</a> and <a href="#">components</a>. It’s ok to adapt these components for specific use cases discovered through user research.
 
 
-##Using GOV.UK components elsewhere
+##If your service isn’t on GOV.UK
 
 The code and guidance found in <a href="#">patterns</a> and <a href="#">components</a> should be considered best practice, with the appropriate adjustments made to fit with the needs of your users and style of your organisation.
