@@ -3,6 +3,7 @@
 set -e
 
 echo "Building documentation..."
+npm install
 bundle exec middleman build
 
 echo "Setting target organisation and space..."

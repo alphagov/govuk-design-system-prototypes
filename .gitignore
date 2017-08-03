@@ -18,3 +18,5 @@
 .DS_Store
 
 Staticfile.auth
+
+/node_modules

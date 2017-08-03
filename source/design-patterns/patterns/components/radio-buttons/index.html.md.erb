@@ -69,34 +69,7 @@ option. If you need to do this, you should use
 
 When there are more than two options, radio buttons should be stacked, like so:
 
-<% partial "/layouts/example" do %>
-<h1 class="heading-medium">What type of phone do you have access to?</h1>
-
-<form>
-  <div class="form-group">
-    <fieldset>
-
-      <legend class="visually-hidden">What type of phone do you have access to?</legend>
-
-      <p class="form-block">This will be used to send your security code</p>
-
-      <div class="multiple-choice">
-        <input id="radio-1" type="radio" name="radio-group" value="Mobile phone">
-        <label for="radio-1">Mobile phone</label>
-      </div>
-      <div class="multiple-choice">
-        <input id="radio-2" type="radio" name="radio-group" value="Landline phone">
-        <label for="radio-2">Landline phone</label>
-      </div>
-      <div class="multiple-choice">
-        <input id="radio-3" type="radio" name="radio-group" value="I don’t have access to a phone">
-        <label for="radio-3">I don’t have access to a phone</label>
-      </div>
-    </fieldset>
-  </div>
-</form><% end %>
-
-
+<%= frontend_example 'radio', 'radio' -%>
 
 ### Inline radio buttons
 

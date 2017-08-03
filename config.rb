@@ -1,4 +1,5 @@
 require 'lib/tech_docs_html_renderer'
+require 'lib/govuk_frontend_extension'
 
 ###
 # Page options, layouts, aliases and proxies
@@ -67,6 +68,8 @@ activate :autoprefixer
 activate :sprockets
 activate :syntax
 
+activate :govuk_frontend_examples
+
 ###
 # Helpers
 ###
@@ -86,3 +89,5 @@ end
 
 config[:design_system] = YAML.load_file('config/design-system.yml')
                          &.with_indifferent_access
+
+sprockets.append_path File.join(root, "node_modules")

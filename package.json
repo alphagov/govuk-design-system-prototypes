@@ -1,0 +1,23 @@
+{
+  "name": "govuk_design_prototypes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GOV.UK Design System Prototype",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alphagov/govuk_design_prototypes.git"
+  },
+  "author": "Government Digital Service developers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alphagov/govuk_design_prototypes/issues"
+  },
+  "homepage": "https://github.com/alphagov/govuk_design_prototypes#readme",
+  "dependencies": {
+    "@govuk-frontend/all": "0.0.10-alpha"
+  }
+}
