@@ -26,6 +26,12 @@
 <div class="grid-row">
   <div class="column-full">
 
+        <% if current_page.data.copy&.downcase != 'done' %>
+          <div class="banner banner__out-of-date">
+            <p><strong>Out of date:</strong> This content has not yet been written using the Design System content guidelines</p>
+          </div>
+        <% end %>
+
         <div class="pattern-header">
         <% if section_uses_themes?(current_section) %>
           <p class="section-heading"><%= theme_for_current_pattern %></p>
@@ -35,20 +41,6 @@
         <h1><%= current_page.data.title %><% if current_page.data.status %><a href="/design-patterns/patterns/overview/pattern_status/#<%= current_page.data.status.downcase %>"><span class="status"><%= current_page.data.status %></span></a><% end %></h1>
 
       </div>
-
-<!--     <div class="grid-row">
-        <div class="column-two-thirds">
-          
-          <div class="govuk-metadata govuk-metadata-top">
-            <dl>
-              <dt>Last reviewed:</dt>
-              <dd><% if current_page.data.date %> <%= current_page.data.date %> <% else %>30 March 2017<% end %></dd>
-          </div>
-
-        </div>
-
-    </div> -->
-
 
     <%= yield %>
 
