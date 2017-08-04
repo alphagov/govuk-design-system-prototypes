@@ -1,5 +1,5 @@
 ---
-title:		Structure forms
+title:		How to structure forms
 section:	Patterns
 theme:		Form design
 status:		Approved
