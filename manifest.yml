@@ -1,4 +1,3 @@
----
 applications:
 - name: govuk-design-system-prototypes
   memory: 64M
