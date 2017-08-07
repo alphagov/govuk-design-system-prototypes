@@ -112,9 +112,9 @@ $(function() {
       var resultData = lunrData['docs'][result.ref];
       var breadcrumb = resultData['section'];
 
-      if (resultData['theme']) {
-        breadcrumb = breadcrumb + " > " + resultData['theme']
-      }
+      // if (resultData['theme']) {
+      //   breadcrumb = breadcrumb + " > " + resultData['theme']
+      // }
 
       var resultItem = $('<li />').append(
         $('<a>', {href: resultData['url']}).text(resultData['title']).append(
