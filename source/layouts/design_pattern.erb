@@ -54,7 +54,7 @@
                 <h2>Related patterns</h2>
                 <ul class="list">
                   <% current_page.data.related.each do |related| %>
-                  <li><a href="/design-patterns/patterns/components/<%= related.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>"><%= related %></a></li>
+                  <li><a href="/design-patterns/patterns/patterns/<%= related.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>"><%= related %></a></li>
                   <% end %>
                 </ul>
           </div>
