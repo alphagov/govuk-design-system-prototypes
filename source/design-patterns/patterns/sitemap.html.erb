@@ -54,9 +54,10 @@ design_patterns = sitemap.resources
 
 	<% end %>
 </div> -->
+
 <div class="column-constrained">
 
-<h1>GOV.UK Design Contents</h1>
+<h1>Site contents</h1>
 
 <br>
 
@@ -75,8 +76,7 @@ design_patterns.each do |res|
 		<td><%= link_to res.data.title, res.url %></td>
 		<td><%= res.data.section %></td>
 		<td><%= res.data.priority %></td>
-		<td><%= res.data.department %></td>
-			
+		<td><%= res.data.department %></td>	
 		<td>
 		<% if res.data.status&.downcase == "backlog" %>
 			<%= res.data.status %>
