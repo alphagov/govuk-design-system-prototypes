@@ -4,7 +4,6 @@ section:	Patterns
 theme:		Form design
 status:		Approved
 department: All
-discuss:	https://designpatterns.hackpad.com/XDwY2wv3lCn
 ---
 
 This guide explains how to structure online forms.
@@ -82,10 +81,6 @@ Asking a question doesn’t necessarily mean you should use one form field. For 
 For page titles you can use either a question or a statement. For example, ‘What is your date of birth?’ or just ‘Date of birth’.
 
 Use questions or statements consistently to help users get into a rhythm of answering. This lets them focus on the content of the questions rather than their presentation.
-
-### Discuss online forms
-
-[Discuss how to structure online forms on the design patterns wiki](https://designpatterns.hackpad.com/Form-structure-XDwY2wv3lCn).
 
 
 ### Further reading
