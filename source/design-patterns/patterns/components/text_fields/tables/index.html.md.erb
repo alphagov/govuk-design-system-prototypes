@@ -9,10 +9,10 @@ department: All
 ##Overview
 When in what ways to display tabular data.
 
-## When to use this pattern
+## When to use this component
 Tables should only be used to present data.
 
-### When NOT to use this pattern
+### When NOT to use this component
 Don’t use tables for cosmetic changes to layout, eg to present a list because you think it looks better that way.
 
 ## How it works
@@ -76,7 +76,7 @@ Use when columns are small enough to fit on a mobile screen
 <% end %>
 
 ### Horizontal scrolling
-In cases where tables are complex and a responsive layout would be confusing for users, a scrollable table pattern can be adopted.
+In cases where tables are complex and a responsive layout would be confusing for users, a scrollable table can be adopted.
 It will keep the table at the desktop size, but will provide a scrolling option on mobile screens to view the intire table.
 
 <% partial "/layouts/example" do %>
@@ -191,8 +191,8 @@ It will keep the table at the desktop size, but will provide a scrolling option 
 </div>
 <% end %>
 
-###Responsive tables
-Use this pattern when there is not enough space on smaller screen to fit traditional table layout. This pattern requires adding data-* attribute to
+### Responsive tables
+Use this variant when there is not enough space on smaller screen to fit traditional table layout. This variant requires adding data-* attribute to
 each row cell that mimics the column header text. On smaller screens this text is then displays before the cell value, making information easier to read.
 
 <% partial "/layouts/example" do %>
@@ -337,5 +337,5 @@ for (var i = 0, row; row = tablebody.rows[i]; i++) {
 ### Responsive tables - Table saw
 [Filament group "paginated tables" Javascript Solution](https://www.filamentgroup.com/lab/tablesaw.html)
 
-## Related work on this pattern
+## Related work on this component
 [Service Manual](https://www.gov.uk/guidance/content-design/tables)
