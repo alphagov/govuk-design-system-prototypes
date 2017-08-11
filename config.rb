@@ -44,7 +44,8 @@ activate :search do |search|
     # Just make these available when presenting search results
     url:     {index: false, store: true},
     section: {index: false, store: true, required: true},
-    theme:   {index: false, store: true}
+    theme:   {index: false, store: true},
+    description: {index: false, store: true}
   }
 end
 
