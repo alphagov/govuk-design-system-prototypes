@@ -1,9 +1,25 @@
 // CUSTOM STYLES
 
+.prototype-banner {
+  display: block;
+  background-color: $pink;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  padding: 5px 3px 3px 2px;
+  line-height: 1;
+  width: 110px;
+  position: absolute;
+  top: 18px;
+  left: -29px;
+  text-align: center;
+  transform: rotate(-45deg);
+}
+
 .markdown ul {
   max-width: 34em;
 }
-
 
 .markdown h1 {
   max-width: 14.5em;
