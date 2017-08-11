@@ -17,10 +17,13 @@ $.ajax({
 
     $(function () {
       var url = new URL(window.location);
-      var q = url.searchParams.get("q");
+      var q = url.searchParams.get("q")
+        .replace('site:https://govuk-design-system-prototypes.cloudapps.digital', '')
+        .trim();
+
       var results = lunrIndex.search(q);
 
-      $('.js-search-query').val(q);
+      $('.js-search-query').val(q + ' site:https://govuk-design-system-prototypes.cloudapps.digital');
 
       var template = $('.js-result-template').html();
       $('.js-result-count').text(results.length);
