@@ -21,11 +21,19 @@
 
   </div>
 
-  <div class="pattern-search pattern-search--in-header">
-    <input type="text" name="pattern-query" id="pattern-search-text" placeholder="Search Design System" autocomplete="off">
-    <ul class="search-results js-search-results">
-    </ul>
-  </div>
+  <% if config[:design_system][:use_google_fallback] %>
+    <div class="pattern-search pattern-search--in-header pattern-search--google-fallback">
+      <form action="/google/results.html" action="get">
+        <input type="text" name="q" class="pattern-search__input" placeholder="Search via Google" autocomplete="off">
+      </form>
+    </div>
+  <% else %>
+    <div class="pattern-search pattern-search--in-header">
+      <input type="text" name="pattern-query" class="pattern-search__input" placeholder="Search Design System" autocomplete="off">
+      <ul class="search-results js-search-results">
+      </ul>
+    </div>
+  <% end %>
  
   <div class="mobile-nav-trigger">
     <input class="button js-mobile-nav-toggle" type="submit" value="Menu">

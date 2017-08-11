@@ -7,6 +7,14 @@ $(function() {
     40: 'down'
   }
 
+  var $searchBox = $('.pattern-search'),
+      $resultsContainer = $('.js-search-results'),
+      $searchInput = $('.pattern-search__input');
+
+  if ($searchBox.hasClass('pattern-search--google-fallback')) {
+    return;
+  }
+
   // Download index data
   $.ajax({
     url: '/search.json',
@@ -17,8 +25,6 @@ $(function() {
       lunrIndex = lunr.Index.load(lunrData.index);
     }
   });
-
-  var $resultsContainer = $('.js-search-results');
 
   function getActiveResultPosition() {
     return $('.active-result', $resultsContainer).index();
@@ -60,19 +66,19 @@ $(function() {
     }
   }
 
-  $('#pattern-search-text').on('focus', function (event) {
+  $searchInput.on('focus', function (event) {
     if ($('li', $resultsContainer).length) {
       $resultsContainer.css('display', 'block');
     }
   });
 
-  $('#pattern-search-text').on('blur', function (event) {
+  $searchInput.on('blur', function (event) {
     setTimeout(function () {
       $resultsContainer.css('display', 'none');
     }, 150);
   });
 
-  $('#pattern-search-text').on('keydown', function (evt) {
+  $searchInput.on('keydown', function (evt) {
     switch (kc[evt.keyCode]) {
       case 'up':
         handleUpArrow(evt)
@@ -98,7 +104,7 @@ $(function() {
     $(this).addClass('active-result');
   })
 
-  $('#pattern-search-text').on('input', function() {
+  $searchInput.on('input', function() {
     if (!lunrIndex) {
       return;
     }

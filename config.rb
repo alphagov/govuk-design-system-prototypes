@@ -84,5 +84,5 @@ end
 # Tech Docs-specific configuration
 ###
 
-config[:tech_docs] = YAML.load_file('config/tech-docs.yml')
-                         .with_indifferent_access
+config[:design_system] = YAML.load_file('config/design-system.yml')
+                         &.with_indifferent_access
