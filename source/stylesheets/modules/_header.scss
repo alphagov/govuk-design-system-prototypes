@@ -101,7 +101,7 @@ $active-nav-color: #1d8feb;
   font-size: 20px;
   display: block;
   padding-top: 12px;
-  
+
   @include media(tablet) {
     @include core-24;
     display: inherit;
