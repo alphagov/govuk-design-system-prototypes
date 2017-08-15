@@ -1557,3 +1557,19 @@ dl.meta-data-bottom {
 .phase-banner {
   padding: $gutter-half;
 }
+
+.m0-m {
+  @include media(mobile) {
+    margin: 0px !important;
+  }
+}
+
+.mt_20 {
+  margin-top: 20px !important;
+}
+
+.mtb_20-m {
+  @include media(mobile) {
+    margin: 20px 0 !important;
+  }
+}
