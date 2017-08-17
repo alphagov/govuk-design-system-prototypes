@@ -1498,7 +1498,7 @@ section {
 .related-content {
   font-size: 16px;
   margin-top: $gutter;
-  border-top: 10px solid $govuk-blue;
+  border-top: 1px solid $border-colour;
 
   h2 {
     margin-top: 0;
@@ -1549,13 +1549,45 @@ dl.meta-data-bottom {
   }
 }
 
-.banner__out-of-date {
-  background-color: lighten($govuk-blue, 60%);
-  border: 1px solid lighten($govuk-blue, 40%);
+.banner__out-of-date,
+.panel__quick-links {
+  background-color: lighten($govuk-blue, 65%);
+  border: 1px solid $govuk-blue;
 }
 
 .phase-banner {
   padding: $gutter-half;
+}
+
+.panel__quick-links {
+  margin-top: $gutter;
+  // background-color: $grey-4;
+  // border: 1px solid $border-colour;
+  padding: $gutter;
+  max-width: 34em;
+
+  .panel {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-top: 20px;
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 .m0-m {
