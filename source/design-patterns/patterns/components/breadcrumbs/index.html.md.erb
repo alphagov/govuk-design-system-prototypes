@@ -77,13 +77,19 @@ Your breadcrumb should include the user’s current page, however it should be v
   </ol></div><% end %>
 
 
-### Mobile varient example <span class="experimental">Experimental</span>
+### Mobile varient example
+
+<div class="panel panel-border-wide panel-experimental">
+<h3><span class="experimental">Experimental</span></h3>
+<p>This mobile varient is experimental. It is currently in use within an A/B test on GOV.UK. Feel free to use it in your service and <%= link_to 'let us know what you find', issues_link(current_page.data.title) %></p>
+</div>
 
 When displayed on a small screen device the visual relationship between pages in the breadcrumb are lost due to content wrapping over multiple lines. It also pushes the main content further down the page.
 
 This component has a CSS modifier `breadcrumbs--collapse` which collapses the breadcrumb into a single link, similar to the [back button](/design-patterns/patterns/components/back_button/). 
 
 This reveals the parent of the current page so the user can travel up through the hierarchy of the site or section one level at a time.
+
 
 
 
@@ -125,6 +131,4 @@ Many iterations of this component have been tested across Gov.uk. Some observati
 - People used them to go back one step, hence often compared to a back button - allowing to navigate in a smaller section of the website
  - When the breadcrumbs were tested without the “Current page” users were observed jumping back two levels
 - Some people didn’t interact with them because they didn’t notice them and generally prefer to use the browser back button
-
-Very little research has been done on the mobile presentation of this component.
 

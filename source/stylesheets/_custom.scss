@@ -1329,20 +1329,29 @@ ol.principles {
   }
 }
 
+.panel-experimental {
+  color: $grey-1;
+  font-size: 16px;
+  margin-bottom: $gutter;
+}
+
+.panel h3 {
+  margin-top: 0 !important;
+  padding-top: 0;
+}
+
 span.experimental {
 
   @include box-sizing(border-box);
-  
   vertical-align: middle;
-  font-size: 10px;
-  padding: 1px 3px;
+  font-size: 16px;
+  padding: 1px 5px;
   font-weight: bold;
   color: $secondary-text-colour;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border: 1px solid $border-colour;
   text-decoration: none;
-  margin-left: 5px;
   color: $govuk-blue;
   border-color: $govuk-blue;
 }
