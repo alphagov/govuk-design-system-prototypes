@@ -5,8 +5,6 @@ Components:
   # - Form elements
   # - Page content
 Patterns:
-  # - Ask for
-  # - How to
-  # - When to
-  # - Templates
-# Guidelines:
+  - Asking for
+  - Helping users
+  - Pages
