@@ -1083,6 +1083,10 @@ p.section-description {
   }
 }
 
+.mobile-nav__leaf--overview {
+
+}
+
 .mobile-nav__section {
   font-weight: 700;
   font-size: 19px;
@@ -1128,6 +1132,10 @@ p.section-description {
 
 .mobile-nav__theme {
   margin-bottom: 20px;
+}
+
+.mobile-nav__leaf + .mobile-nav__theme  {
+  margin-top: 20px;
 }
 
 .mobile-nav__theme-header {
