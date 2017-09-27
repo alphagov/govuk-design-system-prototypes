@@ -98,9 +98,14 @@ $active-nav-color: #1d8feb;
 }
 
 .header__title {
-  font-size: 20px;
+  font-size: 17px;
   display: block;
-  padding-top: 12px;
+  padding-top: 16px;
+
+  @media screen and (min-width: 360px) {
+    font-size: 20px;
+    padding-top: 12px;
+  }
 
   @include media(tablet) {
     @include core-24;
