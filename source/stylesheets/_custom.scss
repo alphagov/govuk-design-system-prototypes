@@ -983,7 +983,14 @@ p.section-description {
   }
 
   padding: 0px 10px 0px $gutter-half;
-  background-color: darken($grey-4, 3%);
+  // Update $grey-4 to this?
+  background-color: darken($grey-4, 2%);
+  // Marks colour
+  // background-color: rgba(233, 234, 236, 1);
+  // Existing colour - too dark
+  // background-color: $grey-3;
+  // Existing colour - too light
+  // background-color: $grey-4;
 
   ul.sub-nav-list {
     @extend %contain-floats;
@@ -1043,7 +1050,7 @@ p.section-description {
     display: none !important;
   }
 
-  background-color: darken($grey-4, 3%);
+  background-color: darken($grey-4, 2%);
 }
 
 .mobile-nav a {
