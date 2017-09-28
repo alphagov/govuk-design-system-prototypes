@@ -21,6 +21,7 @@ similar:
 
 Let users select a single option from a list by using radio buttons.
 
+<div class="example__wrapper">
 <div class="example">
 
 <h1 class="heading-medium">
@@ -51,6 +52,7 @@ Let users select a single option from a list by using radio buttons.
     </div>  
   </form>
 </div>  
+</div>
 
 
 ## When to use this component
@@ -69,6 +71,7 @@ option. If you need to do this, you should use
 
 When there are more than two options, radio buttons should be stacked, like so:
 
+<div class="example__wrapper">
 <% partial "/layouts/example" do %>
 <h1 class="heading-medium">What type of phone do you have access to?</h1>
 
@@ -95,7 +98,7 @@ When there are more than two options, radio buttons should be stacked, like so:
     </fieldset>
   </div>
 </form><% end %>
-
+</div>
 
 
 ### Inline radio buttons
@@ -103,6 +106,7 @@ When there are more than two options, radio buttons should be stacked, like so:
 If there are only two options, you can either stack them or use inline radio
 buttons, like this:
 
+<div class="example__wrapper">
 <% partial "/layouts/example" do %>
 <h1 class="heading-medium">
   Do you already have a personal user account?
@@ -126,12 +130,13 @@ buttons, like this:
     </fieldset>
   </div>
 </form><% end %>
-
+</div>
 
 ### Splitting options
 
 In some cases it may help to separate one option from the others, like this: 
 
+<div class="example__wrapper">
 <% partial "/layouts/example" do %>
 <h1 class="heading-medium">Where do you live?</h1>
 
@@ -157,6 +162,7 @@ In some cases it may help to separate one option from the others, like this:
     </fieldset>
   </div>
 </form><% end %>
+</div>
 
 In most cases, you won’t need to do this. 
 

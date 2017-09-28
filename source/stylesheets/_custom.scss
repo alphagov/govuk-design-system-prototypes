@@ -349,9 +349,27 @@ ul ul.section {
         }     
     }
 
+    .example__wrapper {
+      width: 100%;
+      height: auto;
+      background-color: $grey-3;
+    }
+
+    .example__wrapper .example {
+
+        @include media(tablet) {
+          height: 100%;
+          width: auto;
+          resize: both;
+          overflow: auto;
+        }
+        
+    }
+
     .example{
         @extend %contain-floats;
         position: relative;
+        background-color: white;
         border: 1px solid $border-colour;
         margin: $gutter 0;
         padding: $gutter*2 $gutter $gutter $gutter;
