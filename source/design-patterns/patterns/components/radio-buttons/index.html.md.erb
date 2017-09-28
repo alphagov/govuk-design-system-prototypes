@@ -21,7 +21,17 @@ similar:
 
 Let users select a single option from a list by using radio buttons.
 
+
+
+
 <div class="example__wrapper">
+<div class="example__tag">
+EXAMPLE 
+<% sections.each do |section_slug, section_title| %>
+<% if current_section == section_slug %>
+<a href="/design-patterns/patterns/<%= section_slug %>/<%= current_page.data.title&.downcase.gsub(/[\s]/,'-') %>/example.html">(open in a new window)</a>
+<% end %>
+<% end %></div>
 <div class="example">
 
 <h1 class="heading-medium">
