@@ -358,11 +358,14 @@ ul ul.section {
 
     .example__wrapper .example {
 
+
         @include media(tablet) {
           height: 100%;
           width: auto;
+          width: calc(100% - 90px);
           resize: both;
           overflow: auto;
+          border-right: 2px solid #ccc;
         }
 
     }
