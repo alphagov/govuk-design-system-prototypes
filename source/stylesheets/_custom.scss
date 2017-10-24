@@ -1664,3 +1664,17 @@ dl.meta-data-bottom {
     margin: 20px 0 !important;
   }
 }
+
+
+// Blog
+
+article.blog__list-item {
+  h2 {
+    margin-bottom: 10px;
+  }
+  p.blog__list-author {
+    font-size: 16px;
+    margin-top: 0;
+  }
+}
+
