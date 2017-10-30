@@ -1614,6 +1614,12 @@ dl.meta-data-bottom {
   border: 1px solid $govuk-blue;
 }
 
+.banner__do-not-use {
+  background-color: lighten($red, 60%);
+  border: 1px solid $red;
+  color: $red;
+}
+
 .phase-banner {
   padding: $gutter-half;
 }
