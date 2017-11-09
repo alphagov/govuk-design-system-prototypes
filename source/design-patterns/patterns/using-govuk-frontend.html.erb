@@ -1,0 +1,82 @@
+---
+
+layout: design_patterns_overview
+productName: Design Patterns
+title:	Using GOV.UK Frontend
+section: About
+
+---
+
+
+<div class="column-constrained">
+
+<h1>Using GOV.UK Frontend</h1>
+
+<p class="lede" style="margin-bottom: 30px;">To get the <a href="#">styles</a> and start using the <a href="#">components</a> documented in the Design System your service will need to be using GOV.UK Frontend.</p>
+
+<p>You can install GOV.UK Frontend in a few different ways:</p>
+<ul>
+ <li>a single package containing all components</li>
+ <li>separate packages containing individual components</li>
+</ul>
+
+ 
+
+<h2>Quick start</h2>
+
+<p class="panel panel-border-wide">This will not work until packages are published to npm.</p>
+
+<p><code>
+npm install --save @govuk-frontend/all
+</code></p>
+
+<p>Include the CSS in the head</p>
+
+<code><link rel="stylesheet" href="node_modules/@govuk-frontend/all/all.min.css"></code>
+
+<p>and JavaScript at the bottom onf the body</p>
+
+<code><script src="node_modules/@govuk-frontend/all/all.min.js"></script></code>
+
+
+
+<h2 style="margin-bottom: 0;">Installation</h2>
+
+<h3>Install all components</h3>
+
+<p><code>
+npm install --save @govuk-frontend/all
+</code></p>
+
+<h3>Install individual components</h3>
+
+Install a button component
+
+<p><code>
+npm install --save @govuk-frontend/button
+</code></p>
+
+<p>All components can be found in the packages directory.
+Each component has a README with installation and usage instructions.</p>
+
+<h2 style="margin-bottom: 0;">Usage</h2>
+
+<h3>HTML</h3>
+
+<p>Copy and paste component HTML from GOV.UK Design System</p>
+
+<h3>SCSS</h3>
+
+<p>In your main.scss file</p>
+
+<pre style="margin-top: 20px; margin-bottom: 20px;"><code>// All components
+@import "@govuk-frontend/all/all";
+
+// Pick and choose components
+@import "@govuk-frontend/button/button";
+@import "@govuk-frontend/input/input"
+</code></pre>
+
+<p>See more on the <a href="https://github.com/alphagov/govuk-frontend">GOV.UK Frontend GitHub</a>
+
+</div>
