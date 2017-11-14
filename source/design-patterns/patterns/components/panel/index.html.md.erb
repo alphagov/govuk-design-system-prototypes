@@ -9,7 +9,7 @@ department: All
 
 ##Overview
 
-Used for transaction end pages, and Bank Holidays
+The Panel component is a visible container used on confirmation or results pages to highlight important content.
 
 <div class="govuk-c-panel govuk-c-panel--confirmation">
   <h2 class="govuk-c-panel__title">
@@ -21,12 +21,21 @@ Used for transaction end pages, and Bank Holidays
 </div>
 
 ## When to use this component
+Use the Panel component to display important information when a transaction has been completed.
+
+In most cases, the Panel component is used on [Confirmation pages](/design-patterns/patterns/patterns/pages/confirmation-pages/), to tell the user they have successfully completed the transaction.
+
+You can also use the Panel component in services that give users instant results, such as confirming the MOT status of a vehicle, to highlight the most important information on the page.
+
+![Panel examples](panel_examples.png)
+
+###When not to use
+
+Don’t use the Panel component to highlight important information within body content. In this instance you should use the ‘Inset text’ component instead.
 
 ## How it works
 
-### Standard example
-
-Your breadcrumb should include the user’s current page, however it should be visually different from the other links within the breadcrumb.
+There are two ways to use the Panel component. You can use HTML or, if you are using [Nunjucks](https://mozilla.github.io/nunjucks/) or the [GOV.UK Prototype Kit](https://govuk-prototype-kit.herokuapp.com/docs), you can use the Panel macro.
 <% partial "/layouts/example-no-code" do %><div class="govuk-c-panel govuk-c-panel--confirmation">
   <h2 class="govuk-c-panel__title">Application complete</h2>
   <div class="govuk-c-panel__body">Your reference number<br/><strong>HDJ2123F</strong></div></div><%end%><ul class="tabs">
@@ -47,79 +56,58 @@ Your breadcrumb should include the user’s current page, however it should be v
 <% end %>
 </div>
 <a class="tab_drawer_heading" href="#nunjucks">Nunjucks</a>
-<div class="tab-content readme" id="nunjucks">
-**.njk**
-
-A template for use in the GOV.UK Prototype Kit
-
-    {{ govukPanel({
-      "titleText": "Application complete",
-      "html": "Your reference number<br><strong>HDJ2123F</strong>"
-    }) }}
-
+<div class="tab-content" id="nunjucks">
+<% partial "/layouts/example-only-code" do %>
+{{ govukPanel({
+  "titleText": "Application complete",
+  "html": "Your reference number<br><strong>HDJ2123F</strong>"
+}) }}
+<% end %>
 </div><a class="tab_drawer_heading" href="#readme">Read me</a>
 <div class="tab-content readme" id="readme">
 # Panel
 
 ## Introduction
 
-The confirmation panel has a turquoise background and white text. Used for transaction end pages, and Bank Holidays.
+The Panel component shows white text against a turquoise background. This is used for transactions end pages and Bank Holidays.
 
-## Guidance
 
-More information about when to use panel can be found on [GOV.UK Design System](http://www.linktodesignsystem.com/panel "Link to read guidance on the use of panel on Gov.uk Design system website")
+[Preview the Panel component](https://govuk-frontend-review.herokuapp.com/components/panel/preview).
 
-## Quick start examples
-
-### Component default
-
-[Preview the panel component.](http://govuk-frontend-review.herokuapp.com/components/panel/preview)
-
-#### Markup
-
-#### Macro
-
-    {% from "panel/macro.njk" import govukPanel %}
-
-    {{- govukPanel(
-      classes='',
-      title='Application complete',
-      content='Your reference number is',
-      reference='HDJ2123F'
-      )
-    -}}
-
-## Variants
+Read guidance on when to use the Panel component in your service in the [GOV.UK Design System]([Insert link to component page in the Design System]).
 
 ## Dependencies
 
-To consume the panel component you must be running npm version 5 or above.
+You must be running [npm version 5 or above](http://blog.npmjs.org/post/161081169345/v500)  to use the Panel component.
+
+The Panel component depends on @govuk-frontend/globals, which will automatically be installed with the package.
+
 
 ## Installation
 
-    npm install --save @govuk-frontend/panel
+Install the Panel component by running the command:
 
-## Requirements
+    [npm install code]
 
-### Build tool configuration
+## Configuration
 
-When compiling the Sass files you'll need to define includePaths to reference the node_modules directory. Below is a sample configuration using gulp
+To use the Panel component you need to setup your build tool to find the package in the node_modules.
 
-      .pipe(sass({
-          includePaths: 'node_modules/'
-      }))
+When compiling the Sass files you’ll need to define includePaths to reference the node_modules directory.
+
+Below is a sample configuration using Gulp js:
+
+    .pipe(sass({ includePaths: 'node_modules/' }))
 
 ### Static asset path configuration
 
-To show the button image you need to configure your app to show these assets. Below is a sample configuration using Express js:
+To show the Panel image you need to configure your app. Use the sample configuration in Express js to do this:
 
     app.use('/public', express.static(path.join(__dirname, '/node_modules/@govuk-frontend/icons')))
 
-## Component arguments
+##Component arguments
 
-If you are using Nunjucks,then macros take the following arguments
-
-<div>
+The Panel macro accepts the following arguments:
 
 <table class="govuk-c-table">
 
@@ -143,49 +131,73 @@ If you are using Nunjucks,then macros take the following arguments
 
 <tr class="govuk-c-table__row">
 
+<th class="govuk-c-table__header" scope="row">titleText</th>
+
+<td class="govuk-c-table__cell ">string</td>
+
+<td class="govuk-c-table__cell ">Yes</td>
+
+<td class="govuk-c-table__cell ">Text for the panel title.</td>
+
+</tr>
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">titleHtml</th>
+
+<td class="govuk-c-table__cell ">string</td>
+
+<td class="govuk-c-table__cell ">Yes</td>
+
+<td class="govuk-c-table__cell ">HTML for the panel title. If this is provided, the titleText argument is ignored.</td>
+
+</tr>
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">text</th>
+
+<td class="govuk-c-table__cell ">string</td>
+
+<td class="govuk-c-table__cell ">No</td>
+
+<td class="govuk-c-table__cell ">Text for the panel content.</td>
+
+</tr>
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">html</th>
+
+<td class="govuk-c-table__cell ">string</td>
+
+<td class="govuk-c-table__cell ">No</td>
+
+<td class="govuk-c-table__cell ">HTML for the panel content. If this is provided, the text argument is ignored.</td>
+
+</tr>
+
+<tr class="govuk-c-table__row">
+
 <th class="govuk-c-table__header" scope="row">classes</th>
 
 <td class="govuk-c-table__cell ">string</td>
 
 <td class="govuk-c-table__cell ">No</td>
 
-<td class="govuk-c-table__cell ">Optional additional classes</td>
+<td class="govuk-c-table__cell ">Optional additional classes.</td>
 
 </tr>
 
 <tr class="govuk-c-table__row">
 
-<th class="govuk-c-table__header" scope="row">title</th>
+<th class="govuk-c-table__header" scope="row">attributes</th>
 
-<td class="govuk-c-table__cell ">string</td>
-
-<td class="govuk-c-table__cell ">Yes</td>
-
-<td class="govuk-c-table__cell ">The panel title</td>
-
-</tr>
-
-<tr class="govuk-c-table__row">
-
-<th class="govuk-c-table__header" scope="row">content</th>
-
-<td class="govuk-c-table__cell ">string</td>
+<td class="govuk-c-table__cell ">object</td>
 
 <td class="govuk-c-table__cell ">No</td>
 
-<td class="govuk-c-table__cell ">The panel content</td>
-
-</tr>
-
-<tr class="govuk-c-table__row">
-
-<th class="govuk-c-table__header" scope="row">reference</th>
-
-<td class="govuk-c-table__cell ">string</td>
-
-<td class="govuk-c-table__cell ">No</td>
-
-<td class="govuk-c-table__cell ">Optional reference number</td>
+<td class="govuk-c-table__cell ">Any extra HTML attributes (for example data attributes) to add to the panel container.</td>
 
 </tr>
 
@@ -193,5 +205,36 @@ If you are using Nunjucks,then macros take the following arguments
 
 </table>
 
+### Setup Nunjucks views and paths
+
+Below is an example setup using Express js configure views:
+
+    nunjucks.configure('node_modules/@govuk-frontend`, {
+      autoescape: true,
+      cache: false,
+      express: app
+    })
+
+## Get updates
+
+Check you have the latest version of the Panel component by using the command:
+
+    [npm outdated code for component]
+
+Update to the latest version of the Panel component by using the command:
+
+    [npm update code for component]
+
+## Contribution
+
+To contribute new components or make contributions to existing components visit govuk-frontend/CONTRIBUTING.md
+
+## License
+
+MIT
+
 </div>
-</div>
+
+##Research on this component
+
+If you’ve used this component, [get in touch](Anchor link to Get in touch panel at bottom of page) to share your user research findings.
