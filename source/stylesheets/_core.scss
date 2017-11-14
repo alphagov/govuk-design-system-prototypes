@@ -65,7 +65,7 @@ a:active {
 @import "modules/back-arrow";
 @import "modules/touch-friendly-links";
 @import "modules/new-breadcrumbs";
-//@import "modules/tabs";
+@import "modules/example-tabs";
 
 html, body {
   margin: 0;
@@ -77,6 +77,3 @@ html, body {
 .container {
   @extend %site-width-container;
 }
-
-
-
