@@ -5,7 +5,7 @@ section:	Components
 theme:		Navigation
 status:		Approved
 department: All
-aliases:    navigation path, cookie crumb, ariadne's thread 
+aliases:    navigation path, cookie crumb, ariadne's thread
 ---
 
 ##Overview
@@ -13,33 +13,21 @@ aliases:    navigation path, cookie crumb, ariadne's thread
 Help users orientate themselves and navigate pages within a hierarchical structure.
 
 <div class="example">
-
-	<div class="breadcrumbs breadcrumbs--collapse">
-	  <ol>
-
-	    <li class="">
-	        <a class="" aria-current="false" href="/">Home</a>
+	<div class="govuk-c-breadcrumb">
+	  <ol class="govuk-c-breadcrumb__list">
+	    <li class="govuk-c-breadcrumb__list-item">
+	      <a class="govuk-c-breadcrumb__link" href="/section">Section 1</a>
 	    </li>
-
-	    <li class="">
-	        <a class="" aria-current="false" href="#">Level one</a>
-	    </li>
-
-	    <li class="breadcrumbs__parent">
-	        <a class="" aria-current="false" href="#">Level two</a>
-	    </li>
-
-	    <li class="breadcrumbs__current-page">
-	        <a class="" aria-current="page" href="#content">Level three</a>
+	    <li class="govuk-c-breadcrumb__list-item">
+	      <a class="govuk-c-breadcrumb__link" href="/section/sub-section">Sub-section</a>
 	    </li>
 	  </ol>
 	</div>
-
 </div>
 
 ## When to use this component
 
-Breadcrumbs are a form of navigation that convey the hierarchical relationship between pages. 
+Breadcrumbs are a form of navigation that convey the hierarchical relationship between pages.
 
 They are also used for orientation. If a user lands on any page they should be able to understand where they currently are in the hierarchy of a website.
 
@@ -54,28 +42,170 @@ Their use should also be considered against other navigational devices on the pa
 ### Standard example
 
 Your breadcrumb should include the user’s current page, however it should be visually different from the other links within the breadcrumb.
-
-<% partial "/layouts/example" do %>
-<div class="breadcrumbs">
-  <ol>
-
-    <li class="">
-        <a class="" aria-current="false" href="/">Home</a>
+<% partial "/layouts/example-no-code" do %><div class="govuk-c-breadcrumb">
+  <ol class="govuk-c-breadcrumb__list">
+    <li class="govuk-c-breadcrumb__list-item">
+      <a class="govuk-c-breadcrumb__link" href="/section">Section 1</a>
     </li>
-
-    <li class="">
-        <a class="" aria-current="false" href="#">Level one</a>
+    <li class="govuk-c-breadcrumb__list-item">
+      <a class="govuk-c-breadcrumb__link" href="/section/sub-section">Sub-section</a>
     </li>
-
-    <li class="">
-        <a class="" aria-current="false" href="#">Level two</a>
+  </ol></div><% end %><ul class="tabs">
+	<li><a href="#html">HTML</a></li>
+	<li><a href="#nunjucks">Nunjucks</a></li>
+	<li><a href="#readme">Read me</a></li>
+</ul>
+<a class="tab_drawer_heading" href="#html">HTML</a>
+<div class="tab-content" id="html">
+<% partial "/layouts/example-only-code" do %>
+<div class="govuk-c-breadcrumb">
+  <ol class="govuk-c-breadcrumb\_\_list">
+    <li class="govuk-c-breadcrumb\_\_list-item">
+      <a class="govuk-c-breadcrumb\_\_link" href="/section">Section 1</a>
     </li>
-
-    <li class="breadcrumbs__current-page">
-        <a class="" aria-current="page" href="#content">Level three</a>
+    <li class="govuk-c-breadcrumb\_\_list-item">
+      <a class="govuk-c-breadcrumb\_\_link" href="/section/sub-section">Sub-section</a>
     </li>
-  </ol></div><% end %>
+  </ol>
+</div><% end %></div>
+<a class="tab_drawer_heading" href="#nunjucks">Nunjucks</a>
+<div class="tab-content readme" id="nunjucks">
+**.njk**
 
+A template for use in the GOV.UK Prototype Kit
+
+		{{ govukBreadcrumb({
+		  "items": [
+		    {
+		      "text": "Section 1",
+		      "href": "/section"
+		    },
+		    {
+		      "text": "Sub-section",
+		      "href": "/section/sub-section"
+		    }
+		  ]
+		}) }}
+
+</div><a class="tab_drawer_heading" href="#readme">Read me</a>
+<div class="tab-content readme" id="readme">
+# Breadcrumb
+
+## Introduction
+
+A breadcrumb is a GOV.UK element that helps users to understand where they are within the site and move between levels.
+
+## Guidance
+
+More information about when to use breadcrumb can be found on [GOV.UK Design System](http://www.linktodesignsystem.com/breadcrumb "Link to read guidance on the use of breadcrumb on Gov.uk Design system website")
+
+## Dependencies
+
+To consume the breadcrumb component you must be running npm version 5 or above.
+
+Please note, this component depends on @govuk-frontend/globals and @govuk-frontend/icons, which will automatically be installed with the package.
+
+## Installation
+
+    npm install --save @govuk-frontend/breadcrumb
+
+## Requirements
+
+### Build tool configuration
+
+When compiling the Sass files you'll need to define includePaths to reference the node_modules directory. Below is a sample configuration using gulp
+
+    .pipe(sass({
+        includePaths: 'node_modules/'
+    }))
+
+### Static asset path configuration
+
+To show the button image you need to configure your app to show these assets. Below is a sample configuration using Express js:
+
+    app.use('/public', express.static(path.join(__dirname, '/node_modules/@govuk-frontend/icons')))
+
+## Component arguments
+
+If you are using Nunjucks,then macros take the following arguments
+
+<div>
+
+<table class="govuk-c-table">
+
+<thead class="govuk-c-table__head">
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="col">Name</th>
+
+<th class="govuk-c-table__header" scope="col">Type</th>
+
+<th class="govuk-c-table__header" scope="col">Required</th>
+
+<th class="govuk-c-table__header" scope="col">Description</th>
+
+</tr>
+
+</thead>
+
+<tbody class="govuk-c-table__body">
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">classes</th>
+
+<td class="govuk-c-table__cell ">string</td>
+
+<td class="govuk-c-table__cell ">No</td>
+
+<td class="govuk-c-table__cell ">Optional additional classes</td>
+
+</tr>
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">breadcrumbs</th>
+
+<td class="govuk-c-table__cell ">array</td>
+
+<td class="govuk-c-table__cell ">Yes</td>
+
+<td class="govuk-c-table__cell ">Breadcrumbs array with title and url keys</td>
+
+</tr>
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">title</th>
+
+<td class="govuk-c-table__cell ">string</td>
+
+<td class="govuk-c-table__cell ">Yes</td>
+
+<td class="govuk-c-table__cell ">Title of the breadcrumb item</td>
+
+</tr>
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">url</th>
+
+<td class="govuk-c-table__cell ">string</td>
+
+<td class="govuk-c-table__cell ">No</td>
+
+<td class="govuk-c-table__cell ">Url of the breadcrumb item</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
 
 ### Mobile varient example
 
@@ -86,7 +216,7 @@ Your breadcrumb should include the user’s current page, however it should be v
 
 When displayed on a small screen device the visual relationship between pages in the breadcrumb are lost due to content wrapping over multiple lines. It also pushes the main content further down the page.
 
-This component has a CSS modifier `breadcrumbs--collapse` which collapses the breadcrumb into a single link, similar to the [back button](/design-patterns/patterns/components/back_button/). 
+This component has a CSS modifier `breadcrumbs--collapse` which collapses the breadcrumb into a single link, similar to the [back button](/design-patterns/patterns/components/back_button/).
 
 This reveals the parent of the current page so the user can travel up through the hierarchy of the site or section one level at a time.
 
@@ -97,27 +227,27 @@ This reveals the parent of the current page so the user can travel up through th
 <div class="breadcrumbs breadcrumbs--collapse">
   <ol>
 
-    <li class="">
-        <a class="" aria-current="false" href="/">Home</a>
+    <li>
+        <a aria-current="false" href="/">Home</a>
     </li>
 
-    <li class="">
-        <a class="" aria-current="false" href="#">Level one</a>
+    <li>
+        <a aria-current="false" href="#">Level one</a>
     </li>
 
     <li class="breadcrumbs__parent">
-        <a class="" aria-current="false" href="#">Level two</a>
+        <a aria-current="false" href="#">Level two</a>
     </li>
 
     <li class="breadcrumbs__current-page">
-        <a class="" aria-current="page" href="#content">Level three</a>
+        <a aria-current="page" href="#content">Level three</a>
     </li>
   </ol></div><% end %>
 
 
 ### Navigation markup
 
-If the breadcrumb is the only form of navigation on the page then it should be marked up using `<nav>` in place of a `<div>`. This is to limit confusion screen reader users may face with multiple navigational components on the page. 
+If the breadcrumb is the only form of navigation on the page then it should be marked up using `<nav>` in place of a `<div>`. This is to limit confusion screen reader users may face with multiple navigational components on the page.
 
 
 ##Research on this component
@@ -131,4 +261,3 @@ Many iterations of this component have been tested across Gov.uk. Some observati
 - People used them to go back one step, hence often compared to a back button - allowing to navigate in a smaller section of the website
  - When the breadcrumbs were tested without the “Current page” users were observed jumping back two levels
 - Some people didn’t interact with them because they didn’t notice them and generally prefer to use the browser back button
-

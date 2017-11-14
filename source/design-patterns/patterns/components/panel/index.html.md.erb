@@ -1,10 +1,197 @@
 ---
 title:		Panel
-description: 
+description:
 section:	Components
 theme:		Global
 status:		Approved
 department: All
 ---
 
-(There should be content for this)
+##Overview
+
+Used for transaction end pages, and Bank Holidays
+
+<div class="govuk-c-panel govuk-c-panel--confirmation">
+  <h2 class="govuk-c-panel__title">
+    Application complete
+  </h2>
+  <div class="govuk-c-panel__body">
+    Your reference number<br><strong>HDJ2123F</strong>
+  </div>
+</div>
+
+## When to use this component
+
+## How it works
+
+### Standard example
+
+Your breadcrumb should include the user’s current page, however it should be visually different from the other links within the breadcrumb.
+<% partial "/layouts/example-no-code" do %><div class="govuk-c-panel govuk-c-panel--confirmation">
+  <h2 class="govuk-c-panel__title">Application complete</h2>
+  <div class="govuk-c-panel__body">Your reference number<br/><strong>HDJ2123F</strong></div></div><%end%><ul class="tabs">
+	<li><a href="#html">HTML</a></li>
+	<li><a href="#nunjucks">Nunjucks</a></li>
+	<li><a href="#readme">Read me</a></li>
+</ul><a class="tab_drawer_heading" href="#html">HTML</a>
+<div class="tab-content" id="html">
+<% partial "/layouts/example-only-code" do %>
+  <div class="govuk-c-panel govuk-c-panel--confirmation">
+    <h2 class="govuk-c-panel\_\_title">
+      Application complete
+    </h2>
+    <div class="govuk-c-panel\_\_body">
+      Your reference number<br><strong>HDJ2123F</strong>
+    </div>
+  </div>
+<% end %>
+</div>
+<a class="tab_drawer_heading" href="#nunjucks">Nunjucks</a>
+<div class="tab-content readme" id="nunjucks">
+**.njk**
+
+A template for use in the GOV.UK Prototype Kit
+
+    {{ govukPanel({
+      "titleText": "Application complete",
+      "html": "Your reference number<br><strong>HDJ2123F</strong>"
+    }) }}
+
+</div><a class="tab_drawer_heading" href="#readme">Read me</a>
+<div class="tab-content readme" id="readme">
+# Panel
+
+## Introduction
+
+The confirmation panel has a turquoise background and white text. Used for transaction end pages, and Bank Holidays.
+
+## Guidance
+
+More information about when to use panel can be found on [GOV.UK Design System](http://www.linktodesignsystem.com/panel "Link to read guidance on the use of panel on Gov.uk Design system website")
+
+## Quick start examples
+
+### Component default
+
+[Preview the panel component.](http://govuk-frontend-review.herokuapp.com/components/panel/preview)
+
+#### Markup
+
+#### Macro
+
+    {% from "panel/macro.njk" import govukPanel %}
+
+    {{- govukPanel(
+      classes='',
+      title='Application complete',
+      content='Your reference number is',
+      reference='HDJ2123F'
+      )
+    -}}
+
+## Variants
+
+## Dependencies
+
+To consume the panel component you must be running npm version 5 or above.
+
+## Installation
+
+    npm install --save @govuk-frontend/panel
+
+## Requirements
+
+### Build tool configuration
+
+When compiling the Sass files you'll need to define includePaths to reference the node_modules directory. Below is a sample configuration using gulp
+
+      .pipe(sass({
+          includePaths: 'node_modules/'
+      }))
+
+### Static asset path configuration
+
+To show the button image you need to configure your app to show these assets. Below is a sample configuration using Express js:
+
+    app.use('/public', express.static(path.join(__dirname, '/node_modules/@govuk-frontend/icons')))
+
+## Component arguments
+
+If you are using Nunjucks,then macros take the following arguments
+
+<div>
+
+<table class="govuk-c-table">
+
+<thead class="govuk-c-table__head">
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="col">Name</th>
+
+<th class="govuk-c-table__header" scope="col">Type</th>
+
+<th class="govuk-c-table__header" scope="col">Required</th>
+
+<th class="govuk-c-table__header" scope="col">Description</th>
+
+</tr>
+
+</thead>
+
+<tbody class="govuk-c-table__body">
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">classes</th>
+
+<td class="govuk-c-table__cell ">string</td>
+
+<td class="govuk-c-table__cell ">No</td>
+
+<td class="govuk-c-table__cell ">Optional additional classes</td>
+
+</tr>
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">title</th>
+
+<td class="govuk-c-table__cell ">string</td>
+
+<td class="govuk-c-table__cell ">Yes</td>
+
+<td class="govuk-c-table__cell ">The panel title</td>
+
+</tr>
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">content</th>
+
+<td class="govuk-c-table__cell ">string</td>
+
+<td class="govuk-c-table__cell ">No</td>
+
+<td class="govuk-c-table__cell ">The panel content</td>
+
+</tr>
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">reference</th>
+
+<td class="govuk-c-table__cell ">string</td>
+
+<td class="govuk-c-table__cell ">No</td>
+
+<td class="govuk-c-table__cell ">Optional reference number</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+</div>
