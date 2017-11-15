@@ -6,9 +6,8 @@ theme:		Navigation
 status:		Approved
 department: All
 aliases:    navigation path, cookie crumb, ariadne's thread
+copy:     done
 ---
-
-##Overview
 
 The Breadcrumbs component helps users to understand where they are within a website’s structure and move between levels.
 
@@ -28,19 +27,19 @@ The Breadcrumbs component helps users to understand where they are within a webs
 
 ## When to use this component
 
-Use the Breadcrumbs component when you need to help users orientate themselves within websites with multiple levels.
+Use the Breadcrumbs component when you need to help users understand and move between the multiple levels of a  website.
 
 ### When not to use this component
 
 Don’t use the Breadcrumbs component on websites with a flat structure, or to show progress through a linear journey or transaction.
 
-If you’re using other navigational devices on the page, such as a sidebar, consider whether your users need the additional support of breadcrumbs.
+If you’re using other navigational devices on the page, such as a sidebar, consider whether your users need the additional guidance of breadcrumbs.
 
 ## How it works
 
 The Breadcrumbs component should include the user’s current page, which should be visually different from the other pages linked to in the breadcrumb.
 
-There are two ways to use the Breadcrumbs component. You can use HTML or, if you are using [Nunjucks](https://mozilla.github.io/nunjucks/) or the [GOV.UK Prototype Kit](https://govuk-prototype-kit.herokuapp.com/docs), you can use the Breadcrumbs macro.
+There are two ways to use the Breadcrumbs component. You can use HTML or, if you are using [Nunjucks](https://mozilla.github.io/nunjucks/) or the GOV.UK Prototype Kit, you can use the Breadcrumbs macro.
 <% partial "/layouts/example-no-code" do %><div class="govuk-c-breadcrumb">
   <ol class="govuk-c-breadcrumb__list">
     <li class="govuk-c-breadcrumb__list-item">
@@ -53,8 +52,8 @@ There are two ways to use the Breadcrumbs component. You can use HTML or, if you
   </ol>
 </div><% end %><ul class="tabs">
 	<li><a href="#html">HTML</a></li>
-	<li><a href="#nunjucks">Nunjucks</a></li>
-	<li><a href="#readme">Read me</a></li>
+	<li><a href="#nunjucks">Macro</a></li>
+	<li><a href="#readme">Technical documentation</a></li>
 </ul>
 <a class="tab_drawer_heading" href="#html">HTML</a>
 <div class="tab-content" id="html">
@@ -70,7 +69,7 @@ There are two ways to use the Breadcrumbs component. You can use HTML or, if you
     <li class="govuk-c-breadcrumb\_\_list-item" aria-current="page">Travel abroad</li>
   </ol>
 </div><% end %></div>
-<a class="tab_drawer_heading" href="#nunjucks">Nunjucks</a>
+<a class="tab_drawer_heading" href="#nunjucks">Macro</a>
 <div class="tab-content" id="nunjucks">
 <% partial "/layouts/example-only-code" do %>
 {{ govukBreadcrumb({
@@ -89,33 +88,23 @@ There are two ways to use the Breadcrumbs component. You can use HTML or, if you
   ]
 }) }}
 <% end %>
-</div><a class="tab_drawer_heading" href="#readme">Read me</a>
+</div><a class="tab_drawer_heading" href="#readme">Technical documentation</a>
 <div class="tab-content readme" id="readme">
-# Breadcrumb
-
-## Introduction
-
-The Breadcrumb component helps users to understand where they are within a website and move between levels.
-
-[Preview the Breadcrumb component](http://govuk-frontend-review.herokuapp.com/components/breadcrumb).
-
-Read guidance on when to use the Breadcrumb component in your service in the [GOV.UK Design System](https://govuk-design-system-prototypes.cloudapps.digital/design-patterns/patterns/components/breadcrumbs/).
-
 ## Dependencies
 
-You must be running [npm version 5 or above](http://blog.npmjs.org/post/161081169345/v500) to use the Breadcrumb component.
+You must be running [npm version 5 or above](http://blog.npmjs.org/post/161081169345/v500) to use the Breadcrumbs component.
 
-The Breadcrumb component depends on @govuk-frontend/globals and @govuk-frontend/icons, which will be automatically installed with the package.
+The Breadcrumbs component depends on @govuk-frontend/globals and @govuk-frontend/icons, which will be automatically installed with the package.
 
 ## Installation
 
-Install the Breadcrumb component by running the command:
+Install the Breadcrumbs component by running the command:
 
 	npm install --save @govuk-frontend/breadcrumb
 
 ## Configuration
 
-To use the Breadcrumb component you need to setup your build tool to find the package in the node_modules.
+To use the Breadcrumbs component you need to setup your build tool to find the package in the node_modules.
 
 When compiling the Sass files you’ll need to define includePaths to reference the node_modules directory.
 
@@ -125,16 +114,51 @@ Below is a sample configuration using Gulp js:
 
 ### Static asset path configuration
 
-To show the Breadcrumb image you need to configure your app. Use the sample configuration in Express js to do this:
+To show the Breadcrumbs image you need to configure your app. Use the sample configuration in Express js to do this:
 
 	app.use('/public', express.static(path.join(__dirname, '/node_modules/@govuk-frontend/icons')))
 
 	app.use('/public', express.static(path.join(__dirname, '/node_modules/@govuk-frontend/icons')))
 
+## Quick start examples
 
-### Nunjucks macro
+There are two ways to use the Breadcrumbs component. You can use HTML or, if you are using the Nunjucks templating language, you can call the Breadcrumbs macro.
 
-The Breadcrumb macro accepts the following arguments:
+HTML
+
+	<div class="govuk-c-breadcrumb">
+	  <ol class="govuk-c-breadcrumb__list">
+	    <li class="govuk-c-breadcrumb__list-item">
+	      <a class="govuk-c-breadcrumb__link" href="/">Home</a>
+	    </li>
+	    <li class="govuk-c-breadcrumb__list-item">
+	      <a class="govuk-c-breadcrumb__link" href="/browse/abroad">Passports, travel and living abroad</a>
+	    </li>
+	    <li class="govuk-c-breadcrumb__list-item" aria-current="page">Travel abroad</li>
+	  </ol>
+	</div>
+
+Nunjucks macro
+
+	{{ govukBreadcrumb({
+	  "items": [
+	    {
+	      "text": "Home",
+	      "href": "/"
+	    },
+	    {
+	      "text": "Passports, travel and living abroad",
+	      "href": "/browse/abroad"
+	    },
+	    {
+	      "text": "Travel abroad"
+	    }
+	  ]
+	}) }}
+
+##Component arguments
+
+The Breadcrumbs macro accepts the following arguments:
 
 <table class="govuk-c-table">
 
@@ -244,11 +268,11 @@ Below is an example setup using Express js configure views:
 
 ## Get updates
 
-Check you have the latest version of the Breadcrumb by using the command:
+Check you have the latest version of the Breadcrumbs by using the command:
 
 	npm outdated @govuk-frontend/breadcrumb
 
-Update to the latest version of the Breadcrumb by using the command:
+Update to the latest version of the Breadcrumbs by using the command:
 
 	npm update @govuk-frontend/breadcrumb
 
@@ -262,4 +286,4 @@ MIT
 
 ##Research on this component
 
-If you’ve used this component, [get in touch](Anchor link to Get in touch panel at bottom of page) to share your user research findings.
+If you’ve used this component, [get in touch](#get-in-touch) to share your user research findings.
