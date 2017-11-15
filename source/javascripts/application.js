@@ -49,6 +49,8 @@ $(function () {
 		$(tab_id).addClass('current')
 	})
 
+  $('ul.tabs li:first-child a').click()
+
   // Accordion mode
   $('.tab_drawer_heading').click( function(e){
     e.preventDefault()
