@@ -19,14 +19,15 @@
   max-width: none;
 }
 .technical-documentation p{
-  margin-top: 0;
-  margin-bottom: $gutter-half;
+  // margin-top: 0;
+  // margin-bottom: $gutter-half;
 }
 .banner p{
   margin-bottom: 0;
 }
+
 // Redefine panel__title as it's being overwritten
-.technical-documentation .govuk-c-panel__title{
+.technical-documentation .example h2.govuk-c-panel__title{
   margin-top: 1.25em;
   margin-bottom: .625em;
   font-family: nta,Arial,sans-serif;
