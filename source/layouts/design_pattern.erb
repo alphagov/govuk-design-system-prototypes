@@ -21,7 +21,7 @@
 <% end %>
 
 <% wrap_layout :docs do %>
-   
+
 
 <div class="grid-row">
   <div class="column-full">
@@ -62,12 +62,12 @@
                   <% end %>
                 </ul>
           </div>
-        <% end %>  
-        
+        <% end %>
+
         <% if current_section.downcase == 'components' %>
           <% if current_page.data.similar? %>
           <div class="column-one-quarter related-content-grid-item">
-                
+
                   <h2>Similar components</h2>
                   <ul class="list">
                     <% current_page.data.similar.each do |similar| %>
@@ -78,19 +78,19 @@
 
           <% end %>
         <% end %>
-          
+
         <% if current_section.downcase == 'patterns' %><% if current_page.data.uses? %>
           <div class="column-one-quarter related-content-grid-item">
-              
+
                 <h2>Uses components</h2>
                 <ul class="list">
                   <% current_page.data.uses.each do |uses| %>
                   <li><a href="/design-patterns/patterns/components/<%= uses.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') %>"><%= uses %></a></li>
                   <% end %>
                 </ul>
-              
-          </div>                          
-        <% end %> <% end %> 
+
+          </div>
+        <% end %> <% end %>
 
         <div class="column-one-quarter related-content-grid-item">
               <h2>Further resources</h2>
@@ -108,23 +108,23 @@
 
 
               <dl class="meta-data-bottom">
-                <% if current_page.data.aliases? %>  
+                <% if current_page.data.aliases? %>
                 <dt>Also known as:</dt>
                 <dd><%= current_page.data.aliases %></dd>
                 <% end %>
                 <dt>Last reviewed:</dt>
                 <dd><% if current_page.data.date %> <%= current_page.data.date %> <% else %>30 March 2017<% end %></dd>
-                
-              </dl>   
+
+              </dl>
         </div>
       </div>
-    
+
     </div>
 
-    <div class="callout">
+    <div class="callout" id="get-in-touch">
         <h2 class="heading-medium">Get in touch</h2>
         <p>If you’ve got a question, idea or suggestion share it in <%= link_to '#govuk-design-system', slack_link %> on cross-government Slack (<%= link_to 'open in app', slack_app_link %>) or <a href="#">email the Design System team</a></p>
-    </div> 
+    </div>
 
 
 
@@ -132,7 +132,7 @@
   </div>
 
 
-</div>    
+</div>
 
 
 <% end %>
