@@ -5,130 +5,261 @@ section:	Components
 theme:		Navigation
 status:		Approved
 department: All
-aliases:    navigation path, cookie crumb, ariadne's thread 
+aliases:    navigation path, cookie crumb, ariadne's thread
 ---
 
 ##Overview
 
-Help users orientate themselves and navigate pages within a hierarchical structure.
+The Breadcrumbs component helps users to understand where they are within a website’s structure and move between levels.
 
 <div class="example">
-
-	<div class="breadcrumbs breadcrumbs--collapse">
-	  <ol>
-
-	    <li class="">
-	        <a class="" aria-current="false" href="/">Home</a>
+	<div class="govuk-c-breadcrumb">
+	  <ol class="govuk-c-breadcrumb__list">
+	    <li class="govuk-c-breadcrumb__list-item">
+	      <a class="govuk-c-breadcrumb__link" href="/">Home</a>
 	    </li>
-
-	    <li class="">
-	        <a class="" aria-current="false" href="#">Level one</a>
+	    <li class="govuk-c-breadcrumb__list-item">
+	      <a class="govuk-c-breadcrumb__link" href="/browse/abroad">Passports, travel and living abroad</a>
 	    </li>
-
-	    <li class="breadcrumbs__parent">
-	        <a class="" aria-current="false" href="#">Level two</a>
-	    </li>
-
-	    <li class="breadcrumbs__current-page">
-	        <a class="" aria-current="page" href="#content">Level three</a>
-	    </li>
+	    <li class="govuk-c-breadcrumb__list-item" aria-current="page">Travel abroad</li>
 	  </ol>
 	</div>
-
 </div>
 
 ## When to use this component
 
-Breadcrumbs are a form of navigation that convey the hierarchical relationship between pages. 
-
-They are also used for orientation. If a user lands on any page they should be able to understand where they currently are in the hierarchy of a website.
+Use the Breadcrumbs component when you need to help users orientate themselves within websites with multiple levels.
 
 ### When not to use this component
 
-Breadcrumbs are not appropriate for use in a flat website structure, or to convey progress through a linear journey or transaction. We recommend using [back button](/design-patterns/patterns/components/back_button/) for this.
+Don’t use the Breadcrumbs component on websites with a flat structure, or to show progress through a linear journey or transaction.
 
-Their use should also be considered against other navigational devices on the page. Breadcrumbs are not always necessary where there is permanently visible navigation, such as a sidebar.
+If you’re using other navigational devices on the page, such as a sidebar, consider whether your users need the additional support of breadcrumbs.
 
 ## How it works
 
-### Standard example
+The Breadcrumbs component should include the user’s current page, which should be visually different from the other pages linked to in the breadcrumb.
 
-Your breadcrumb should include the user’s current page, however it should be visually different from the other links within the breadcrumb.
-
-<% partial "/layouts/example" do %>
-<div class="breadcrumbs">
-  <ol>
-
-    <li class="">
-        <a class="" aria-current="false" href="/">Home</a>
+There are two ways to use the Breadcrumbs component. You can use HTML or, if you are using [Nunjucks](https://mozilla.github.io/nunjucks/) or the [GOV.UK Prototype Kit](https://govuk-prototype-kit.herokuapp.com/docs), you can use the Breadcrumbs macro.
+<% partial "/layouts/example-no-code" do %><div class="govuk-c-breadcrumb">
+  <ol class="govuk-c-breadcrumb__list">
+    <li class="govuk-c-breadcrumb__list-item">
+      <a class="govuk-c-breadcrumb__link" href="/">Home</a>
     </li>
-
-    <li class="">
-        <a class="" aria-current="false" href="#">Level one</a>
+    <li class="govuk-c-breadcrumb__list-item">
+      <a class="govuk-c-breadcrumb__link" href="/browse/abroad">Passports, travel and living abroad</a>
     </li>
-
-    <li class="">
-        <a class="" aria-current="false" href="#">Level two</a>
+    <li class="govuk-c-breadcrumb__list-item" aria-current="page">Travel abroad</li>
+  </ol>
+</div><% end %><ul class="tabs">
+	<li><a href="#html">HTML</a></li>
+	<li><a href="#nunjucks">Nunjucks</a></li>
+	<li><a href="#readme">Read me</a></li>
+</ul>
+<a class="tab_drawer_heading" href="#html">HTML</a>
+<div class="tab-content" id="html">
+<% partial "/layouts/example-only-code" do %>
+<div class="govuk-c-breadcrumb">
+  <ol class="govuk-c-breadcrumb\_\_list">
+    <li class="govuk-c-breadcrumb\_\_list-item">
+      <a class="govuk-c-breadcrumb\_\_link" href="/">Home</a>
     </li>
-
-    <li class="breadcrumbs__current-page">
-        <a class="" aria-current="page" href="#content">Level three</a>
+    <li class="govuk-c-breadcrumb\_\_list-item">
+      <a class="govuk-c-breadcrumb\_\_link" href="/browse/abroad">Passports, travel and living abroad</a>
     </li>
-  </ol></div><% end %>
+    <li class="govuk-c-breadcrumb\_\_list-item" aria-current="page">Travel abroad</li>
+  </ol>
+</div><% end %></div>
+<a class="tab_drawer_heading" href="#nunjucks">Nunjucks</a>
+<div class="tab-content" id="nunjucks">
+<% partial "/layouts/example-only-code" do %>
+{{ govukBreadcrumb({
+  "items": [
+    {
+      "text": "Home",
+      "href": "/"
+    },
+    {
+      "text": "Passports, travel and living abroad",
+      "href": "/browse/abroad"
+    },
+    {
+      "text": "Travel abroad"
+    }
+  ]
+}) }}
+<% end %>
+</div><a class="tab_drawer_heading" href="#readme">Read me</a>
+<div class="tab-content readme" id="readme">
+# Breadcrumb
+
+## Introduction
+
+The Breadcrumb component helps users to understand where they are within a website and move between levels.
+
+[Preview the Breadcrumb component](http://govuk-frontend-review.herokuapp.com/components/breadcrumb).
+
+Read guidance on when to use the Breadcrumb component in your service in the [GOV.UK Design System](https://govuk-design-system-prototypes.cloudapps.digital/design-patterns/patterns/components/breadcrumbs/).
+
+## Dependencies
+
+You must be running [npm version 5 or above](http://blog.npmjs.org/post/161081169345/v500) to use the Breadcrumb component.
+
+The Breadcrumb component depends on @govuk-frontend/globals and @govuk-frontend/icons, which will be automatically installed with the package.
+
+## Installation
+
+Install the Breadcrumb component by running the command:
+
+	npm install --save @govuk-frontend/breadcrumb
+
+## Configuration
+
+To use the Breadcrumb component you need to setup your build tool to find the package in the node_modules.
+
+When compiling the Sass files you’ll need to define includePaths to reference the node_modules directory.
+
+Below is a sample configuration using Gulp js:
+
+	.pipe(sass({ includePaths: 'node_modules/' }))
+
+### Static asset path configuration
+
+To show the Breadcrumb image you need to configure your app. Use the sample configuration in Express js to do this:
+
+	app.use('/public', express.static(path.join(__dirname, '/node_modules/@govuk-frontend/icons')))
+
+	app.use('/public', express.static(path.join(__dirname, '/node_modules/@govuk-frontend/icons')))
 
 
-### Mobile varient example
+### Nunjucks macro
 
-<div class="panel panel-border-wide panel-experimental">
-<h3><span class="experimental">Experimental</span></h3>
-<p>This mobile varient is experimental. It is currently in use within an A/B test on GOV.UK. Feel free to use it in your service and <%= link_to 'let us know what you find', issues_link(current_page.data.title) %></p>
+The Breadcrumb macro accepts the following arguments:
+
+<table class="govuk-c-table">
+
+<thead class="govuk-c-table__head">
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="col">Name</th>
+
+<th class="govuk-c-table__header" scope="col">Type</th>
+
+<th class="govuk-c-table__header" scope="col">Required</th>
+
+<th class="govuk-c-table__header" scope="col">Description</th>
+
+</tr>
+
+</thead>
+
+<tbody class="govuk-c-table__body">
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">classes</th>
+
+<td class="govuk-c-table__cell ">string</td>
+
+<td class="govuk-c-table__cell ">No</td>
+
+<td class="govuk-c-table__cell ">Optional additional classes.</td>
+
+</tr>
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">items</th>
+
+<td class="govuk-c-table__cell ">array</td>
+
+<td class="govuk-c-table__cell ">Yes</td>
+
+<td class="govuk-c-table__cell ">Array of breadcrumb items.</td>
+
+</tr>
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">text</th>
+
+<td class="govuk-c-table__cell ">string</td>
+
+<td class="govuk-c-table__cell ">No</td>
+
+<td class="govuk-c-table__cell ">Text to use within the breadcrumb item.</td>
+
+</tr>
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">html</th>
+
+<td class="govuk-c-table__cell ">string</td>
+
+<td class="govuk-c-table__cell ">No</td>
+
+<td class="govuk-c-table__cell ">HTML to use within the breadcrumb item. If this is provided, the text argument will be ignored.</td>
+
+</tr>
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">href</th>
+
+<td class="govuk-c-table__cell ">string</td>
+
+<td class="govuk-c-table__cell ">no</td>
+
+<td class="govuk-c-table__cell ">Link for the breadcrumb item. If not specified, breadcrumb item is a normal list item.</td>
+
+</tr>
+
+<tr class="govuk-c-table__row">
+
+<th class="govuk-c-table__header" scope="row">attributes</th>
+
+<td class="govuk-c-table__cell ">object</td>
+
+<td class="govuk-c-table__cell ">No</td>
+
+<td class="govuk-c-table__cell ">Any extra HTML attributes (for example data attributes) to add to the breadcrumb container.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+### Set up Nunjucks views and paths
+
+Below is an example setup using Express js configure views:
+
+	nunjucks.configure('node_modules/@govuk-frontend`, {
+	  autoescape: true,
+	  cache: false,
+	  express: app
+	})
+
+## Get updates
+
+Check you have the latest version of the Breadcrumb by using the command:
+
+	npm outdated @govuk-frontend/breadcrumb
+
+Update to the latest version of the Breadcrumb by using the command:
+
+	npm update @govuk-frontend/breadcrumb
+
+## Contribution
+To contribute new components or make contributions to existing components visit govuk-frontend/CONTRIBUTING.md
+
+## License
+MIT
+
 </div>
-
-When displayed on a small screen device the visual relationship between pages in the breadcrumb are lost due to content wrapping over multiple lines. It also pushes the main content further down the page.
-
-This component has a CSS modifier `breadcrumbs--collapse` which collapses the breadcrumb into a single link, similar to the [back button](/design-patterns/patterns/components/back_button/). 
-
-This reveals the parent of the current page so the user can travel up through the hierarchy of the site or section one level at a time.
-
-
-
-
-<% partial "/layouts/example" do %>
-<div class="breadcrumbs breadcrumbs--collapse">
-  <ol>
-
-    <li class="">
-        <a class="" aria-current="false" href="/">Home</a>
-    </li>
-
-    <li class="">
-        <a class="" aria-current="false" href="#">Level one</a>
-    </li>
-
-    <li class="breadcrumbs__parent">
-        <a class="" aria-current="false" href="#">Level two</a>
-    </li>
-
-    <li class="breadcrumbs__current-page">
-        <a class="" aria-current="page" href="#content">Level three</a>
-    </li>
-  </ol></div><% end %>
-
-
-### Navigation markup
-
-If the breadcrumb is the only form of navigation on the page then it should be marked up using `<nav>` in place of a `<div>`. This is to limit confusion screen reader users may face with multiple navigational components on the page. 
-
 
 ##Research on this component
 
-Many iterations of this component have been tested across Gov.uk. Some observations from research are
-
-- People do use breadcrumbs to navigate and have a strong mental model of how breadcrumbs work (they show how content is organised)
-- There isn’t a common way they are used for orientation
-- People used them to “go home” when they feel too deep in the website
-- Some users understood that they represent hierarchy of the content, however some users expect breadcrumbs to show the path they have personally taken to reach that specific piece of content
-- People used them to go back one step, hence often compared to a back button - allowing to navigate in a smaller section of the website
- - When the breadcrumbs were tested without the “Current page” users were observed jumping back two levels
-- Some people didn’t interact with them because they didn’t notice them and generally prefer to use the browser back button
-
+If you’ve used this component, [get in touch](Anchor link to Get in touch panel at bottom of page) to share your user research findings.

@@ -1,6 +1,7 @@
 //= require vendor/jquery
 //= require vendor/modernizr
 //= require vendor/fixedsticky
+//= require vendor/clipboard
 //= require start-modules
 //= require lunr.min
 //= require lunr.stemmer.support
@@ -20,7 +21,7 @@ $(function () {
     $subNav.toggle();
 
     $navToggle.toggleClass('active', function () {
-      $(subNav).is(":visible"); 
+      $(subNav).is(":visible");
     })
   });
 
@@ -34,4 +35,50 @@ $(function () {
 
     return false;
   })
+
+  // Tabs mode
+  $('ul.tabs li a').click( function(e){
+    e.preventDefault()
+
+		var tab_id = $(this).attr('href')
+
+		$('ul.tabs li').removeClass('current')
+		$('.tab-content').removeClass('current')
+
+		$(this).parent().addClass('current')
+		$(tab_id).addClass('current')
+	})
+
+  // Accordion mode
+  $('.tab_drawer_heading').click( function(e){
+    e.preventDefault()
+
+		var tab_id = $(this).attr('href')
+
+		$('.tab_drawer_heading').removeClass('current')
+		$('.tab-content').removeClass('current')
+
+		$(this).addClass('current')
+		$(tab_id).addClass('current')
+	})
+
+  // Close current tab
+  $('.tab-content').append('<a class="close chevron top" href="#close">Close</a>')
+  $('.close').click( function(e){
+    e.preventDefault()
+    $('ul.tabs li').removeClass('current')
+    $('.tab_drawer_heading').removeClass('current')
+    $('.tab-content').removeClass('current')
+  })
+
+  // Copy to clipboard
+  $('.tab-content pre code').parent().prepend('<a class="copy" href="#copy">Copy</a>')
+  new Clipboard('.copy', {
+      target: function(trigger) {
+          return trigger.nextElementSibling
+      }
+  }).on('success', function(e) {
+    e.clearSelection()
+  })
+
 });

@@ -1,0 +1,161 @@
+// Overwrite classes
+.technical-documentation.markdown .example{
+  margin-bottom: 0;
+}
+.technical-documentation .example ol{
+  list-style: none;
+}
+.technical-documentation .example ol, .technical-documentation .example ul{
+  margin: 0;
+  padding: 0;
+}
+.technical-documentation .example li{
+  margin-top: 0;
+}
+.technical-documentation.markdown .example-tabs{
+  border-bottom: 0;
+}
+.technical-documentation ul.tabs{
+  max-width: none;
+}
+.technical-documentation p{
+  margin-top: 0;
+  margin-bottom: $gutter-half;
+}
+.banner p{
+  margin-bottom: 0;
+}
+// Redefine panel__title as it's being overwritten
+.technical-documentation .govuk-c-panel__title{
+  margin-top: 1.25em;
+  margin-bottom: .625em;
+  font-family: nta,Arial,sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 48px;
+  line-height: 1.04167;
+  padding-top: 0;
+}
+
+// Make the examples resizeable
+.resizeable{
+  resize: both;
+  overflow: auto;
+}
+
+// Tabs styles
+ul.tabs{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid $grey-2;
+  height: 55px;
+  overflow: visible;
+  li{
+    margin: 0;
+    display: inline-block;
+    a {
+      color: $link-colour;
+      font-weight: bold;
+      text-decoration: none;
+      display: block;
+      line-height: 53px;
+      padding: 0 $gutter-half;
+      margin-top: -1px;
+      border-top: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+      &:hover{
+      }
+    }
+    &.current{
+      a {
+        background-color: darken($grey-4, 3%);
+        border-top-color: $govuk-blue;
+        border-bottom-color: $govuk-blue;
+      }
+    }
+  }
+  @include media(mobile) {
+	  display: none;
+	}
+}
+// Tab drawer heading for accordion look on mobile
+.tab_drawer_heading {
+  display: none;
+  color: $link-colour;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 53px;
+  padding: 0 $gutter-half;
+  border: 1px solid $grey-2;
+  border-top: 0;
+  &:visited{
+    color: $link-colour;
+  }
+  &.current{
+    background-color: darken($grey-4, 3%);
+  }
+  @include media(mobile) {
+	  display: block;
+	}
+}
+// Tab containers
+.tab-content pre.html{
+  border-top: 0;
+  padding-bottom: $gutter;
+}
+.tab-content.readme{
+  background: #fcfcfc;
+  padding: $gutter;
+  overflow: auto;
+  position: relative;
+  border: 1px solid $grey-2;
+  border-top: 0;
+  padding-bottom: $gutter + $gutter-half;
+}
+.tab-content{
+  display: none;
+  position: relative;
+  &.current{
+    display: inherit;
+  }
+}
+// Close container button
+.close{
+  @include core-16;
+  position: absolute;
+  bottom: $gutter-two-thirds;
+  right: $gutter;
+  text-decoration: none;
+}
+// Generic chevron
+// can be rotated for .right .bottom .left versions
+.chevron::before {
+  @include core-16;
+	border-style: solid;
+	border-width: 0.15em 0.15em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	left: 0.15em;
+	position: relative;
+	top: 0.15em;
+	transform: rotate(-45deg);
+	vertical-align: top;
+	width: 0.45em;
+  margin-right: 0.5em;
+  margin-top: 0.25em;
+}
+// Copy button
+.copy{
+  @include core-14;
+  border: 1px solid #00823b;
+  color: #00823b !important;
+  text-transform: uppercase;
+  position: absolute;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 2px 10px 0px;
+  top: $gutter-half;
+  right: $gutter-half;
+}
